@@ -13,6 +13,13 @@
 		30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E91D6C7E9F0085FFBD /* Assets.xcassets */; };
 		30C716ED1D6C7E9F0085FFBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716EB1D6C7E9F0085FFBD /* LaunchScreen.storyboard */; };
 		30C716F81D6C7E9F0085FFBD /* bbqFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716F71D6C7E9F0085FFBD /* bbqFinderTests.swift */; };
+		30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */; };
+		30C717081D6C7F270085FFBD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717071D6C7F270085FFBD /* Router.swift */; };
+		30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717091D6C7FE50085FFBD /* AreasViewController.swift */; };
+		30C7170D1D6C84CF0085FFBD /* RMTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */; };
+		30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170E1D6C852B0085FFBD /* Array+Safe.swift */; };
+		30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717111D6C868E0085FFBD /* AreasPresenter.swift */; };
+		30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717131D6C89250085FFBD /* AreasInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,13 @@
 		30C716F31D6C7E9F0085FFBD /* bbqFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bbqFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C716F71D6C7E9F0085FFBD /* bbqFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bbqFinderTests.swift; sourceTree = "<group>"; };
 		30C716F91D6C7E9F0085FFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		30C717071D6C7F270085FFBD /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		30C717091D6C7FE50085FFBD /* AreasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasViewController.swift; sourceTree = "<group>"; };
+		30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMTableViewDataSource.swift; sourceTree = "<group>"; };
+		30C7170E1D6C852B0085FFBD /* Array+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
+		30C717111D6C868E0085FFBD /* AreasPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasPresenter.swift; sourceTree = "<group>"; };
+		30C717131D6C89250085FFBD /* AreasInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,10 @@
 		30C716E11D6C7E9F0085FFBD /* bbqFinder */ = {
 			isa = PBXGroup;
 			children = (
+				30C717101D6C859A0085FFBD /* Extentions */,
+				30C7170B1D6C84B60085FFBD /* Data Sources */,
+				30C717051D6C7F0D0085FFBD /* Architecture */,
+				30C717021D6C7EAD0085FFBD /* Area Selection */,
 				30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */,
 				30C716E41D6C7E9F0085FFBD /* ViewController.swift */,
 				30C716E61D6C7E9F0085FFBD /* Main.storyboard */,
@@ -94,6 +112,41 @@
 				30C716F91D6C7E9F0085FFBD /* Info.plist */,
 			);
 			path = bbqFinderTests;
+			sourceTree = "<group>";
+		};
+		30C717021D6C7EAD0085FFBD /* Area Selection */ = {
+			isa = PBXGroup;
+			children = (
+				30C717091D6C7FE50085FFBD /* AreasViewController.swift */,
+				30C717111D6C868E0085FFBD /* AreasPresenter.swift */,
+				30C717131D6C89250085FFBD /* AreasInteractor.swift */,
+			);
+			name = "Area Selection";
+			sourceTree = "<group>";
+		};
+		30C717051D6C7F0D0085FFBD /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */,
+				30C717071D6C7F270085FFBD /* Router.swift */,
+			);
+			name = Architecture;
+			sourceTree = "<group>";
+		};
+		30C7170B1D6C84B60085FFBD /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		30C717101D6C859A0085FFBD /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				30C7170E1D6C852B0085FFBD /* Array+Safe.swift */,
+			);
+			name = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C717081D6C7F270085FFBD /* Router.swift in Sources */,
+				30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */,
+				30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */,
+				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
+				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
+				30C7170D1D6C84CF0085FFBD /* RMTableViewDataSource.swift in Sources */,
 				30C716E51D6C7E9F0085FFBD /* ViewController.swift in Sources */,
 				30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */,
+				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +450,7 @@
 				30C716FE1D6C7E9F0085FFBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30C716FF1D6C7E9F0085FFBD /* Build configuration list for PBXNativeTarget "bbqFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +459,7 @@
 				30C717011D6C7E9F0085FFBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
