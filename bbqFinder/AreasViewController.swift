@@ -6,7 +6,8 @@ import UIKit
 
 class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate {
 
-    var dataSource: RMTableViewDataSource!
+    typealias dataSourceType = String
+    var dataSource: RMTableViewDataSource<AreasViewController>!
     var interactor: AreasInteractor!
 
     override func viewDidLoad() {
@@ -22,9 +23,9 @@ class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate 
     }
 
 
-    func configureCell(tableViewCell cell:UITableViewCell, object:AnyObject) {
+    func configureCell(tableViewCell cell:UITableViewCell, object:String) {
 
-        cell.textLabel?.text = object as? String
+        cell.textLabel?.text = object
     }
 
 }

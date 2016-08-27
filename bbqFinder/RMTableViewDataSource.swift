@@ -11,16 +11,19 @@ import UIKit
 
 protocol RMTableViewDataSourceDelegate: class {
 
+    associatedtype dataSourceType
     func cellReuseIdentifier(atIndexPath indexPath:NSIndexPath) -> String
-    func configureCell(tableViewCell cell:UITableViewCell, object:AnyObject)
+    func configureCell(tableViewCell cell:UITableViewCell, object:dataSourceType)
 }
 
 
-class RMTableViewDataSource: NSObject, UITableViewDataSource, ListInterface {
+
+class RMTableViewDataSource<T:RMTableViewDataSourceDelegate>: NSObject, UITableViewDataSource, ListInterface {
+
+    var delegate: T?
 
     private var tableView:UITableView?
-    private var dataSource:[[AnyObject]]?
-    weak var delegate:RMTableViewDataSourceDelegate?
+    private var dataSource:[[T.dataSourceType]]?
 
 
     func setTableView(tableView: UITableView?) {
@@ -30,16 +33,23 @@ class RMTableViewDataSource: NSObject, UITableViewDataSource, ListInterface {
     }
 
 
+    // todo make listInteractor generic
     func reloadData(dataSource:[[AnyObject]]) {
 
-        self.dataSource = dataSource
+        self.dataSource = dataSource as? AnyObject as? [[T.dataSourceType]]
         self.tableView?.reloadData()
     }
+
+//    func reloadData(dataSource:[[T.dataSourceType]]) {
+//
+//        self.dataSource = dataSource
+//        self.tableView?.reloadData()
+//    }
 
 
     // MARK: table view delegate
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    @objc internal func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 
         if let source = dataSource {
             return source.count
@@ -48,7 +58,7 @@ class RMTableViewDataSource: NSObject, UITableViewDataSource, ListInterface {
     }
 
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if let source = dataSource {
 
@@ -61,7 +71,7 @@ class RMTableViewDataSource: NSObject, UITableViewDataSource, ListInterface {
     }
 
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    @objc internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let cellIdentifier = self.delegate?.cellReuseIdentifier(atIndexPath: indexPath)
 
@@ -77,7 +87,7 @@ class RMTableViewDataSource: NSObject, UITableViewDataSource, ListInterface {
 
     // MARK: helpers
     
-    func objectAtIndexPath(indexPath: NSIndexPath) -> AnyObject? {
+    private func objectAtIndexPath(indexPath: NSIndexPath) -> T.dataSourceType? {
         
         return dataSource?[safe:indexPath.section]?[safe:indexPath.row]
     }
