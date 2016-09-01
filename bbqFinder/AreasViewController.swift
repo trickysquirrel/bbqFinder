@@ -4,10 +4,10 @@
 
 import UIKit
 
-class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate, ListAreaViewInterface {
+class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaViewInterface {
 
     typealias dataSourceType = AreaViewModel
-    var dataSource: RMTableViewDataSource<AreasViewController>!
+    var dataSource: TableViewDataSource<AreasViewController>!
     var interactor: AreasInteractor!
 
 
@@ -31,8 +31,13 @@ class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate,
 
 
     func configureCell(tableViewCell cell:UITableViewCell, object:AreaViewModel) {
-
         cell.textLabel?.text = object.title
+    }
+
+    // MARK: table view delegate
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 }

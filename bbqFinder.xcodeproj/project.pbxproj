@@ -16,7 +16,7 @@
 		30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */; };
 		30C717081D6C7F270085FFBD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717071D6C7F270085FFBD /* Router.swift */; };
 		30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717091D6C7FE50085FFBD /* AreasViewController.swift */; };
-		30C7170D1D6C84CF0085FFBD /* RMTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */; };
+		30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170C1D6C84CF0085FFBD /* TableViewDataSource.swift */; };
 		30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170E1D6C852B0085FFBD /* Array+Safe.swift */; };
 		30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717111D6C868E0085FFBD /* AreasPresenter.swift */; };
 		30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717131D6C89250085FFBD /* AreasInteractor.swift */; };
@@ -46,7 +46,7 @@
 		30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		30C717071D6C7F270085FFBD /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		30C717091D6C7FE50085FFBD /* AreasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasViewController.swift; sourceTree = "<group>"; };
-		30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMTableViewDataSource.swift; sourceTree = "<group>"; };
+		30C7170C1D6C84CF0085FFBD /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		30C7170E1D6C852B0085FFBD /* Array+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		30C717111D6C868E0085FFBD /* AreasPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasPresenter.swift; sourceTree = "<group>"; };
 		30C717131D6C89250085FFBD /* AreasInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasInteractor.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		30C7170B1D6C84B60085FFBD /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				30C7170C1D6C84CF0085FFBD /* RMTableViewDataSource.swift */,
+				30C7170C1D6C84CF0085FFBD /* TableViewDataSource.swift */,
 			);
 			name = "Data Sources";
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */,
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
-				30C7170D1D6C84CF0085FFBD /* RMTableViewDataSource.swift in Sources */,
+				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
 				30C716E51D6C7E9F0085FFBD /* ViewController.swift in Sources */,
 				30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */,
 				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,

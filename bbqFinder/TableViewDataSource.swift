@@ -9,7 +9,7 @@
 import UIKit
 
 
-protocol RMTableViewDataSourceDelegate: class {
+protocol TableViewDataSourceDelegate: class {
 
     associatedtype dataSourceType
     func cellReuseIdentifier(atIndexPath indexPath:NSIndexPath) -> String
@@ -17,7 +17,7 @@ protocol RMTableViewDataSourceDelegate: class {
 }
 
 
-class RMTableViewDataSource<T:RMTableViewDataSourceDelegate>: NSObject, UITableViewDataSource {
+class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewDataSource {
 
     var delegate: T?
 

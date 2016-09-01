@@ -33,7 +33,7 @@ class ViewControllerFactory: NSObject {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.areas) as! AreasViewController
         
-        controller.dataSource = RMTableViewDataSource()
+        controller.dataSource = TableViewDataSource()
         controller.dataSource.delegate = controller
 
         let presenter = AreasPresenter(interface: controller)
