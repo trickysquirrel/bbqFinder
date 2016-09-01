@@ -5,18 +5,27 @@
 import Foundation
 
 
-protocol ListInterface {
-
-    func reloadData(dataSource:[[AnyObject]])
+struct AreaViewModel {
+    let title: String
 }
+
+
+protocol ListAreaViewInterface {
+    func reloadData(dataSource:[[AreaViewModel]])
+}
+
 
 class AreasPresenter: NSObject {
 
-    let areaList = ["alpineShire", "ballarat", "glenorchy", "Melbourne"]
-    let interface: ListInterface
+    let areaList = [ AreaViewModel(title:"alpineShire"),
+                     AreaViewModel(title:"ballarat"),
+                     AreaViewModel(title:"glenorchy"),
+                     AreaViewModel(title:"Melbourne") ]
+
+    let interface: ListAreaViewInterface
 
 
-    init(interface: ListInterface) {
+    init(interface: ListAreaViewInterface) {
         self.interface = interface
     }
 

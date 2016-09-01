@@ -36,7 +36,7 @@ class ViewControllerFactory: NSObject {
         controller.dataSource = RMTableViewDataSource()
         controller.dataSource.delegate = controller
 
-        let presenter = AreasPresenter(interface: controller.dataSource)
+        let presenter = AreasPresenter(interface: controller)
 
         let interactor = AreasInteractor(presenter: presenter)
         controller.interactor = interactor

@@ -4,16 +4,23 @@
 
 import UIKit
 
-class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate {
+class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate, ListAreaViewInterface {
 
-    typealias dataSourceType = String
+    typealias dataSourceType = AreaViewModel
     var dataSource: RMTableViewDataSource<AreasViewController>!
     var interactor: AreasInteractor!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.setTableView(tableView)
         interactor.fetchAreas()
+    }
+
+    // MARK: List View Interface
+
+    func reloadData(data:[[AreaViewModel]]) {
+        dataSource.reloadData(data)
     }
 
     // MARK: data source delegate
@@ -23,9 +30,9 @@ class AreasViewController: UITableViewController, RMTableViewDataSourceDelegate 
     }
 
 
-    func configureCell(tableViewCell cell:UITableViewCell, object:String) {
+    func configureCell(tableViewCell cell:UITableViewCell, object:AreaViewModel) {
 
-        cell.textLabel?.text = object
+        cell.textLabel?.text = object.title
     }
 
 }

@@ -17,8 +17,7 @@ protocol RMTableViewDataSourceDelegate: class {
 }
 
 
-
-class RMTableViewDataSource<T:RMTableViewDataSourceDelegate>: NSObject, UITableViewDataSource, ListInterface {
+class RMTableViewDataSource<T:RMTableViewDataSourceDelegate>: NSObject, UITableViewDataSource {
 
     var delegate: T?
 
@@ -33,18 +32,11 @@ class RMTableViewDataSource<T:RMTableViewDataSourceDelegate>: NSObject, UITableV
     }
 
 
-    // todo make listInteractor generic
-    func reloadData(dataSource:[[AnyObject]]) {
+    func reloadData(dataSource:[[T.dataSourceType]]) {
 
-        self.dataSource = dataSource as? AnyObject as? [[T.dataSourceType]]
+        self.dataSource = dataSource
         self.tableView?.reloadData()
     }
-
-//    func reloadData(dataSource:[[T.dataSourceType]]) {
-//
-//        self.dataSource = dataSource
-//        self.tableView?.reloadData()
-//    }
 
 
     // MARK: table view delegate
