@@ -19,6 +19,9 @@ enum ViewControllersIDs : String {
 }
 
 
+typealias AreaSelectionAction = (areaTitle:String) -> Void
+
+
 class ViewControllerFactory: NSObject {
 
     private let storyboard: UIStoryboard?
@@ -29,16 +32,16 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeAreasViewController() -> AreasViewController {
+    func makeAreasViewController(action action: AreaSelectionAction) -> AreasViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.areas) as! AreasViewController
         
         controller.dataSource = TableViewDataSource()
         controller.dataSource.delegate = controller
 
-        let presenter = AreasPresenter(interface: controller)
+        let presenter = AreasPresenter(interface: controller, action: action)
 
-        let interactor = AreasInteractor(presenter: presenter)
+        let interactor = AreasInteractor(output: presenter)
         controller.interactor = interactor
 
         return controller

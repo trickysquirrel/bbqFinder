@@ -4,15 +4,23 @@
 
 import Foundation
 
-class AreasInteractor: NSObject {
 
-    let presenter: AreasPresenter // <-- make interface
+protocol AreasInteractorOutput {
+    func didFetchAreas(list: [String])
+}
 
-    init(presenter: AreasPresenter) {
-        self.presenter = presenter
+
+class AreasInteractor {
+
+    let areaList = ["alpineShire", "ballarat", "glenorchy", "Melbourne"]
+
+    let output: AreasInteractorOutput
+
+    init(output: AreasPresenter) {
+        self.output = output
     }
 
     func fetchAreas() {
-        presenter.tempFuncUpdateView()
+        output.didFetchAreas(areaList)
     }
 }

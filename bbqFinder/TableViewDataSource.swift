@@ -1,8 +1,4 @@
 //
-//  TSTableDataSource.swift
-//  FoodNutrientsFinder
-//
-//  Created by Richard Moult on 08/10/2015.
 //  Copyright © 2015 TrickySquirrel. All rights reserved.
 //
 
@@ -79,7 +75,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     // MARK: helpers
     
-    private func objectAtIndexPath(indexPath: NSIndexPath) -> T.dataSourceType? {
+    func objectAtIndexPath(indexPath: NSIndexPath) -> T.dataSourceType? {
         
         return dataSource?[safe:indexPath.section]?[safe:indexPath.row]
     }

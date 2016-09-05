@@ -6,7 +6,7 @@ import UIKit
 
 class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaViewInterface {
 
-    typealias dataSourceType = AreaViewModel
+    typealias dataSourceType = AreaDataModel
     var dataSource: TableViewDataSource<AreasViewController>!
     var interactor: AreasInteractor!
 
@@ -19,7 +19,7 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     // MARK: List View Interface
 
-    func reloadData(data:[[AreaViewModel]]) {
+    func reloadData(data:[[AreaDataModel]]) {
         dataSource.reloadData(data)
     }
 
@@ -29,15 +29,15 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
         return "AreasTableCellID"
     }
 
-
-    func configureCell(tableViewCell cell:UITableViewCell, object:AreaViewModel) {
-        cell.textLabel?.text = object.title
+    func configureCell(tableViewCell cell:UITableViewCell, object:AreaDataModel) {
+        cell.textLabel?.text = object.viewModel.title
     }
 
     // MARK: table view delegate
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        dataSource.objectAtIndexPath(indexPath)?.action()
     }
 
 }

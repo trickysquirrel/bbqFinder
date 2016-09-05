@@ -14,11 +14,18 @@ struct Router {
 
     func showRootViewController() {
 
-        let controller = viewControllerFactory.makeAreasViewController()
+        let action: AreaSelectionAction = { title in self.showAreaMapViewController(title) }
+
+        let controller = viewControllerFactory.makeAreasViewController(action: action)
 
         navigationController.setViewControllers([controller], animated: false)
 
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
+    }
+
+
+    private func showAreaMapViewController(areaTitle: String) {
+        print("got the action \(areaTitle)")
     }
 }
