@@ -127,8 +127,8 @@
 		30C717051D6C7F0D0085FFBD /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
-				30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */,
 				30C717071D6C7F270085FFBD /* Router.swift */,
+				30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */,
 			);
 			name = Architecture;
 			sourceTree = "<group>";

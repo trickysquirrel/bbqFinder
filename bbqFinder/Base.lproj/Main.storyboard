@@ -52,5 +52,23 @@
             </objects>
             <point key="canvasLocation" x="575" y="543"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oND-N4-v6U">
+            <objects>
+                <viewController storyboardIdentifier="bbqSelectedAreaID" id="Rgk-1R-yXr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ahr-u4-Ca7"/>
+                        <viewControllerLayoutGuide type="bottom" id="f9c-gO-7xs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pWc-op-kxI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAa-0E-nu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242" y="543"/>
+        </scene>
     </scenes>
 </document>
