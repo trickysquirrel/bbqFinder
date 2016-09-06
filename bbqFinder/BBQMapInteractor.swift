@@ -12,27 +12,25 @@ struct BBQ {
     let lon: Double
 }
 
-
 struct BBQLocationsResponseModel {
-
     let bbqs: [BBQ]
-    // add other things like centre point
 }
 
-
 protocol BBQMapInteractorOutput {
-
     func didFetchLocations(locations: BBQLocationsResponseModel)
 }
 
 
 class BBQMapInteractor: NSObject {
 
-    var output: BBQMapInteractorOutput
+    let output: BBQMapInteractorOutput
+    let bbqListProvider: BBQListProvider
 
 
-    required init(output: BBQMapInteractorOutput) {
+    required init(output: BBQMapInteractorOutput, bbqListProvider: BBQListProvider) {
+
         self.output = output
+        self.bbqListProvider = bbqListProvider
     }
 
 
@@ -44,11 +42,6 @@ class BBQMapInteractor: NSObject {
 
     private func responseModel() -> BBQLocationsResponseModel {
 
-        let bbqs = [
-            BBQ(title:"Barbeque - Enterprize Park", lat: -37.8202390666158, lon: 144.959910438727),
-            BBQ(title:"Barbeque - Brick Single Hotplate", lat: -37.8217875175357, lon: 144.957267921996)
-        ]
-
-        return BBQLocationsResponseModel(bbqs: bbqs)
+        return BBQLocationsResponseModel(bbqs: bbqListProvider.list())
     }
 }

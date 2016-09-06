@@ -6,13 +6,13 @@ import Foundation
 
 
 protocol AreasInteractorOutput {
-    func didFetchAreas(list: [String])
+    func didFetchAreas(list: [BBQArea])
 }
 
 
 class AreasInteractor {
 
-    let areaList = ["alpineShire", "ballarat", "glenorchy", "Melbourne"]
+    let areaList: [BBQArea] = [ .alpineShire, .ballarat, .glenorchy, .melbourne ]
 
     let output: AreasInteractorOutput
 

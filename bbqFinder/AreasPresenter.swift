@@ -37,20 +37,20 @@ class AreasPresenter: AreasInteractorOutput {
     }
 
 
-    func didFetchAreas(areaList:[String]) {
+    func didFetchAreas(areaList:[BBQArea]) {
 
         let dataModelList = areaList.map {
 
-            AreaDataModel(viewModel: AreaViewModel(title:$0), action: actionForTitle($0))
+            AreaDataModel(viewModel: AreaViewModel(title:$0.title()), action: actionForTitle($0))
         }
         output?.presenterUpdate( .updateAreas([dataModelList]) )
     }
 
 
-    private func actionForTitle(title:String) -> DataModelAction {
+    private func actionForTitle(area: BBQArea) -> DataModelAction {
 
         return  {
-            self.action(areaTitle: title)
+            self.action(area: area)
         }
     }
 }

@@ -25,6 +25,7 @@
 		30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7170E1D6C852B0085FFBD /* Array+Safe.swift */; };
 		30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717111D6C868E0085FFBD /* AreasPresenter.swift */; };
 		30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717131D6C89250085FFBD /* AreasInteractor.swift */; };
+		30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBEE1D7E9ACD007C2884 /* BBQs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		30C7170E1D6C852B0085FFBD /* Array+Safe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
 		30C717111D6C868E0085FFBD /* AreasPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasPresenter.swift; sourceTree = "<group>"; };
 		30C717131D6C89250085FFBD /* AreasInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasInteractor.swift; sourceTree = "<group>"; };
+		30D7EBEE1D7E9ACD007C2884 /* BBQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				30C717101D6C859A0085FFBD /* Extentions */,
-				30C7170B1D6C84B60085FFBD /* Data Sources */,
+				30D7EBF01D7E9B27007C2884 /* BBQs Data */,
+				30C7170B1D6C84B60085FFBD /* Table Data Source */,
 				30C717051D6C7F0D0085FFBD /* Architecture */,
 				30C717021D6C7EAD0085FFBD /* Area Selection */,
 				3030E31A1D7E05E600647CFA /* Bbq Map */,
@@ -157,12 +160,12 @@
 			name = Architecture;
 			sourceTree = "<group>";
 		};
-		30C7170B1D6C84B60085FFBD /* Data Sources */ = {
+		30C7170B1D6C84B60085FFBD /* Table Data Source */ = {
 			isa = PBXGroup;
 			children = (
 				30C7170C1D6C84CF0085FFBD /* TableViewDataSource.swift */,
 			);
-			name = "Data Sources";
+			name = "Table Data Source";
 			sourceTree = "<group>";
 		};
 		30C717101D6C859A0085FFBD /* Extentions */ = {
@@ -171,6 +174,14 @@
 				30C7170E1D6C852B0085FFBD /* Array+Safe.swift */,
 			);
 			name = Extentions;
+			sourceTree = "<group>";
+		};
+		30D7EBF01D7E9B27007C2884 /* BBQs Data */ = {
+			isa = PBXGroup;
+			children = (
+				30D7EBEE1D7E9ACD007C2884 /* BBQs.swift */,
+			);
+			name = "BBQs Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMap.swift in Sources */,
+				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
 				3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */,
 				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
 				30C716E51D6C7E9F0085FFBD /* ViewController.swift in Sources */,

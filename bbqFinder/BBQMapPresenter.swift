@@ -21,7 +21,6 @@ enum BBQMapPresenterResponse {
     case updateDataModels(list: [BBQMapDataModel])
 }
 
-
 protocol BBQMapPresenterOutput: class {
     func presenterUpdate(response: BBQMapPresenterResponse)
 }

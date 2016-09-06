@@ -14,7 +14,6 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.setTableView(tableView)
-        print("list interactor \(interactor)")
         interactor.fetchAreas()
     }
 

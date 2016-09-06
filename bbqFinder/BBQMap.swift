@@ -2,6 +2,7 @@
 //  Created by Richard Moult on 06/09/2016.
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
+//  todo: Add user location button
 
 import UIKit
 import MapKit
@@ -21,17 +22,9 @@ import MapKit
 }
 
 
-@objc class MapView: MKMapView, MKMapViewDelegate {
+@objc class MapView: MKMapView {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
-
-
-    override func awakeFromNib() {
-        
-        delegate = self
-        super.awakeFromNib()
-    }
-
 
     func reloadData(dataSource:[BBQMapDataModel]) {
         
@@ -40,5 +33,4 @@ import MapKit
         addAnnotations(annotationList)
         showAnnotations(annotationList, animated: false)
     }
-
 }

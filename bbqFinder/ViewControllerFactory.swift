@@ -20,7 +20,7 @@ enum ViewControllersIDs : String {
 }
 
 
-typealias AreaSelectionAction = (areaTitle:String) -> Void
+typealias AreaSelectionAction = (area:BBQArea) -> Void
 
 
 class ViewControllerFactory: NSObject {
@@ -49,14 +49,15 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqMapArea(areaTitle: String) -> BBQMapViewController {
+    func makeBbqMapArea(area: BBQArea) -> BBQMapViewController {
 
         let controller = (storyboard?.instantiateViewControllerWithIdentifier(.bbqMap)) as! BBQMapViewController
 
         let presenter = BBQMapPresenter(output: controller)
-        let interactor = BBQMapInteractor(output: presenter)
+        let bbqListProvider = BBQListProvider(area: area)
+        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
 
-        controller.title = areaTitle
+        controller.title = area.title()
         controller.interactor = interactor
 
         return controller

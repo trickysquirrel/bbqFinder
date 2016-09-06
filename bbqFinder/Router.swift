@@ -14,7 +14,7 @@ struct Router {
 
     func showRootViewController() {
 
-        let action: AreaSelectionAction = { title in self.showAreaMapViewController(title) }
+        let action: AreaSelectionAction = { area in self.showAreaMapViewController(area) }
 
         let controller = viewControllerFactory.makeAreasViewController(action: action)
 
@@ -25,9 +25,9 @@ struct Router {
     }
 
 
-    private func showAreaMapViewController(areaTitle: String) {
+    private func showAreaMapViewController(area: BBQArea) {
 
-        let controller = viewControllerFactory.makeBbqMapArea(areaTitle)
+        let controller = viewControllerFactory.makeBbqMapArea(area)
         navigationController.pushViewController(controller, animated: true)
     }
 }

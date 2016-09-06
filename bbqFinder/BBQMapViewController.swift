@@ -2,6 +2,10 @@
 //  Created by Richard Moult on 06/09/2016.
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
+//  todo add user location
+//  todo add directions
+//  todo add review
+//
 
 import UIKit
 import MapKit
@@ -13,7 +17,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     @IBOutlet var mapView: MapView?
 
     deinit {
-        print("deleted map view controller")
+        print("deleted map view controller") // test this
     }
     
     override func viewDidAppear(animated: Bool) {
