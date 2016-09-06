@@ -27,8 +27,7 @@ struct Router {
 
     private func showAreaMapViewController(areaTitle: String) {
 
-        let controller = viewControllerFactory.makeBbqSelectedArea()
-        controller.title = areaTitle
+        let controller = viewControllerFactory.makeBbqMapArea(areaTitle)
         navigationController.pushViewController(controller, animated: true)
     }
 }

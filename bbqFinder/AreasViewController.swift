@@ -4,7 +4,7 @@
 
 import UIKit
 
-class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaViewInterface {
+class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaPresenterOutput {
 
     typealias dataSourceType = AreaDataModel
     var dataSource: TableViewDataSource<AreasViewController>!
@@ -14,13 +14,18 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource.setTableView(tableView)
+        print("list interactor \(interactor)")
         interactor.fetchAreas()
     }
 
     // MARK: List View Interface
 
-    func reloadData(data:[[AreaDataModel]]) {
-        dataSource.reloadData(data)
+    func presenterUpdate(response:AreasMapPresenterResponse) {
+
+        switch response {
+        case .updateAreas(let areas):
+            dataSource.reloadData(areas)
+        }
     }
 
     // MARK: data source delegate

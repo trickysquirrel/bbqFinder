@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -52,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="575" y="543"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="oND-N4-v6U">
             <objects>
-                <viewController storyboardIdentifier="bbqSelectedAreaID" id="Rgk-1R-yXr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BBQMapViewControllerID" id="Rgk-1R-yXr" customClass="BBQMapViewController" customModule="bbqFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ahr-u4-Ca7"/>
                         <viewControllerLayoutGuide type="bottom" id="f9c-gO-7xs"/>
@@ -63,8 +64,22 @@
                     <view key="view" contentMode="scaleToFill" id="pWc-op-kxI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ivn-xC-EQR" customClass="MapView" customModule="bbqFinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ivn-xC-EQR" firstAttribute="leading" secondItem="pWc-op-kxI" secondAttribute="leadingMargin" constant="-20" id="6fR-aI-Wh7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ivn-xC-EQR" secondAttribute="trailing" constant="-20" id="hcb-y3-sLW"/>
+                            <constraint firstItem="Ivn-xC-EQR" firstAttribute="top" secondItem="pWc-op-kxI" secondAttribute="topMargin" id="nxA-GI-HMD"/>
+                            <constraint firstItem="f9c-gO-7xs" firstAttribute="top" secondItem="Ivn-xC-EQR" secondAttribute="bottom" id="pjz-zF-LsQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="Ivn-xC-EQR" id="GaV-gS-vro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAa-0E-nu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

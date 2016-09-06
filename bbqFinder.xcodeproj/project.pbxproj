@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31B1D7E061400647CFA /* BBQMapViewController.swift */; };
+		3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3030E31D1D7E070200647CFA /* MapKit.framework */; };
+		3030E3201D7E078200647CFA /* BBQMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31F1D7E078200647CFA /* BBQMap.swift */; };
+		3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */; };
+		3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3251D7E717300647CFA /* BBQMapPresenter.swift */; };
 		30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */; };
 		30C716E51D6C7E9F0085FFBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E41D6C7E9F0085FFBD /* ViewController.swift */; };
 		30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E61D6C7E9F0085FFBD /* Main.storyboard */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3030E31B1D7E061400647CFA /* BBQMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapViewController.swift; sourceTree = "<group>"; };
+		3030E31D1D7E070200647CFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3030E31F1D7E078200647CFA /* BBQMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMap.swift; sourceTree = "<group>"; };
+		3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapInteractor.swift; sourceTree = "<group>"; };
+		3030E3251D7E717300647CFA /* BBQMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapPresenter.swift; sourceTree = "<group>"; };
 		30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C716E41D6C7E9F0085FFBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3030E31A1D7E05E600647CFA /* Bbq Map */ = {
+			isa = PBXGroup;
+			children = (
+				3030E31B1D7E061400647CFA /* BBQMapViewController.swift */,
+				3030E31F1D7E078200647CFA /* BBQMap.swift */,
+				3030E3251D7E717300647CFA /* BBQMapPresenter.swift */,
+				3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */,
+			);
+			name = "Bbq Map";
+			sourceTree = "<group>";
+		};
 		30C716D61D6C7E9E0085FFBD = {
 			isa = PBXGroup;
 			children = (
+				3030E31D1D7E070200647CFA /* MapKit.framework */,
 				30C716E11D6C7E9F0085FFBD /* bbqFinder */,
 				30C716F61D6C7E9F0085FFBD /* bbqFinderTests */,
 				30C716E01D6C7E9F0085FFBD /* Products */,
@@ -95,6 +118,7 @@
 				30C7170B1D6C84B60085FFBD /* Data Sources */,
 				30C717051D6C7F0D0085FFBD /* Architecture */,
 				30C717021D6C7EAD0085FFBD /* Area Selection */,
+				3030E31A1D7E05E600647CFA /* Bbq Map */,
 				30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */,
 				30C716E41D6C7E9F0085FFBD /* ViewController.swift */,
 				30C716E61D6C7E9F0085FFBD /* Main.storyboard */,
@@ -254,11 +278,15 @@
 				30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */,
 				30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */,
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
+				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
+				3030E3201D7E078200647CFA /* BBQMap.swift in Sources */,
+				3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */,
 				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
 				30C716E51D6C7E9F0085FFBD /* ViewController.swift in Sources */,
 				30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */,
 				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,
+				3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

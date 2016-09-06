@@ -16,7 +16,7 @@ extension UIStoryboard {
 
 enum ViewControllersIDs : String {
     case areas = "AreasViewControllerStoryboardID"
-    case selectedArea = "bbqSelectedAreaID"
+    case bbqMap = "BBQMapViewControllerID"
 }
 
 
@@ -32,12 +32,11 @@ class ViewControllerFactory: NSObject {
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
     }
 
-
     func makeAreasViewController(action action: AreaSelectionAction) -> AreasViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.areas) as! AreasViewController
 
-        controller.title = "Area Selection"
+        controller.title = "Areas"
         controller.dataSource = TableViewDataSource()
         controller.dataSource.delegate = controller
 
@@ -50,9 +49,16 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqSelectedArea() -> UIViewController {
+    func makeBbqMapArea(areaTitle: String) -> BBQMapViewController {
 
-        let controller = storyboard?.instantiateViewControllerWithIdentifier(.selectedArea)
-        return controller!
+        let controller = (storyboard?.instantiateViewControllerWithIdentifier(.bbqMap)) as! BBQMapViewController
+
+        let presenter = BBQMapPresenter(output: controller)
+        let interactor = BBQMapInteractor(output: presenter)
+
+        controller.title = areaTitle
+        controller.interactor = interactor
+
+        return controller
     }
 }

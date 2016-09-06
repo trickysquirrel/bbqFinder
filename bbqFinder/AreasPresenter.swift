@@ -16,19 +16,23 @@ struct AreaViewModel {
     let title: String
 }
 
-protocol ListAreaViewInterface {
-    func reloadData(dataSource:[[AreaDataModel]])
+enum AreasMapPresenterResponse {
+    case updateAreas([[AreaDataModel]])
+}
+
+protocol ListAreaPresenterOutput: class {
+    func presenterUpdate(response:AreasMapPresenterResponse)
 }
 
 
 class AreasPresenter: AreasInteractorOutput {
 
-    let interface: ListAreaViewInterface
+    weak var output: ListAreaPresenterOutput?
     let action: AreaSelectionAction
 
 
-    init(interface: ListAreaViewInterface, action: AreaSelectionAction) {
-        self.interface = interface
+    init(interface: ListAreaPresenterOutput, action: AreaSelectionAction) {
+        self.output = interface
         self.action = action
     }
 
@@ -39,7 +43,7 @@ class AreasPresenter: AreasInteractorOutput {
 
             AreaDataModel(viewModel: AreaViewModel(title:$0), action: actionForTitle($0))
         }
-        interface.reloadData([dataModelList])
+        output?.presenterUpdate( .updateAreas([dataModelList]) )
     }
 
 
