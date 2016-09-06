@@ -53,9 +53,13 @@ class ViewControllerFactory: NSObject {
 
         let controller = (storyboard?.instantiateViewControllerWithIdentifier(.bbqMap)) as! BBQMapViewController
 
+        let locationManager = UserLocationStatus()
+
         let presenter = BBQMapPresenter(output: controller)
+
         let bbqListProvider = BBQListProvider(area: area)
-        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
+
+        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider, locationManagerStatus: locationManager)
 
         controller.title = area.title()
         controller.interactor = interactor

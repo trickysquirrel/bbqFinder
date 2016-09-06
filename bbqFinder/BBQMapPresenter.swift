@@ -1,5 +1,4 @@
 //
-//  Created by Richard Moult on 06/09/2016.
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
 
@@ -17,8 +16,9 @@ struct BBQMapDataModel {
 }
 
 enum BBQMapPresenterResponse {
-
-    case updateDataModels(list: [BBQMapDataModel])
+    case updateDataModels([BBQMapDataModel])
+    case watchUsersLocation()
+    case displayAlert(title: String, message: String)
 }
 
 protocol BBQMapPresenterOutput: class {
@@ -37,10 +37,20 @@ class BBQMapPresenter: BBQMapInteractorOutput {
 
     // MARK: interactor output
 
-    func didFetchLocations(responseModel: BBQLocationsResponseModel) {
+    func interactorUpdate(response: BBQMapInteractorResponseModel) {
 
-        let list = responseModel.bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0)) }
-        output?.presenterUpdate(.updateDataModels(list: list))
+        switch response {
+
+        case .bbqs(let bbqs):
+            let dataModels = bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0)) }
+            output?.presenterUpdate(.updateDataModels(dataModels))
+
+        case .userLocationDenied:
+            output?.presenterUpdate(.displayAlert(title:"location services off", message:"please go to settings and allow user location to be determined"))
+
+        case .watchUsersLocation:
+            output?.presenterUpdate(.watchUsersLocation())
+        }
     }
 
 

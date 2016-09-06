@@ -68,13 +68,27 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ivn-xC-EQR" customClass="MapView" customModule="bbqFinder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMM-OE-h1T" userLabel="user location button">
+                                <rect key="frame" x="10" y="560" width="30" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.69999999999999996" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hQq-43-FGl"/>
+                                    <constraint firstAttribute="width" constant="30" id="wTC-Ym-Hjw"/>
+                                </constraints>
+                                <state key="normal" image="userLocationIcon"/>
+                                <connections>
+                                    <action selector="userSelectedShowCurrentLocation" destination="Rgk-1R-yXr" eventType="touchUpInside" id="HKG-Ly-AEr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ivn-xC-EQR" firstAttribute="leading" secondItem="pWc-op-kxI" secondAttribute="leadingMargin" constant="-20" id="6fR-aI-Wh7"/>
+                            <constraint firstItem="IMM-OE-h1T" firstAttribute="leading" secondItem="pWc-op-kxI" secondAttribute="leadingMargin" constant="-10" id="RDv-iG-iAQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ivn-xC-EQR" secondAttribute="trailing" constant="-20" id="hcb-y3-sLW"/>
                             <constraint firstItem="Ivn-xC-EQR" firstAttribute="top" secondItem="pWc-op-kxI" secondAttribute="topMargin" id="nxA-GI-HMD"/>
                             <constraint firstItem="f9c-gO-7xs" firstAttribute="top" secondItem="Ivn-xC-EQR" secondAttribute="bottom" id="pjz-zF-LsQ"/>
+                            <constraint firstItem="f9c-gO-7xs" firstAttribute="top" secondItem="IMM-OE-h1T" secondAttribute="bottom" constant="10" id="tao-XX-hNT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -86,4 +100,7 @@
             <point key="canvasLocation" x="1242" y="543"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="userLocationIcon" width="30" height="30"/>
+    </resources>
 </document>

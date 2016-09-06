@@ -1,8 +1,6 @@
 //
-//  Created by Richard Moult on 06/09/2016.
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
-//  todo: Add user location button
 
 import UIKit
 import MapKit
@@ -26,11 +24,17 @@ import MapKit
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
+
     func reloadData(dataSource:[BBQMapDataModel]) {
         
         removeAnnotations(annotationList)
         annotationList = dataSource.map{ MapViewAnnotation(dataModel: $0) }
         addAnnotations(annotationList)
         showAnnotations(annotationList, animated: false)
+    }
+
+
+    func showLocationOfUser() {
+        showsUserLocation = true
     }
 }
