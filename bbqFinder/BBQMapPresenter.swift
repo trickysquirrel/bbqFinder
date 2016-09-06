@@ -17,7 +17,7 @@ struct BBQMapDataModel {
 
 enum BBQMapPresenterResponse {
     case updateDataModels([BBQMapDataModel])
-    case watchUsersLocation()
+    case showUsersLocation()
     case displayAlert(title: String, message: String)
 }
 
@@ -49,7 +49,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
             output?.presenterUpdate(.displayAlert(title:"location services off", message:"please go to settings and allow user location to be determined"))
 
         case .watchUsersLocation:
-            output?.presenterUpdate(.watchUsersLocation())
+            output?.presenterUpdate(.showUsersLocation())
         }
     }
 

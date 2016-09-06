@@ -15,6 +15,7 @@ import MapKit
 class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
     var interactor: BBQMapInteractor!
+    var alerter: Alerter!
     @IBOutlet var mapView: MapView?
 
     deinit {
@@ -35,22 +36,19 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
         case .updateDataModels(let coordinates):
             mapView?.reloadData(coordinates)
 
-        case .watchUsersLocation:
+        case .showUsersLocation:
             mapView?.showLocationOfUser()
 
         case .displayAlert(let title, let message):
+            alerter.displayOkAlert(title, message: message, presentingViewController: self)
 
-            let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-            let button = UIAlertAction(title: "ok", style: .Default, handler: nil)
-            alertController.addAction(button)
-            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
 
     // MARK: Actions
 
     @IBAction func userSelectedShowCurrentLocation() {
-        interactor.fetchUsersLocation()
+        interactor.requestUsersLocation()
     }
 
 }

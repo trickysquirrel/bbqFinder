@@ -29,6 +29,7 @@
 		30D7EBF21D7F4D97007C2884 /* MelbournBBQs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBF11D7F4D97007C2884 /* MelbournBBQs.swift */; };
 		30D7EBF61D7F5329007C2884 /* UserLocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */; };
 		30D7EBF81D7F5353007C2884 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D7EBF71D7F5353007C2884 /* CoreLocation.framework */; };
+		30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBFD1D7F70E8007C2884 /* Alerter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		30D7EBF11D7F4D97007C2884 /* MelbournBBQs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelbournBBQs.swift; sourceTree = "<group>"; };
 		30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationStatus.swift; sourceTree = "<group>"; };
 		30D7EBF71D7F5353007C2884 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		30D7EBFD1D7F70E8007C2884 /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				30C717101D6C859A0085FFBD /* Extentions */,
 				30C7170B1D6C84B60085FFBD /* Table Data Source */,
 				30D7EBF91D7F6FB9007C2884 /* User Location */,
+				30D7EBFC1D7F70D2007C2884 /* Alerter */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -217,6 +220,14 @@
 			);
 			name = Frameworks;
 			path = bbqFinder;
+			sourceTree = "<group>";
+		};
+		30D7EBFC1D7F70D2007C2884 /* Alerter */ = {
+			isa = PBXGroup;
+			children = (
+				30D7EBFD1D7F70E8007C2884 /* Alerter.swift */,
+			);
+			name = Alerter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
+				30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMap.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
 				3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */,

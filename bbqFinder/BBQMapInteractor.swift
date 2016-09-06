@@ -42,8 +42,7 @@ class BBQMapInteractor: NSObject, LocationManagerStatusDelegate {
         output.interactorUpdate( locationsResponseModel() )
     }
 
-    // todo amend to startWatchingUsersLocation + stopWatchingUsersLocation
-    func fetchUsersLocation() {
+    func requestUsersLocation() {
 
         self.locationManagerStatus.statusDelegate = self
 
@@ -62,7 +61,7 @@ class BBQMapInteractor: NSObject, LocationManagerStatusDelegate {
 
     func locationManagerStatusUpdated(locationManager: UserLocationStatus) {
 
-        fetchUsersLocation()
+        requestUsersLocation()
     }
 
     // MARK: Response Models

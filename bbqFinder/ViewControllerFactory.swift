@@ -55,6 +55,8 @@ class ViewControllerFactory: NSObject {
 
         let locationManager = UserLocationStatus()
 
+        let alerter = Alerter()
+
         let presenter = BBQMapPresenter(output: controller)
 
         let bbqListProvider = BBQListProvider(area: area)
@@ -63,6 +65,7 @@ class ViewControllerFactory: NSObject {
 
         controller.title = area.title()
         controller.interactor = interactor
+        controller.alerter = alerter
 
         return controller
     }
