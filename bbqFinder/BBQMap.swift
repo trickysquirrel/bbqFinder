@@ -25,17 +25,11 @@ import MapKit
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
-    
+
     override func awakeFromNib() {
         
         delegate = self
         super.awakeFromNib()
-    }
-
-
-    func updateRegion(region: MKCoordinateRegion) {
-
-        setRegion(region, animated: false)
     }
 
 
@@ -44,6 +38,7 @@ import MapKit
         removeAnnotations(annotationList)
         annotationList = dataSource.map{ MapViewAnnotation(dataModel: $0) }
         addAnnotations(annotationList)
+        showAnnotations(annotationList, animated: false)
     }
 
 }

@@ -44,7 +44,11 @@ class BBQMapInteractor: NSObject {
 
     private func responseModel() -> BBQLocationsResponseModel {
 
-        let bbqs = [BBQ(title:"Barbeque - Enterprize Park", lat: -37.8202390666158, lon: 144.959910438727)]
+        let bbqs = [
+            BBQ(title:"Barbeque - Enterprize Park", lat: -37.8202390666158, lon: 144.959910438727),
+            BBQ(title:"Barbeque - Brick Single Hotplate", lat: -37.8217875175357, lon: 144.957267921996)
+        ]
+
         return BBQLocationsResponseModel(bbqs: bbqs)
     }
 }

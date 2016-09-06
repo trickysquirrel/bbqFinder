@@ -16,8 +16,8 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
         print("deleted map view controller")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         interactor.fetchLocations()
     }
 
@@ -28,10 +28,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
         switch(response) {
         case .updateDataModels(let coordinates):
             mapView?.reloadData(coordinates)
-        case .updateMapRegion(let region):
-            mapView?.updateRegion(region)
         }
-
     }
 
 }
