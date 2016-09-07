@@ -26,7 +26,8 @@ import MapKit
 
 
     func reloadData(dataSource:[BBQMapDataModel]) {
-        
+
+        delegate = self
         removeAnnotations(annotationList)
         annotationList = dataSource.map{ MapViewAnnotation(dataModel: $0) }
         addAnnotations(annotationList)
@@ -37,10 +38,8 @@ import MapKit
     func showLocationOfUser() {
 
         showsUserLocation = true
-        if userLocation.coordinate.isLocationSet() {
-            delegate = self
-        }
-        else {
+
+        if userLocation.coordinate.isLocationSet() == false {
             setCenterCoordinate(userLocation.coordinate, animated: true)
         }
     }
@@ -51,5 +50,20 @@ import MapKit
         
         delegate = nil
         setCenterCoordinate(userLocation.coordinate, animated: true)
+    }
+
+
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "bbqLocation")
+        view.canShowCallout = true
+        view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+        return view
+    }
+
+
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+
+        guard let annotation = view.annotation as? MapViewAnnotation else { return }
+        annotation.dataModel.action()
     }
 }

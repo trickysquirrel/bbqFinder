@@ -5,7 +5,6 @@
 import UIKit
 import Foundation
 
-
 extension UIStoryboard {
 
     func instantiateViewControllerWithIdentifier(identifier: ViewControllersIDs) -> UIViewController {
@@ -17,10 +16,8 @@ extension UIStoryboard {
 enum ViewControllersIDs : String {
     case areas = "AreasViewControllerStoryboardID"
     case bbqMap = "BBQMapViewControllerID"
+    case bbqDetails = "BBQDetailsViewControllerStoryboardID"
 }
-
-
-typealias AreaSelectionAction = (area:BBQArea) -> Void
 
 
 class ViewControllerFactory: NSObject {
@@ -49,15 +46,15 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqMapArea(area: BBQArea) -> BBQMapViewController {
+    func makeBbqMapArea(area: BBQArea, action: BBQSelectionAction) -> BBQMapViewController {
 
-        let controller = (storyboard?.instantiateViewControllerWithIdentifier(.bbqMap)) as! BBQMapViewController
+        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqMap) as! BBQMapViewController
 
         let locationManager = UserLocationStatus()
 
         let alerter = Alerter()
 
-        let presenter = BBQMapPresenter(output: controller)
+        let presenter = BBQMapPresenter(output: controller, action: action)
 
         let bbqListProvider = BBQListProvider(area: area)
 
@@ -67,6 +64,13 @@ class ViewControllerFactory: NSObject {
         controller.interactor = interactor
         controller.alerter = alerter
 
+        return controller
+    }
+
+
+    func makeBbqDetails() -> UITableViewController {
+
+        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! UITableViewController
         return controller
     }
 }

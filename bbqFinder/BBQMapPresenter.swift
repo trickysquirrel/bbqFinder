@@ -13,6 +13,7 @@ struct BBQMapViewModel {
 
 struct BBQMapDataModel {
     let viewModel: BBQMapViewModel
+    let action: DataModelAction
 }
 
 enum BBQMapPresenterResponse {
@@ -29,10 +30,12 @@ protocol BBQMapPresenterOutput: class {
 class BBQMapPresenter: BBQMapInteractorOutput {
 
     weak var output: BBQMapPresenterOutput?
+    var action: BBQSelectionAction
 
 
-    required init(output: BBQMapPresenterOutput) {
+    required init(output: BBQMapPresenterOutput, action: BBQSelectionAction) {
         self.output = output
+        self.action = action
     }
 
     // MARK: interactor output
@@ -42,7 +45,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
         switch response {
 
         case .bbqs(let bbqs):
-            let dataModels = bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0)) }
+            let dataModels = bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0), action: actionForBBQ($0)) }
             output?.presenterUpdate(.updateDataModels(dataModels))
 
         case .userLocationDenied:
@@ -58,4 +61,13 @@ class BBQMapPresenter: BBQMapInteractorOutput {
 
         return BBQMapViewModel(title: bbq.title, location: CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon))
     }
+
+
+    private func actionForBBQ(bbq: BBQ) -> DataModelAction {
+        return  {
+            let coordinate = CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon)
+            self.action( coordinate: coordinate )
+        }
+    }
+
 }

@@ -24,7 +24,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        interactor.fetchLocations()
+        interactor.fetchLocations() // todo make only onViewDidLoad as it hides the pin callout info
     }
 
     // MARK: presenter output
