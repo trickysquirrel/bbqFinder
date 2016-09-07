@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31B1D7E061400647CFA /* BBQMapViewController.swift */; };
 		3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3030E31D1D7E070200647CFA /* MapKit.framework */; };
-		3030E3201D7E078200647CFA /* BBQMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31F1D7E078200647CFA /* BBQMap.swift */; };
+		3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31F1D7E078200647CFA /* BBQMapView.swift */; };
 		3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */; };
 		3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3251D7E717300647CFA /* BBQMapPresenter.swift */; };
 		30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */; };
@@ -30,6 +30,7 @@
 		30D7EBF61D7F5329007C2884 /* UserLocationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */; };
 		30D7EBF81D7F5353007C2884 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30D7EBF71D7F5353007C2884 /* CoreLocation.framework */; };
 		30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBFD1D7F70E8007C2884 /* Alerter.swift */; };
+		30D7EC001D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D7EBFF1D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 /* Begin PBXFileReference section */
 		3030E31B1D7E061400647CFA /* BBQMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapViewController.swift; sourceTree = "<group>"; };
 		3030E31D1D7E070200647CFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3030E31F1D7E078200647CFA /* BBQMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMap.swift; sourceTree = "<group>"; };
+		3030E31F1D7E078200647CFA /* BBQMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapView.swift; sourceTree = "<group>"; };
 		3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapInteractor.swift; sourceTree = "<group>"; };
 		3030E3251D7E717300647CFA /* BBQMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapPresenter.swift; sourceTree = "<group>"; };
 		30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,7 @@
 		30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationStatus.swift; sourceTree = "<group>"; };
 		30D7EBF71D7F5353007C2884 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		30D7EBFD1D7F70E8007C2884 /* Alerter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerter.swift; sourceTree = "<group>"; };
+		30D7EBFF1D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Default.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3030E31B1D7E061400647CFA /* BBQMapViewController.swift */,
-				3030E31F1D7E078200647CFA /* BBQMap.swift */,
+				3030E31F1D7E078200647CFA /* BBQMapView.swift */,
 				3030E3251D7E717300647CFA /* BBQMapPresenter.swift */,
 				3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */,
 			);
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				30C7170E1D6C852B0085FFBD /* Array+Safe.swift */,
+				30D7EBFF1D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -340,7 +343,7 @@
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
 				30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */,
-				3030E3201D7E078200647CFA /* BBQMap.swift in Sources */,
+				3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
 				3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */,
 				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
@@ -348,6 +351,7 @@
 				30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */,
 				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,
 				3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */,
+				30D7EC001D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

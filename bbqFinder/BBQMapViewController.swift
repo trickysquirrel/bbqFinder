@@ -1,7 +1,7 @@
 //
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
-//  todo add user location
+//  todo show to user that we are currently getting the users location - add spinner over button???
 //  todo add distance to bbq
 //  todo add area photo shot
 //  todo add directions
@@ -16,7 +16,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
     var interactor: BBQMapInteractor!
     var alerter: Alerter!
-    @IBOutlet var mapView: MapView?
+    @IBOutlet var mapView: BBQMapView?
 
     deinit {
         print("deleted map view controller") // test this
@@ -41,7 +41,6 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
-
         }
     }
 

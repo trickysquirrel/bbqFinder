@@ -48,7 +48,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
         case .userLocationDenied:
             output?.presenterUpdate(.displayAlert(title:"location services off", message:"please go to settings and allow user location to be determined"))
 
-        case .watchUsersLocation:
+        case .showUsersLocation:
             output?.presenterUpdate(.showUsersLocation())
         }
     }

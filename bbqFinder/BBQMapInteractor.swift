@@ -13,7 +13,7 @@ struct BBQ {
 
 enum BBQMapInteractorResponseModel {
     case bbqs([BBQ])
-    case watchUsersLocation
+    case showUsersLocation
     case userLocationDenied
 }
 
@@ -53,7 +53,7 @@ class BBQMapInteractor: NSObject, LocationManagerStatusDelegate {
             locationManagerStatus.requestLocationWhenInUse()
         }
         else {
-            output.interactorUpdate( .watchUsersLocation )
+            output.interactorUpdate( .showUsersLocation )
         }
     }
 

@@ -20,7 +20,7 @@ import MapKit
 }
 
 
-@objc class MapView: MKMapView {
+@objc class BBQMapView: MKMapView, MKMapViewDelegate {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
@@ -35,6 +35,21 @@ import MapKit
 
 
     func showLocationOfUser() {
+
         showsUserLocation = true
+        if userLocation.coordinate.isLocationSet() {
+            delegate = self
+        }
+        else {
+            setCenterCoordinate(userLocation.coordinate, animated: true)
+        }
+    }
+
+    // MARK: MapView delegate
+
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        
+        delegate = nil
+        setCenterCoordinate(userLocation.coordinate, animated: true)
     }
 }
