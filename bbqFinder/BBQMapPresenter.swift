@@ -18,8 +18,6 @@ struct BBQMapDataModel {
 
 enum BBQMapPresenterResponse {
     case updateDataModels([BBQMapDataModel])
-    case showUsersLocation()
-    case displayAlert(title: String, message: String)
 }
 
 protocol BBQMapPresenterOutput: class {
@@ -47,12 +45,6 @@ class BBQMapPresenter: BBQMapInteractorOutput {
         case .bbqs(let bbqs):
             let dataModels = bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0), action: actionForBBQ($0)) }
             output?.presenterUpdate(.updateDataModels(dataModels))
-
-        case .userLocationDenied:
-            output?.presenterUpdate(.displayAlert(title:"location services off", message:"please go to settings and allow user location to be determined"))
-
-        case .showUsersLocation:
-            output?.presenterUpdate(.showUsersLocation())
         }
     }
 

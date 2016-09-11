@@ -33,7 +33,7 @@ struct Router {
 
     private func showAreaMapViewController(area: BBQArea) {
 
-        let action: BBQSelectionAction = { coordinate in self.showBBQDetailsViewController() }
+        let action: BBQSelectionAction = { coordinate in self.showBBQDetailsViewController(coordinate) }
 
         let controller = viewControllerFactory.makeBbqMapArea(area, action: action)
 
@@ -41,9 +41,9 @@ struct Router {
     }
 
 
-    private func showBBQDetailsViewController() {
+    private func showBBQDetailsViewController(coordinate: CLLocationCoordinate2D) {
 
-        let controller = viewControllerFactory.makeBbqDetails()
+        let controller = viewControllerFactory.makeBbqDetails(coordinate)
         
         navigationController.pushViewController(controller, animated: true)
     }

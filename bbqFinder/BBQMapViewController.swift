@@ -5,6 +5,8 @@
 //  todo add distance to bbq
 //  todo add area photo shot
 //  todo add directions
+//  todo address
+//  todo ammenities
 //  todo add review
 //
 
@@ -12,9 +14,10 @@ import UIKit
 import MapKit
 
 
-class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
+class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocationPresenterOutput {
 
     var interactor: BBQMapInteractor!
+    var userLocationInteractor: UserLocationInteractor!
     var alerter: Alerter!
     @IBOutlet var mapView: BBQMapView?
 
@@ -22,8 +25,8 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
         print("deleted map view controller") // test this
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         interactor.fetchLocations() // todo make only onViewDidLoad as it hides the pin callout info
     }
 
@@ -35,9 +38,17 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
         case .updateDataModels(let coordinates):
             mapView?.reloadData(coordinates)
+            
+        }
+    }
 
-        case .showUsersLocation:
-            mapView?.showLocationOfUser()
+
+    func presenterUpdate(presenter: UserLocationPresenter, response: UserLocationPresenterResponse) {
+
+        switch(response) {
+
+        case .showUsersLocation(let coordinate2D):
+            mapView?.showLocationOfUser(coordinate2D)
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
@@ -47,7 +58,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     // MARK: Actions
 
     @IBAction func userSelectedShowCurrentLocation() {
-        interactor.requestUsersLocation()
+        userLocationInteractor.requestUsersLocation()
     }
 
 }

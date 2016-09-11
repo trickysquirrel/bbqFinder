@@ -4,6 +4,8 @@
 
 import UIKit
 import Foundation
+import MapKit
+
 
 extension UIStoryboard {
 
@@ -50,27 +52,45 @@ class ViewControllerFactory: NSObject {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqMap) as! BBQMapViewController
 
-        let locationManager = UserLocationStatus()
-
         let alerter = Alerter()
 
         let presenter = BBQMapPresenter(output: controller, action: action)
 
         let bbqListProvider = BBQListProvider(area: area)
 
-        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider, locationManagerStatus: locationManager)
+        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
+
+        let userLocationInteractor = makeUserLocationInteractor(controller)
 
         controller.title = area.title()
         controller.interactor = interactor
+        controller.userLocationInteractor = userLocationInteractor
         controller.alerter = alerter
 
         return controller
     }
 
 
-    func makeBbqDetails() -> UITableViewController {
+    func makeBbqDetails(coordinate: CLLocationCoordinate2D) -> BBQDetailsTableViewController {
 
-        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! UITableViewController
+        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
+
+        let locationManager = UserLocationStatus()
+        let presenter = BBQDetailsPresenter(output: controller)
+        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, locationStatus: locationManager)
+        controller.interactor = interactor
+
         return controller
     }
+
+    // MARK: private
+
+    private func makeUserLocationInteractor(output: UserLocationPresenterOutput) -> UserLocationInteractor {
+
+        let locationManager = UserLocationStatus()
+        let userLocationPresenter = UserLocationPresenter(output: output)
+        let userLocationInteractor = UserLocationInteractor(output: userLocationPresenter, locationManagerStatus: locationManager)
+        return userLocationInteractor
+    }
+
 }

@@ -35,25 +35,20 @@ import MapKit
     }
 
 
-    func showLocationOfUser() {
+    func showLocationOfUser(coordinate2D: CLLocationCoordinate2D) {
 
         showsUserLocation = true
-
-        if userLocation.coordinate.isLocationSet() == false {
-            setCenterCoordinate(userLocation.coordinate, animated: true)
-        }
+        setCenterCoordinate(coordinate2D, animated: true)
     }
 
     // MARK: MapView delegate
 
-    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
-        
-        delegate = nil
-        setCenterCoordinate(userLocation.coordinate, animated: true)
-    }
-
-
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+
+        if annotation is MKUserLocation {
+            return nil
+        }
+
         let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "bbqLocation")
         view.canShowCallout = true
         view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)

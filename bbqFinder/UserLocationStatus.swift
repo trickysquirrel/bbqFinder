@@ -6,9 +6,10 @@ import Foundation
 import CoreLocation
 
 
-protocol LocationManagerStatus: NSObjectProtocol {
+protocol LocationManagerStatus: class {
 
     var statusDelegate: LocationManagerStatusDelegate? { get set }
+    func currentLocation() -> (lat:Double, lon:Double)?
     func isCurrentLocationNotDetermined() -> Bool
     func isCurrentLocationAuthorised() -> Bool
     func isCurrentLocationDenied() -> Bool
@@ -31,6 +32,21 @@ class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerSt
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    }
+
+
+    func currentLocation() -> (lat:Double, lon:Double)? { // todo tuple to lat lon
+
+        guard isCurrentLocationAuthorised() == true else {
+            print("you are not yet authorised to access user location")
+            return nil
+        }
+
+        guard let coordinate = self.locationManager.location?.coordinate else {
+            print("location manager does not yet have the user location")
+            return nil
+        }
+        return (coordinate.latitude, coordinate.longitude)
     }
 
 
