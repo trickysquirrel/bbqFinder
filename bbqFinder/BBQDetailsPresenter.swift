@@ -10,6 +10,7 @@ struct BBQDetailsViewCellModel {
     let labelColour: UIColor
     let action: DataModelAction?
     let enabled: Bool
+    let infoText: String
 }
 
 struct BBQDetailsViewModel {
@@ -71,15 +72,17 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
             addressAction = requestUserLocationAction
         }
 
-        let mapViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: noAction, enabled: enabled)
+        let mapViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: noAction, enabled: false, infoText: "")
 
-        let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: enabled)
+        let distanceString = "\(bbqDetails.distanceInMeters)m"
 
-        let directionViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: directionAction, enabled: enabled)
+        let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: enabled, infoText: distanceString)
 
-        let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: UIColor.blackColor(), action: noAction, enabled: false)
+        let directionViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: directionAction, enabled: enabled, infoText: "")
 
-        let addressViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: addressAction, enabled: enabled)
+        let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: UIColor.blackColor(), action: noAction, enabled: false, infoText: "")
+
+        let addressViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: addressAction, enabled: enabled, infoText: "")
 
         let cellViewModels = [ mapViewModel, distanceViewModel, directionViewModel, ammenitiesViewModel, addressViewModel ]
 

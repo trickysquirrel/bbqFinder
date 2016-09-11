@@ -5,6 +5,8 @@
 import UIKit
 import MapKit
 
+
+
 class BBQDetailsMapViewCell: UITableViewCell {
 
     @IBOutlet var mapView: MKMapView?

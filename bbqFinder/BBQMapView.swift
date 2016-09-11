@@ -6,7 +6,7 @@ import UIKit
 import MapKit
 
 
-@objc class MapViewAnnotation: NSObject, MKAnnotation {
+class MapViewAnnotation: NSObject, MKAnnotation {
 
     let coordinate: CLLocationCoordinate2D
     let dataModel: BBQMapDataModel
@@ -20,7 +20,7 @@ import MapKit
 }
 
 
-@objc class BBQMapView: MKMapView, MKMapViewDelegate {
+class BBQMapView: MKMapView, MKMapViewDelegate {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
