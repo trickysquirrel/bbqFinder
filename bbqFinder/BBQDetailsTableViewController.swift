@@ -7,12 +7,13 @@ import UIKit
 class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterOutput {
 
     var interactor: BBQDetailsInteractor!
+    var alerter: Alerter!
+    var viewModels: BBQDetailsViewModel?
     @IBOutlet var mapViewCell: BBQDetailsMapViewCell?
     @IBOutlet var distanceViewCell: BBQDetailsDistanceViewCell?
     @IBOutlet var directionViewCell: BBQDetailsDirectionViewCell?
     @IBOutlet var ammentiesViewCell: BBQDetailsAmmenitiesViewCell?
     @IBOutlet var addressViewCell: BBQDetailsAddressViewCell?
-    var viewModels: BBQDetailsViewModel?
 
 
     override func viewWillAppear(animated: Bool) {
@@ -31,8 +32,11 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
             updateAllViewCells(viewModels)
 
         case .requiresUserLocation:
-            print("ask for users location")
-            //interactor.requestUserLocation()
+            interactor.requestUsersLocation()
+
+        case .displayAlert(let title, let message):
+            alerter.displayOkAlert(title, message: message, presentingViewController: self)
+            
         }
     }
 

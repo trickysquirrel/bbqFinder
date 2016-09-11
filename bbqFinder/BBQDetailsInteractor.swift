@@ -14,6 +14,7 @@ struct BBQDetails {
 
 enum BBQDetailsInteractorResponseModel {
     case details(BBQDetails)
+    case userLocationDenied
 }
 
 protocol BBQDetailsInteractorOutput {
@@ -61,10 +62,10 @@ class BBQDetailsInteractor: NSObject, LocationManagerStatusDelegate {
         locationStatus.statusDelegate = self
 
         if locationStatus.isCurrentLocationDenied() {
-            //output.interactorUpdate( .userLocationDenied )
+            output.interactorUpdate( .userLocationDenied )
         }
         else if locationStatus.isCurrentLocationNotDetermined() {
-            //locationStatus.requestLocationWhenInUse()
+            locationStatus.requestLocationWhenInUse()
         }
         else if let location = locationStatus.currentLocation() {
 
