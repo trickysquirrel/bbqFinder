@@ -4,6 +4,15 @@
 
 import Foundation
 
+
+struct BBQ {
+    let title: String
+    let facilities: String
+    let lat: Double
+    let lon: Double
+}
+
+
 enum BBQArea: String {
 
     case alpineShire = "AlpineShire"

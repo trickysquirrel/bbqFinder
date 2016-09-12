@@ -10,25 +10,37 @@ protocol LocationManagerStatus: class {
 
     var statusDelegate: LocationManagerStatusDelegate? { get set }
     func currentLocation() -> (lat:Double, lon:Double)?
+    func fetchCurrentAddress()
     func isCurrentLocationNotDetermined() -> Bool
     func isCurrentLocationAuthorised() -> Bool
     func isCurrentLocationDenied() -> Bool
     func requestLocationWhenInUse()
 }
 
+
 protocol LocationManagerStatusDelegate: class {
     func locationManagerStatusUpdated(locationManager: UserLocationStatus)
+    func didFetchAddress(address: String) // optional
 }
 
+
+extension LocationManagerStatusDelegate {
+
+    func didFetchAddress(address: String) {
+        // leaving this empty to act as an optional delegate method
+    }
+}
 
 class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerStatus {
 
     let locationManager: CLLocationManager
+    let geocoder: CLGeocoder
     weak var statusDelegate: LocationManagerStatusDelegate?
 
     override init() {
 
         locationManager = CLLocationManager()
+        geocoder = CLGeocoder()
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
@@ -47,6 +59,47 @@ class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerSt
             return nil
         }
         return (coordinate.latitude, coordinate.longitude)
+    }
+
+
+    func fetchCurrentAddress() {
+
+        guard isCurrentLocationAuthorised() == true else {
+            print("you are not yet authorised to access user location")
+            return
+        }
+
+        guard let location = self.locationManager.location else {
+            print("location manager does not yet have the user location")
+            return
+        }
+
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+
+            guard let placemarks = placemarks else { return }
+            guard let placemark = placemarks.last else { return }
+
+            var address: String = self.addressByAddingString("", string: nil)
+            address = self.addressByAddingString(address, string: placemark.thoroughfare)
+            address = self.addressByAddingString(address, string: placemark.locality)
+            address = self.addressByAddingString(address, string: placemark.postalCode)
+
+            self.statusDelegate?.didFetchAddress(address)
+        }
+    }
+
+
+    private func addressByAddingString(address: String, string: String?) -> String {
+
+        guard let string = string else { return address }
+
+        var output = address
+
+        if address.characters.count > 0 {
+
+            output = output.stringByAppendingString("\n")
+        }
+        return output.stringByAppendingString(string)
     }
 
 

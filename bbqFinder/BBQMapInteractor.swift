@@ -5,12 +5,6 @@
 import Foundation
 
 
-struct BBQ {
-    let title: String
-    let lat: Double
-    let lon: Double
-}
-
 enum BBQMapInteractorResponseModel {
     case bbqs([BBQ])
 }

@@ -2,12 +2,8 @@
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
 //  todo show to user that we are currently getting the users location - add spinner over button???
-//  todo add distance to bbq
-//  todo add area photo shot
-//  todo add directions
-//  todo address
-//  todo ammenities
-//  todo add review
+//  todo add drive and steps times using MKDirectionsResponse - http://www.techotopia.com/index.php/Using_MKDirections_to_get_iOS_7_Map_Directions_and_Routes
+//  todo add reviews
 //
 
 import UIKit

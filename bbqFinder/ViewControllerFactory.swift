@@ -71,14 +71,14 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqDetails(coordinate: CLLocationCoordinate2D) -> BBQDetailsTableViewController {
+    func makeBbqDetails(coordinate: CLLocationCoordinate2D, facilities: String) -> BBQDetailsTableViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
 
         let alerter = Alerter()
         let locationManager = UserLocationStatus()
         let presenter = BBQDetailsPresenter(output: controller)
-        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, locationStatus: locationManager)
+        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, locationStatus: locationManager, facilities: facilities)
 
         controller.interactor = interactor
         controller.alerter = alerter

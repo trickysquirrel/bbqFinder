@@ -58,7 +58,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
     private func actionForBBQ(bbq: BBQ) -> DataModelAction {
         return  {
             let coordinate = CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon)
-            self.action( coordinate: coordinate )
+            self.action( coordinate: coordinate, facilities: bbq.facilities )
         }
     }
 

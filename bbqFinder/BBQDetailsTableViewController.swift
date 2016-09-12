@@ -12,7 +12,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     @IBOutlet var mapViewCell: BBQDetailsMapViewCell?
     @IBOutlet var distanceViewCell: BBQDetailsDistanceViewCell?
     @IBOutlet var directionViewCell: BBQDetailsDirectionViewCell?
-    @IBOutlet var ammentiesViewCell: BBQDetailsAmmenitiesViewCell?
+    @IBOutlet var ammentiesViewCell: BBQDetailsAmenitiesViewCell?
     @IBOutlet var addressViewCell: BBQDetailsAddressViewCell?
 
 

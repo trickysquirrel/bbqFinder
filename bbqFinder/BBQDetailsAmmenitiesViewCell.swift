@@ -4,13 +4,15 @@
 
 import UIKit
 
-class BBQDetailsAmmenitiesViewCell: UITableViewCell {
+class BBQDetailsAmenitiesViewCell: UITableViewCell {
+
+    @IBOutlet var infoLabel: UILabel?
 
     func configureWithViewModel(viewModel: BBQDetailsViewCellModel?) {
 
         guard let viewModel = viewModel else { return }
-        textLabel?.textColor = viewModel.labelColour
-        userInteractionEnabled = false
+        infoLabel?.textColor = viewModel.labelColour
+        infoLabel?.text = viewModel.infoText
         userInteractionEnabled = viewModel.enabled
     }
 

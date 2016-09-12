@@ -64,7 +64,6 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
         var distanceAction: DataModelAction? = nil
         var directionAction: DataModelAction? = makeDirectionAction(bbqDetails)
-        var addressAction: DataModelAction? = nil
 
         var enabled = false
 
@@ -76,7 +75,6 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
             let requestUserLocationAction: DataModelAction  = { self.output?.presenterUpdate(.requiresUserLocation) }
             distanceAction = requestUserLocationAction
             directionAction = requestUserLocationAction
-            addressAction = requestUserLocationAction
         }
 
         let mapViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: noAction, enabled: false, infoText: "")
@@ -85,11 +83,14 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
         let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: false, infoText: distanceString)
 
-        let directionViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: directionAction, enabled: true, infoText: ">")
+        let directionViewModel = BBQDetailsViewCellModel(labelColour: UIColor.blackColor(), action: directionAction, enabled: true, infoText: ">")
 
-        let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: UIColor.blackColor(), action: noAction, enabled: false, infoText: "")
+        let facilities = presentFacilitiesTextAndColour(bbqDetails)
 
-        let addressViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: addressAction, enabled: enabled, infoText: "")
+        let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: facilities.colour, action: noAction, enabled: false, infoText: facilities.text)
+
+        let addressTextAndColour = addressTextAndFontColour(bbqDetails)
+        let addressViewModel = BBQDetailsViewCellModel(labelColour: addressTextAndColour.colour, action: directionAction, enabled: true, infoText: addressTextAndColour.text)
 
         let cellViewModels = [ mapViewModel, distanceViewModel, directionViewModel, ammenitiesViewModel, addressViewModel ]
 
@@ -98,6 +99,16 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
                 cellModels: cellViewModels
         )
     }
+
+    private func addressTextAndFontColour(bbqDetails: BBQDetails) ->(text: String, colour: UIColor) {
+
+        if bbqDetails.address.characters.count == 0 {
+            return ("requesting address please wait", UIColor.lightGrayColor())
+        }
+
+        return (bbqDetails.address, UIColor.blueColor())
+    }
+    
 
     private func makeDirectionAction(bbqDetails: BBQDetails) -> DataModelAction {
 
@@ -120,6 +131,16 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
         }
         return showDirectionsAction
     }
+
+
+    private func presentFacilitiesTextAndColour(bbqDetails: BBQDetails) -> (text:String, colour:UIColor) {
+
+        if bbqDetails.facilities.characters.count == 0 {
+            return ("unknown", UIColor.lightGrayColor())
+        }
+        return (bbqDetails.facilities, UIColor.blackColor())
+    }
+
 
     private func presentDistanceInMeters(bbqDetails: BBQDetails) -> String {
 

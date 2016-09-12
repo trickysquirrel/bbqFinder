@@ -132,21 +132,21 @@
                                             <outlet property="mapView" destination="6Xl-0x-7Tu" id="Paz-7B-aj6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fpi-E5-kTY" customClass="BBQDetailsDistanceViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Fpi-E5-kTY" customClass="BBQDetailsDistanceViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="250" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fpi-E5-kTY" id="oeX-8Y-bpk">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-82-i8K">
-                                                    <rect key="frame" x="16" y="11" width="67" height="21"/>
+                                                    <rect key="frame" x="16" y="19.5" width="67" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-om-C5a">
-                                                    <rect key="frame" x="550" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="550" y="19.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -163,15 +163,15 @@
                                             <outlet property="infoLabel" destination="ruX-om-C5a" id="cfl-T7-3Ql"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsDirectionsCellId" textLabel="ayj-P5-TaJ" style="IBUITableViewCellStyleDefault" id="YKu-rE-T4C" customClass="BBQDetailsDirectionViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="294" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BBQDetailsDirectionsCellId" textLabel="ayj-P5-TaJ" rowHeight="60" style="IBUITableViewCellStyleDefault" id="YKu-rE-T4C" customClass="BBQDetailsDirectionViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="310" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YKu-rE-T4C" id="VLp-dM-RPv">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ayj-P5-TaJ">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="550" height="59.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -180,39 +180,77 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsAmmenitiesCellId" textLabel="b79-Am-2dn" style="IBUITableViewCellStyleDefault" id="vHh-Jg-SXu" customClass="BBQDetailsAmmenitiesViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="338" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsAmmenitiesCellId" rowHeight="80" id="vHh-Jg-SXu" customClass="BBQDetailsAmenitiesViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="370" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHh-Jg-SXu" id="uDB-ew-azi">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ammenities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b79-Am-2dn">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-cp-c9M">
+                                                    <rect key="frame" x="14" y="8" width="66" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="bRo-gv-eaK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlE-D6-S4r">
+                                                    <rect key="frame" x="14" y="29" width="578" height="42.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yYf-cp-c9M" firstAttribute="leading" secondItem="uDB-ew-azi" secondAttribute="leadingMargin" constant="6" id="0dz-pU-wUB"/>
+                                                <constraint firstItem="yYf-cp-c9M" firstAttribute="top" secondItem="uDB-ew-azi" secondAttribute="topMargin" id="896-5T-sgS"/>
+                                                <constraint firstItem="JlE-D6-S4r" firstAttribute="trailing" secondItem="uDB-ew-azi" secondAttribute="trailingMargin" id="Qq9-TO-W1L"/>
+                                                <constraint firstItem="JlE-D6-S4r" firstAttribute="bottom" secondItem="uDB-ew-azi" secondAttribute="bottomMargin" id="X5i-gy-3pS"/>
+                                                <constraint firstItem="JlE-D6-S4r" firstAttribute="top" secondItem="yYf-cp-c9M" secondAttribute="bottom" id="ia2-8i-PyX"/>
+                                                <constraint firstItem="JlE-D6-S4r" firstAttribute="leading" secondItem="uDB-ew-azi" secondAttribute="leadingMargin" constant="6" id="tRD-Mt-w2m"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="infoLabel" destination="JlE-D6-S4r" id="gR4-oL-6La"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsAddressCellId" textLabel="KdC-AL-aGP" style="IBUITableViewCellStyleDefault" id="Iya-pG-FGq" customClass="BBQDetailsAddressViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="382" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsAddressCellId" rowHeight="140" id="Iya-pG-FGq" customClass="BBQDetailsAddressViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="450" width="600" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iya-pG-FGq" id="RPm-xk-NL2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KdC-AL-aGP">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-hQ-4tQ">
+                                                    <rect key="frame" x="16" y="8" width="63" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="RnP-cW-gsz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-93-74N">
+                                                    <rect key="frame" x="16" y="37" width="576" height="94.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Lo-93-74N" firstAttribute="trailing" secondItem="RPm-xk-NL2" secondAttribute="trailingMargin" id="2L1-fL-g3O"/>
+                                                <constraint firstItem="0Lo-93-74N" firstAttribute="top" secondItem="KDP-hQ-4tQ" secondAttribute="bottom" constant="8" id="7nn-Kv-BTn"/>
+                                                <constraint firstItem="KDP-hQ-4tQ" firstAttribute="leading" secondItem="RPm-xk-NL2" secondAttribute="leadingMargin" constant="8" id="F4h-RE-HbU"/>
+                                                <constraint firstItem="0Lo-93-74N" firstAttribute="leading" secondItem="RPm-xk-NL2" secondAttribute="leadingMargin" constant="8" id="Myg-Wc-LOs"/>
+                                                <constraint firstItem="0Lo-93-74N" firstAttribute="bottom" secondItem="RPm-xk-NL2" secondAttribute="bottomMargin" id="he6-S9-gS6"/>
+                                                <constraint firstItem="KDP-hQ-4tQ" firstAttribute="top" secondItem="RPm-xk-NL2" secondAttribute="topMargin" id="y8h-qP-cAq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="0Lo-93-74N" id="oR2-Nn-2Ir"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
