@@ -34,10 +34,12 @@ protocol BBQDetailsPresenterOutput: class {
 class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
     weak var output: BBQDetailsPresenterOutput?
+    let style: AppStyle
 
 
-    init(output: BBQDetailsPresenterOutput) {
+    init(output: BBQDetailsPresenterOutput, style: AppStyle) {
         self.output = output
+        self.style = style
     }
 
     
@@ -58,7 +60,7 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
     private func makeBBQDetailsDataModel(bbqDetails: BBQDetails) -> BBQDetailsViewModel {
 
-        var labelColour = UIColor.blackColor()
+        var labelColour = style.enabledColour
 
         let noAction: DataModelAction? = nil
 
@@ -69,7 +71,7 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
         if bbqDetails.userLocationUnknown {
 
-            labelColour = UIColor.lightGrayColor()
+            labelColour = style.disabledColour
             enabled = true
 
             let requestUserLocationAction: DataModelAction  = { self.output?.presenterUpdate(.requiresUserLocation) }
@@ -83,7 +85,7 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
         let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: false, infoText: distanceString)
 
-        let directionViewModel = BBQDetailsViewCellModel(labelColour: UIColor.blackColor(), action: directionAction, enabled: true, infoText: ">")
+        let directionViewModel = BBQDetailsViewCellModel(labelColour: style.enabledColour, action: directionAction, enabled: true, infoText: ">")
 
         let facilities = presentFacilitiesTextAndColour(bbqDetails)
 
@@ -103,10 +105,10 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
     private func addressTextAndFontColour(bbqDetails: BBQDetails) ->(text: String, colour: UIColor) {
 
         if bbqDetails.address.characters.count == 0 {
-            return ("requesting address please wait", UIColor.lightGrayColor())
+            return ("requesting address please wait", style.disabledColour)
         }
 
-        return (bbqDetails.address, UIColor.blueColor())
+        return (bbqDetails.address,style.selectableColour)
     }
     
 
@@ -136,9 +138,9 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
     private func presentFacilitiesTextAndColour(bbqDetails: BBQDetails) -> (text:String, colour:UIColor) {
 
         if bbqDetails.facilities.characters.count == 0 {
-            return ("unknown", UIColor.lightGrayColor())
+            return ("unknown", style.disabledColour)
         }
-        return (bbqDetails.facilities, UIColor.blackColor())
+        return (bbqDetails.facilities, style.enabledColour)
     }
 
 

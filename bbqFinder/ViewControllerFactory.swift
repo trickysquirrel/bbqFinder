@@ -25,10 +25,12 @@ enum ViewControllersIDs : String {
 class ViewControllerFactory: NSObject {
 
     private let storyboard: UIStoryboard?
+    private let appStyle: AppStyle
 
     
     override init() {
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.appStyle = AppStyle()
     }
 
     func makeAreasViewController(action action: AreaSelectionAction) -> AreasViewController {
@@ -77,7 +79,7 @@ class ViewControllerFactory: NSObject {
 
         let alerter = Alerter()
         let locationManager = UserLocationStatus()
-        let presenter = BBQDetailsPresenter(output: controller)
+        let presenter = BBQDetailsPresenter(output: controller, style: appStyle)
         let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, locationStatus: locationManager, facilities: facilities)
 
         controller.interactor = interactor
