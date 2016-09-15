@@ -24,26 +24,30 @@ protocol BBQDetailsInteractorOutput {
 }
 
 
-class BBQDetailsInteractor: NSObject, LocationManagerStatusDelegate {
+class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddressDelegate {
 
     let output: BBQDetailsInteractorOutput
-    let locationStatus: LocationManagerStatus
+    let userLocation: UserLocation
+    let locationAddress: LocationAddress
     let bbqCoordinate: CLLocationCoordinate2D
     let facilities: String
     var distanceInMeters: Int = 0
 
 
-    init(output: BBQDetailsInteractorOutput, coordinate: CLLocationCoordinate2D, locationStatus: LocationManagerStatus, facilities: String) {
+    init(output: BBQDetailsInteractorOutput, coordinate: CLLocationCoordinate2D, facilities: String, userLocation: UserLocation, locationAddress: LocationAddress) {
         self.output = output
         self.bbqCoordinate = coordinate
-        self.locationStatus = locationStatus
         self.facilities = facilities
+        self.userLocation = userLocation
+        self.locationAddress = locationAddress
+        super.init()
+        self.locationAddress.delegate = self
     }
 
 
     func fetchDetails() {
 
-        if locationStatus.isCurrentLocationAuthorised() {
+        if userLocation.canRequestUserLocation() {
             output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters)))
         }
         else {
@@ -51,52 +55,48 @@ class BBQDetailsInteractor: NSObject, LocationManagerStatusDelegate {
             output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: false, distance: distanceInMeters)))
         }
 
-        requestUsersLocation()
-        locationStatus.fetchCurrentAddress()
+        fetchUsersLocation()
     }
 
+
+    func fetchUsersLocation() {
+
+        userLocation.delegate = self
+        locationAddress.requestAddress(bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
+        userLocation.requestUsersLocation()
+    }
+
+
+    // MARK: request user location delegate
+
+    func requestUserLocationDenied() {
+
+        output.interactorUpdate( .userLocationDenied )
+    }
+
+
+    func requestUserLocationCompleted(latitude:Double, londitude:Double) {
+
+        let locationBbq = CLLocation(latitude: bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
+
+        let locationUser = CLLocation(latitude: latitude, longitude: londitude)
+
+        distanceInMeters = Int(locationBbq.distanceFromLocation(locationUser))
+
+        output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters)))
+    }
+
+    // MARK: Location Address Delegate
+
+    func locationAddressDidFetchAddress(address: String) {
+
+        output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters, address: address)))
+    }
+
+    // MARK: Helpers
 
     private func makeBBQDetails(locationAuthorised locationAuthorised:Bool, distance: Int, address : String="") -> BBQDetails {
 
         return BBQDetails(coordinate: bbqCoordinate, userLocationUnknown: !locationAuthorised, distanceInMeters: distance, address: address, facilities: facilities)
     }
-
-    // MARK: user location status
-
-    func requestUsersLocation() {
-
-        locationStatus.statusDelegate = self
-
-        if locationStatus.isCurrentLocationDenied() {
-            output.interactorUpdate( .userLocationDenied )
-        }
-        else if locationStatus.isCurrentLocationNotDetermined() {
-            locationStatus.requestLocationWhenInUse()
-        }
-        else if let location = locationStatus.currentLocation() {
-
-            let locationBbq = CLLocation(latitude: bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
-
-            let locationUser = CLLocation(latitude: location.lat, longitude: location.lon)
-
-            distanceInMeters = Int(locationBbq.distanceFromLocation(locationUser))
-
-            output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters)))
-        }
-    }
-
-
-    // MARK: Location status delegate
-
-    func locationManagerStatusUpdated(locationManager: UserLocationStatus) {
-
-        requestUsersLocation()
-    }
-
-
-    func didFetchAddress(address: String) {
-
-        output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters, address: address)))
-    }
-
 }

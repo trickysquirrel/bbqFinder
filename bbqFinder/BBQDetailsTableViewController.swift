@@ -32,7 +32,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
             updateAllViewCells(viewModels)
 
         case .requiresUserLocation:
-            interactor.requestUsersLocation()
+            interactor.fetchUsersLocation()
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)

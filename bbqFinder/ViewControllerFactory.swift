@@ -77,10 +77,12 @@ class ViewControllerFactory: NSObject {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
 
-        let alerter = Alerter()
         let locationManager = UserLocationStatus()
+        let requestUsersLocation = UserLocation(locationStatus: locationManager)
+        let locationAddress = LocationAddress(locationStatus: locationManager)
+        let alerter = Alerter()
         let presenter = BBQDetailsPresenter(output: controller, style: appStyle)
-        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, locationStatus: locationManager, facilities: facilities)
+        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, facilities: facilities, userLocation: requestUsersLocation, locationAddress: locationAddress)
 
         controller.interactor = interactor
         controller.alerter = alerter

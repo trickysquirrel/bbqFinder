@@ -13,12 +13,13 @@ struct BBQ {
 }
 
 
+// todo change this to sections vic = A,B,C
 enum BBQArea: String {
 
-    case alpineShire = "AlpineShire"
-    case ballarat = "Ballarat"
-    case glenorchy = "Glenorchy"
-    case melbourne = "Melbourne"
+    case alpineShire = "Melbourne - Bright (alpineshire)"
+    case ballarat = "Melbourne - Ballarat"
+    case melbourne = "Melbourne - CBD"
+    case glenorchy = "Tasmania (glenorchy)"
 
     func title() -> String {
         return self.rawValue
@@ -43,3 +44,4 @@ struct BBQListProvider {
 
 
 let emptyBBQs: [BBQ] = []
+
