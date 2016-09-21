@@ -8,14 +8,14 @@ import CoreLocation
 
 protocol RequestUserLocationDelegate: class {
     func requestUserLocationDenied()
-    func requestUserLocationCompleted(latitude:Double, londitude:Double)
+    func requestUserLocationCompleted(_ latitude:Double, londitude:Double)
 }
 
 
 class UserLocation: NSObject, LocationManagerStatusDelegate {
 
     weak var delegate: RequestUserLocationDelegate?
-    private let locationStatus: UserLocationStatus
+    fileprivate let locationStatus: UserLocationStatus
     let geocoder: CLGeocoder
 
 
@@ -53,7 +53,7 @@ class UserLocation: NSObject, LocationManagerStatusDelegate {
 
     // MARK: Location status delegate
 
-    @objc internal func locationManagerStatusUpdated(locationManager: UserLocationStatus) {
+    @objc internal func locationManagerStatusUpdated(_ locationManager: UserLocationStatus) {
         
         requestUsersLocation()
     }

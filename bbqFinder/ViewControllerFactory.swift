@@ -9,8 +9,8 @@ import MapKit
 
 extension UIStoryboard {
 
-    func instantiateViewControllerWithIdentifier(identifier: ViewControllersIDs) -> UIViewController {
-        return self.instantiateViewControllerWithIdentifier(identifier.rawValue)
+    func instantiateViewControllerWithIdentifier(_ identifier: ViewControllersIDs) -> UIViewController {
+        return self.instantiateViewController(withIdentifier: identifier.rawValue)
     }
 }
 
@@ -24,33 +24,25 @@ enum ViewControllersIDs : String {
 
 class ViewControllerFactory: NSObject {
 
-    private let storyboard: UIStoryboard?
-    private let appStyle: AppStyle
+    fileprivate var storyboard: UIStoryboard?
+    fileprivate let appStyle: AppStyle
 
     
     override init() {
-        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.appStyle = AppStyle()
+        super.init()
+        self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 
-    func makeAreasViewController(action action: AreaSelectionAction) -> AreasViewController {
+    func makeAreasViewController() -> AreasViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.areas) as! AreasViewController
-
-        controller.title = "Areas"
-        controller.dataSource = TableViewDataSource()
-        controller.dataSource.delegate = controller
-
-        let presenter = AreasPresenter(interface: controller, action: action)
-
-        let interactor = AreasInteractor(output: presenter)
-        controller.interactor = interactor
 
         return controller
     }
 
 
-    func makeBbqMapArea(area: BBQArea, action: BBQSelectionAction) -> BBQMapViewController {
+    func makeBbqMapArea(_ area: BBQArea, action: @escaping BBQSelectionAction) -> BBQMapViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqMap) as! BBQMapViewController
 
@@ -73,15 +65,18 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqDetails(coordinate: CLLocationCoordinate2D, facilities: String) -> BBQDetailsTableViewController {
+    func makeBbqDetails(_ coordinate: CLLocationCoordinate2D, facilities: String) -> BBQDetailsTableViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
 
+        let appleMapsApp = AppleMapsAppDirection()
         let locationManager = UserLocationStatus()
         let requestUsersLocation = UserLocation(locationStatus: locationManager)
         let locationAddress = LocationAddress(locationStatus: locationManager)
         let alerter = Alerter()
-        let presenter = BBQDetailsPresenter(output: controller, style: appStyle)
+
+        let presenter = BBQDetailsPresenter(output: controller, style: appStyle, appleMapsApp: appleMapsApp)
+        
         let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, facilities: facilities, userLocation: requestUsersLocation, locationAddress: locationAddress)
 
         controller.interactor = interactor
@@ -92,7 +87,7 @@ class ViewControllerFactory: NSObject {
 
     // MARK: private
 
-    private func makeUserLocationInteractor(output: UserLocationPresenterOutput) -> UserLocationInteractor {
+    fileprivate func makeUserLocationInteractor(_ output: UserLocationPresenterOutput) -> UserLocationInteractor {
 
         let locationManager = UserLocationStatus()
         let userLocationPresenter = UserLocationPresenter(output: output)

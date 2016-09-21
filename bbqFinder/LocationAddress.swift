@@ -7,14 +7,14 @@ import CoreLocation
 
 
 protocol LocationAddressDelegate: class {
-    func locationAddressDidFetchAddress(address: String)
+    func locationAddressDidFetchAddress(_ address: String)
 }
 
 
 class LocationAddress: NSObject {
 
     weak var delegate: LocationAddressDelegate?
-    private let locationStatus: UserLocationStatus
+    fileprivate let locationStatus: UserLocationStatus
     let geocoder: CLGeocoder
 
 
@@ -24,12 +24,7 @@ class LocationAddress: NSObject {
     }
 
 
-    func requestAddress(latitude: Double, longitude: Double) {
-
-        guard locationStatus.isCurrentLocationAuthorised() == true else {
-            print("you are not yet authorised to access user location")
-            return
-        }
+    func requestAddress(_ latitude: Double, longitude: Double) {
 
         let location = CLLocation(latitude: latitude, longitude: longitude)
 
@@ -37,19 +32,21 @@ class LocationAddress: NSObject {
 
             guard let placemarks = placemarks else { return }
             guard let placemark = placemarks.last else { return }
-            //CLPlacemark
 
-            var address: String = self.addressByAddingString("", string: placemark.subThoroughfare)
-            address = self.addressByAddingString(address, string: placemark.thoroughfare)
-            address = self.addressByAddingNewLineString(address, string: placemark.locality)
-            address = self.addressByAddingNewLineString(address, string: placemark.postalCode)
+            var address: String = self.appendString("", separator:"", string: placemark.subThoroughfare)
+
+            address = self.appendString(address, separator:" ", string: placemark.thoroughfare)
+
+            address = self.appendString(address, separator: "\n", string: placemark.locality)
+
+            address = self.appendString(address,separator: "\n", string: placemark.postalCode)
 
             self.delegate?.locationAddressDidFetchAddress(address)
         }
     }
 
 
-    private func addressByAddingString(address: String, string: String?) -> String {
+    fileprivate func appendString(_ address: String, separator: String, string: String?) -> String {
 
         guard let string = string else { return address }
 
@@ -57,23 +54,9 @@ class LocationAddress: NSObject {
 
         if address.characters.count > 0 {
 
-            output = output.stringByAppendingString(" ")
+            output = output + separator
         }
-        return output.stringByAppendingString(string)
-    }
-
-
-    private func addressByAddingNewLineString(address: String, string: String?) -> String {
-
-        guard let string = string else { return address }
-
-        var output = address
-
-        if address.characters.count > 0 {
-
-            output = output.stringByAppendingString("\n")
-        }
-        return output.stringByAppendingString(string)
+        return output + string
     }
 
 }

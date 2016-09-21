@@ -6,7 +6,7 @@ import Foundation
 
 
 protocol AreasInteractorOutput {
-    func didFetchAreas(list: [BBQArea])
+    func didFetchAreas(_ list: [BBQArea])
 }
 
 

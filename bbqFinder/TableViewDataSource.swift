@@ -8,7 +8,7 @@ import UIKit
 protocol TableViewDataSourceDelegate: class {
 
     associatedtype dataSourceType
-    func cellReuseIdentifier(atIndexPath indexPath:NSIndexPath) -> String
+    func cellReuseIdentifier(atIndexPath indexPath:IndexPath) -> String
     func configureCell(tableViewCell cell:UITableViewCell, object:dataSourceType)
 }
 
@@ -17,18 +17,18 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     var delegate: T?
 
-    private var tableView:UITableView?
-    private var dataSource:[[T.dataSourceType]]?
+    fileprivate var tableView:UITableView?
+    fileprivate var dataSource:[[T.dataSourceType]]?
 
 
-    func setTableView(tableView: UITableView?) {
+    func setTableView(_ tableView: UITableView?) {
 
         self.tableView = tableView
         self.tableView?.dataSource = self
     }
 
 
-    func reloadData(dataSource:[[T.dataSourceType]]) {
+    func reloadData(_ dataSource:[[T.dataSourceType]]) {
 
         self.dataSource = dataSource
         self.tableView?.reloadData()
@@ -37,7 +37,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     // MARK: table view delegate
 
-    @objc internal func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    @objc internal func numberOfSections(in tableView: UITableView) -> Int {
 
         if let source = dataSource {
             return source.count
@@ -46,7 +46,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    @objc internal func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if let source = dataSource {
 
@@ -59,11 +59,11 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    @objc internal func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    @objc internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cellIdentifier = self.delegate?.cellReuseIdentifier(atIndexPath: indexPath)
 
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier!, forIndexPath: indexPath);
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier!, for: indexPath);
 
         let object = self.objectAtIndexPath(indexPath)
 
@@ -75,9 +75,9 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     // MARK: helpers
     
-    func objectAtIndexPath(indexPath: NSIndexPath) -> T.dataSourceType? {
+    func objectAtIndexPath(_ indexPath: IndexPath) -> T.dataSourceType? {
         
-        return dataSource?[safe:indexPath.section]?[safe:indexPath.row]
+        return dataSource?[safe:(indexPath as NSIndexPath).section]?[safe:(indexPath as NSIndexPath).row]
     }
     
 }

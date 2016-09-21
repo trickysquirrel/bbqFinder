@@ -21,7 +21,7 @@ enum AreasMapPresenterResponse {
 }
 
 protocol ListAreaPresenterOutput: class {
-    func presenterUpdate(response:AreasMapPresenterResponse)
+    func presenterUpdate(_ response:AreasMapPresenterResponse)
 }
 
 
@@ -31,13 +31,13 @@ class AreasPresenter: AreasInteractorOutput {
     let action: AreaSelectionAction
 
 
-    init(interface: ListAreaPresenterOutput, action: AreaSelectionAction) {
+    init(interface: ListAreaPresenterOutput, action: @escaping AreaSelectionAction) {
         self.output = interface
         self.action = action
     }
 
 
-    func didFetchAreas(areaList:[BBQArea]) {
+    func didFetchAreas(_ areaList:[BBQArea]) {
 
         let dataModelList = areaList.map {
 
@@ -47,10 +47,10 @@ class AreasPresenter: AreasInteractorOutput {
     }
 
 
-    private func actionForTitle(area: BBQArea) -> DataModelAction {
+    fileprivate func actionForTitle(_ area: BBQArea) -> DataModelAction {
 
         return  {
-            self.action(area: area)
+            self.action(area)
         }
     }
 }

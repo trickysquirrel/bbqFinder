@@ -21,7 +21,7 @@ enum BBQMapPresenterResponse {
 }
 
 protocol BBQMapPresenterOutput: class {
-    func presenterUpdate(response: BBQMapPresenterResponse)
+    func presenterUpdate(_ response: BBQMapPresenterResponse)
 }
 
 
@@ -31,14 +31,14 @@ class BBQMapPresenter: BBQMapInteractorOutput {
     var action: BBQSelectionAction
 
 
-    required init(output: BBQMapPresenterOutput, action: BBQSelectionAction) {
+    required init(output: BBQMapPresenterOutput, action: @escaping BBQSelectionAction) {
         self.output = output
         self.action = action
     }
 
     // MARK: interactor output
 
-    func interactorUpdate(response: BBQMapInteractorResponseModel) {
+    func interactorUpdate(_ response: BBQMapInteractorResponseModel) {
 
         switch response {
 
@@ -49,16 +49,16 @@ class BBQMapPresenter: BBQMapInteractorOutput {
     }
 
 
-    private func makeViewModel(bbq: BBQ) -> BBQMapViewModel {
+    fileprivate func makeViewModel(_ bbq: BBQ) -> BBQMapViewModel {
 
         return BBQMapViewModel(title: bbq.title, location: CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon))
     }
 
 
-    private func actionForBBQ(bbq: BBQ) -> DataModelAction {
+    fileprivate func actionForBBQ(_ bbq: BBQ) -> DataModelAction {
         return  {
             let coordinate = CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon)
-            self.action( coordinate: coordinate, facilities: bbq.facilities )
+            self.action( coordinate, bbq.facilities )
         }
     }
 

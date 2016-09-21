@@ -7,11 +7,11 @@ import UIKit
 
 class Alerter: NSObject {
 
-    func displayOkAlert(title: String, message: String, presentingViewController: UIViewController) {
+    func displayOkAlert(_ title: String, message: String, presentingViewController: UIViewController) {
 
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let button = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let button = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(button)
-        presentingViewController.presentViewController(alertController, animated: true, completion: nil)
+        presentingViewController.present(alertController, animated: true, completion: nil)
     }
 }

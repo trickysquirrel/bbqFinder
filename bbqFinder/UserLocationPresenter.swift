@@ -12,7 +12,7 @@ enum UserLocationPresenterResponse {
 }
 
 protocol UserLocationPresenterOutput: class {
-    func presenterUpdate(presenter: UserLocationPresenter, response: UserLocationPresenterResponse)
+    func presenterUpdate(_ presenter: UserLocationPresenter, response: UserLocationPresenterResponse)
 }
 
 
@@ -28,7 +28,7 @@ class UserLocationPresenter: NSObject, UserLocationInteractorOutput {
 
     // MARK: interactor output
 
-    func interactorUpdate(response: UserLocationInteractorResponse) {
+    func interactorUpdate(_ response: UserLocationInteractorResponse) {
 
         switch response {
 

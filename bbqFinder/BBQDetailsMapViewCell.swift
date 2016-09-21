@@ -10,12 +10,12 @@ class BBQDetailsMapViewCell: UITableViewCell {
 
     @IBOutlet var mapView: MKMapView?
 
-    func configureWithViewModel(viewModel: BBQDetailsViewCellModel?, coordinate: CLLocationCoordinate2D) {
+    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?, coordinate: CLLocationCoordinate2D) {
 
         guard let viewModel = viewModel else { return }
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 100, 100)
         mapView?.setRegion(region, animated: false)
-        userInteractionEnabled = viewModel.enabled
+        isUserInteractionEnabled = viewModel.enabled
     }
 
 }

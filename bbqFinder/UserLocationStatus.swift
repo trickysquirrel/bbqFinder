@@ -18,14 +18,14 @@ protocol LocationManagerStatus: class {
 
 
 protocol LocationManagerStatusDelegate: class {
-    func locationManagerStatusUpdated(locationManager: UserLocationStatus)
-    func didFetchAddress(address: String) // optional
+    func locationManagerStatusUpdated(_ locationManager: UserLocationStatus)
+    func didFetchAddress(_ address: String) // optional
 }
 
 
 extension LocationManagerStatusDelegate {
 
-    func didFetchAddress(address: String) {
+    func didFetchAddress(_ address: String) {
         // leaving this empty to act as an optional delegate method
     }
 }
@@ -61,19 +61,19 @@ class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerSt
 
     func isCurrentLocationNotDetermined() -> Bool {
 
-        return CLLocationManager.authorizationStatus() == .NotDetermined
+        return CLLocationManager.authorizationStatus() == .notDetermined
     }
 
 
     func isCurrentLocationAuthorised() -> Bool {
 
-        return CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways;
+        return CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways;
     }
 
 
     func isCurrentLocationDenied() -> Bool {
 
-        return CLLocationManager.authorizationStatus() == .Denied;
+        return CLLocationManager.authorizationStatus() == .denied;
     }
 
 
@@ -84,7 +84,7 @@ class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerSt
 
     // MARK: delegate
 
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 
         statusDelegate?.locationManagerStatusUpdated(self)
     }

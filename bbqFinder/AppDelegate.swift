@@ -15,13 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var router: Router?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         guard let validWindow = window else { return true }
 
+        let wireframe = Wireframe()
         let viewControllerFactory = ViewControllerFactory()
-        router = Router(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController())
+        router = Router(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe)
         router?.showRootViewController()
 
         return true
@@ -29,11 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-    func applicationWillResignActive(application: UIApplication) {}
-    func applicationDidEnterBackground(application: UIApplication) {}
-    func applicationWillEnterForeground(application: UIApplication) {}
-    func applicationDidBecomeActive(application: UIApplication) {}
-    func applicationWillTerminate(application: UIApplication) {}
+    func applicationWillResignActive(_ application: UIApplication) {}
+    func applicationDidEnterBackground(_ application: UIApplication) {}
+    func applicationWillEnterForeground(_ application: UIApplication) {}
+    func applicationDidBecomeActive(_ application: UIApplication) {}
+    func applicationWillTerminate(_ application: UIApplication) {}
 
 }
 

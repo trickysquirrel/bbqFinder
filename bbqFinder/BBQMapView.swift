@@ -22,10 +22,10 @@ class MapViewAnnotation: NSObject, MKAnnotation {
 
 class BBQMapView: MKMapView, MKMapViewDelegate {
 
-    private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
+    fileprivate var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
 
-    func reloadData(dataSource:[BBQMapDataModel]) {
+    func reloadData(_ dataSource:[BBQMapDataModel]) {
 
         delegate = self
         removeAnnotations(annotationList)
@@ -35,15 +35,15 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
     }
 
 
-    func showLocationOfUser(coordinate2D: CLLocationCoordinate2D) {
+    func showLocationOfUser(_ coordinate2D: CLLocationCoordinate2D) {
 
         showsUserLocation = true
-        setCenterCoordinate(coordinate2D, animated: true)
+        setCenter(coordinate2D, animated: true)
     }
 
     // MARK: MapView delegate
 
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
         if annotation is MKUserLocation {
             return nil
@@ -51,12 +51,12 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
 
         let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "bbqLocation")
         view.canShowCallout = true
-        view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         return view
     }
 
 
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
         guard let annotation = view.annotation as? MapViewAnnotation else { return }
         annotation.dataModel.action()

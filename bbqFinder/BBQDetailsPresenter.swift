@@ -27,7 +27,7 @@ enum BBQDetailsPresenterResponseModel {
 }
 
 protocol BBQDetailsPresenterOutput: class {
-    func presenterUpdate(response: BBQDetailsPresenterResponseModel)
+    func presenterUpdate(_ response: BBQDetailsPresenterResponseModel)
 }
 
 
@@ -35,44 +35,53 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
     weak var output: BBQDetailsPresenterOutput?
     let style: AppStyle
+    let appleMapsApp: AppleMapsApp
+
+    let distanceUnknownString = "your location is unknown"
+    let fetchingDistance = "please wait"
+    let facilitiesUnknownString = "unknown"
+    let requestingAddressString = "please wait"
+    let locationServiceOffTitle = "location services off"
+    let locationServiceOffMessage = "please go to settings and allow user location to be determined"
 
 
-    init(output: BBQDetailsPresenterOutput, style: AppStyle) {
+    init(output: BBQDetailsPresenterOutput, style: AppStyle, appleMapsApp: AppleMapsApp) {
         self.output = output
         self.style = style
+        self.appleMapsApp = appleMapsApp
     }
 
     
     // MARK: interactor output 
 
-    func interactorUpdate(response: BBQDetailsInteractorResponseModel) {
+    func interactorUpdate(_ response: BBQDetailsInteractorResponseModel) {
 
         switch response {
             
         case .details(let details):
-            output?.presenterUpdate( .details(makeBBQDetailsDataModel(details)) )
+
+            let viewModel = makeBBQDetailsDataModel(details)
+            output?.presenterUpdate( .details(viewModel) )
 
         case .userLocationDenied:
-            output?.presenterUpdate(.displayAlert(title:"location services off", message:"please go to settings and allow user location to be determined"))
+            
+            output?.presenterUpdate(.displayAlert(title: locationServiceOffTitle, message: locationServiceOffMessage))
         }
     }
 
 
-    private func makeBBQDetailsDataModel(bbqDetails: BBQDetails) -> BBQDetailsViewModel {
+    fileprivate func makeBBQDetailsDataModel(_ bbqDetails: BBQDetails) -> BBQDetailsViewModel {
 
         var labelColour = style.enabledColour
 
         let noAction: DataModelAction? = nil
 
         var distanceAction: DataModelAction? = nil
-        var directionAction: DataModelAction? = makeDirectionAction(bbqDetails)
-
-        var enabled = false
+        var directionAction: DataModelAction? = makeShowDirectionAction(bbqDetails)
 
         if bbqDetails.userLocationUnknown {
 
             labelColour = style.disabledColour
-            enabled = true
 
             let requestUserLocationAction: DataModelAction  = { self.output?.presenterUpdate(.requiresUserLocation) }
             distanceAction = requestUserLocationAction
@@ -85,13 +94,14 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
         let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: false, infoText: distanceString)
 
-        let directionViewModel = BBQDetailsViewCellModel(labelColour: style.enabledColour, action: directionAction, enabled: true, infoText: ">")
+        let directionViewModel = BBQDetailsViewCellModel(labelColour: style.enabledColour, action: directionAction, enabled: true, infoText: "")
 
         let facilities = presentFacilitiesTextAndColour(bbqDetails)
 
         let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: facilities.colour, action: noAction, enabled: false, infoText: facilities.text)
 
-        let addressTextAndColour = addressTextAndFontColour(bbqDetails)
+        let addressTextAndColour = presentAddressTextAndColour(bbqDetails)
+
         let addressViewModel = BBQDetailsViewCellModel(labelColour: addressTextAndColour.colour, action: directionAction, enabled: true, infoText: addressTextAndColour.text)
 
         let cellViewModels = [ mapViewModel, distanceViewModel, directionViewModel, ammenitiesViewModel, addressViewModel ]
@@ -102,54 +112,55 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
         )
     }
 
-    private func addressTextAndFontColour(bbqDetails: BBQDetails) ->(text: String, colour: UIColor) {
+    // MARK: Presenters
+
+    fileprivate func presentAddressTextAndColour(_ bbqDetails: BBQDetails) ->(text: String, colour: UIColor) {
 
         if bbqDetails.address.characters.count == 0 {
-            return ("requesting address please wait", style.disabledColour)
+            return (requestingAddressString, style.disabledColour)
         }
 
         return (bbqDetails.address,style.selectableColour)
     }
-    
-
-    private func makeDirectionAction(bbqDetails: BBQDetails) -> DataModelAction {
-
-        let showDirectionsAction: DataModelAction  = {
-
-            let latitude:CLLocationDegrees =  bbqDetails.coordinate.latitude
-            let longitude:CLLocationDegrees =  bbqDetails.coordinate.longitude
-
-            let regionDistance:CLLocationDistance = 10000
-            let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-            let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-            let options = [
-                MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
-                MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
-            ]
-            let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-            let mapItem = MKMapItem(placemark: placemark)
-            mapItem.name = "bbq"
-            mapItem.openInMapsWithLaunchOptions(options)
-        }
-        return showDirectionsAction
-    }
 
 
-    private func presentFacilitiesTextAndColour(bbqDetails: BBQDetails) -> (text:String, colour:UIColor) {
+    fileprivate func presentFacilitiesTextAndColour(_ bbqDetails: BBQDetails) -> (text:String, colour:UIColor) {
 
-        if bbqDetails.facilities.characters.count == 0 {
-            return ("unknown", style.disabledColour)
+        if bbqDetails.facilities.isEmpty {
+            return (facilitiesUnknownString, style.disabledColour)
         }
         return (bbqDetails.facilities, style.enabledColour)
     }
 
 
-    private func presentDistanceInMeters(bbqDetails: BBQDetails) -> String {
+    fileprivate func presentDistanceInMeters(_ bbqDetails: BBQDetails) -> String {
 
-        var distanceString = "your location is unknown"
+        var distanceString = distanceUnknownString
         if bbqDetails.userLocationUnknown == false {
-            distanceString = "\(bbqDetails.distanceInMeters)m"
+
+            if bbqDetails.distanceInMeters == 0 {
+                distanceString = fetchingDistance
+            }
+            else {
+                distanceString = "\(bbqDetails.distanceInMeters)m"
+            }
         }
         return distanceString
+    }
+
+    // MARK: Actions
+
+    fileprivate func makeRequestUserLocationAction() -> DataModelAction {
+
+        return  { self.output?.presenterUpdate(.requiresUserLocation) }
+    }
+
+
+    fileprivate func makeShowDirectionAction(_ bbqDetails: BBQDetails) -> DataModelAction {
+
+        let showDirectionsAction: DataModelAction  = {
+            self.appleMapsApp.showDirectionsForLatitude(bbqDetails.coordinate.latitude, longitude: bbqDetails.coordinate.longitude, regionDistance: 10000, pinTitle: "bbq")
+        }
+        return showDirectionsAction
     }
 }

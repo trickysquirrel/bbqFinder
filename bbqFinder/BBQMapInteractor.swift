@@ -10,7 +10,7 @@ enum BBQMapInteractorResponseModel {
 }
 
 protocol BBQMapInteractorOutput {
-    func interactorUpdate(response: BBQMapInteractorResponseModel)
+    func interactorUpdate(_ response: BBQMapInteractorResponseModel)
 }
 
 
@@ -34,7 +34,7 @@ class BBQMapInteractor: NSObject {
 
     // MARK: Response Models
 
-    private func locationsResponseModel() -> BBQMapInteractorResponseModel {
+    fileprivate func locationsResponseModel() -> BBQMapInteractorResponseModel {
 
         let bbqs = bbqListProvider.list()
         let response: BBQMapInteractorResponseModel = .bbqs(bbqs)

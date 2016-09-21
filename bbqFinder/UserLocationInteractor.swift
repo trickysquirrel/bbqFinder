@@ -13,7 +13,7 @@ enum UserLocationInteractorResponse {
 
 protocol UserLocationInteractorOutput {
 
-    func interactorUpdate(response: UserLocationInteractorResponse)
+    func interactorUpdate(_ response: UserLocationInteractorResponse)
 }
 
 
@@ -48,7 +48,7 @@ class UserLocationInteractor: NSObject, LocationManagerStatusDelegate {
 
     // MARK: Location status delegate
 
-    func locationManagerStatusUpdated(locationManager: UserLocationStatus) {
+    func locationManagerStatusUpdated(_ locationManager: UserLocationStatus) {
 
         requestUsersLocation()
     }

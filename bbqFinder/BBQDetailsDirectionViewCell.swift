@@ -7,11 +7,11 @@ import UIKit
 class BBQDetailsDirectionViewCell: UITableViewCell {
 
 
-    func configureWithViewModel(viewModel: BBQDetailsViewCellModel?) {
+    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
 
         guard let viewModel = viewModel else { return }
         textLabel?.textColor = viewModel.labelColour
-        userInteractionEnabled = viewModel.enabled
+        isUserInteractionEnabled = viewModel.enabled
     }
 
 }

@@ -19,7 +19,7 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     // MARK: List View Interface
 
-    func presenterUpdate(response:AreasMapPresenterResponse) {
+    func presenterUpdate(_ response:AreasMapPresenterResponse) {
 
         switch response {
         case .updateAreas(let areas):
@@ -29,7 +29,7 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     // MARK: data source delegate
     
-    func cellReuseIdentifier(atIndexPath indexPath:NSIndexPath) -> String {
+    func cellReuseIdentifier(atIndexPath indexPath:IndexPath) -> String {
         return "AreasTableCellID"
     }
 
@@ -39,8 +39,8 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     // MARK: table view delegate
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         dataSource.objectAtIndexPath(indexPath)?.action()
     }
 

@@ -8,12 +8,12 @@ class BBQDetailsAddressViewCell: UITableViewCell {
 
     @IBOutlet var addressLabel: UILabel?
 
-    func configureWithViewModel(viewModel: BBQDetailsViewCellModel?) {
+    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
 
         guard let viewModel = viewModel else { return }
         addressLabel?.textColor = viewModel.labelColour
         addressLabel?.text = viewModel.infoText
-        userInteractionEnabled = viewModel.enabled
+        isUserInteractionEnabled = viewModel.enabled
     }
 
 }

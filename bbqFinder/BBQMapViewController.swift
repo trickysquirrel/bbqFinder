@@ -28,7 +28,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
 
     // MARK: presenter output
 
-    func presenterUpdate(response: BBQMapPresenterResponse) {
+    func presenterUpdate(_ response: BBQMapPresenterResponse) {
 
         switch(response) {
 
@@ -39,7 +39,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
     }
 
 
-    func presenterUpdate(presenter: UserLocationPresenter, response: UserLocationPresenterResponse) {
+    func presenterUpdate(_ presenter: UserLocationPresenter, response: UserLocationPresenterResponse) {
 
         switch(response) {
 

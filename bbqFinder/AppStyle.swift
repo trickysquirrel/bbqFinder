@@ -7,7 +7,7 @@ import UIKit
 
 class AppStyle: NSObject {
 
-    let disabledColour = UIColor.lightGrayColor()
-    let enabledColour = UIColor.blackColor()
-    let selectableColour = UIColor.blueColor()
+    let disabledColour = UIColor.lightGray
+    let enabledColour = UIColor.black
+    let selectableColour = UIColor.blue
 }

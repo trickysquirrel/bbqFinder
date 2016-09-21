@@ -16,14 +16,14 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     @IBOutlet var addressViewCell: BBQDetailsAddressViewCell?
 
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interactor.fetchDetails()
     }
 
     // MARK: Presenter output
     
-    func presenterUpdate(response: BBQDetailsPresenterResponseModel) {
+    func presenterUpdate(_ response: BBQDetailsPresenterResponseModel) {
 
         switch response {
 
@@ -41,7 +41,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     }
 
 
-    private func updateAllViewCells(viewModels: BBQDetailsViewModel) {
+    fileprivate func updateAllViewCells(_ viewModels: BBQDetailsViewModel) {
 
         mapViewCell?.configureWithViewModel(viewModels.cellModels[safe:0], coordinate: viewModels.coordinate)
         distanceViewCell?.configureWithViewModel(viewModels.cellModels[safe:1])
@@ -53,10 +53,10 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     // MARK: tabel view delegate
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if let cellModel = self.viewModels?.cellModels[safe: indexPath.row] {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if let cellModel = self.viewModels?.cellModels[safe: (indexPath as NSIndexPath).row] {
             cellModel.action?()
         }
     }

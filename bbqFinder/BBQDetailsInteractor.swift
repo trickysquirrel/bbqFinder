@@ -20,7 +20,7 @@ enum BBQDetailsInteractorResponseModel {
 }
 
 protocol BBQDetailsInteractorOutput {
-    func interactorUpdate(response: BBQDetailsInteractorResponseModel)
+    func interactorUpdate(_ response: BBQDetailsInteractorResponseModel)
 }
 
 
@@ -31,7 +31,10 @@ class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddre
     let locationAddress: LocationAddress
     let bbqCoordinate: CLLocationCoordinate2D
     let facilities: String
+
     var distanceInMeters: Int = 0
+    var userLocationAuthorised = false
+    var address: String = ""
 
 
     init(output: BBQDetailsInteractorOutput, coordinate: CLLocationCoordinate2D, facilities: String, userLocation: UserLocation, locationAddress: LocationAddress) {
@@ -48,21 +51,30 @@ class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddre
     func fetchDetails() {
 
         if userLocation.canRequestUserLocation() {
-            output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters)))
+
+            userLocationAuthorised = true
+            output.interactorUpdate(.details(makeBBQDetails()))
+            fetchBBQAddress()
+            fetchUsersLocation()
         }
         else {
 
-            output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: false, distance: distanceInMeters)))
+            userLocationAuthorised = false
+            output.interactorUpdate(.details(makeBBQDetails()))
+            fetchBBQAddress()
         }
-
-        fetchUsersLocation()
     }
 
+
+    func fetchBBQAddress() {
+
+        locationAddress.requestAddress(bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
+    }
+    
 
     func fetchUsersLocation() {
 
         userLocation.delegate = self
-        locationAddress.requestAddress(bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
         userLocation.requestUsersLocation()
     }
 
@@ -75,28 +87,29 @@ class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddre
     }
 
 
-    func requestUserLocationCompleted(latitude:Double, londitude:Double) {
+    func requestUserLocationCompleted(_ latitude:Double, londitude:Double) {
 
         let locationBbq = CLLocation(latitude: bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
 
         let locationUser = CLLocation(latitude: latitude, longitude: londitude)
 
-        distanceInMeters = Int(locationBbq.distanceFromLocation(locationUser))
+        distanceInMeters = Int(locationBbq.distance(from: locationUser))
 
-        output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters)))
+        output.interactorUpdate(.details(makeBBQDetails()))
     }
 
     // MARK: Location Address Delegate
 
-    func locationAddressDidFetchAddress(address: String) {
+    func locationAddressDidFetchAddress(_ address: String) {
 
-        output.interactorUpdate(.details(makeBBQDetails(locationAuthorised: true, distance: distanceInMeters, address: address)))
+        self.address = address
+        output.interactorUpdate(.details(makeBBQDetails()))
     }
 
     // MARK: Helpers
 
-    private func makeBBQDetails(locationAuthorised locationAuthorised:Bool, distance: Int, address : String="") -> BBQDetails {
+    fileprivate func makeBBQDetails() -> BBQDetails {
 
-        return BBQDetails(coordinate: bbqCoordinate, userLocationUnknown: !locationAuthorised, distanceInMeters: distance, address: address, facilities: facilities)
+        return BBQDetails(coordinate: bbqCoordinate, userLocationUnknown: !userLocationAuthorised, distanceInMeters: distanceInMeters, address: address, facilities: facilities)
     }
 }
