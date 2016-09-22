@@ -21,6 +21,34 @@ class Wireframe: NSObject {
         if let view = nibContents?.first as? UIView {
             controller.tableView.backgroundView = view
         }
-
     }
+
+
+    func wireUpBbqMapViewController(controller: BBQMapViewController, bbqArea: BBQArea, action: @escaping BBQSelectionAction) {
+
+        let presenter = BBQMapPresenter(output: controller, action: action)
+
+        let bbqListProvider = BBQListProvider(area: bbqArea)
+
+        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
+
+        let userLocationInteractor = makeUserLocationInteractor(controller)
+
+        controller.title = bbqArea.title()
+        controller.interactor = interactor
+        controller.userLocationInteractor = userLocationInteractor
+    }
+
+
+    // MARK: private
+
+    fileprivate func makeUserLocationInteractor(_ output: UserLocationPresenterOutput) -> UserLocationInteractor {
+
+        let locationManager = UserLocationStatus()
+        let userLocationPresenter = UserLocationPresenter(output: output)
+        let userLocationInteractor = UserLocationInteractor(output: userLocationPresenter, locationManagerStatus: locationManager)
+        return userLocationInteractor
+    }
+
+
 }

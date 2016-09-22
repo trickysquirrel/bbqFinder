@@ -16,6 +16,7 @@
 		3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305035391D9389E4002B7D1F /* AreaTableViewCell.swift */; };
 		3050353C1D93E974002B7D1F /* UILabel+CharacterSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050353B1D93E974002B7D1F /* UILabel+CharacterSpacing.swift */; };
 		305035461D948688002B7D1F /* AreasTableViewBackground.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305035451D948688002B7D1F /* AreasTableViewBackground.xib */; };
+		3050354F1D949A91002B7D1F /* BBQMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3050354D1D949A91002B7D1F /* BBQMapViewController.xib */; };
 		3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9671D8A4F0C00A033A6 /* UserLocation.swift */; };
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
@@ -76,6 +77,7 @@
 		305035391D9389E4002B7D1F /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		3050353B1D93E974002B7D1F /* UILabel+CharacterSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+CharacterSpacing.swift"; sourceTree = "<group>"; };
 		305035451D948688002B7D1F /* AreasTableViewBackground.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreasTableViewBackground.xib; sourceTree = "<group>"; };
+		3050354D1D949A91002B7D1F /* BBQMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BBQMapViewController.xib; sourceTree = "<group>"; };
 		3070C9671D8A4F0C00A033A6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		3030E31A1D7E05E600647CFA /* Bbq Map */ = {
 			isa = PBXGroup;
 			children = (
+				305035471D949712002B7D1F /* Views */,
 				3030E31B1D7E061400647CFA /* BBQMapViewController.swift */,
 				3030E31F1D7E078200647CFA /* BBQMapView.swift */,
 				3030E3251D7E717300647CFA /* BBQMapPresenter.swift */,
@@ -156,6 +159,14 @@
 				305035391D9389E4002B7D1F /* AreaTableViewCell.swift */,
 				305035371D938971002B7D1F /* AreaViewCell.xib */,
 				305035451D948688002B7D1F /* AreasTableViewBackground.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		305035471D949712002B7D1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3050354D1D949A91002B7D1F /* BBQMapViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -444,6 +455,7 @@
 				305035381D938971002B7D1F /* AreaViewCell.xib in Resources */,
 				305035461D948688002B7D1F /* AreasTableViewBackground.xib in Resources */,
 				30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */,
+				3050354F1D949A91002B7D1F /* BBQMapViewController.xib in Resources */,
 				30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

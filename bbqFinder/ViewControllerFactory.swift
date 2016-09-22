@@ -34,33 +34,16 @@ class ViewControllerFactory: NSObject {
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 
+    
     func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
 
-        let controller = AreasViewController(dataSource: dataSource)
-        return controller
+        return AreasViewController(dataSource: dataSource)
     }
 
 
-    func makeBbqMapArea(_ area: BBQArea, action: @escaping BBQSelectionAction) -> BBQMapViewController {
+    func makeBbqMapArea(alerter: Alerter) -> BBQMapViewController {
 
-        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqMap) as! BBQMapViewController
-
-        let alerter = Alerter()
-
-        let presenter = BBQMapPresenter(output: controller, action: action)
-
-        let bbqListProvider = BBQListProvider(area: area)
-
-        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
-
-        let userLocationInteractor = makeUserLocationInteractor(controller)
-
-        controller.title = area.title()
-        controller.interactor = interactor
-        controller.userLocationInteractor = userLocationInteractor
-        controller.alerter = alerter
-
-        return controller
+        return BBQMapViewController(alerter: alerter)
     }
 
 
@@ -84,14 +67,5 @@ class ViewControllerFactory: NSObject {
         return controller
     }
 
-    // MARK: private
-
-    fileprivate func makeUserLocationInteractor(_ output: UserLocationPresenterOutput) -> UserLocationInteractor {
-
-        let locationManager = UserLocationStatus()
-        let userLocationPresenter = UserLocationPresenter(output: output)
-        let userLocationInteractor = UserLocationInteractor(output: userLocationPresenter, locationManagerStatus: locationManager)
-        return userLocationInteractor
-    }
 
 }

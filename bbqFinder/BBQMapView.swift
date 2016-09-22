@@ -25,7 +25,7 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
 
-    func hasAnnotations() -> Bool {
+    func hasLocationData() -> Bool {
         return annotationList.count > 0 ? true : false
     }
 
@@ -39,7 +39,7 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
         showAnnotations(annotationList, animated: false)
     }
 
-
+    // todo should be showAndCentreLocationOfUser
     func showLocationOfUser(_ coordinate2D: CLLocationCoordinate2D) {
 
         showsUserLocation = true

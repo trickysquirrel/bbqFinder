@@ -40,7 +40,11 @@ struct Router {
 
         let action: BBQSelectionAction = { coordinate, facilities in self.showBBQDetailsViewController(coordinate, facilities: facilities) }
 
-        let controller = viewControllerFactory.makeBbqMapArea(area, action: action)
+        let alerter = Alerter()
+
+        let controller = viewControllerFactory.makeBbqMapArea(alerter: alerter)
+
+        wireframe.wireUpBbqMapViewController(controller: controller, bbqArea: area, action: action)
 
         navigationController.pushViewController(controller, animated: true)
     }
