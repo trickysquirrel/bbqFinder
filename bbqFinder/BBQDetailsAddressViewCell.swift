@@ -6,13 +6,13 @@ import UIKit
 
 class BBQDetailsAddressViewCell: UITableViewCell {
 
-    @IBOutlet var addressLabel: UILabel?
+    @IBOutlet weak var addressLabel: UILabel!
 
     func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
 
         guard let viewModel = viewModel else { return }
-        addressLabel?.textColor = viewModel.labelColour
-        addressLabel?.text = viewModel.infoText
+        addressLabel.textColor = viewModel.labelColour
+        addressLabel.text = viewModel.infoText
         isUserInteractionEnabled = viewModel.enabled
     }
 

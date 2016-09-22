@@ -33,13 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setAppApperance() {
 
-        let font = UIFont(name: "HelveticaNeue-Light", size: 20)!
+        let titleFont = UIFont(name: "HelveticaNeue-Light", size: 20)!
+        let backButtonDont = UIFont(name: "HelveticaNeue-Light", size: 16)!
 
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: font
+            NSFontAttributeName: titleFont
         ]
 
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: backButtonDont], for: .normal)
+
+        UINavigationBar.appearance().tintColor = UIColor.black
     }
 
 

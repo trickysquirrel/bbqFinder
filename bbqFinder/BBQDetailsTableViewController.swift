@@ -9,11 +9,11 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     var interactor: BBQDetailsInteractor!
     var alerter: Alerter!
     var viewModels: BBQDetailsViewModel?
-    @IBOutlet var mapViewCell: BBQDetailsMapViewCell?
-    @IBOutlet var distanceViewCell: BBQDetailsDistanceViewCell?
-    @IBOutlet var directionViewCell: BBQDetailsDirectionViewCell?
-    @IBOutlet var ammentiesViewCell: BBQDetailsAmenitiesViewCell?
-    @IBOutlet var addressViewCell: BBQDetailsAddressViewCell?
+    @IBOutlet weak var mapViewCell: BBQDetailsMapViewCell!
+    @IBOutlet weak var distanceViewCell: BBQDetailsDistanceViewCell!
+    @IBOutlet weak var directionViewCell: BBQDetailsDirectionViewCell!
+    @IBOutlet weak var ammentiesViewCell: BBQDetailsAmenitiesViewCell!
+    @IBOutlet weak var addressViewCell: BBQDetailsAddressViewCell!
 
 
     override func viewWillAppear(_ animated: Bool) {
@@ -43,11 +43,11 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     fileprivate func updateAllViewCells(_ viewModels: BBQDetailsViewModel) {
 
-        mapViewCell?.configureWithViewModel(viewModels.cellModels[safe:0], coordinate: viewModels.coordinate)
-        distanceViewCell?.configureWithViewModel(viewModels.cellModels[safe:1])
-        directionViewCell?.configureWithViewModel(viewModels.cellModels[safe:2])
-        ammentiesViewCell?.configureWithViewModel(viewModels.cellModels[safe:3])
-        addressViewCell?.configureWithViewModel(viewModels.cellModels[safe:4])
+        mapViewCell.configureWithViewModel(viewModels.cellModels[safe:0], coordinate: viewModels.coordinate)
+        distanceViewCell.configureWithViewModel(viewModels.cellModels[safe:1])
+        directionViewCell.configureWithViewModel(viewModels.cellModels[safe:2])
+        ammentiesViewCell.configureWithViewModel(viewModels.cellModels[safe:3])
+        addressViewCell.configureWithViewModel(viewModels.cellModels[safe:4])
     }
 
 

@@ -6,7 +6,7 @@ import UIKit
 
 class BBQDetailsDistanceViewCell: UITableViewCell {
 
-    @IBOutlet var infoLabel: UILabel?
+    @IBOutlet weak var infoLabel: UILabel!
 
     func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
 

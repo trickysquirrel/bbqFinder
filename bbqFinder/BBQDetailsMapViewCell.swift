@@ -8,13 +8,13 @@ import MapKit
 
 class BBQDetailsMapViewCell: UITableViewCell {
 
-    @IBOutlet var mapView: MKMapView?
+    @IBOutlet weak var mapView: MKMapView!
 
     func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?, coordinate: CLLocationCoordinate2D) {
 
         guard let viewModel = viewModel else { return }
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 100, 100)
-        mapView?.setRegion(region, animated: false)
+        mapView.setRegion(region, animated: false)
         isUserInteractionEnabled = viewModel.enabled
     }
 

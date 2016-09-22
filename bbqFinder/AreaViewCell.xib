@@ -27,6 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="2uA-lx-1HI" firstAttribute="leading" secondItem="ll8-Ef-A9C" secondAttribute="leadingMargin" id="JHC-bc-Z2j"/>
                     <constraint firstItem="Vbx-05-Ukw" firstAttribute="top" secondItem="ll8-Ef-A9C" secondAttribute="topMargin" id="TBw-KJ-eom"/>
@@ -37,6 +38,7 @@
                     <constraint firstItem="2uA-lx-1HI" firstAttribute="trailing" secondItem="ll8-Ef-A9C" secondAttribute="trailingMargin" id="xVh-44-4f4"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="subtitleLabel" destination="2uA-lx-1HI" id="oXa-iH-g8F"/>
                 <outlet property="titleLabel" destination="Vbx-05-Ukw" id="H4p-98-0gT"/>

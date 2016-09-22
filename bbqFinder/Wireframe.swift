@@ -2,7 +2,7 @@
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // todo: not the correct name especially if we inject the view controller factory
 class Wireframe: NSObject {
@@ -16,6 +16,11 @@ class Wireframe: NSObject {
 
         let interactor = AreasInteractor(output: presenter)
         controller.interactor = interactor
+
+        let nibContents =  Bundle.main.loadNibNamed("AreasTableViewBackground", owner: nil, options: nil)
+        if let view = nibContents?.first as? UIView {
+            controller.tableView.backgroundView = view
+        }
 
     }
 }

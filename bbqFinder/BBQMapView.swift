@@ -22,7 +22,12 @@ class MapViewAnnotation: NSObject, MKAnnotation {
 
 class BBQMapView: MKMapView, MKMapViewDelegate {
 
-    fileprivate var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
+    private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
+
+
+    func hasAnnotations() -> Bool {
+        return annotationList.count > 0 ? true : false
+    }
 
 
     func reloadData(_ dataSource:[BBQMapDataModel]) {
@@ -45,10 +50,7 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
 
-        if annotation is MKUserLocation {
-            return nil
-        }
-
+        guard (annotation is MKUserLocation) == false else { return nil }
         let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "bbqLocation")
         view.canShowCallout = true
         view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)

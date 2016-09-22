@@ -15,15 +15,20 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
     var interactor: BBQMapInteractor!
     var userLocationInteractor: UserLocationInteractor!
     var alerter: Alerter!
-    @IBOutlet var mapView: BBQMapView?
+    @IBOutlet weak var mapView: BBQMapView!
+
 
     deinit {
         print("deleted map view controller") // test this
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.fetchLocations() // todo make only onViewDidLoad as it hides the pin callout info
+
+    override func viewDidAppear(_ animated: Bool) {
+
+        super.viewDidAppear(animated)
+        if mapView.hasAnnotations() == false {
+            interactor.fetchLocations()
+        }
     }
 
     // MARK: presenter output
@@ -31,10 +36,8 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
     func presenterUpdate(_ response: BBQMapPresenterResponse) {
 
         switch(response) {
-
         case .updateDataModels(let coordinates):
-            mapView?.reloadData(coordinates)
-            
+            mapView.reloadData(coordinates)
         }
     }
 
@@ -42,9 +45,8 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
     func presenterUpdate(_ presenter: UserLocationPresenter, response: UserLocationPresenterResponse) {
 
         switch(response) {
-
         case .showUsersLocation(let coordinate2D):
-            mapView?.showLocationOfUser(coordinate2D)
+            mapView.showLocationOfUser(coordinate2D)
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)

@@ -48,6 +48,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
         }
     }
 
+    // MARK: helpers
 
     fileprivate func makeViewModel(_ bbq: BBQ) -> BBQMapViewModel {
 
