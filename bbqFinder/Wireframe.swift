@@ -10,9 +10,7 @@ class Wireframe: NSObject {
 
     func wireUpAreasViewController(controller: AreasViewController, action: @escaping AreaSelectionAction) {
 
-        controller.title = "Areas"
-        controller.dataSource = TableViewDataSource()
-        controller.dataSource.delegate = controller
+        controller.title = "Bbq Areas"
 
         let presenter = AreasPresenter(interface: controller, action: action)
 

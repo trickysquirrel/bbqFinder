@@ -22,14 +22,24 @@ class AreasAcceptanceTests: XCTestCase {
         XCTAssertEqual(areasInFirstSection.count, 4)
     }
 
-//    func test_onShowingRootViewController_firstSectionShownsAreasInCorrectOrder() {
-//
-//        app.showRootViewController()
-//
-//        let areasInFirstSection = app.areasInSection(section: 0)
-//
-//        XCTAssertEqual(areasInFirstSection[0].title, "bob")
-//    }
+    
+    func test_onShowingRootViewController_firstSectionShowsAreasInCorrectOrder() {
 
+        app.showRootViewController()
+
+        let areasInFirstSection = app.areasInSection(section: 0)
+
+        XCTAssertEqual(areasInFirstSection[0].title, "Ballarat")
+        XCTAssertEqual(areasInFirstSection[0].subtitle, "Victoria")
+
+        XCTAssertEqual(areasInFirstSection[1].title, "Bright")
+        XCTAssertEqual(areasInFirstSection[1].subtitle, "Victoria")
+
+        XCTAssertEqual(areasInFirstSection[2].title, "Melbourne")
+        XCTAssertEqual(areasInFirstSection[2].subtitle, "Victoria")
+
+        XCTAssertEqual(areasInFirstSection[3].title, "Glenorchy")
+        XCTAssertEqual(areasInFirstSection[3].subtitle, "Tasmania")
+    }
 
 }

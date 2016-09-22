@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        setAppApperance()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let validWindow = window else { return true }
 
@@ -28,6 +30,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+
+    private func setAppApperance() {
+
+        let font = UIFont(name: "HelveticaNeue-Light", size: 20)!
+
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSFontAttributeName: font
+        ]
+
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: font], for: .normal)
+    }
 
 
     func applicationWillResignActive(_ application: UIApplication) {}

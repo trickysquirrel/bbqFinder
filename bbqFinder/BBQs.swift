@@ -16,13 +16,24 @@ struct BBQ {
 // todo change this to sections vic = A,B,C
 enum BBQArea: String {
 
-    case alpineShire = "Melbourne - Bright (alpineshire)"
-    case ballarat = "Melbourne - Ballarat"
-    case melbourne = "Melbourne - CBD"
-    case glenorchy = "Tasmania (glenorchy)"
+    case alpineShire = "Bright" // alpineshire
+    case ballarat = "Ballarat"
+    case melbourne = "Melbourne"
+    case glenorchy = "Glenorchy"
 
     func title() -> String {
         return self.rawValue
+    }
+
+    func subtitle() -> String {
+        switch self {
+        case .alpineShire, .ballarat:
+            return "Victoria"
+        case .melbourne:
+            return "Victoria"
+        case .glenorchy:
+            return "Tasmania"
+        }
     }
 }
 

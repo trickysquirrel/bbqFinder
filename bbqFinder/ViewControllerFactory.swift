@@ -34,10 +34,9 @@ class ViewControllerFactory: NSObject {
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 
-    func makeAreasViewController() -> AreasViewController {
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
 
-        let controller = storyboard?.instantiateViewControllerWithIdentifier(.areas) as! AreasViewController
-
+        let controller = AreasViewController(dataSource: dataSource)
         return controller
     }
 

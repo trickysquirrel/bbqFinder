@@ -8,13 +8,13 @@ import UIKit
 
 class SpyViewControllerFactory: ViewControllerFactory {
 
-    fileprivate let spyAreasViewController: AreasViewController
+    fileprivate let spyAreasViewController: SpyAreasViewController
 
-    init(spyAreasViewController: AreasViewController) {
+    init(spyAreasViewController: SpyAreasViewController) {
         self.spyAreasViewController = spyAreasViewController
     }
 
-    override func makeAreasViewController() -> AreasViewController {
+    override func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
         return spyAreasViewController
     }
 }

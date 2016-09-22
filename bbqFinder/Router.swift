@@ -24,7 +24,9 @@ struct Router {
 
         let action: AreaSelectionAction = { area in self.showAreaMapViewController(area) }
 
-        let controller = viewControllerFactory.makeAreasViewController()
+        let dataSource = TableViewDataSource<AreasViewController>()
+        let controller = viewControllerFactory.makeAreasViewController(dataSource: dataSource)
+        
         wireframe.wireUpAreasViewController(controller: controller, action: action)
 
         navigationController.setViewControllers([controller], animated: false)

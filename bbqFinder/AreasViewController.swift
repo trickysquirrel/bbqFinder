@@ -7,19 +7,35 @@ import UIKit
 class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaPresenterOutput {
 
     typealias dataSourceType = AreaDataModel
-    var dataSource: TableViewDataSource<AreasViewController>!
-    var interactor: AreasInteractor!
+    let dataSource: TableViewDataSource<AreasViewController>
+    var interactor: AreasInteractor!    // required var for the controller/interactor/presenter dependancy
 
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    required init(dataSource: TableViewDataSource<AreasViewController>) {
+
+        self.dataSource = dataSource
+        super.init(style: .plain)
+        AreaTableViewCell.reigsterWithTableView(tableView)
+        dataSource.delegate = self
         dataSource.setTableView(tableView)
+    }
+
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         interactor.fetchAreas()
     }
 
     // MARK: List View Interface
 
-    func presenterUpdate(_ response:AreasMapPresenterResponse) {
+    func presenterUpdate(_ response: AreasMapPresenterResponse) {
 
         switch response {
         case .updateAreas(let areas):
@@ -30,11 +46,13 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     // MARK: data source delegate
     
     func cellReuseIdentifier(atIndexPath indexPath:IndexPath) -> String {
-        return "AreasTableCellID"
+        return AreaTableViewCell.cellIdentifier
     }
+    
 
     func configureCell(tableViewCell cell:UITableViewCell, object:AreaDataModel) {
-        cell.textLabel?.text = object.viewModel.title
+        guard let cell = cell as? AreaTableViewCell else { return }
+        cell.configureWithViewModel(viewModel: object.viewModel)
     }
 
     // MARK: table view delegate

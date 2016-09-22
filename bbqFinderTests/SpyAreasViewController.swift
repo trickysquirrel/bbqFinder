@@ -16,7 +16,7 @@ class SpyAreasViewController: AreasViewController {
 
         switch response {
         case .updateAreas(let areas):
-            //didReceivePresenterUpdate?(areas)
+            didReceivePresenterUpdate?(areas)
             break
         }
     }

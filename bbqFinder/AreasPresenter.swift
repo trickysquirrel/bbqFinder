@@ -14,6 +14,7 @@ struct AreaDataModel {
 
 struct AreaViewModel {
     let title: String
+    let subtitle: String
 }
 
 enum AreasMapPresenterResponse {
@@ -41,7 +42,8 @@ class AreasPresenter: AreasInteractorOutput {
 
         let dataModelList = areaList.map {
 
-            AreaDataModel(viewModel: AreaViewModel(title:$0.title()), action: actionForTitle($0))
+            AreaDataModel(viewModel: AreaViewModel(title:$0.title(), subtitle:$0.subtitle()),
+                          action: actionForTitle($0))
         }
         output?.presenterUpdate( .updateAreas([dataModelList]) )
     }
