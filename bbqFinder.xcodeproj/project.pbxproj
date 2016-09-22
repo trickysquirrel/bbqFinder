@@ -148,6 +148,15 @@
 			name = "Bbq Map";
 			sourceTree = "<group>";
 		};
+		305035401D948382002B7D1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				305035391D9389E4002B7D1F /* AreaTableViewCell.swift */,
+				305035371D938971002B7D1F /* AreaViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		3070C96F1D8B491F00A033A6 /* Apple Maps App */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,9 +223,8 @@
 		30C717021D6C7EAD0085FFBD /* Area Selection */ = {
 			isa = PBXGroup;
 			children = (
+				305035401D948382002B7D1F /* Views */,
 				30C717091D6C7FE50085FFBD /* AreasViewController.swift */,
-				305035391D9389E4002B7D1F /* AreaTableViewCell.swift */,
-				305035371D938971002B7D1F /* AreaViewCell.xib */,
 				30C717111D6C868E0085FFBD /* AreasPresenter.swift */,
 				30C717131D6C89250085FFBD /* AreasInteractor.swift */,
 			);
