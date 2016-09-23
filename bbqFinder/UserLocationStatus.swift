@@ -44,7 +44,7 @@ class UserLocationStatus: NSObject, CLLocationManagerDelegate, LocationManagerSt
     }
 
 
-    func currentLocation() -> (lat:Double, lon:Double)? { // todo tuple to lat lon
+    func currentLocation() -> (lat:Double, lon:Double)? {
 
         guard isCurrentLocationAuthorised() == true else {
             print("you are not yet authorised to access user location")

@@ -6,7 +6,7 @@ import Foundation
 import CoreLocation
 
 
-protocol RequestUserLocationDelegate: class {
+protocol UserLocationDelegate: class {
     func requestUserLocationDenied()
     func requestUserLocationCompleted(_ latitude:Double, longitude:Double)
 }
@@ -14,7 +14,7 @@ protocol RequestUserLocationDelegate: class {
 
 class UserLocation: NSObject, LocationManagerStatusDelegate {
 
-    weak var delegate: RequestUserLocationDelegate?
+    weak var delegate: UserLocationDelegate?
     fileprivate let locationStatus: UserLocationStatus
     let geocoder: CLGeocoder
 

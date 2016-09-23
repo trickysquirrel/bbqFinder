@@ -16,7 +16,7 @@ protocol BBQMapInteractorOutput {
 }
 
 
-class BBQMapInteractor: NSObject, RequestUserLocationDelegate {
+class BBQMapInteractor: NSObject, UserLocationDelegate {
 
     private let output: BBQMapInteractorOutput
     private let bbqListProvider: BBQListProvider

@@ -20,8 +20,6 @@
 		3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9671D8A4F0C00A033A6 /* UserLocation.swift */; };
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
-		3086A30D1D84EE2E005A4EBF /* UserLocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086A30C1D84EE2E005A4EBF /* UserLocationInteractor.swift */; };
-		3086A30F1D84F218005A4EBF /* UserLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086A30E1D84F218005A4EBF /* UserLocationPresenter.swift */; };
 		30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */; };
 		30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E61D6C7E9F0085FFBD /* Main.storyboard */; };
 		30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E91D6C7E9F0085FFBD /* Assets.xcassets */; };
@@ -81,8 +79,6 @@
 		3070C9671D8A4F0C00A033A6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
-		3086A30C1D84EE2E005A4EBF /* UserLocationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationInteractor.swift; sourceTree = "<group>"; };
-		3086A30E1D84F218005A4EBF /* UserLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocationPresenter.swift; sourceTree = "<group>"; };
 		30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C716E71D6C7E9F0085FFBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -286,8 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */,
-				3086A30E1D84F218005A4EBF /* UserLocationPresenter.swift */,
-				3086A30C1D84EE2E005A4EBF /* UserLocationInteractor.swift */,
 				3070C9671D8A4F0C00A033A6 /* UserLocation.swift */,
 				3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */,
 			);
@@ -488,7 +482,6 @@
 				30D7EBF61D7F5329007C2884 /* UserLocationStatus.swift in Sources */,
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
 				3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */,
-				3086A30F1D84F218005A4EBF /* UserLocationPresenter.swift in Sources */,
 				30E59F0A1D922772008643B5 /* Wireframe.swift in Sources */,
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
@@ -499,7 +492,6 @@
 				30D7EC071D80B14F007C2884 /* BBQDetailsInteractor.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
 				30D7EC0E1D8111C9007C2884 /* BBQDetailsDistanceViewCell.swift in Sources */,
-				3086A30D1D84EE2E005A4EBF /* UserLocationInteractor.swift in Sources */,
 				3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */,
 				3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */,
 				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
