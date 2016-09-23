@@ -12,9 +12,8 @@ protocol AreasInteractorOutput {
 
 class AreasInteractor {
 
-    let areaList: [BBQArea] = [  .ballarat, .alpineShire, .melbourne, .glenorchy ]
-
-    let output: AreasInteractorOutput
+    private let areaList: [BBQArea] = [  .ballarat, .alpineShire, .melbourne, .glenorchy ]
+    private let output: AreasInteractorOutput
 
     init(output: AreasPresenter) {
         self.output = output

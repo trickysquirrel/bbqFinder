@@ -7,7 +7,7 @@ import UIKit
 class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaPresenterOutput {
 
     typealias dataSourceType = AreaDataModel
-    let dataSource: TableViewDataSource<AreasViewController>
+    private let dataSource: TableViewDataSource<AreasViewController>
     var interactor: AreasInteractor!    // required var for the controller/interactor/presenter dependancy
 
 

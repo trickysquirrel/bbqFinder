@@ -28,8 +28,8 @@ protocol ListAreaPresenterOutput: class {
 
 class AreasPresenter: AreasInteractorOutput {
 
-    weak var output: ListAreaPresenterOutput?
-    let action: AreaSelectionAction
+    private weak var output: ListAreaPresenterOutput?
+    private let action: AreaSelectionAction
 
 
     init(interface: ListAreaPresenterOutput, action: @escaping AreaSelectionAction) {

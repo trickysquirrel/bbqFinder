@@ -26,15 +26,15 @@ protocol BBQDetailsInteractorOutput {
 
 class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddressDelegate {
 
-    let output: BBQDetailsInteractorOutput
-    let userLocation: UserLocation
-    let locationAddress: LocationAddress
-    let bbqCoordinate: CLLocationCoordinate2D
-    let facilities: String
+    private let output: BBQDetailsInteractorOutput
+    private let userLocation: UserLocation
+    private let locationAddress: LocationAddress
+    private let bbqCoordinate: CLLocationCoordinate2D
+    private let facilities: String
 
-    var distanceInMeters: Int = 0
-    var userLocationAuthorised = false
-    var address: String = ""
+    private var distanceInMeters: Int = 0
+    private var userLocationAuthorised = false
+    private var address: String = ""
 
 
     init(output: BBQDetailsInteractorOutput, coordinate: CLLocationCoordinate2D, facilities: String, userLocation: UserLocation, locationAddress: LocationAddress) {

@@ -27,8 +27,8 @@ protocol BBQMapPresenterOutput: class {
 
 class BBQMapPresenter: BBQMapInteractorOutput {
 
-    weak var output: BBQMapPresenterOutput?
-    var action: BBQSelectionAction
+    private weak var output: BBQMapPresenterOutput?
+    private let action: BBQSelectionAction
 
 
     required init(output: BBQMapPresenterOutput, action: @escaping BBQSelectionAction) {

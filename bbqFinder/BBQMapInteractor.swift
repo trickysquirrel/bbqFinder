@@ -16,8 +16,8 @@ protocol BBQMapInteractorOutput {
 
 class BBQMapInteractor: NSObject {
 
-    let output: BBQMapInteractorOutput
-    let bbqListProvider: BBQListProvider
+    private let output: BBQMapInteractorOutput
+    private let bbqListProvider: BBQListProvider
 
 
     required init(output: BBQMapInteractorOutput, bbqListProvider: BBQListProvider) {

@@ -14,7 +14,7 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
 
     var interactor: BBQMapInteractor!
     var userLocationInteractor: UserLocationInteractor!
-    let alerter: Alerter
+    private let alerter: Alerter
     @IBOutlet weak var mapView: BBQMapView!
 
 

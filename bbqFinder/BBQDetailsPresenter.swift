@@ -33,16 +33,16 @@ protocol BBQDetailsPresenterOutput: class {
 
 class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
-    weak var output: BBQDetailsPresenterOutput?
-    let style: AppStyle
-    let appleMapsApp: AppleMapsApp
+    private weak var output: BBQDetailsPresenterOutput?
+    private let style: AppStyle
+    private let appleMapsApp: AppleMapsApp
 
-    let distanceUnknownString = "your location is unknown"
-    let fetchingDistance = "please wait"
-    let facilitiesUnknownString = "unknown"
-    let requestingAddressString = "please wait"
-    let locationServiceOffTitle = "location services off"
-    let locationServiceOffMessage = "please go to settings and allow user location to be determined"
+    private let distanceUnknownString = "your location is unknown"
+    private let fetchingDistance = "please wait"
+    private let facilitiesUnknownString = "unknown"
+    private let requestingAddressString = "please wait"
+    private let locationServiceOffTitle = "location services off"
+    private let locationServiceOffMessage = "please go to settings and allow user location to be determined"
 
 
     init(output: BBQDetailsPresenterOutput, style: AppStyle, appleMapsApp: AppleMapsApp) {

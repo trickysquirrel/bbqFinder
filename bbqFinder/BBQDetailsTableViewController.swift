@@ -8,7 +8,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     var interactor: BBQDetailsInteractor!
     var alerter: Alerter!
-    var viewModels: BBQDetailsViewModel?
+    private var viewModels: BBQDetailsViewModel?
     @IBOutlet weak var mapViewCell: BBQDetailsMapViewCell!
     @IBOutlet weak var distanceViewCell: BBQDetailsDistanceViewCell!
     @IBOutlet weak var directionViewCell: BBQDetailsDirectionViewCell!
