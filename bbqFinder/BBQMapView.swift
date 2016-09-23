@@ -39,8 +39,8 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
         showAnnotations(annotationList, animated: false)
     }
 
-    // todo should be showAndCentreLocationOfUser
-    func showLocationOfUser(_ coordinate2D: CLLocationCoordinate2D) {
+
+    func showAndCentreLocationOfUser(_ coordinate2D: CLLocationCoordinate2D) {
 
         showsUserLocation = true
         setCenter(coordinate2D, animated: true)

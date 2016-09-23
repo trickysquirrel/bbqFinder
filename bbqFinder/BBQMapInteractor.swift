@@ -7,6 +7,8 @@ import Foundation
 
 enum BBQMapInteractorResponseModel {
     case bbqs([BBQ])
+    case usersLocation(lat:Double, lon:Double)
+    case userLocationDenied
 }
 
 protocol BBQMapInteractorOutput {
@@ -14,22 +16,44 @@ protocol BBQMapInteractorOutput {
 }
 
 
-class BBQMapInteractor: NSObject {
+class BBQMapInteractor: NSObject, RequestUserLocationDelegate {
 
     private let output: BBQMapInteractorOutput
     private let bbqListProvider: BBQListProvider
+    private let userLocation: UserLocation
 
 
-    required init(output: BBQMapInteractorOutput, bbqListProvider: BBQListProvider) {
+    required init(output: BBQMapInteractorOutput, bbqListProvider: BBQListProvider, userLocation: UserLocation) {
 
         self.output = output
         self.bbqListProvider = bbqListProvider
+        self.userLocation = userLocation
     }
 
 
     func fetchLocations() {
 
         output.interactorUpdate( locationsResponseModel() )
+    }
+
+
+    func fetchUsersLocation() {
+
+        userLocation.delegate = self
+        userLocation.requestUsersLocation()
+    }
+
+    // MARK: request user location delegate
+
+    func requestUserLocationDenied() {
+
+        output.interactorUpdate( .userLocationDenied )
+    }
+
+
+    func requestUserLocationCompleted(_ latitude:Double, longitude:Double) {
+
+        output.interactorUpdate(.usersLocation(lat: latitude, lon: longitude))
     }
 
     // MARK: Response Models

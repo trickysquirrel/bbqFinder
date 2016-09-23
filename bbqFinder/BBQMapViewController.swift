@@ -10,10 +10,9 @@ import UIKit
 import MapKit
 
 
-class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocationPresenterOutput {
+class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
     var interactor: BBQMapInteractor!
-    var userLocationInteractor: UserLocationInteractor!
     private let alerter: Alerter
     @IBOutlet weak var mapView: BBQMapView!
 
@@ -47,27 +46,23 @@ class BBQMapViewController: UIViewController, BBQMapPresenterOutput, UserLocatio
     func presenterUpdate(_ response: BBQMapPresenterResponse) {
 
         switch(response) {
-        case .updateDataModels(let coordinates):
-            mapView.reloadData(coordinates)
-        }
-    }
 
+        case .updateDataModels(let bbqCoordinates):
+            mapView.reloadData(bbqCoordinates)
 
-    func presenterUpdate(_ presenter: UserLocationPresenter, response: UserLocationPresenterResponse) {
-
-        switch(response) {
         case .showUsersLocation(let coordinate2D):
-            mapView.showLocationOfUser(coordinate2D)
+            mapView.showAndCentreLocationOfUser(coordinate2D)
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
         }
     }
 
+
     // MARK: Actions
 
     @IBAction func userSelectedShowCurrentLocation() {
-        userLocationInteractor.requestUsersLocation()
+        interactor.fetchUsersLocation()
     }
 
 }

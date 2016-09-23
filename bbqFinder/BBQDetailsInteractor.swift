@@ -87,11 +87,11 @@ class BBQDetailsInteractor: NSObject, RequestUserLocationDelegate, LocationAddre
     }
 
 
-    func requestUserLocationCompleted(_ latitude:Double, londitude:Double) {
+    func requestUserLocationCompleted(_ latitude:Double, longitude:Double) {
 
         let locationBbq = CLLocation(latitude: bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
 
-        let locationUser = CLLocation(latitude: latitude, longitude: londitude)
+        let locationUser = CLLocation(latitude: latitude, longitude: longitude)
 
         distanceInMeters = Int(locationBbq.distance(from: locationUser))
 

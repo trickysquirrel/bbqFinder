@@ -8,7 +8,7 @@ import CoreLocation
 
 protocol RequestUserLocationDelegate: class {
     func requestUserLocationDenied()
-    func requestUserLocationCompleted(_ latitude:Double, londitude:Double)
+    func requestUserLocationCompleted(_ latitude:Double, longitude:Double)
 }
 
 
@@ -46,7 +46,7 @@ class UserLocation: NSObject, LocationManagerStatusDelegate {
             locationStatus.requestLocationWhenInUse()
         }
         else if let location = locationStatus.currentLocation() {
-            self.delegate?.requestUserLocationCompleted(location.lat, londitude: location.lon)
+            self.delegate?.requestUserLocationCompleted(location.lat, longitude: location.lon)
         }
     }
 

@@ -26,29 +26,17 @@ class Wireframe: NSObject {
 
     func wireUpBbqMapViewController(controller: BBQMapViewController, bbqArea: BBQArea, action: @escaping BBQSelectionAction) {
 
+        let locationManager = UserLocationStatus()
+        let requestUsersLocation = UserLocation(locationStatus: locationManager)
+
         let presenter = BBQMapPresenter(output: controller, action: action)
 
         let bbqListProvider = BBQListProvider(area: bbqArea)
 
-        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider)
-
-        let userLocationInteractor = makeUserLocationInteractor(controller)
+        let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider, userLocation: requestUsersLocation)
 
         controller.title = bbqArea.title()
         controller.interactor = interactor
-        controller.userLocationInteractor = userLocationInteractor
     }
-
-
-    // MARK: private
-
-    fileprivate func makeUserLocationInteractor(_ output: UserLocationPresenterOutput) -> UserLocationInteractor {
-
-        let locationManager = UserLocationStatus()
-        let userLocationPresenter = UserLocationPresenter(output: output)
-        let userLocationInteractor = UserLocationInteractor(output: userLocationPresenter, locationManagerStatus: locationManager)
-        return userLocationInteractor
-    }
-
 
 }
