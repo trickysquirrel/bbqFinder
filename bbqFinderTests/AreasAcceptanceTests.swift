@@ -10,7 +10,7 @@ class AreasAcceptanceTests: XCTestCase {
 
     let app = AreasAcceptanceTestsHelper()
 
-    // todo these test should involve the data source
+    // todo these test should involve the data source not view controller
     // add in extra test to make sure data source works correctly with view controller
 
     func test_onShowingRootViewController_oneSectionShownWithFiveAreas() {

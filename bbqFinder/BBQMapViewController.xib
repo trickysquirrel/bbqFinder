@@ -18,12 +18,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nZw-OA-AQZ" customClass="BBQMapView" customModule="bbqFinder" customModuleProvider="target"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-eT-ONN" userLabel="user location button">
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-eT-ONN" userLabel="user location button" customClass="ButtonRounded" customModule="bbqFinder" customModuleProvider="target">
+                    <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="aim-Aa-QuJ"/>
-                        <constraint firstAttribute="width" constant="30" id="fj5-lP-8WF"/>
+                        <constraint firstAttribute="height" constant="44" id="aim-Aa-QuJ"/>
+                        <constraint firstAttribute="width" constant="44" id="fj5-lP-8WF"/>
                     </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" image="userLocationIcon"/>
                     <connections>
                         <action selector="userSelectedShowCurrentLocation" destination="-1" eventType="touchUpInside" id="QnA-Y7-wo3"/>
