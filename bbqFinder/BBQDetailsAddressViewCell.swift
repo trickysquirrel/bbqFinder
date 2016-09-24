@@ -8,10 +8,10 @@ class BBQDetailsAddressViewCell: UITableViewCell {
 
     @IBOutlet weak var addressLabel: UILabel!
 
-    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
+    func configureWithAddress(_ address: String, colour: UIColor) {
 
-        guard let viewModel = viewModel else { return }
-        addressLabel.text = viewModel.infoText
+        addressLabel.text = address
+        addressLabel.textColor = colour
     }
 
 }

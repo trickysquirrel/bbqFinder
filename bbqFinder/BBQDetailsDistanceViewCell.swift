@@ -9,7 +9,7 @@ class BBQDetailsDistanceViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
 
-    func configureWithViewModel(title: String, distance: String, distanceColour: UIColor) {
+    func configureWithBbqTitle(_ title: String, distance: String, distanceColour: UIColor) {
 
         titleLabel.setText(text: title, characterSpacing: 1.0)
         infoLabel?.text = distance

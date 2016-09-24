@@ -10,7 +10,7 @@ class BBQDetailsMapViewCell: UITableViewCell {
 
     @IBOutlet weak var mapView: MKMapView!
 
-    func configureWithViewModel(coordinate: CLLocationCoordinate2D) {
+    func configureWithCoordinate(_ coordinate: CLLocationCoordinate2D) {
 
         let region = MKCoordinateRegionMakeWithDistance(coordinate, 100, 100)
         mapView.setRegion(region, animated: false)

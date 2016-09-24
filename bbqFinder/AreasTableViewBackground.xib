@@ -30,11 +30,19 @@
                         <constraint firstAttribute="width" constant="64" id="SSw-wH-fp6"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cq3-xj-1BF" customClass="BBQSmokeParticleView" customModule="bbqFinder" customModuleProvider="target">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="1y6-oQ-rOq"/>
+                        <constraint firstAttribute="width" constant="150" id="DYW-se-UKp"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xN6-ul-rts" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G8j-4s-gjf"/>
+                <constraint firstItem="Cq3-xj-1BF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="65" id="ICl-Kp-VUE"/>
                 <constraint firstItem="Wgb-ow-2er" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JFf-8h-aVr"/>
+                <constraint firstItem="Cq3-xj-1BF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="47" id="Oko-PR-fw6"/>
                 <constraint firstItem="P1q-k5-IUF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aDo-n6-lPR"/>
                 <constraint firstItem="Wgb-ow-2er" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gBZ-w0-rAM"/>
                 <constraint firstItem="P1q-k5-IUF" firstAttribute="top" secondItem="Wgb-ow-2er" secondAttribute="bottom" constant="38" id="oOl-DZ-sRE"/>

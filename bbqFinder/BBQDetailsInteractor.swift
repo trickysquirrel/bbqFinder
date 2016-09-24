@@ -37,8 +37,8 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
     private let facilities: String
     private let locationDistance: LocationDistance
 
+    // todo remove these 2 vars
     private var distanceInMeters: Int = 0
-    private var userLocationAuthorised = false
     private var address: String = ""
 
 
@@ -66,29 +66,25 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
 
     func fetchDetails() {
 
-        if userLocation.canRequestUserLocation() {
-
-            userLocationAuthorised = true
-            output.interactorUpdate(.details(makeBBQDetails()))
-            fetchBBQAddress()
-            fetchUsersLocation()
-        }
-        else {
-
-            userLocationAuthorised = false
-            output.interactorUpdate(.details(makeBBQDetails()))
-            fetchBBQAddress()
-        }
+        fetchUsersLocation()
+        fetchBBQAddress()
+        output.interactorUpdate(.details(makeBBQDetails()))
     }
 
 
-    func fetchBBQAddress() {
+    private func isUsersLocationUnknown() -> Bool {
+
+        return userLocation.canRequestUserLocation() ? false : true
+    }
+
+
+    private func fetchBBQAddress() {
 
         locationAddress.requestAddress(bbqLatitude, longitude: bbqLongitude)
     }
     
 
-    func fetchUsersLocation() {
+    private func fetchUsersLocation() {
 
         userLocation.delegate = self
         userLocation.requestUsersLocation()
@@ -125,7 +121,7 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
         return BBQDetails(title: bbqTitle,
                           latitude: bbqLatitude,
                           longitude: bbqLongitude,
-                          userLocationUnknown: !userLocationAuthorised,
+                          userLocationUnknown: isUsersLocationUnknown(),
                           distanceInMeters: distanceInMeters,
                           address: address,
                           facilities: facilities)

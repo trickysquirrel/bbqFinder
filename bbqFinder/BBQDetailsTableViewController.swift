@@ -8,7 +8,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     var interactor: BBQDetailsInteractor!
     var alerter: Alerter!
-    private var viewModels: BBQDetailsViewModel?
+    private var viewModel: BBQDetailsViewModel?
     @IBOutlet weak var mapViewCell: BBQDetailsMapViewCell!
     @IBOutlet weak var distanceViewCell: BBQDetailsDistanceViewCell!
     @IBOutlet weak var ammentiesViewCell: BBQDetailsAmenitiesViewCell!
@@ -26,12 +26,9 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
         switch response {
 
-        case .details(let viewModels):
-            self.viewModels = viewModels
-            updateAllViewCells(viewModels)
-
-        case .requiresUserLocation:
-            interactor.fetchUsersLocation()
+        case .details(let viewModel):
+            self.viewModel = viewModel
+            updateAllViewCells(viewModel)
 
         case .displayAlert(let title, let message):
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
@@ -40,23 +37,23 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     }
 
 
-    fileprivate func updateAllViewCells(_ viewModels: BBQDetailsViewModel) {
+    fileprivate func updateAllViewCells(_ viewModel: BBQDetailsViewModel) {
 
-        mapViewCell.configureWithViewModel(coordinate: viewModels.coordinate)
-        distanceViewCell.configureWithViewModel(title: viewModels.title, distance: viewModels.distance, distanceColour: viewModels.distanceColour)
-        ammentiesViewCell.configureWithViewModel(viewModels.cellModels[safe:3])
-        addressViewCell.configureWithViewModel(viewModels.cellModels[safe:4])
+        mapViewCell.configureWithCoordinate(viewModel.coordinate)
+        distanceViewCell.configureWithBbqTitle(viewModel.title, distance: viewModel.distance, distanceColour: viewModel.distanceColour)
+        ammentiesViewCell.configureWithAmenities(viewModel.amenities, colour: viewModel.amenitiesColour)
+        addressViewCell.configureWithAddress(viewModel.address, colour: viewModel.addressColour)
     }
 
     // MARK: Actions
 
     @IBAction func userSelectedDirection() {
-        viewModels?.directionAction()
+        viewModel?.directionAction()
     }
 
     
     @IBAction func userSelectedShare() {
-        viewModels?.shareAction(self)
+        viewModel?.shareAction(self)
     }
     
 }

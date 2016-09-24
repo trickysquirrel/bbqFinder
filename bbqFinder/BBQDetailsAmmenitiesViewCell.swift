@@ -8,12 +8,10 @@ class BBQDetailsAmenitiesViewCell: UITableViewCell {
 
     @IBOutlet weak var infoLabel: UILabel!
 
-    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
+    func configureWithAmenities(_ text: String, colour: UIColor) {
 
-        guard let viewModel = viewModel else { return }
-        infoLabel.textColor = viewModel.labelColour
-        infoLabel.text = viewModel.infoText
-        isUserInteractionEnabled = viewModel.enabled
+        infoLabel.textColor = colour
+        infoLabel.text = text
     }
 
 }
