@@ -9,13 +9,13 @@ import MapKit
 class MapViewAnnotation: NSObject, MKAnnotation {
 
     let coordinate: CLLocationCoordinate2D
-    let dataModel: BBQMapDataModel
+    let action: DataModelAction
     let title: String?
 
-    init(dataModel: BBQMapDataModel) {
-        self.coordinate = dataModel.viewModel.location
-        self.title = dataModel.viewModel.title
-        self.dataModel = dataModel
+    init(viewModel: BBQMapViewModel) {
+        self.coordinate = viewModel.location
+        self.title = viewModel.title
+        self.action = viewModel.action
     }
 }
 
@@ -30,11 +30,11 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
     }
 
 
-    func reloadData(_ dataSource:[BBQMapDataModel]) {
+    func reloadData(_ dataSource:[BBQMapViewModel]) {
 
         delegate = self
         removeAnnotations(annotationList)
-        annotationList = dataSource.map{ MapViewAnnotation(dataModel: $0) }
+        annotationList = dataSource.map{ MapViewAnnotation(viewModel: $0) }
         addAnnotations(annotationList)
         showAnnotations(annotationList, animated: false)
     }
@@ -61,6 +61,6 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
         guard let annotation = view.annotation as? MapViewAnnotation else { return }
-        annotation.dataModel.action()
+        annotation.action()
     }
 }

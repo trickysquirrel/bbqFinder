@@ -9,15 +9,11 @@ import MapKit
 struct BBQMapViewModel {
     let title: String
     let location: CLLocationCoordinate2D
-}
-
-struct BBQMapDataModel {
-    let viewModel: BBQMapViewModel
     let action: DataModelAction
 }
 
 enum BBQMapPresenterResponse {
-    case updateDataModels([BBQMapDataModel])
+    case updateDataModels([BBQMapViewModel])
     case showUsersLocation(CLLocationCoordinate2D)
     case displayAlert(title: String, message: String)
 }
@@ -45,7 +41,7 @@ class BBQMapPresenter: BBQMapInteractorOutput {
         switch response {
 
         case .bbqs(let bbqs):
-            let dataModels = bbqs.map { BBQMapDataModel(viewModel: makeViewModel($0), action: actionForBBQ($0)) }
+            let dataModels = bbqs.map { makeViewModel($0) }
             output?.presenterUpdate(.updateDataModels(dataModels))
 
         case .userLocationDenied:
@@ -62,7 +58,9 @@ class BBQMapPresenter: BBQMapInteractorOutput {
 
     fileprivate func makeViewModel(_ bbq: BBQ) -> BBQMapViewModel {
 
-        return BBQMapViewModel(title: bbq.title, location: CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon))
+        return BBQMapViewModel(title: bbq.title,
+                               location: CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon),
+                               action: actionForBBQ(bbq))
     }
 
 
