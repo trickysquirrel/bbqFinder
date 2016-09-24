@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view alpha="0.080000000000000002" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,38 +30,14 @@
                         <constraint firstAttribute="width" constant="64" id="SSw-wH-fp6"/>
                     </constraints>
                 </imageView>
-                <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4n-qE-pSa">
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WWD-sP-stg">
-                        <frame key="frameInset"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0i-JO-cgh">
-                                <frame key="frameInset"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="LuX-Tv-ymN">
-                                    <frame key="frameInset"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <vibrancyEffect>
-                                    <blurEffect style="light"/>
-                                </vibrancyEffect>
-                            </visualEffectView>
-                        </subviews>
-                    </view>
-                    <blurEffect style="light"/>
-                </visualEffectView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="J4n-qE-pSa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3v9-er-6eH"/>
                 <constraint firstItem="xN6-ul-rts" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="G8j-4s-gjf"/>
                 <constraint firstItem="Wgb-ow-2er" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="JFf-8h-aVr"/>
-                <constraint firstAttribute="bottom" secondItem="J4n-qE-pSa" secondAttribute="bottom" id="NS9-vL-voF"/>
-                <constraint firstAttribute="trailing" secondItem="J4n-qE-pSa" secondAttribute="trailing" id="Vgz-bn-6Lb"/>
                 <constraint firstItem="P1q-k5-IUF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aDo-n6-lPR"/>
                 <constraint firstItem="Wgb-ow-2er" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gBZ-w0-rAM"/>
                 <constraint firstItem="P1q-k5-IUF" firstAttribute="top" secondItem="Wgb-ow-2er" secondAttribute="bottom" constant="38" id="oOl-DZ-sRE"/>
-                <constraint firstItem="J4n-qE-pSa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oWL-Ul-Cia"/>
                 <constraint firstItem="Wgb-ow-2er" firstAttribute="top" secondItem="xN6-ul-rts" secondAttribute="bottom" constant="38" id="vCo-Qq-QfA"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>

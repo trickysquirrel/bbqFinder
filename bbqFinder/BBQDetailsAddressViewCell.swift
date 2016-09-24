@@ -11,9 +11,7 @@ class BBQDetailsAddressViewCell: UITableViewCell {
     func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
 
         guard let viewModel = viewModel else { return }
-        addressLabel.textColor = viewModel.labelColour
         addressLabel.text = viewModel.infoText
-        isUserInteractionEnabled = viewModel.enabled
     }
 
 }

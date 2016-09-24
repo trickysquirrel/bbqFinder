@@ -47,10 +47,11 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqDetails(_ coordinate: CLLocationCoordinate2D, facilities: String) -> BBQDetailsTableViewController {
+    func makeBbqDetails(_ coordinate: CLLocationCoordinate2D, title: String, facilities: String) -> BBQDetailsTableViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
 
+        let locationDistance = LocationDistance()
         let appleMapsApp = AppleMapsAppDirection()
         let locationManager = UserLocationStatus()
         let requestUsersLocation = UserLocation(locationStatus: locationManager)
@@ -59,7 +60,14 @@ class ViewControllerFactory: NSObject {
 
         let presenter = BBQDetailsPresenter(output: controller, style: appStyle, appleMapsApp: appleMapsApp)
         
-        let interactor = BBQDetailsInteractor(output: presenter, coordinate: coordinate, facilities: facilities, userLocation: requestUsersLocation, locationAddress: locationAddress)
+        let interactor = BBQDetailsInteractor(output: presenter,
+                                              bbqTitle:title,
+                                              bbqLatitude: coordinate.latitude,
+                                              bbqLongitude: coordinate.longitude,
+                                              facilities: facilities,
+                                              userLocation: requestUsersLocation,
+                                              locationAddress: locationAddress,
+                                              locationDistance: locationDistance)
 
         controller.interactor = interactor
         controller.alerter = alerter

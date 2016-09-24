@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258791D9571F100E3F33E /* LocationDistance.swift */; };
+		3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012587B1D96A6C200E3F33E /* LabelSpacing.swift */; };
 		3030E31C1D7E061400647CFA /* BBQMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31B1D7E061400647CFA /* BBQMapViewController.swift */; };
 		3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3030E31D1D7E070200647CFA /* MapKit.framework */; };
 		3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E31F1D7E078200647CFA /* BBQMapView.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301258791D9571F100E3F33E /* LocationDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDistance.swift; sourceTree = "<group>"; };
+		3012587B1D96A6C200E3F33E /* LabelSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSpacing.swift; sourceTree = "<group>"; };
 		3030E31B1D7E061400647CFA /* BBQMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapViewController.swift; sourceTree = "<group>"; };
 		3030E31D1D7E070200647CFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3030E31F1D7E078200647CFA /* BBQMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapView.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				30D7EBF51D7F5329007C2884 /* UserLocationStatus.swift */,
 				3070C9671D8A4F0C00A033A6 /* UserLocation.swift */,
 				3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */,
+				301258791D9571F100E3F33E /* LocationDistance.swift */,
 			);
 			name = Location;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				30D7EBF91D7F6FB9007C2884 /* Location */,
 				30D7EBFC1D7F70D2007C2884 /* Alerter */,
 				3070C96F1D8B491F00A033A6 /* Apple Maps App */,
+				3012587B1D96A6C200E3F33E /* LabelSpacing.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 			files = (
 				30C717081D6C7F270085FFBD /* Router.swift in Sources */,
 				3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */,
+				3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */,
 				3050353C1D93E974002B7D1F /* UILabel+CharacterSpacing.swift in Sources */,
 				3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */,
 				30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */,
@@ -479,6 +486,7 @@
 				30D7EC091D80B167007C2884 /* BBQDetailsPresenter.swift in Sources */,
 				30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */,
 				30D7EBF21D7F4D97007C2884 /* MelbournBBQs.swift in Sources */,
+				3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */,
 				30D7EBF61D7F5329007C2884 /* UserLocationStatus.swift in Sources */,
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
 				3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */,

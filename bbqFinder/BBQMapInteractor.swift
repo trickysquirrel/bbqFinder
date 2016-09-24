@@ -7,7 +7,7 @@ import Foundation
 
 enum BBQMapInteractorResponseModel {
     case bbqs([BBQ])
-    case usersLocation(lat:Double, lon:Double)
+    case usersLocation(latitude:Double, longitude:Double)
     case userLocationDenied
 }
 
@@ -51,9 +51,9 @@ class BBQMapInteractor: NSObject, UserLocationDelegate {
     }
 
 
-    func requestUserLocationCompleted(_ latitude:Double, longitude:Double) {
+    func requestUserLocationCompleted(latitude:Double, longitude:Double) {
 
-        output.interactorUpdate(.usersLocation(lat: latitude, lon: longitude))
+        output.interactorUpdate(.usersLocation(latitude: latitude, longitude: longitude))
     }
 
     // MARK: Response Models

@@ -22,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Myv-3K-MJO" id="tym-pn-mgZ">
-                                            <frame key="frameInset" width="375" height="249"/>
+                                            <frame key="frameInset" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xl-0x-7Tu"/>
@@ -38,69 +38,85 @@
                                             <outlet property="mapView" destination="6Xl-0x-7Tu" id="Paz-7B-aj6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="Fpi-E5-kTY" customClass="BBQDetailsDistanceViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="130" id="Fpi-E5-kTY" customClass="BBQDetailsDistanceViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="250" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fpi-E5-kTY" id="oeX-8Y-bpk">
-                                            <frame key="frameInset" width="375" height="59"/>
+                                            <frame key="frameInset" width="375" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-82-i8K">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-82-i8K" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-om-C5a">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8R-K6-wBV">
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwt-e4-Z8Z">
+                                                    <frame key="frameInset" minX="66" minY="71" width="243" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="Directions">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="userSelectedDirection" destination="EuX-Nb-AaI" eventType="touchUpInside" id="rM0-nD-9xC"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-om-C5a">
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eN3-82-i8K" firstAttribute="leading" secondItem="oeX-8Y-bpk" secondAttribute="leadingMargin" constant="8" id="JWi-C5-YgM"/>
-                                                <constraint firstItem="ruX-om-C5a" firstAttribute="trailing" secondItem="oeX-8Y-bpk" secondAttribute="trailingMargin" id="Jx7-Vu-EmE"/>
-                                                <constraint firstItem="ruX-om-C5a" firstAttribute="centerY" secondItem="oeX-8Y-bpk" secondAttribute="centerY" id="Yhz-Du-ZUS"/>
-                                                <constraint firstItem="eN3-82-i8K" firstAttribute="centerY" secondItem="oeX-8Y-bpk" secondAttribute="centerY" id="okC-ig-eYW"/>
+                                                <constraint firstItem="M8R-K6-wBV" firstAttribute="top" secondItem="oeX-8Y-bpk" secondAttribute="topMargin" id="7nt-2P-XK9"/>
+                                                <constraint firstItem="M8R-K6-wBV" firstAttribute="leading" secondItem="oeX-8Y-bpk" secondAttribute="leadingMargin" constant="8" id="KU5-NP-aBM"/>
+                                                <constraint firstItem="eN3-82-i8K" firstAttribute="top" secondItem="M8R-K6-wBV" secondAttribute="bottom" constant="1" id="LAQ-7Y-Bhh"/>
+                                                <constraint firstItem="eN3-82-i8K" firstAttribute="top" secondItem="M8R-K6-wBV" secondAttribute="bottom" constant="1" id="Qxc-fR-vXj"/>
+                                                <constraint firstItem="eN3-82-i8K" firstAttribute="leading" secondItem="oeX-8Y-bpk" secondAttribute="leadingMargin" constant="8" id="Y3p-pz-Qwb"/>
+                                                <constraint firstItem="M8R-K6-wBV" firstAttribute="trailing" secondItem="oeX-8Y-bpk" secondAttribute="trailingMargin" id="x5Y-iu-X1Y"/>
+                                                <constraint firstItem="ruX-om-C5a" firstAttribute="leading" secondItem="eN3-82-i8K" secondAttribute="trailing" constant="8" id="xe0-in-gH1"/>
+                                                <constraint firstItem="ruX-om-C5a" firstAttribute="centerY" secondItem="eN3-82-i8K" secondAttribute="centerY" id="y5m-Yf-gnh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="infoLabel" destination="ruX-om-C5a" id="cfl-T7-3Ql"/>
+                                            <outlet property="titleLabel" destination="M8R-K6-wBV" id="yxz-oZ-fBh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BBQDetailsDirectionsCellId" textLabel="ayj-P5-TaJ" rowHeight="60" style="IBUITableViewCellStyleDefault" id="YKu-rE-T4C" customClass="BBQDetailsDirectionViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="310" width="375" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YKu-rE-T4C" id="VLp-dM-RPv">
-                                            <frame key="frameInset" width="341" height="59.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Directions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ayj-P5-TaJ">
-                                                    <frame key="frameInset" minX="16" width="324" height="59.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BBQDetailsAmmenitiesCellId" rowHeight="80" id="vHh-Jg-SXu" customClass="BBQDetailsAmenitiesViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="370" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BBQDetailsAmmenitiesCellId" rowHeight="80" id="vHh-Jg-SXu" customClass="BBQDetailsAmenitiesViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="380" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHh-Jg-SXu" id="uDB-ew-azi">
                                             <frame key="frameInset" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-cp-c9M">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-cp-c9M" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="bRo-gv-eaK"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlE-D6-S4r">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -118,33 +134,51 @@
                                             <outlet property="infoLabel" destination="JlE-D6-S4r" id="gR4-oL-6La"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BBQDetailsAddressCellId" rowHeight="140" id="Iya-pG-FGq" customClass="BBQDetailsAddressViewCell" customModule="bbqFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="450" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BBQDetailsAddressCellId" rowHeight="140" id="Iya-pG-FGq" customClass="BBQDetailsAddressViewCell" customModule="bbqFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="460" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iya-pG-FGq" id="RPm-xk-NL2">
-                                            <frame key="frameInset" width="342" height="139"/>
+                                            <frame key="frameInset" width="375" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-hQ-4tQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-hQ-4tQ" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="RnP-cW-gsz"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="spacing">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-93-74N">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA5-I8-baq">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="NPs-di-TAV"/>
+                                                        <constraint firstAttribute="width" constant="44" id="onL-vh-eA5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <state key="normal" image="share"/>
+                                                    <connections>
+                                                        <action selector="userSelectedShare" destination="EuX-Nb-AaI" eventType="touchUpInside" id="VkF-tr-gzE"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0Lo-93-74N" firstAttribute="trailing" secondItem="RPm-xk-NL2" secondAttribute="trailingMargin" id="2L1-fL-g3O"/>
                                                 <constraint firstItem="0Lo-93-74N" firstAttribute="top" secondItem="KDP-hQ-4tQ" secondAttribute="bottom" constant="8" id="7nn-Kv-BTn"/>
                                                 <constraint firstItem="KDP-hQ-4tQ" firstAttribute="leading" secondItem="RPm-xk-NL2" secondAttribute="leadingMargin" constant="8" id="F4h-RE-HbU"/>
+                                                <constraint firstItem="vA5-I8-baq" firstAttribute="centerY" secondItem="RPm-xk-NL2" secondAttribute="centerY" id="JbZ-h5-7na"/>
                                                 <constraint firstItem="0Lo-93-74N" firstAttribute="leading" secondItem="RPm-xk-NL2" secondAttribute="leadingMargin" constant="8" id="Myg-Wc-LOs"/>
                                                 <constraint firstItem="0Lo-93-74N" firstAttribute="bottom" secondItem="RPm-xk-NL2" secondAttribute="bottomMargin" id="he6-S9-gS6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vA5-I8-baq" secondAttribute="trailing" constant="8" id="v3Y-1F-Xwi"/>
                                                 <constraint firstItem="KDP-hQ-4tQ" firstAttribute="top" secondItem="RPm-xk-NL2" secondAttribute="topMargin" id="y8h-qP-cAq"/>
                                             </constraints>
                                             <variation key="default">
@@ -168,14 +202,16 @@
                     <connections>
                         <outlet property="addressViewCell" destination="Iya-pG-FGq" id="cQa-fb-XxL"/>
                         <outlet property="ammentiesViewCell" destination="vHh-Jg-SXu" id="VrY-Zo-rZZ"/>
-                        <outlet property="directionViewCell" destination="YKu-rE-T4C" id="vwM-Zv-gUo"/>
                         <outlet property="distanceViewCell" destination="Fpi-E5-kTY" id="D8P-oI-4Li"/>
                         <outlet property="mapViewCell" destination="Myv-3K-MJO" id="pTq-tW-12z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnr-zh-Pfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925" y="543"/>
+            <point key="canvasLocation" x="1924" y="542.87856071964018"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="share" width="32" height="32"/>
+    </resources>
 </document>

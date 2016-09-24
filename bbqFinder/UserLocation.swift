@@ -8,7 +8,7 @@ import CoreLocation
 
 protocol UserLocationDelegate: class {
     func requestUserLocationDenied()
-    func requestUserLocationCompleted(_ latitude:Double, longitude:Double)
+    func requestUserLocationCompleted(latitude:Double, longitude:Double)
 }
 
 
@@ -19,15 +19,15 @@ class UserLocation: NSObject, LocationManagerStatusDelegate {
     let geocoder: CLGeocoder
 
 
-
     init(locationStatus: UserLocationStatus) {
+
         self.locationStatus = locationStatus
         geocoder = CLGeocoder()
     }
 
 
     func canRequestUserLocation() -> Bool {
-        
+
         if locationStatus.isCurrentLocationAuthorised() {
             return true
         }
@@ -46,7 +46,7 @@ class UserLocation: NSObject, LocationManagerStatusDelegate {
             locationStatus.requestLocationWhenInUse()
         }
         else if let location = locationStatus.currentLocation() {
-            self.delegate?.requestUserLocationCompleted(location.lat, longitude: location.lon)
+            self.delegate?.requestUserLocationCompleted(latitude: location.lat, longitude: location.lon)
         }
     }
 
@@ -54,7 +54,7 @@ class UserLocation: NSObject, LocationManagerStatusDelegate {
     // MARK: Location status delegate
 
     @objc internal func locationManagerStatusUpdated(_ locationManager: UserLocationStatus) {
-        
+
         requestUsersLocation()
     }
 

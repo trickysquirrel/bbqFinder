@@ -2,10 +2,11 @@
 //  Copyright © 2016 RichardMoult. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 typealias DataModelAction = (() -> Void)
+typealias DataModelViewControllerAction = ((_ viewController: UIViewController) -> Void)
 
 struct AreaDataModel {
     let viewModel: AreaViewModel

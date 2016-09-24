@@ -7,7 +7,9 @@ import MapKit
 
 
 struct BBQDetails {
-    let coordinate: CLLocationCoordinate2D
+    let title: String
+    let latitude: Double
+    let longitude: Double
     let userLocationUnknown: Bool
     let distanceInMeters: Int
     let address: String
@@ -29,20 +31,34 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
     private let output: BBQDetailsInteractorOutput
     private let userLocation: UserLocation
     private let locationAddress: LocationAddress
-    private let bbqCoordinate: CLLocationCoordinate2D
+    private let bbqTitle: String
+    private let bbqLatitude: Double
+    private let bbqLongitude: Double
     private let facilities: String
+    private let locationDistance: LocationDistance
 
     private var distanceInMeters: Int = 0
     private var userLocationAuthorised = false
     private var address: String = ""
 
 
-    init(output: BBQDetailsInteractorOutput, coordinate: CLLocationCoordinate2D, facilities: String, userLocation: UserLocation, locationAddress: LocationAddress) {
+    init(output: BBQDetailsInteractorOutput,
+         bbqTitle: String,
+         bbqLatitude: Double,
+         bbqLongitude: Double,
+         facilities: String,
+         userLocation: UserLocation,
+         locationAddress: LocationAddress,
+         locationDistance: LocationDistance) {
+        
         self.output = output
-        self.bbqCoordinate = coordinate
+        self.bbqTitle = bbqTitle
+        self.bbqLatitude = bbqLatitude
+        self.bbqLongitude = bbqLongitude
         self.facilities = facilities
         self.userLocation = userLocation
         self.locationAddress = locationAddress
+        self.locationDistance = locationDistance
         super.init()
         self.locationAddress.delegate = self
     }
@@ -68,7 +84,7 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
 
     func fetchBBQAddress() {
 
-        locationAddress.requestAddress(bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
+        locationAddress.requestAddress(bbqLatitude, longitude: bbqLongitude)
     }
     
 
@@ -87,13 +103,9 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
     }
 
 
-    func requestUserLocationCompleted(_ latitude:Double, longitude:Double) {
+    func requestUserLocationCompleted(latitude:Double, longitude:Double) {
 
-        let locationBbq = CLLocation(latitude: bbqCoordinate.latitude, longitude: bbqCoordinate.longitude)
-
-        let locationUser = CLLocation(latitude: latitude, longitude: longitude)
-
-        distanceInMeters = Int(locationBbq.distance(from: locationUser))
+        distanceInMeters = Int( locationDistance.calculateDistanceInMetersBetween(latitudeA: bbqLatitude, longitudeA: bbqLongitude, latitudeB: latitude, longitudeB: longitude))
 
         output.interactorUpdate(.details(makeBBQDetails()))
     }
@@ -108,8 +120,14 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
 
     // MARK: Helpers
 
-    fileprivate func makeBBQDetails() -> BBQDetails {
+    private func makeBBQDetails() -> BBQDetails {
 
-        return BBQDetails(coordinate: bbqCoordinate, userLocationUnknown: !userLocationAuthorised, distanceInMeters: distanceInMeters, address: address, facilities: facilities)
+        return BBQDetails(title: bbqTitle,
+                          latitude: bbqLatitude,
+                          longitude: bbqLongitude,
+                          userLocationUnknown: !userLocationAuthorised,
+                          distanceInMeters: distanceInMeters,
+                          address: address,
+                          facilities: facilities)
     }
 }

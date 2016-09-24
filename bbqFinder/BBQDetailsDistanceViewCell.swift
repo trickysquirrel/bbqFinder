@@ -6,13 +6,13 @@ import UIKit
 
 class BBQDetailsDistanceViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
 
-    func configureWithViewModel(_ viewModel: BBQDetailsViewCellModel?) {
+    func configureWithViewModel(title: String, distance: String, distanceColour: UIColor) {
 
-        guard let viewModel = viewModel else { return }
-        infoLabel?.textColor = viewModel.labelColour
-        isUserInteractionEnabled = viewModel.enabled
-        infoLabel?.text = viewModel.infoText
+        titleLabel.setText(text: title, characterSpacing: 1.0)
+        infoLabel?.text = distance
+        infoLabel?.textColor = distanceColour
     }
 }

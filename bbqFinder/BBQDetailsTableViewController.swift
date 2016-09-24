@@ -11,7 +11,6 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
     private var viewModels: BBQDetailsViewModel?
     @IBOutlet weak var mapViewCell: BBQDetailsMapViewCell!
     @IBOutlet weak var distanceViewCell: BBQDetailsDistanceViewCell!
-    @IBOutlet weak var directionViewCell: BBQDetailsDirectionViewCell!
     @IBOutlet weak var ammentiesViewCell: BBQDetailsAmenitiesViewCell!
     @IBOutlet weak var addressViewCell: BBQDetailsAddressViewCell!
 
@@ -23,7 +22,7 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     // MARK: Presenter output
     
-    func presenterUpdate(_ response: BBQDetailsPresenterResponseModel) {
+    func presenterUpdate(response: BBQDetailsPresenterResponseModel) {
 
         switch response {
 
@@ -43,22 +42,21 @@ class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterO
 
     fileprivate func updateAllViewCells(_ viewModels: BBQDetailsViewModel) {
 
-        mapViewCell.configureWithViewModel(viewModels.cellModels[safe:0], coordinate: viewModels.coordinate)
-        distanceViewCell.configureWithViewModel(viewModels.cellModels[safe:1])
-        directionViewCell.configureWithViewModel(viewModels.cellModels[safe:2])
+        mapViewCell.configureWithViewModel(coordinate: viewModels.coordinate)
+        distanceViewCell.configureWithViewModel(title: viewModels.title, distance: viewModels.distance, distanceColour: viewModels.distanceColour)
         ammentiesViewCell.configureWithViewModel(viewModels.cellModels[safe:3])
         addressViewCell.configureWithViewModel(viewModels.cellModels[safe:4])
     }
 
+    // MARK: Actions
 
-    // MARK: tabel view delegate
+    @IBAction func userSelectedDirection() {
+        viewModels?.directionAction()
+    }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        tableView.deselectRow(at: indexPath, animated: true)
-        if let cellModel = self.viewModels?.cellModels[safe: (indexPath as NSIndexPath).row] {
-            cellModel.action?()
-        }
+    
+    @IBAction func userSelectedShare() {
+        viewModels?.shareAction(self)
     }
     
 }

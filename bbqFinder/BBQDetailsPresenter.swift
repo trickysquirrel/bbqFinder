@@ -10,12 +10,18 @@ import MapKit
 
 struct BBQDetailsViewCellModel {
     let labelColour: UIColor
-    let action: DataModelAction?
+    let action: DataModelAction
     let enabled: Bool
     let infoText: String
 }
 
+// todo this should be data model and extra view stuff
 struct BBQDetailsViewModel {
+    let title: String
+    let distance: String
+    let distanceColour: UIColor
+    let directionAction: DataModelAction
+    let shareAction: DataModelViewControllerAction
     let coordinate: CLLocationCoordinate2D
     let cellModels: [BBQDetailsViewCellModel]
 }
@@ -27,22 +33,23 @@ enum BBQDetailsPresenterResponseModel {
 }
 
 protocol BBQDetailsPresenterOutput: class {
-    func presenterUpdate(_ response: BBQDetailsPresenterResponseModel)
+    func presenterUpdate(response: BBQDetailsPresenterResponseModel)
 }
 
 
 class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
-    private weak var output: BBQDetailsPresenterOutput?
-    private let style: AppStyle
-    private let appleMapsApp: AppleMapsApp
+    fileprivate weak var output: BBQDetailsPresenterOutput?
+    fileprivate let style: AppStyle
+    fileprivate let appleMapsApp: AppleMapsApp
 
-    private let distanceUnknownString = "your location is unknown"
-    private let fetchingDistance = "please wait"
-    private let facilitiesUnknownString = "unknown"
-    private let requestingAddressString = "please wait"
-    private let locationServiceOffTitle = "location services off"
-    private let locationServiceOffMessage = "please go to settings and allow user location to be determined"
+    // todo localise
+    fileprivate let distanceUnknownString = "your location is unknown"
+    fileprivate let fetchingDistance = "please wait"
+    fileprivate let facilitiesUnknownString = "unknown"
+    fileprivate let requestingAddressString = "please wait"
+    fileprivate let locationServiceOffTitle = "location services off"
+    fileprivate let locationServiceOffMessage = "please go to settings and allow user location to be determined"
 
 
     init(output: BBQDetailsPresenterOutput, style: AppStyle, appleMapsApp: AppleMapsApp) {
@@ -61,79 +68,117 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
         case .details(let details):
 
             let viewModel = makeBBQDetailsDataModel(details)
-            output?.presenterUpdate( .details(viewModel) )
+            output?.presenterUpdate( response: .details(viewModel) )
 
         case .userLocationDenied:
             
-            output?.presenterUpdate(.displayAlert(title: locationServiceOffTitle, message: locationServiceOffMessage))
+            output?.presenterUpdate(response: .displayAlert(title: locationServiceOffTitle, message: locationServiceOffMessage))
         }
     }
 
 
-    fileprivate func makeBBQDetailsDataModel(_ bbqDetails: BBQDetails) -> BBQDetailsViewModel {
+    private func makeBBQDetailsDataModel(_ bbqDetails: BBQDetails) -> BBQDetailsViewModel {
 
-        var labelColour = style.enabledColour
-
-        let noAction: DataModelAction? = nil
-
-        var distanceAction: DataModelAction? = nil
-        var directionAction: DataModelAction? = makeShowDirectionAction(bbqDetails)
-
-        if bbqDetails.userLocationUnknown {
-
-            labelColour = style.disabledColour
-
-            let requestUserLocationAction: DataModelAction  = { self.output?.presenterUpdate(.requiresUserLocation) }
-            distanceAction = requestUserLocationAction
-            directionAction = requestUserLocationAction
-        }
-
-        let mapViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: noAction, enabled: false, infoText: "")
-
-        let distanceString = presentDistanceInMeters(bbqDetails)
-
-        let distanceViewModel = BBQDetailsViewCellModel(labelColour: labelColour, action: distanceAction, enabled: false, infoText: distanceString)
-
-        let directionViewModel = BBQDetailsViewCellModel(labelColour: style.enabledColour, action: directionAction, enabled: true, infoText: "")
-
-        let facilities = presentFacilitiesTextAndColour(bbqDetails)
-
-        let ammenitiesViewModel = BBQDetailsViewCellModel(labelColour: facilities.colour, action: noAction, enabled: false, infoText: facilities.text)
-
-        let addressTextAndColour = presentAddressTextAndColour(bbqDetails)
-
-        let addressViewModel = BBQDetailsViewCellModel(labelColour: addressTextAndColour.colour, action: directionAction, enabled: true, infoText: addressTextAndColour.text)
+        let mapViewModel = makeMapViewCellModel(bbqDetails: bbqDetails)
+        let distanceViewModel = makeDistanceViewCellModel(bbqDetails: bbqDetails)
+        let directionViewModel = makeDirectionViewCellModel(bbqDetails: bbqDetails)
+        let ammenitiesViewModel = makeAmmenitiesViewCellModel(bbqDetails: bbqDetails)
+        let addressViewModel = makeAddressViewCellModel(bbqDetails: bbqDetails)
 
         let cellViewModels = [ mapViewModel, distanceViewModel, directionViewModel, ammenitiesViewModel, addressViewModel ]
 
+        let bbqLocation2D = CLLocationCoordinate2DMake(bbqDetails.latitude, bbqDetails.longitude)
+
+        var distanceColour = style.enabledColour
+
+        if bbqDetails.userLocationUnknown {
+            distanceColour = style.disabledColour
+        }
+
+
         return BBQDetailsViewModel(
-                coordinate: bbqDetails.coordinate,
+                title: bbqDetails.title,
+                distance: presentDistance(bbqDetails),
+                distanceColour: distanceColour,
+                directionAction: makeShowDirectionAction(bbqDetails: bbqDetails),
+                shareAction: makeShareAction(bbqDetails: bbqDetails),
+                coordinate: bbqLocation2D,
                 cellModels: cellViewModels
         )
     }
+}
 
-    // MARK: Presenters
 
-    fileprivate func presentAddressTextAndColour(_ bbqDetails: BBQDetails) ->(text: String, colour: UIColor) {
+// MARK: View Cell Models
+extension BBQDetailsPresenter {
 
-        if bbqDetails.address.characters.count == 0 {
-            return (requestingAddressString, style.disabledColour)
-        }
-
-        return (bbqDetails.address,style.selectableColour)
+    fileprivate func makeMapViewCellModel(bbqDetails: BBQDetails) -> BBQDetailsViewCellModel {
+        let emptyAction = makeEmptyAction()
+        return BBQDetailsViewCellModel(labelColour: style.enabledColour, action: emptyAction, enabled: false, infoText: "")
     }
 
 
-    fileprivate func presentFacilitiesTextAndColour(_ bbqDetails: BBQDetails) -> (text:String, colour:UIColor) {
+    fileprivate func makeDistanceViewCellModel(bbqDetails: BBQDetails) -> BBQDetailsViewCellModel {
 
-        if bbqDetails.facilities.isEmpty {
-            return (facilitiesUnknownString, style.disabledColour)
+        var action = makeEmptyAction()
+        var colour = style.enabledColour
+        let distanceString = presentDistance(bbqDetails)
+
+        if bbqDetails.userLocationUnknown {
+            action = { self.output?.presenterUpdate(response: .requiresUserLocation) }
+            colour = style.disabledColour
         }
-        return (bbqDetails.facilities, style.enabledColour)
+
+        return BBQDetailsViewCellModel(labelColour: colour, action: action, enabled: false, infoText: distanceString)
     }
 
 
-    fileprivate func presentDistanceInMeters(_ bbqDetails: BBQDetails) -> String {
+    fileprivate func makeDirectionViewCellModel(bbqDetails: BBQDetails) -> BBQDetailsViewCellModel {
+        let action = makeActionForDirections(bbqDetails: bbqDetails)
+        return BBQDetailsViewCellModel(labelColour: style.enabledColour, action: action, enabled: true, infoText: "")
+    }
+
+
+    fileprivate func makeAmmenitiesViewCellModel(bbqDetails: BBQDetails) -> BBQDetailsViewCellModel {
+        var text = facilitiesUnknownString
+        var colour = style.disabledColour
+        let emptyAction = makeEmptyAction()
+
+        if bbqDetails.facilities.isEmpty == false {
+            text = bbqDetails.facilities
+            colour = style.enabledColour
+        }
+
+        return BBQDetailsViewCellModel(labelColour: colour, action: emptyAction, enabled: false, infoText: text)
+    }
+
+
+    fileprivate func makeAddressViewCellModel(bbqDetails: BBQDetails) -> BBQDetailsViewCellModel {
+
+        var text = requestingAddressString
+        var colour = style.disabledColour
+
+        if bbqDetails.address.characters.count > 0 {
+            text = bbqDetails.address
+            colour = style.selectableColour
+        }
+
+        return BBQDetailsViewCellModel(labelColour: colour, action: makeEmptyAction(), enabled: true, infoText: text)
+    }
+
+
+    private func makeActionForDirections(bbqDetails: BBQDetails) -> DataModelAction {
+
+        if bbqDetails.userLocationUnknown {
+            return { self.output?.presenterUpdate(response: .requiresUserLocation) }
+        }
+        else {
+            return makeShowDirectionAction(bbqDetails: bbqDetails)
+        }
+    }
+
+
+    fileprivate func presentDistance(_ bbqDetails: BBQDetails) -> String {
 
         var distanceString = distanceUnknownString
         if bbqDetails.userLocationUnknown == false {
@@ -142,25 +187,65 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
                 distanceString = fetchingDistance
             }
             else {
-                distanceString = "\(bbqDetails.distanceInMeters)m"
+                if bbqDetails.distanceInMeters < 999 {
+                    distanceString = "\(bbqDetails.distanceInMeters)m"
+                }
+                else {
+                    let kmDistance: Double = Double(bbqDetails.distanceInMeters)/1000.0
+                    distanceString = String(format: "%.2fkm", kmDistance)
+                }
             }
         }
         return distanceString
     }
+}
 
-    // MARK: Actions
+
+// MARK: Actions
+extension BBQDetailsPresenter {
+
 
     fileprivate func makeRequestUserLocationAction() -> DataModelAction {
 
-        return  { self.output?.presenterUpdate(.requiresUserLocation) }
+        return { self.output?.presenterUpdate(response: .requiresUserLocation) }
     }
 
 
-    fileprivate func makeShowDirectionAction(_ bbqDetails: BBQDetails) -> DataModelAction {
+    fileprivate func makeEmptyAction() -> DataModelAction {
+
+        return {}
+    }
+
+
+    fileprivate func makeShareAction(bbqDetails: BBQDetails) -> DataModelViewControllerAction {
+
+        return { viewController in
+
+            let textToShare = "Lets meet at a BBQ here"
+
+            let latString = String(format: "%.6f", bbqDetails.latitude)
+            let lonString = String(format: "%.6f", bbqDetails.longitude)
+
+            if let myWebsite = NSURL(string: "http://maps.google.com/?ie=UTF8&hq=&ll=\(latString),\(lonString)&z=20") {
+
+                let objectsToShare = [textToShare, myWebsite] as [Any]
+
+                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+                activityVC.popoverPresentationController?.sourceView = viewController.view
+                viewController.present(activityVC, animated: true, completion: nil)
+            }
+        }
+    }
+
+
+    fileprivate func makeShowDirectionAction(bbqDetails: BBQDetails) -> DataModelAction {
 
         let showDirectionsAction: DataModelAction  = {
-            self.appleMapsApp.showDirectionsForLatitude(bbqDetails.coordinate.latitude, longitude: bbqDetails.coordinate.longitude, regionDistance: 10000, pinTitle: "bbq")
+            self.appleMapsApp.showDirectionsForLatitude(bbqDetails.latitude, longitude: bbqDetails.longitude, regionDistance: 10000, pinTitle: "bbq")
         }
         return showDirectionsAction
     }
+
 }
+
