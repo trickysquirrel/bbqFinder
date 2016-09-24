@@ -15,7 +15,7 @@ struct ACTAreas {
 class AreasAcceptanceTestsHelper: NSObject {
 
     let testCase: XCTestCase
-    var providedAreaDataModels = [[AreaDataModel]]()
+    var providedAreaDataModels = [[AreaViewModel]]()
 
 
     override init() {
@@ -54,8 +54,8 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         if let section = providedAreaDataModels[safe: section] {
 
-            areas = section.map { ACTAreas(title:$0.viewModel.title,
-                                           subtitle:$0.viewModel.subtitle) }
+            areas = section.map { ACTAreas(title:$0.title,
+                                           subtitle:$0.subtitle) }
         }
         return areas
     }

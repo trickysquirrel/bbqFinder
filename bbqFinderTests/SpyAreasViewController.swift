@@ -8,7 +8,7 @@ import UIKit
 
 class SpyAreasViewController: AreasViewController {
 
-    var didReceivePresenterUpdate: ((_ areas: [[AreaDataModel]]) -> Void)?
+    var didReceivePresenterUpdate: ((_ areas: [[AreaViewModel]]) -> Void)?
 
     override func presenterUpdate(_ response:AreasMapPresenterResponse) {
 

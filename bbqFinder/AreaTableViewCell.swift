@@ -20,7 +20,7 @@ class AreaTableViewCell: UITableViewCell {
     }
 
 
-    func configureWithViewModel(viewModel: AreaViewModel) {
+    func configureWithViewModel(_ viewModel: AreaViewModel) {
         titleLabel.setText(text: viewModel.title, characterSpacing: 1.0)
         subtitleLabel.setText(text: viewModel.subtitle, characterSpacing: 5.0)
     }

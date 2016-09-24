@@ -8,18 +8,14 @@ import UIKit
 typealias DataModelAction = (() -> Void)
 typealias DataModelViewControllerAction = ((_ viewController: UIViewController) -> Void)
 
-struct AreaDataModel {
-    let viewModel: AreaViewModel
-    let action: DataModelAction
-}
-
 struct AreaViewModel {
     let title: String
     let subtitle: String
+    let action: DataModelAction
 }
 
 enum AreasMapPresenterResponse {
-    case updateAreas([[AreaDataModel]])
+    case updateAreas([[AreaViewModel]])
 }
 
 protocol ListAreaPresenterOutput: class {
@@ -43,7 +39,7 @@ class AreasPresenter: AreasInteractorOutput {
 
         let dataModelList = areaList.map {
 
-            AreaDataModel(viewModel: AreaViewModel(title:$0.title(), subtitle:$0.subtitle()),
+            AreaViewModel(title:$0.title(), subtitle:$0.subtitle(),
                           action: actionForTitle($0))
         }
         output?.presenterUpdate( .updateAreas([dataModelList]) )

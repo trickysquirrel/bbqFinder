@@ -6,7 +6,7 @@ import UIKit
 
 class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaPresenterOutput {
 
-    typealias dataSourceType = AreaDataModel
+    typealias dataSourceType = AreaViewModel
     private let dataSource: TableViewDataSource<AreasViewController>
     var interactor: AreasInteractor!    // required var for the controller/interactor/presenter dependancy
 
@@ -50,9 +50,9 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     }
     
 
-    func configureCell(tableViewCell cell:UITableViewCell, object:AreaDataModel) {
+    func configureCell(tableViewCell cell:UITableViewCell, object viewModel:AreaViewModel) {
         guard let cell = cell as? AreaTableViewCell else { return }
-        cell.configureWithViewModel(viewModel: object.viewModel)
+        cell.configureWithViewModel(viewModel)
     }
 
     // MARK: table view delegate
