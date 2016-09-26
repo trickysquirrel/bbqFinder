@@ -59,4 +59,10 @@ class LocationAddress: NSObject {
         return output + string
     }
 
+
+    func replaceCommasWithNewLines(address: String) -> String {
+
+        return address.replacingOccurrences(of: ",", with: "\n")
+    }
+
 }

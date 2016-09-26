@@ -1,0 +1,231 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "zzzz-zzzz",
+      "name" : "Public Barbeques",
+      "attribution" : "City of Melbourne, Australia",
+      "averageRating" : 0,
+      "category" : "Assets & Infrastructure",
+      "description" : "This dataset holds the description, type and geographical location of all BBQs in the City of Melbourne",
+      "displayType" : "table",
+      "downloadCount" : 0,
+      "indexUpdatedAt" : 1444700023,
+      "licenseId" : "CC_30_BY_AUS",
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 0,
+      "publicationAppendEnabled" : true,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1399013109,
+      "rowsUpdatedBy" : "cpk3-dipk",
+      "tableId" : 1566703,
+      "totalTimesRated" : 0,
+      "viewCount" : 0,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 146186378,
+        "name" : "Description",
+        "dataTypeName" : "text",
+        "description" : "Description of the place.",
+        "fieldName" : "descriptio",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 19465427,
+        "width" : 466,
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 146186386,
+        "name" : "Co-ordinates",
+        "dataTypeName" : "location",
+        "description" : "Co-ordinates of the barbeque place.",
+        "fieldName" : "geom",
+        "position" : 14,
+        "renderTypeName" : "location",
+        "tableColumnId" : 19465435,
+        "width" : 229,
+        "format" : {
+          "view" : "address_coords",
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : true,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "license" : {
+        "name" : "Creative Commons Attribution 3.0 Australia",
+        "logoUrl" : "images/licenses/cc30by.png",
+        "termsLink" : "http://creativecommons.org/licenses/by/3.0/au/deed.en"
+      },
+      "metadata" : {
+        "jsonQuery" : {
+          "order" : [ {
+            "ascending" : true,
+            "columnFieldName" : "asset_subt"
+          } ]
+        },
+        "rdfSubject" : "0",
+        "rdfClass" : "",
+        "custom_fields" : {
+          "Melbourne Metadata" : {
+            "Data Quality" : "4 Star",
+            "Original upload date" : "30/04/2014",
+            "Spatial dataset" : "Yes",
+            "Update Frequency" : "As Required",
+            "Version number" : "1",
+            "Last Updated" : "30/04/2014",
+            "Data Completeness statement: Has the full dataset been included, or has a subset been excluded? Why?" : "All data held by the City of Melbourne has been included"
+          }
+        },
+        "rowIdentifier" : "0",
+        "rowLabel" : "Row",
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "fatrow" : true,
+            "page" : true,
+            "table" : true
+          }
+        }
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "xcv7-86fp",
+        "displayName" : "City of Melbourne",
+        "profileImageUrlLarge" : "/api/users/xcv7-86fp/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/xcv7-86fp/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/xcv7-86fp/profile_images/TINY",
+        "roleName" : "administrator",
+        "screenName" : "City of Melbourne",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "tags" : [ "bbq", "public bbq", "parks", "food", "picnic", "barbecue", "eventsplanner" ],
+      "flags" : [ "unsaved" ]
+    }
+  },
+  "data" : [ [ 1, "9EE8CE55-5E0C-4845-B70A-043B10EFDEDB", 1, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Enterprize Park", [ null, "-37.8202390666158", "144.959910438727", null, false ] ]
+, [ 2, "6ECE72DB-C0C3-43C3-BCED-9F05F98CF844", 2, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Barbeque (Docklands - not categorised)", [ null, "-37.8219867297684", "144.947270632022", null, false ] ]
+, [ 3, "42735B51-1DC4-4649-8644-39C6D2948475", 3, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Brick Single Hotplate", [ null, "-37.8217875175357", "144.957267921996", null, false ] ]
+, [ 4, "E32E6EEE-C812-46D2-8F64-40C86087CEB3", 4, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.8299740085141", "144.965159992732", null, false ] ]
+, [ 5, "27503B8B-0EF4-4682-BA55-4ED0CE1B20A6", 5, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8277830318739", "144.982952980632", null, false ] ]
+, [ 6, "E7C8F5E6-F913-46FE-B337-8D2551DC99A1", 6, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Bluestone Double Hotplate", [ null, "-37.7990318232721", "144.943431824152", null, false ] ]
+, [ 7, "F8453583-94C5-44DC-96D1-FA36FC940CB6", 7, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7885474331189", "144.926229545123", null, false ] ]
+, [ 8, "40079866-2BFF-4BF2-84BF-8D05D5478127", 8, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate - Alexandra Park", [ null, "-37.8241264190802", "144.977526546641", null, false ] ]
+, [ 9, "676E7176-5888-4088-BB36-552691E31909", 9, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8272700958416", "144.981192395015", null, false ] ]
+, [ 10, "C45AA2B4-304F-4064-83E4-EF64C180A6BD", 10, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7869785497088", "144.95295755838", null, false ] ]
+, [ 11, "788B9C03-9396-45B7-ACD5-BB975AABE0A5", 11, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.7979461421323", "144.921420205265", null, false ] ]
+, [ 12, "D43926E3-40B4-4C68-8D1A-7EA9A7A6A875", 12, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate - Warun Biik Park", [ null, "-37.7962232357793", "144.926647354479", null, false ] ]
+, [ 13, "5212E408-314A-4588-86EF-9E34E6A0809C", 13, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7978044430348", "144.926095148364", null, false ] ]
+, [ 14, "AB02BCF7-9113-4832-BAEB-A86639152863", 14, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7794864233462", "144.939860204242", null, false ] ]
+, [ 15, "1B810660-B843-43F3-8C8E-3ABA091E9631", 15, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate - Alexandra Park", [ null, "-37.8246224193697", "144.977945862679", null, false ] ]
+, [ 16, "1FBA13BF-CA3E-43F7-BCB0-F33EA28C3DEC", 16, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Fawkner Park Toddler Play Space", [ null, "-37.8391633644094", "144.980667021681", null, false ] ]
+, [ 17, "1305200A-93AD-40AD-8844-DF3A9931541A", 17, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.8207420265614", "144.962503021056", null, false ] ]
+, [ 18, "22FAD0C7-C828-4C31-81A9-25E7DBB0E341", 18, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Unknown model - JJ Holland Park", [ null, "-37.7974424626108", "144.923370662567", null, false ] ]
+, [ 19, "6B3011FF-A6D1-4DCF-8201-A998F46BDA05", 19, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Brick Single Hotplate", [ null, "-37.7936371319885", "144.940318095482", null, false ] ]
+, [ 20, "B2FFFDBC-F1CB-4C46-B283-F3A9C0B7B343", 20, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8276800360085", "144.982417019765", null, false ] ]
+, [ 21, "B208704F-91AC-4DAE-83FA-7FAA1210F43F", 21, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate - Royal Park", [ null, "-37.7854523349727", "144.946188017402", null, false ] ]
+, [ 22, "E5080607-B50B-4C4D-8938-BD293631C7DC", 22, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.809571010654", "144.954858909896", null, false ] ]
+, [ 23, "018A6CED-636B-4FF3-A144-E183128AB044", 23, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate Spanning Two Units - Alexandra Park", [ null, "-37.8242600533734", "144.977646619935", null, false ] ]
+, [ 24, "5316F413-6B75-4877-B12B-B120333832E7", 24, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.7830587361358", "144.944360438628", null, false ] ]
+, [ 25, "9C4B4434-36DC-42DB-841E-DE21C9BC13E4", 25, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Barbeque (Docklands - not categorised)", [ null, "-37.8230649594663", "144.94180279899", null, false ] ]
+, [ 26, "72E40D14-5F7D-478A-BB11-8E3A63A95521", 26, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8423871533564", "144.981908203787", null, false ] ]
+, [ 27, "9A7819FE-E60F-451E-B082-4B5F4A72BE92", 27, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7899871990245", "144.94502340389", null, false ] ]
+, [ 28, "5D15EDFC-6C18-4000-B87E-97C0C4551755", 28, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.8198213422369", "144.974801707537", null, false ] ]
+, [ 29, "18F39D98-121F-4BF7-82E5-09979D8844A7", 29, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate - Fawkner Park", [ null, "-37.8407762210928", "144.983938810609", null, false ] ]
+, [ 30, "BE3D29CB-F884-4E82-8D0B-B5DE2CFAFC5F", 30, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Brick Single Hotplate", [ null, "-37.8217756062805", "144.957287790679", null, false ] ]
+, [ 31, "94A63C4C-44CD-412A-9ED8-45FB1A530293", 31, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Unknown Barbeque Type", [ null, "-37.8188905200849", "144.942754984404", null, false ] ]
+, [ 32, "9ADDDB18-9F1D-4649-8586-49ACF8211B51", 32, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7850762057896", "144.962429016152", null, false ] ]
+, [ 33, "54FD9A1E-0328-41E2-B1C6-311AA9F01B66", 33, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Barbeque (Docklands - not categorised)", [ null, "-37.8208690109621", "144.946531929423", null, false ] ]
+, [ 34, "82789F15-1F99-4CEA-9394-8B17935A44A8", 34, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8273630728151", "144.981437996496", null, false ] ]
+, [ 35, "2955BEE9-CB90-4602-894E-4E62DA12E49D", 35, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7937519856621", "144.924040571257", null, false ] ]
+, [ 36, "41A92165-7203-41C5-B6E0-CAC259B3F070", 36, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8275329822723", "144.981908051517", null, false ] ]
+, [ 37, "8FECF4E1-EF58-4A9A-AC29-3A597D919EAD", 37, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.7829165883469", "144.943625531237", null, false ] ]
+, [ 38, "AD995240-9568-49AE-9AD8-912C6160194E", 38, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8274468037021", "144.981675215773", null, false ] ]
+, [ 39, "84436EC6-1025-479F-8B23-CCD0DEF3BF93", 39, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7820010694697", "144.956631830226", null, false ] ]
+, [ 40, "B538B731-1C02-4FF9-8E3C-AB7FC36DA255", 40, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Barbeque (Docklands - not categorised)", [ null, "-37.8231027986633", "144.941895019831", null, false ] ]
+, [ 41, "A55B33C2-333A-4588-BF04-BB18A4139908", 41, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7955720155858", "144.930785490229", null, false ] ]
+, [ 42, "1A2FFE81-D200-49B3-9294-6721B25A752F", 42, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7978218295656", "144.926074333248", null, false ] ]
+, [ 43, "C8F74709-9294-48A2-A54D-DC68EB374051", 43, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7850389969712", "144.962226443141", null, false ] ]
+, [ 44, "36C6C86D-6039-43AC-BC8D-09F54BBE5EB0", 44, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8204582399571", "144.944940135583", null, false ] ]
+, [ 45, "8C4BBE64-8EE1-4737-AE77-8F97D6337CFD", 45, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate Spanning Two Units - Alexandra Park", [ null, "-37.8244442251688", "144.977802351141", null, false ] ]
+, [ 46, "71A1CCBC-0354-45FA-B6A6-7D706F42D830", 46, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.8200938157226", "144.975103148808", null, false ] ]
+, [ 47, "AAEEEEE1-5CE7-4267-81ED-DC9110C3318E", 47, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.8296480355972", "144.964966025963", null, false ] ]
+, [ 48, "1553AED0-BBF3-49D7-8E34-CA7536859D33", 48, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Single Hotplate", [ null, "-37.7868116243503", "144.952950809573", null, false ] ]
+, [ 49, "7A5775BD-8935-42C3-A2C2-E7F9836EDD6E", 49, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate - Alexandra Park", [ null, "-37.8245221006383", "144.977866119555", null, false ] ]
+, [ 50, "5EC4F57D-3CD1-4E36-A070-7477B75FD195", 50, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8277333769002", "144.982684722583", null, false ] ]
+, [ 51, "3CCD5818-06FB-47BA-A670-8DE9CB2F67EA", 51, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbecue - Fawkner Park Toddler Play Space", [ null, "-37.8392182328173", "144.980724046416", null, false ] ]
+, [ 52, "B3E5651B-65B2-4464-A4E8-BE6F31B339C4", 52, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Urban Design Double Hotplate", [ null, "-37.8278504336664", "144.983405040927", null, false ] ]
+, [ 53, "00E3D7CC-8E7D-4B7F-B37F-4738F6EA5B19", 53, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Barbeque (Docklands - not categorised)", [ null, "-37.8196434391829", "144.946073429285", null, false ] ]
+, [ 54, "AEAA97BA-2A4C-497F-B0C5-4156D3D534D6", 54, 1398812999, "880594", 1398812999, "880594", "{\n}", "Barbeque - Docklands Barbeque - All Chromed - Docklands Community Gardens", [ null, "-37.8205485324527", "144.945321953656", null, false ] ]
+ ]
+}

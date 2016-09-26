@@ -47,7 +47,7 @@ class ViewControllerFactory: NSObject {
     }
 
 
-    func makeBbqDetails(_ coordinate: CLLocationCoordinate2D, title: String, facilities: String) -> BBQDetailsTableViewController {
+    func makeBbqDetails(_ coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String) -> BBQDetailsTableViewController {
 
         let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
 
@@ -65,6 +65,7 @@ class ViewControllerFactory: NSObject {
                                               bbqLatitude: coordinate.latitude,
                                               bbqLongitude: coordinate.longitude,
                                               facilities: facilities,
+                                              address: address,
                                               userLocation: requestUsersLocation,
                                               locationAddress: locationAddress,
                                               locationDistance: locationDistance)

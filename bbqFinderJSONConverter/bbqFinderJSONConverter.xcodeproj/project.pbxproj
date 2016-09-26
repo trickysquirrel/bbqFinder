@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		301258A21D9754DE00E3F33E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258A11D9754DE00E3F33E /* AppDelegate.swift */; };
+		301258A41D9754DE00E3F33E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258A31D9754DE00E3F33E /* ViewController.swift */; };
+		301258A61D9754DE00E3F33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301258A51D9754DE00E3F33E /* Assets.xcassets */; };
+		301258A91D9754DE00E3F33E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301258A71D9754DE00E3F33E /* Main.storyboard */; };
+		301258B71D97AD0000E3F33E /* AlpineShire.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B31D97AD0000E3F33E /* AlpineShire.json */; };
+		301258B81D97AD0000E3F33E /* Ballarat.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B41D97AD0000E3F33E /* Ballarat.json */; };
+		301258B91D97AD0000E3F33E /* MelbourneCBD.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B51D97AD0000E3F33E /* MelbourneCBD.json */; };
+		301258BA1D97AD0000E3F33E /* TasmaniaGlenorchy.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3012589E1D9754DE00E3F33E /* bbqFinderJSONConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinderJSONConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		301258A11D9754DE00E3F33E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		301258A31D9754DE00E3F33E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		301258A51D9754DE00E3F33E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		301258A81D9754DE00E3F33E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		301258AA1D9754DE00E3F33E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301258B31D97AD0000E3F33E /* AlpineShire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AlpineShire.json; path = "data sets/AlpineShire.json"; sourceTree = SOURCE_ROOT; };
+		301258B41D97AD0000E3F33E /* Ballarat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Ballarat.json; path = "data sets/Ballarat.json"; sourceTree = SOURCE_ROOT; };
+		301258B51D97AD0000E3F33E /* MelbourneCBD.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MelbourneCBD.json; path = "data sets/MelbourneCBD.json"; sourceTree = SOURCE_ROOT; };
+		301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TasmaniaGlenorchy.json; path = "data sets/TasmaniaGlenorchy.json"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3012589B1D9754DE00E3F33E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		301258951D9754DE00E3F33E = {
+			isa = PBXGroup;
+			children = (
+				301258A01D9754DE00E3F33E /* bbqFinderJSONConverter */,
+				3012589F1D9754DE00E3F33E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3012589F1D9754DE00E3F33E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3012589E1D9754DE00E3F33E /* bbqFinderJSONConverter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		301258A01D9754DE00E3F33E /* bbqFinderJSONConverter */ = {
+			isa = PBXGroup;
+			children = (
+				301258B21D97ACB800E3F33E /* Resources */,
+				301258A11D9754DE00E3F33E /* AppDelegate.swift */,
+				301258A31D9754DE00E3F33E /* ViewController.swift */,
+				301258A51D9754DE00E3F33E /* Assets.xcassets */,
+				301258A71D9754DE00E3F33E /* Main.storyboard */,
+				301258AA1D9754DE00E3F33E /* Info.plist */,
+			);
+			path = bbqFinderJSONConverter;
+			sourceTree = "<group>";
+		};
+		301258B21D97ACB800E3F33E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				301258B31D97AD0000E3F33E /* AlpineShire.json */,
+				301258B41D97AD0000E3F33E /* Ballarat.json */,
+				301258B51D97AD0000E3F33E /* MelbourneCBD.json */,
+				301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3012589D1D9754DE00E3F33E /* bbqFinderJSONConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 301258AD1D9754DE00E3F33E /* Build configuration list for PBXNativeTarget "bbqFinderJSONConverter" */;
+			buildPhases = (
+				3012589A1D9754DE00E3F33E /* Sources */,
+				3012589B1D9754DE00E3F33E /* Frameworks */,
+				3012589C1D9754DE00E3F33E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bbqFinderJSONConverter;
+			productName = bbqFinderJSONConverter;
+			productReference = 3012589E1D9754DE00E3F33E /* bbqFinderJSONConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		301258961D9754DE00E3F33E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = RichardMoult;
+				TargetAttributes = {
+					3012589D1D9754DE00E3F33E = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 301258991D9754DE00E3F33E /* Build configuration list for PBXProject "bbqFinderJSONConverter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 301258951D9754DE00E3F33E;
+			productRefGroup = 3012589F1D9754DE00E3F33E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3012589D1D9754DE00E3F33E /* bbqFinderJSONConverter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3012589C1D9754DE00E3F33E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301258B91D97AD0000E3F33E /* MelbourneCBD.json in Resources */,
+				301258BA1D97AD0000E3F33E /* TasmaniaGlenorchy.json in Resources */,
+				301258B81D97AD0000E3F33E /* Ballarat.json in Resources */,
+				301258B71D97AD0000E3F33E /* AlpineShire.json in Resources */,
+				301258A61D9754DE00E3F33E /* Assets.xcassets in Resources */,
+				301258A91D9754DE00E3F33E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3012589A1D9754DE00E3F33E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				301258A41D9754DE00E3F33E /* ViewController.swift in Sources */,
+				301258A21D9754DE00E3F33E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		301258A71D9754DE00E3F33E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				301258A81D9754DE00E3F33E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		301258AB1D9754DE00E3F33E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		301258AC1D9754DE00E3F33E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		301258AE1D9754DE00E3F33E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = bbqFinderJSONConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinderJSONConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		301258AF1D9754DE00E3F33E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = bbqFinderJSONConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinderJSONConverter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		301258991D9754DE00E3F33E /* Build configuration list for PBXProject "bbqFinderJSONConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				301258AB1D9754DE00E3F33E /* Debug */,
+				301258AC1D9754DE00E3F33E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		301258AD1D9754DE00E3F33E /* Build configuration list for PBXNativeTarget "bbqFinderJSONConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				301258AE1D9754DE00E3F33E /* Debug */,
+				301258AF1D9754DE00E3F33E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 301258961D9754DE00E3F33E /* Project object */;
+}

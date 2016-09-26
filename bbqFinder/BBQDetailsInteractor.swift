@@ -35,18 +35,19 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
     private let bbqLatitude: Double
     private let bbqLongitude: Double
     private let facilities: String
+    private var address: String = ""
     private let locationDistance: LocationDistance
 
     // todo remove these 2 vars
     private var distanceInMeters: Int = 0
-    private var address: String = ""
 
-
+    // todo pass through address if there is one
     init(output: BBQDetailsInteractorOutput,
          bbqTitle: String,
          bbqLatitude: Double,
          bbqLongitude: Double,
          facilities: String,
+         address: String,
          userLocation: UserLocation,
          locationAddress: LocationAddress,
          locationDistance: LocationDistance) {
@@ -56,6 +57,7 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
         self.bbqLatitude = bbqLatitude
         self.bbqLongitude = bbqLongitude
         self.facilities = facilities
+        self.address = address
         self.userLocation = userLocation
         self.locationAddress = locationAddress
         self.locationDistance = locationDistance
@@ -80,7 +82,12 @@ class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDeleg
 
     private func fetchBBQAddress() {
 
-        locationAddress.requestAddress(bbqLatitude, longitude: bbqLongitude)
+        if address.isEmpty {
+            locationAddress.requestAddress(bbqLatitude, longitude: bbqLongitude)
+        }
+        else {
+            address = locationAddress.replaceCommasWithNewLines(address: address)
+        }
     }
     
 

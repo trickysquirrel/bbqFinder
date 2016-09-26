@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setAppApperance() {
 
         let titleFont = UIFont(name: "HelveticaNeue-Light", size: 20)!
-        let backButtonDont = UIFont(name: "HelveticaNeue-Light", size: 16)!
+        let backButtonDont = UIFont(name: "HelveticaNeue-Light", size: 18)!
 
         UINavigationBar.appearance().titleTextAttributes = [
             NSFontAttributeName: titleFont

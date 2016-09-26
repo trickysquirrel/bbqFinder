@@ -36,7 +36,7 @@ class BBQMapView: MKMapView, MKMapViewDelegate {
         removeAnnotations(annotationList)
         annotationList = dataSource.map{ MapViewAnnotation(viewModel: $0) }
         addAnnotations(annotationList)
-        showAnnotations(annotationList, animated: false)
+        showAnnotations(annotationList, animated: true)
     }
 
 

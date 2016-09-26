@@ -8,7 +8,7 @@ import MapKit
 
 
 typealias AreaSelectionAction = (_ area:BBQArea) -> Void
-typealias BBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ title: String, _ facilities:String) -> Void
+typealias BBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ title: String, _ facilities:String, _ address:String) -> Void
 
 
 struct Router {
@@ -38,7 +38,7 @@ struct Router {
 
     fileprivate func showAreaMapViewController(_ area: BBQArea) {
 
-        let action: BBQSelectionAction = { coordinate, title, facilities in self.showBBQDetailsViewController(coordinate, title: title, facilities: facilities) }
+        let action: BBQSelectionAction = { coordinate, title, facilities, address in self.showBBQDetailsViewController(coordinate, title: title, facilities: facilities, address: address) }
 
         let alerter = Alerter()
 
@@ -50,9 +50,9 @@ struct Router {
     }
 
 
-    fileprivate func showBBQDetailsViewController(_ coordinate: CLLocationCoordinate2D, title: String, facilities: String) {
+    fileprivate func showBBQDetailsViewController(_ coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String) {
 
-        let controller = viewControllerFactory.makeBbqDetails(coordinate, title: title, facilities: facilities)
+        let controller = viewControllerFactory.makeBbqDetails(coordinate, title: title, facilities: facilities, address: address)
         
         navigationController.pushViewController(controller, animated: true)
     }

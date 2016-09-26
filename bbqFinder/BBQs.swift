@@ -10,6 +10,15 @@ struct BBQ {
     let facilities: String
     let lat: Double
     let lon: Double
+    let address: String
+
+    init(title:String, facilities:String, lat:Double, lon:Double, address:String="") {
+        self.title = title
+        self.facilities = facilities
+        self.lat = lat
+        self.lon = lon
+        self.address = address
+    }
 }
 
 
@@ -47,8 +56,14 @@ struct BBQListProvider {
         switch area {
         case .melbourne:
             return melbourneBBQs
-        default:
-            return emptyBBQs
+        case .ballarat:
+            return ballaratBBQs
+        case .glenorchy:
+            return glenorchyBBQs
+        case .alpineShire:
+            return alpineShireBBQs
+//        default:
+//            return emptyBBQs
         }
     }
 }
