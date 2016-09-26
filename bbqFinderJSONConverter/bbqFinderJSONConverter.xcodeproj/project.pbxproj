@@ -15,6 +15,10 @@
 		301258B81D97AD0000E3F33E /* Ballarat.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B41D97AD0000E3F33E /* Ballarat.json */; };
 		301258B91D97AD0000E3F33E /* MelbourneCBD.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B51D97AD0000E3F33E /* MelbourneCBD.json */; };
 		301258BA1D97AD0000E3F33E /* TasmaniaGlenorchy.json in Resources */ = {isa = PBXBuildFile; fileRef = 301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */; };
+		30AE272D1D9931190044B6C4 /* noosa.json in Resources */ = {isa = PBXBuildFile; fileRef = 30AE272C1D9931190044B6C4 /* noosa.json */; };
+		30AE27311D9937040044B6C4 /* GreaterGeelong.json in Resources */ = {isa = PBXBuildFile; fileRef = 30AE27301D9937040044B6C4 /* GreaterGeelong.json */; };
+		30AE27331D9939DE0044B6C4 /* GreaterDandenong.json in Resources */ = {isa = PBXBuildFile; fileRef = 30AE27321D9939DE0044B6C4 /* GreaterDandenong.json */; };
+		30AE27371D99408B0044B6C4 /* Canberra.json in Resources */ = {isa = PBXBuildFile; fileRef = 30AE27361D99408B0044B6C4 /* Canberra.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		301258B41D97AD0000E3F33E /* Ballarat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Ballarat.json; path = "data sets/Ballarat.json"; sourceTree = SOURCE_ROOT; };
 		301258B51D97AD0000E3F33E /* MelbourneCBD.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = MelbourneCBD.json; path = "data sets/MelbourneCBD.json"; sourceTree = SOURCE_ROOT; };
 		301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TasmaniaGlenorchy.json; path = "data sets/TasmaniaGlenorchy.json"; sourceTree = SOURCE_ROOT; };
+		30AE272C1D9931190044B6C4 /* noosa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = noosa.json; path = "data sets/noosa.json"; sourceTree = SOURCE_ROOT; };
+		30AE27301D9937040044B6C4 /* GreaterGeelong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GreaterGeelong.json; sourceTree = "<group>"; };
+		30AE27321D9939DE0044B6C4 /* GreaterDandenong.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GreaterDandenong.json; sourceTree = "<group>"; };
+		30AE27361D99408B0044B6C4 /* Canberra.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Canberra.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 				301258B41D97AD0000E3F33E /* Ballarat.json */,
 				301258B51D97AD0000E3F33E /* MelbourneCBD.json */,
 				301258B61D97AD0000E3F33E /* TasmaniaGlenorchy.json */,
+				30AE272C1D9931190044B6C4 /* noosa.json */,
+				30AE27301D9937040044B6C4 /* GreaterGeelong.json */,
+				30AE27321D9939DE0044B6C4 /* GreaterDandenong.json */,
+				30AE27361D99408B0044B6C4 /* Canberra.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -141,10 +153,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				301258B91D97AD0000E3F33E /* MelbourneCBD.json in Resources */,
+				30AE27331D9939DE0044B6C4 /* GreaterDandenong.json in Resources */,
 				301258BA1D97AD0000E3F33E /* TasmaniaGlenorchy.json in Resources */,
+				30AE272D1D9931190044B6C4 /* noosa.json in Resources */,
 				301258B81D97AD0000E3F33E /* Ballarat.json in Resources */,
 				301258B71D97AD0000E3F33E /* AlpineShire.json in Resources */,
 				301258A61D9754DE00E3F33E /* Assets.xcassets in Resources */,
+				30AE27371D99408B0044B6C4 /* Canberra.json in Resources */,
+				30AE27311D9937040044B6C4 /* GreaterGeelong.json in Resources */,
 				301258A91D9754DE00E3F33E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +326,7 @@
 				301258AF1D9754DE00E3F33E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -29,6 +29,9 @@ enum BBQArea: String {
     case ballarat = "Ballarat"
     case melbourne = "Melbourne"
     case glenorchy = "Glenorchy"
+    case noosa = "Noosa"
+    case greaterDandenong = "Melbourne SE"
+    case canberra = "Canberra"
 
     func title() -> String {
         return self.rawValue
@@ -36,12 +39,16 @@ enum BBQArea: String {
 
     func subtitle() -> String {
         switch self {
-        case .alpineShire, .ballarat:
+        case .alpineShire, .ballarat, .greaterDandenong:
             return "Victoria"
         case .melbourne:
             return "Victoria"
         case .glenorchy:
             return "Tasmania"
+        case .noosa:
+            return "Queensland"
+        case .canberra:
+            return "ACT"
         }
     }
 }
@@ -58,12 +65,16 @@ struct BBQListProvider {
             return melbourneBBQs
         case .ballarat:
             return ballaratBBQs
+        case .greaterDandenong:
+            return greaterDandenonyBBQs
         case .glenorchy:
             return glenorchyBBQs
         case .alpineShire:
             return alpineShireBBQs
-//        default:
-//            return emptyBBQs
+        case .noosa:
+            return noosaBBQs
+        case .canberra:
+            return canberraBBQs
         }
     }
 }

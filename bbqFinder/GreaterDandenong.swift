@@ -1,0 +1,63 @@
+//
+//  Copyright © 2016 RichardMoult. All rights reserved.
+//
+
+import Foundation
+
+
+let greaterDandenonyBBQs = [
+
+BBQ(title:"Amersham Reserve", facilities:"", lat: -37.96436365, lon: 145.14701916, address: ""),
+BBQ(title:"Frederick Wachter Reserve", facilities:"", lat: -37.99054439, lon: 145.1741914, address: ""),
+BBQ(title:"Keysborough Reserve", facilities:"", lat: -37.99438019, lon: 145.16669273, address: ""),
+BBQ(title:"Keysborough Parish Resurrect", facilities:"", lat: -37.9899812, lon: 145.1597795, address: ""),
+BBQ(title:"Dawn Reserve", facilities:"", lat: -37.99529311, lon: 145.20205764, address: ""),
+BBQ(title:"George Andrews Reserve", facilities:"", lat: -38.00140386, lon: 145.21217235, address: ""),
+BBQ(title:"Dandenong Park", facilities:"", lat: -37.99293383, lon: 145.2166814, address: ""),
+BBQ(title:"Hemmings Park", facilities:"", lat: -37.98103955, lon: 145.20930752, address: ""),
+BBQ(title:"Hemmings Park", facilities:"", lat: -37.98086583, lon: 145.209142, address: ""),
+BBQ(title:"Norman Luth Reserve", facilities:"", lat: -37.95498432, lon: 145.14101604, address: ""),
+BBQ(title:"Hemmings Park", facilities:"", lat: -37.98101884, lon: 145.20908965, address: ""),
+BBQ(title:"Tirhatuan Reserve", facilities:"", lat: -37.94618809, lon: 145.22251352, address: ""),
+BBQ(title:"Tirhatuan Reserve", facilities:"", lat: -37.94612009, lon: 145.22233677, address: ""),
+BBQ(title:"Tirhatuan Reserve", facilities:"", lat: -37.94593299, lon: 145.22227925, address: ""),
+BBQ(title:"Barry J Powell Reserve", facilities:"", lat: -37.95362634, lon: 145.19597119, address: ""),
+BBQ(title:"G J Duggan Reserve", facilities:"", lat: -37.94654695, lon: 145.18895803, address: ""),
+BBQ(title:"Racecourse Reserve", facilities:"", lat: -37.94989602, lon: 145.17432646, address: ""),
+BBQ(title:"Racecourse Reserve", facilities:"", lat: -37.94999144, lon: 145.17457054, address: ""),
+BBQ(title:"Ross Reserve", facilities:"", lat: -37.95848061, lon: 145.17042036, address: ""),
+BBQ(title:"Ross Reserve", facilities:"", lat: -37.96215233, lon: 145.17332804, address: ""),
+BBQ(title:"Burden Park", facilities:"", lat: -37.96370539, lon: 145.15418743, address: ""),
+BBQ(title:"Edith McPherson Reserve", facilities:"", lat: -37.96874552, lon: 145.18938694, address: ""),
+BBQ(title:"Warner Reserve", facilities:"", lat: -37.9421963, lon: 145.15605442, address: ""),
+BBQ(title:"Springvale South Reserve", facilities:"", lat: -37.97312898, lon: 145.14924434, address: ""),
+BBQ(title:"Alex Nelson Reserve", facilities:"", lat: -37.975433, lon: 145.1537263, address: ""),
+BBQ(title:"Alan Corrigan Reserve", facilities:"", lat: -37.98380119, lon: 145.16352535, address: ""),
+BBQ(title:"Roth Hetherington Botanic Ga", facilities:"", lat: -37.98361274, lon: 145.16768011, address: ""),
+BBQ(title:"Noble Park Reserve", facilities:"", lat: -37.97842764, lon: 145.16841779, address: ""),
+BBQ(title:"Glendale Reserve", facilities:"", lat: -37.9395617, lon: 145.14680792, address: ""),
+BBQ(title:"Hemmings Park", facilities:"", lat: -37.97994588, lon: 145.20793366, address: ""),
+BBQ(title:"Keneally Reserve", facilities:"", lat: -37.9929546, lon: 145.20491415, address: ""),
+BBQ(title:"Dandenong Indoor Sports Stad", facilities:"", lat: -37.96603804, lon: 145.2272388, address: ""),
+BBQ(title:"Dandenong Indoor Sports Stad", facilities:"", lat: -37.9660556, lon: 145.2273039, address: ""),
+BBQ(title:"Hemmings Park", facilities:"", lat: -37.98006489, lon: 145.20792109, address: ""),
+BBQ(title:"Springvalley Reserve", facilities:"", lat: -37.96683133, lon: 145.14082785, address: ""),
+BBQ(title:"Alex Wilke Nature Reserve", facilities:"", lat: -37.97339798, lon: 145.15379325, address: ""),
+BBQ(title:"Copas Park", facilities:"", lat: -37.9684319, lon: 145.17467203, address: ""),
+BBQ(title:"Burden Park", facilities:"", lat: -37.96301592, lon: 145.15284879, address: ""),
+BBQ(title:"Burden Park", facilities:"", lat: -37.96304551, lon: 145.1528397, address: ""),
+BBQ(title:"Norine Cox Reserve", facilities:"", lat: -37.99987999, lon: 145.2038666, address: ""),
+BBQ(title:"Norman Luth Reserve", facilities:"", lat: -37.95402507, lon: 145.1412298, address: ""),
+BBQ(title:"Oakwood Park", facilities:"", lat: -37.96499835, lon: 145.19330052, address: ""),
+BBQ(title:"Tatterson Park", facilities:"", lat: -37.99703521, lon: 145.15577372, address: ""),
+BBQ(title:"Tatterson Park", facilities:"", lat: -37.99703822, lon: 145.1556326, address: ""),
+BBQ(title:"Lake View Reserve", facilities:"", lat: -37.99800439, lon: 145.15211787, address: ""),
+BBQ(title:"2-12 Somerfield Drive Reserv", facilities:"", lat: -38.01028643, lon: 145.17270595, address: ""),
+BBQ(title:"Dandenong Park", facilities:"", lat: -37.99298588, lon: 145.2170778, address: ""),
+BBQ(title:"Dandenong Park", facilities:"", lat: -37.99326649, lon: 145.21730641, address: ""),
+BBQ(title:"Dandenong Park", facilities:"", lat: -37.99311404, lon: 145.21730588, address: ""),
+BBQ(title:"Menzies Reserve", facilities:"", lat: -37.96630032, lon: 145.21007763, address: ""),
+BBQ(title:"Keshava Reserve", facilities:"", lat: -37.99964639, lon: 145.19668172, address: ""),
+BBQ(title:"National Reserve (43-67 Nati", facilities:"", lat: -38.03844384, lon: 145.23498665, address: ""),
+BBQ(title:"Hidden Grove Reserve (152 Ch", facilities:"", lat: -38.0061394, lon: 145.15743604, address: "")
+]

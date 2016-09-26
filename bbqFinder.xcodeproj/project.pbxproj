@@ -27,6 +27,9 @@
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
 		30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272A1D98DD180044B6C4 /* AlphineShire.swift */; };
+		30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272E1D9932C80044B6C4 /* Noosa.swift */; };
+		30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27341D993A670044B6C4 /* GreaterDandenong.swift */; };
+		30AE27391D99421B0044B6C4 /* Canberra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27381D99421B0044B6C4 /* Canberra.swift */; };
 		30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */; };
 		30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E61D6C7E9F0085FFBD /* Main.storyboard */; };
 		30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E91D6C7E9F0085FFBD /* Assets.xcassets */; };
@@ -92,6 +95,9 @@
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
 		30AE272A1D98DD180044B6C4 /* AlphineShire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphineShire.swift; sourceTree = "<group>"; };
+		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
+		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
+		30AE27381D99421B0044B6C4 /* Canberra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canberra.swift; sourceTree = "<group>"; };
 		30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C716E71D6C7E9F0085FFBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -306,6 +312,9 @@
 				301258BD1D97F86600E3F33E /* BallaratBBQs.swift */,
 				301258BF1D97FECE00E3F33E /* Tasmania.swift */,
 				30AE272A1D98DD180044B6C4 /* AlphineShire.swift */,
+				30AE272E1D9932C80044B6C4 /* Noosa.swift */,
+				30AE27341D993A670044B6C4 /* GreaterDandenong.swift */,
+				30AE27381D99421B0044B6C4 /* Canberra.swift */,
 			);
 			name = "BBQs Data";
 			sourceTree = "<group>";
@@ -522,13 +531,16 @@
 				30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */,
 				3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */,
 				30E59F0A1D922772008643B5 /* Wireframe.swift in Sources */,
+				30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */,
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				301258941D96CC9900E3F33E /* ButtonRounded.swift in Sources */,
 				301258C01D97FECE00E3F33E /* Tasmania.swift in Sources */,
 				30C7170F1D6C852B0085FFBD /* Array+Safe.swift in Sources */,
+				30AE27391D99421B0044B6C4 /* Canberra.swift in Sources */,
 				30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */,
 				30D7EC161D811681007C2884 /* BBQDetailsMapViewCell.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */,
+				30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */,
 				30D7EC071D80B14F007C2884 /* BBQDetailsInteractor.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
 				30D7EC0E1D8111C9007C2884 /* BBQDetailsDistanceViewCell.swift in Sources */,

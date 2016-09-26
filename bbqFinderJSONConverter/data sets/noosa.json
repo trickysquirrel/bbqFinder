@@ -1,0 +1,1066 @@
+{
+    "type": "FeatureCollection",
+    "totalFeatures": 62,
+    "features": [
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.1",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.844791,
+                                  -26.367678
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.2",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.854379,
+                                  -26.366222
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.3",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.85548,
+                                  -26.365778
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.4",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.874348,
+                                  -26.263942
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.5",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.900276,
+                                  -26.420154
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.6",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.907953,
+                                  -26.237366
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.7",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.909441,
+                                  -26.416073
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.8",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.93552,
+                                  -26.380773
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.9",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.959708,
+                                  -26.40035
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.10",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.994077,
+                                  -26.287139
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.11",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.994526,
+                                  -26.287009
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.12",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.995725,
+                                  -26.286652
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.13",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.995886,
+                                  -26.286706
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.14",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.996278,
+                                  -26.286347
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.15",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.996502,
+                                  -26.285305
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.16",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.997242,
+                                  -26.285947
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.17",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.997303,
+                                  -26.282978
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.18",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.997329,
+                                  -26.285364
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.19",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.997521,
+                                  -26.285053
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.20",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.997902,
+                                  -26.283803
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.21",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.99793,
+                                  -26.283976
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.22",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.013276,
+                                  -26.356178
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.23",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.033736,
+                                  -26.409026
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.24",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.039893,
+                                  -26.391583
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.25",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.048344,
+                                  -26.396818
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.26",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.054188,
+                                  -26.397414
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.27",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.054325,
+                                  -26.397488
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.28",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.055806,
+                                  -26.397811
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.29",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.057017,
+                                  -26.397821
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.30",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.058518,
+                                  -26.397858
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.31",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.059181,
+                                  -26.397968
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.32",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.059463,
+                                  -26.397958
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.33",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.061637,
+                                  -26.397983
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.34",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.061936,
+                                  -26.397967
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.35",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.063529,
+                                  -26.397316
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.36",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.064633,
+                                  -26.397066
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.37",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.066712,
+                                  -26.396417
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.38",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.067492,
+                                  -26.39612
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.39",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.068474,
+                                  -26.395844
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.40",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.0689,
+                                  -26.395712
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.41",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.07246,
+                                  -26.394271
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.42",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.072901,
+                                  -26.39405
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.43",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.073367,
+                                  -26.39395
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.44",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.086225,
+                                  -26.386919
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.45",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.086286,
+                                  -26.387168
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.46",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.086484,
+                                  -26.386811
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.47",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.087581,
+                                  -26.397504
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.48",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.090317,
+                                  -26.388971
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.49",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.090336,
+                                  -26.389369
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.50",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.094999,
+                                  -26.495394
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.51",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.096937,
+                                  -26.481438
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.52",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.097044,
+                                  -26.481909
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.53",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.097184,
+                                  -26.480488
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Single Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.54",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.097559,
+                                  -26.481313
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.55",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.111387,
+                                  -26.405915
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.56",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.111679,
+                                  -26.405924
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.57",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.055859,
+                                  -26.397814
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.58",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.057101,
+                                  -26.397821
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.59",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.835869,
+                                  -26.304524
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.60",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.097747,
+                                  -26.407263
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Double Electric"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.61",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  153.074302,
+                                  -26.393493
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Gas & Electric, Kitchen"
+                 }
+                 },
+                 {
+                 "type": "Feature",
+                 "id": "ckan_8113d56b_335d_416b_b368_ac89e59b91ee.62",
+                 "geometry": {
+                 "type": "MultiPoint",
+                 "coordinates": [
+                                 [
+                                  152.835869,
+                                  -26.304469
+                                  ]
+                                 ]
+                 },
+                 "geometry_name": "geom",
+                 "properties": {
+                 "name": "Wood Burning"
+                 }
+                 }
+                 ],
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:EPSG::4326"
+        }
+    }
+}

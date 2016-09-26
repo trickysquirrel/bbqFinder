@@ -26,7 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        printOutAlphineShireBbqList()
+        printOutCanberraBbqList()
 
     }
 
@@ -45,6 +45,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationWillTerminate(_ aNotification: Notification) {
+    }
+
+
+
+    private func printOutCanberraBbqList() {
+
+        printOutJsonWithProperties(fileName: "Canberra", titleKey: "DIVISION_NAME", latKey: "lat_gda94", lonKey: "lon_gda94", addressKey: "LOCATION_DESCRIPTION")
+    }
+
+
+    private func printOutGreaterDandenongBbqList() {
+
+        printOutJsonWithProperties(fileName: "GreaterDandenong", titleKey: "site_name", latKey: "lat_gda94", lonKey: "lon_gda94", addressKey: "location")
+    }
+
+
+    private func printOutGreaterGeelongBbqList() {
+
+        printOutJsonWithProperties(fileName: "GreaterGeelong", titleKey: "descriptio", latKey: "lat_gda94", lonKey: "lon_gda94", addressKey: "address")
+    }
+
+    private func printOutNoosaBbqList() {
+
+        printOutJsonWithProperties(fileName: "noosa", titleKey: "name", latKey: "lat_gda94", lonKey: "lon_gda94", addressKey: "")
     }
 
 
@@ -96,9 +120,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     let lon = bbqCoords.lon
 
                     var address = ""
-                    if address.characters.count > 0 {
-                        address = properties[addressKey] as! String
-                        address = address.replacingOccurrences(of: "\r\n", with: ", ")
+                    if addressKey.characters.count > 0 {
+                        if let jsonAddress = properties[addressKey] as? String {
+                            address = jsonAddress.replacingOccurrences(of: "\r\n", with: ", ")
+                        }
                     }
                     var facilities = ""
                     if facilitiesKey != nil {
@@ -123,6 +148,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         guard let geometry = bbqJson["geometry"] as? NSDictionary else { return (0,0) }
         guard let coordinates = geometry["coordinates"] as? NSArray else { return (0,0) }
+
+        if let coords = coordinates[0] as? NSArray {
+            guard let lat = coords[1] as? Double else { return (0,0) }
+            guard let lon = coords[0] as? Double else { return (0,0) }
+            return (lat, lon)
+        }
+
         guard let lat = coordinates[1] as? Double else { return (0,0) }
         guard let lon = coordinates[0] as? Double else { return (0,0) }
         return (lat, lon)
