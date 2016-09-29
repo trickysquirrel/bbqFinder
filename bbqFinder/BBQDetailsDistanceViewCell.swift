@@ -4,7 +4,7 @@
 
 import UIKit
 
-class BBQDetailsDistanceViewCell: UITableViewCell {
+final class BBQDetailsDistanceViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
+final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
     var interactor: BBQMapInteractor!
     private let alerter: Alerter

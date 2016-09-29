@@ -26,7 +26,7 @@ protocol BBQDetailsInteractorOutput {
 }
 
 
-class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDelegate {
+final class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddressDelegate {
 
     private let output: BBQDetailsInteractorOutput
     private let userLocation: UserLocation

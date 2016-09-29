@@ -32,11 +32,12 @@ protocol BBQDetailsPresenterOutput: class {
 }
 
 
-class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
+final class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
     fileprivate weak var output: BBQDetailsPresenterOutput?
     fileprivate let style: AppStyle
-    fileprivate let appleMapsApp: AppleMapsApp
+    fileprivate let directionsAction: RouterDirectionAction
+    fileprivate let shareAction: RouterShareBBQAction
 
     // todo localise
     fileprivate let distanceUnknownString = "-.-km"
@@ -47,10 +48,11 @@ class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
     fileprivate let locationServiceOffMessage = "please go to settings and allow user location to be determined"
 
 
-    init(output: BBQDetailsPresenterOutput, style: AppStyle, appleMapsApp: AppleMapsApp) {
+    init(output: BBQDetailsPresenterOutput, style: AppStyle, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) {
         self.output = output
         self.style = style
-        self.appleMapsApp = appleMapsApp
+        self.directionsAction = directionsAction
+        self.shareAction = sharingAction
     }
 
     
@@ -171,29 +173,17 @@ extension BBQDetailsPresenter {
     fileprivate func makeShareAction(bbqDetails: BBQDetails) -> DataModelViewControllerAction {
 
         return { viewController in
-
-            let textToShare = "Lets meet at a BBQ here"
-
-            let latString = String(format: "%.6f", bbqDetails.latitude)
-            let lonString = String(format: "%.6f", bbqDetails.longitude)
-
-            if let myWebsite = NSURL(string: "http://maps.google.com/?ie=UTF8&hq=&ll=\(latString),\(lonString)&z=20") {
-
-                let objectsToShare = [textToShare, myWebsite] as [Any]
-
-                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
-                activityVC.popoverPresentationController?.sourceView = viewController.view
-                viewController.present(activityVC, animated: true, completion: nil)
-            }
+            self.shareAction(viewController, "Lets meet at a BBQ here", bbqDetails.latitude, bbqDetails.longitude)
         }
     }
 
 
+    // todo - as this is a new view controller maybe this should belong in the router
+
     fileprivate func makeShowDirectionAction(bbqDetails: BBQDetails) -> DataModelAction {
 
         let showDirectionsAction: DataModelAction  = {
-            self.appleMapsApp.showDirectionsForLatitude(bbqDetails.latitude, longitude: bbqDetails.longitude, regionDistance: 10000, pinTitle: "bbq")
+            self.directionsAction(bbqDetails.latitude, bbqDetails.longitude, 10000, "bbq")
         }
         return showDirectionsAction
     }

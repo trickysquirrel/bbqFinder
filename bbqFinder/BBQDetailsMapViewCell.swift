@@ -6,7 +6,7 @@ import UIKit
 import MapKit
 
 
-class BBQDetailsMapViewCell: UITableViewCell {
+final class BBQDetailsMapViewCell: UITableViewCell {
 
     @IBOutlet weak var mapView: MKMapView!
 

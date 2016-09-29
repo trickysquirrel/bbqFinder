@@ -23,13 +23,13 @@ protocol BBQMapPresenterOutput: class {
 }
 
 
-class BBQMapPresenter: BBQMapInteractorOutput {
+final class BBQMapPresenter: BBQMapInteractorOutput {
 
     private weak var output: BBQMapPresenterOutput?
-    private let action: BBQSelectionAction
+    private let action: RouterBBQSelectionAction
 
 
-    required init(output: BBQMapPresenterOutput, action: @escaping BBQSelectionAction) {
+    required init(output: BBQMapPresenterOutput, action: @escaping RouterBBQSelectionAction) {
         self.output = output
         self.action = action
     }

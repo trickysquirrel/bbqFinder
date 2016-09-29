@@ -4,7 +4,7 @@
 
 import UIKit
 
-class BBQDetailsAmenitiesViewCell: UITableViewCell {
+final class BBQDetailsAmenitiesViewCell: UITableViewCell {
 
     @IBOutlet weak var infoLabel: UILabel!
 

@@ -4,10 +4,6 @@
 
 import UIKit
 
-
-typealias DataModelAction = (() -> Void)
-typealias DataModelViewControllerAction = ((_ viewController: UIViewController) -> Void)
-
 struct AreaViewModel {
     let title: String
     let subtitle: String
@@ -23,13 +19,13 @@ protocol ListAreaPresenterOutput: class {
 }
 
 
-class AreasPresenter: AreasInteractorOutput {
+final class AreasPresenter: AreasInteractorOutput {
 
     private weak var output: ListAreaPresenterOutput?
-    private let action: AreaSelectionAction
+    private let action: RouterAreaSelectionAction
 
 
-    init(interface: ListAreaPresenterOutput, action: @escaping AreaSelectionAction) {
+    init(interface: ListAreaPresenterOutput, action: @escaping RouterAreaSelectionAction) {
         self.output = interface
         self.action = action
     }

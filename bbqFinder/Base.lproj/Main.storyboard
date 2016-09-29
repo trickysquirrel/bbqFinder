@@ -22,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Myv-3K-MJO" id="tym-pn-mgZ">
-                                            <frame key="frameInset" width="375" height="249"/>
+                                            <frame key="frameInset" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xl-0x-7Tu"/>
@@ -42,7 +42,7 @@
                                         <rect key="frame" x="0.0" y="250" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fpi-E5-kTY" id="oeX-8Y-bpk">
-                                            <frame key="frameInset" width="375" height="129"/>
+                                            <frame key="frameInset" width="375" height="129.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-82-i8K" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
@@ -103,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="380" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vHh-Jg-SXu" id="uDB-ew-azi">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-cp-c9M" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
@@ -142,7 +142,7 @@
                                         <rect key="frame" x="0.0" y="460" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iya-pG-FGq" id="RPm-xk-NL2">
-                                            <frame key="frameInset" width="375" height="139"/>
+                                            <frame key="frameInset" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDP-hQ-4tQ" customClass="LabelSpacing" customModule="bbqFinder" customModuleProvider="target">
@@ -181,7 +181,7 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Lo-93-74N" firstAttribute="trailing" secondItem="RPm-xk-NL2" secondAttribute="trailingMargin" id="2L1-fL-g3O"/>
+                                                <constraint firstItem="0Lo-93-74N" firstAttribute="trailing" secondItem="RPm-xk-NL2" secondAttribute="trailingMargin" constant="-60" id="2L1-fL-g3O"/>
                                                 <constraint firstItem="0Lo-93-74N" firstAttribute="top" secondItem="KDP-hQ-4tQ" secondAttribute="bottom" constant="8" id="7nn-Kv-BTn"/>
                                                 <constraint firstItem="KDP-hQ-4tQ" firstAttribute="leading" secondItem="RPm-xk-NL2" secondAttribute="leadingMargin" constant="8" id="F4h-RE-HbU"/>
                                                 <constraint firstItem="vA5-I8-baq" firstAttribute="centerY" secondItem="RPm-xk-NL2" secondAttribute="centerY" id="JbZ-h5-7na"/>

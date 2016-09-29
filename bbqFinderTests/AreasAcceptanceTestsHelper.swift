@@ -66,10 +66,12 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let window = UIWindow()
         let wireframe = Wireframe()
+        let appleMaps = AppleMapsAppDirection()
+        let appleRouter = AppleRouter(appleMapsApp: appleMaps)
 
         let spyViewControllerFactory = SpyViewControllerFactory(spyAreasViewController: spyAreasViewController)
 
-        let router = Router(window: window, viewControllerFactory: spyViewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe)
+        let router = AppRouter(window: window, viewControllerFactory: spyViewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe, appleRouter: appleRouter)
 
         router.showRootViewController()
     }

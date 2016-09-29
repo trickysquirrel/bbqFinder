@@ -12,6 +12,7 @@ class AreasAcceptanceTests: XCTestCase {
 
     // todo these test should involve the data source not view controller
     // add in extra test to make sure data source works correctly with view controller
+    // add in test to make sure the views got given the correct viewModels
 
     func test_onShowingRootViewController_oneSectionShownWithFiveAreas() {
 
@@ -21,7 +22,7 @@ class AreasAcceptanceTests: XCTestCase {
         let areasInFirstSection = app.areasInSection(section: 0)
 
         XCTAssertEqual(sections, 1)
-        XCTAssertEqual(areasInFirstSection.count, 4)
+        XCTAssertEqual(areasInFirstSection.count, 7)
     }
 
     
@@ -37,11 +38,20 @@ class AreasAcceptanceTests: XCTestCase {
         XCTAssertEqual(areasInFirstSection[1].title, "Bright")
         XCTAssertEqual(areasInFirstSection[1].subtitle, "Victoria")
 
-        XCTAssertEqual(areasInFirstSection[2].title, "Melbourne")
-        XCTAssertEqual(areasInFirstSection[2].subtitle, "Victoria")
+        XCTAssertEqual(areasInFirstSection[2].title, "Canberra")
+        XCTAssertEqual(areasInFirstSection[2].subtitle, "ACT")
 
         XCTAssertEqual(areasInFirstSection[3].title, "Glenorchy")
         XCTAssertEqual(areasInFirstSection[3].subtitle, "Tasmania")
+
+        XCTAssertEqual(areasInFirstSection[4].title, "Melbourne")
+        XCTAssertEqual(areasInFirstSection[4].subtitle, "Victoria")
+
+        XCTAssertEqual(areasInFirstSection[5].title, "Melbourne SE")
+        XCTAssertEqual(areasInFirstSection[5].subtitle, "Victoria")
+
+        XCTAssertEqual(areasInFirstSection[6].title, "Noosa")
+        XCTAssertEqual(areasInFirstSection[6].subtitle, "Queensland")
     }
 
 }

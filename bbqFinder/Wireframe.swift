@@ -3,12 +3,22 @@
 //
 
 import UIKit
-
-// todo: not the correct name especially if we inject the view controller factory
-class Wireframe: NSObject {
+import CoreLocation
 
 
-    func wireUpAreasViewController(controller: AreasViewController, action: @escaping AreaSelectionAction) {
+// todo: is this the correct name?
+
+final class Wireframe: NSObject {
+
+    private let appStyle: AppStyle
+
+
+    override init() {
+        self.appStyle = AppStyle()
+    }
+
+
+    func wireUpAreasViewController(controller: AreasViewController, action: @escaping RouterAreaSelectionAction) {
 
         controller.title = "Bbq Areas"
 
@@ -24,10 +34,10 @@ class Wireframe: NSObject {
     }
 
 
-    func wireUpBbqMapViewController(controller: BBQMapViewController, bbqArea: BBQArea, action: @escaping BBQSelectionAction) {
+    func wireUpBbqMapViewController(controller: BBQMapViewController, bbqArea: BBQArea, action: @escaping RouterBBQSelectionAction) {
 
-        let locationManager = UserLocationStatus()
-        let requestUsersLocation = UserLocation(locationStatus: locationManager)
+        let locationStatus = UserLocationStatus()
+        let requestUsersLocation = UserLocation(locationStatus: locationStatus)
 
         let presenter = BBQMapPresenter(output: controller, action: action)
 
@@ -38,5 +48,31 @@ class Wireframe: NSObject {
         controller.title = bbqArea.title()
         controller.interactor = interactor
     }
+
+
+    func wireUpBbqDetailsViewController(controller: BBQDetailsTableViewController, coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) {
+        
+        let locationDistance = LocationDistance()
+        let locationStatus = UserLocationStatus()
+        let requestUsersLocation = UserLocation(locationStatus: locationStatus)
+        let locationAddress = LocationAddress(locationStatus: locationStatus)
+        let alerter = Alerter()
+
+        let presenter = BBQDetailsPresenter(output: controller, style: appStyle, directionsAction: directionsAction, sharingAction: sharingAction)
+
+        let interactor = BBQDetailsInteractor(output: presenter,
+                                              bbqTitle:title,
+                                              bbqLatitude: coordinate.latitude,
+                                              bbqLongitude: coordinate.longitude,
+                                              facilities: facilities,
+                                              address: address,
+                                              userLocation: requestUsersLocation,
+                                              locationAddress: locationAddress,
+                                              locationDistance: locationDistance)
+
+        controller.interactor = interactor
+        controller.alerter = alerter
+    }
+
 
 }

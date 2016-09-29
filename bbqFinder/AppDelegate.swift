@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var router: Router?
+    var router: AppRouter?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -22,9 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let validWindow = window else { return true }
 
+        let appleMapsApp = AppleMapsAppDirection()
         let wireframe = Wireframe()
         let viewControllerFactory = ViewControllerFactory()
-        router = Router(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe)
+        let appleRouter = AppleRouter(appleMapsApp: appleMapsApp)
+        
+        router = AppRouter(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe, appleRouter: appleRouter)
         router?.showRootViewController()
 
         return true

@@ -4,7 +4,7 @@
 
 import UIKit
 
-class BBQDetailsAddressViewCell: UITableViewCell {
+final class BBQDetailsAddressViewCell: UITableViewCell {
 
     @IBOutlet weak var addressLabel: UILabel!
 

@@ -4,7 +4,7 @@
 
 import UIKit
 
-class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterOutput {
+final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterOutput {
 
     var interactor: BBQDetailsInteractor!
     var alerter: Alerter!

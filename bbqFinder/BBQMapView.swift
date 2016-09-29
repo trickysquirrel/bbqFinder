@@ -20,7 +20,7 @@ class MapViewAnnotation: NSObject, MKAnnotation {
 }
 
 
-class BBQMapView: MKMapView, MKMapViewDelegate {
+final class BBQMapView: MKMapView, MKMapViewDelegate {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
 
