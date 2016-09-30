@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3002BCE81D9F09BF0068B2B6 /* MapAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */; };
+		3002BCEA1D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */; };
 		3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258791D9571F100E3F33E /* LocationDistance.swift */; };
 		3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012587B1D96A6C200E3F33E /* LabelSpacing.swift */; };
 		301258851D96AE5D00E3F33E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301258841D96AE5D00E3F33E /* SceneKit.framework */; };
@@ -28,6 +30,10 @@
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
 		308BF9DD1D9DC110007FA732 /* AppleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9DC1D9DC110007FA732 /* AppleRouter.swift */; };
+		308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
+		308BF9E71D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */; };
+		308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
+		308BF9EA1D9DD329007FA732 /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */; };
 		30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272A1D98DD180044B6C4 /* AlphineShire.swift */; };
 		30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272E1D9932C80044B6C4 /* Noosa.swift */; };
 		30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27341D993A670044B6C4 /* GreaterDandenong.swift */; };
@@ -64,6 +70,8 @@
 		30F6BF5F1D92359B001509A2 /* SpyViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6BF5E1D92359B001509A2 /* SpyViewControllerFactory.swift */; };
 		30F6BF611D9235CA001509A2 /* SpyAreasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6BF601D9235CA001509A2 /* SpyAreasViewController.swift */; };
 		30F6BF631D92364A001509A2 /* AreasAcceptanceTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F6BF621D92364A001509A2 /* AreasAcceptanceTestsHelper.swift */; };
+		3DA9BA03E1ADDE2AE71DD422 /* Pods_bbqFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE180710E616F6C00CD3C07B /* Pods_bbqFinder.framework */; };
+		548BADCF25C719C2EDDE7E4D /* Pods_bbqFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE39A88C6D87A686C505E60 /* Pods_bbqFinderTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +85,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F175D616D4E694D4E3928BE /* Pods-bbqFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bbqFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		280DF157ACD55C0E945F8ADC /* Pods-bbqFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bbqFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bbqFinder/Pods-bbqFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		3002BCE61D9E351B0068B2B6 /* bbqFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bbqFinder.entitlements; sourceTree = "<group>"; };
+		3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnalyticsTracker.swift; sourceTree = "<group>"; };
+		3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQDetailsAnalyticsTracker.swift; sourceTree = "<group>"; };
 		301258791D9571F100E3F33E /* LocationDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDistance.swift; sourceTree = "<group>"; };
 		3012587B1D96A6C200E3F33E /* LabelSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSpacing.swift; sourceTree = "<group>"; };
 		301258841D96AE5D00E3F33E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
@@ -98,6 +111,10 @@
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
 		308BF9DC1D9DC110007FA732 /* AppleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleRouter.swift; sourceTree = "<group>"; };
+		308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bbqFinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
+		308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
 		30AE272A1D98DD180044B6C4 /* AlphineShire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphineShire.swift; sourceTree = "<group>"; };
 		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
 		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
@@ -137,6 +154,10 @@
 		30F6BF5E1D92359B001509A2 /* SpyViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyViewControllerFactory.swift; sourceTree = "<group>"; };
 		30F6BF601D9235CA001509A2 /* SpyAreasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyAreasViewController.swift; sourceTree = "<group>"; };
 		30F6BF621D92364A001509A2 /* AreasAcceptanceTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasAcceptanceTestsHelper.swift; sourceTree = "<group>"; };
+		4AE39A88C6D87A686C505E60 /* Pods_bbqFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbqFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C16396CC77EAE0C2FCE01E /* Pods-bbqFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bbqFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE180710E616F6C00CD3C07B /* Pods_bbqFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbqFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6EFDB97356BB8F7F4571EFD /* Pods-bbqFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bbqFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-bbqFinder/Pods-bbqFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +168,7 @@
 				301258851D96AE5D00E3F33E /* SceneKit.framework in Frameworks */,
 				30D7EBF81D7F5353007C2884 /* CoreLocation.framework in Frameworks */,
 				3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */,
+				3DA9BA03E1ADDE2AE71DD422 /* Pods_bbqFinder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				548BADCF25C719C2EDDE7E4D /* Pods_bbqFinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +237,17 @@
 			name = "Apple Maps";
 			sourceTree = "<group>";
 		};
+		308BF9E51D9DD1CA007FA732 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */,
+				308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */,
+				3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */,
+				3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */,
+			);
+			name = Tracking;
+			sourceTree = "<group>";
+		};
 		30A81D541D89682800309158 /* App Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +263,7 @@
 				30D7EBFB1D7F6FEC007C2884 /* Frameworks */,
 				30C716F61D6C7E9F0085FFBD /* bbqFinderTests */,
 				30C716E01D6C7E9F0085FFBD /* Products */,
+				31F5A58C8701C5AAE5FEB646 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +279,7 @@
 		30C716E11D6C7E9F0085FFBD /* bbqFinder */ = {
 			isa = PBXGroup;
 			children = (
+				3002BCE61D9E351B0068B2B6 /* bbqFinder.entitlements */,
 				30C717051D6C7F0D0085FFBD /* Architecture */,
 				30D7EBF01D7E9B27007C2884 /* BBQs Data */,
 				30C717021D6C7EAD0085FFBD /* Area Selection */,
@@ -254,6 +290,8 @@
 				30C716E91D6C7E9F0085FFBD /* Assets.xcassets */,
 				30C716EB1D6C7E9F0085FFBD /* LaunchScreen.storyboard */,
 				30C716EE1D6C7E9F0085FFBD /* Info.plist */,
+				308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */,
+				308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */,
 				30D7EBFA1D7F6FC5007C2884 /* Utils */,
 			);
 			path = bbqFinder;
@@ -339,6 +377,7 @@
 		30D7EBFA1D7F6FC5007C2884 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				308BF9E51D9DD1CA007FA732 /* Tracking */,
 				301258921D96CC7F00E3F33E /* Buttons */,
 				3012587D1D96AB2B00E3F33E /* Labels */,
 				30A81D541D89682800309158 /* App Style */,
@@ -357,6 +396,8 @@
 				301258841D96AE5D00E3F33E /* SceneKit.framework */,
 				30D7EBF71D7F5353007C2884 /* CoreLocation.framework */,
 				3030E31D1D7E070200647CFA /* MapKit.framework */,
+				DE180710E616F6C00CD3C07B /* Pods_bbqFinder.framework */,
+				4AE39A88C6D87A686C505E60 /* Pods_bbqFinderTests.framework */,
 			);
 			name = Frameworks;
 			path = bbqFinder;
@@ -411,6 +452,17 @@
 			name = "Spy Controllers";
 			sourceTree = "<group>";
 		};
+		31F5A58C8701C5AAE5FEB646 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				280DF157ACD55C0E945F8ADC /* Pods-bbqFinder.debug.xcconfig */,
+				E6EFDB97356BB8F7F4571EFD /* Pods-bbqFinder.release.xcconfig */,
+				0F175D616D4E694D4E3928BE /* Pods-bbqFinderTests.debug.xcconfig */,
+				50C16396CC77EAE0C2FCE01E /* Pods-bbqFinderTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -418,9 +470,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C716FC1D6C7E9F0085FFBD /* Build configuration list for PBXNativeTarget "bbqFinder" */;
 			buildPhases = (
+				89AF9F4D576FD79879BF9EA0 /* [CP] Check Pods Manifest.lock */,
 				30C716DB1D6C7E9E0085FFBD /* Sources */,
 				30C716DC1D6C7E9E0085FFBD /* Frameworks */,
 				30C716DD1D6C7E9E0085FFBD /* Resources */,
+				325BF0F9BB4D45667BABEF6A /* [CP] Embed Pods Frameworks */,
+				BCF85090B0BD34DA611D12B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,9 +490,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C716FF1D6C7E9F0085FFBD /* Build configuration list for PBXNativeTarget "bbqFinderTests" */;
 			buildPhases = (
+				C016BCF5F74F26CFF938EAFB /* [CP] Check Pods Manifest.lock */,
 				30C716EF1D6C7E9F0085FFBD /* Sources */,
 				30C716F01D6C7E9F0085FFBD /* Frameworks */,
 				30C716F11D6C7E9F0085FFBD /* Resources */,
+				ED36F2B50B46AA2F9CD61644 /* [CP] Embed Pods Frameworks */,
+				5B36A9A85BBE1AD1C3F144CB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -463,6 +521,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7HG6PP7Q5J;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					30C716F21D6C7E9F0085FFBD = {
 						CreatedOnToolsVersion = 7.3;
@@ -501,6 +564,7 @@
 				30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */,
 				3050354F1D949A91002B7D1F /* BBQMapViewController.xib in Resources */,
 				30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */,
+				308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,10 +573,104 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F6BF5C1D923340001509A2 /* Main.storyboard in Resources */,
+				308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		325BF0F9BB4D45667BABEF6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bbqFinder/Pods-bbqFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B36A9A85BBE1AD1C3F144CB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89AF9F4D576FD79879BF9EA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BCF85090B0BD34DA611D12B2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bbqFinder/Pods-bbqFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C016BCF5F74F26CFF938EAFB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ED36F2B50B46AA2F9CD61644 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30C716DB1D6C7E9E0085FFBD /* Sources */ = {
@@ -530,6 +688,7 @@
 				30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */,
 				30D7EC091D80B167007C2884 /* BBQDetailsPresenter.swift in Sources */,
 				301258BE1D97F86600E3F33E /* BallaratBBQs.swift in Sources */,
+				308BF9E71D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift in Sources */,
 				30C717141D6C89250085FFBD /* AreasInteractor.swift in Sources */,
 				30D7EBF21D7F4D97007C2884 /* MelbournBBQs.swift in Sources */,
 				3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */,
@@ -546,6 +705,7 @@
 				30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */,
 				30D7EC161D811681007C2884 /* BBQDetailsMapViewCell.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */,
+				308BF9EA1D9DD329007FA732 /* AnalyticsTracker.swift in Sources */,
 				30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */,
 				30D7EC071D80B14F007C2884 /* BBQDetailsInteractor.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,
@@ -555,12 +715,14 @@
 				3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */,
 				30C7170D1D6C84CF0085FFBD /* TableViewDataSource.swift in Sources */,
 				30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */,
+				3002BCEA1D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift in Sources */,
 				30D7EC121D811596007C2884 /* BBQDetailsAmmenitiesViewCell.swift in Sources */,
 				308BF9DD1D9DC110007FA732 /* AppleRouter.swift in Sources */,
 				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,
 				3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */,
 				30D7EC001D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift in Sources */,
 				30F640981D86642E00E27A67 /* AppStyle.swift in Sources */,
+				3002BCE81D9F09BF0068B2B6 /* MapAnalyticsTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,32 +855,42 @@
 		};
 		30C716FD1D6C7E9F0085FFBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 280DF157ACD55C0E945F8ADC /* Pods-bbqFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = bbqFinder/bbqFinder.entitlements;
 				DEVELOPMENT_TEAM = 7HG6PP7Q5J;
 				INFOPLIST_FILE = bbqFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bbqFinder/bbqFinder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		30C716FE1D6C7E9F0085FFBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6EFDB97356BB8F7F4571EFD /* Pods-bbqFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = bbqFinder/bbqFinder.entitlements;
 				DEVELOPMENT_TEAM = 7HG6PP7Q5J;
 				INFOPLIST_FILE = bbqFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bbqFinder/bbqFinder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		30C717001D6C7E9F0085FFBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F175D616D4E694D4E3928BE /* Pods-bbqFinderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = bbqFinderTests/Info.plist;
@@ -732,6 +904,7 @@
 		};
 		30C717011D6C7E9F0085FFBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C16396CC77EAE0C2FCE01E /* Pods-bbqFinderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = bbqFinderTests/Info.plist;

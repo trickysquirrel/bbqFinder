@@ -8,19 +8,21 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     typealias dataSourceType = AreaViewModel
     private let dataSource: TableViewDataSource<AreasViewController>
+    private let analytics: AnalyticsTracker
     var interactor: AreasInteractor!    // required var for the controller/interactor/presenter dependancy
 
 
-    required init(dataSource: TableViewDataSource<AreasViewController>) {
+    required init(dataSource: TableViewDataSource<AreasViewController>, analyticsTracker: AnalyticsTracker) {
 
         self.dataSource = dataSource
+        self.analytics = analyticsTracker
         super.init(style: .plain)
         AreaTableViewCell.reigsterWithTableView(tableView)
         dataSource.delegate = self
         dataSource.setTableView(tableView)
     }
 
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -28,6 +30,7 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        analytics.trackScreenAppearance()
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
         interactor.fetchAreas()

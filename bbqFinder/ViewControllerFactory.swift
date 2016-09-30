@@ -23,33 +23,47 @@ enum ViewControllersIDs : String {
 }
 
 
-class ViewControllerFactory: NSObject {
+protocol ViewControllerFactoryProtocol {
 
-    fileprivate var storyboard: UIStoryboard?
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController
+    func makeBbqMapArea() -> BBQMapViewController
+    func makeBbqDetails() -> BBQDetailsTableViewController
+}
+
+
+class ViewControllerFactory: ViewControllerFactoryProtocol {
+
+    private var storyboard: UIStoryboard?
+    private var analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol
 
     
-    override init() {
-        super.init()
+    required init(analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol) {
+        self.analyticsTrackerFactory = analyticsTrackerFactory
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }
 
     
     func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
 
-        return AreasViewController(dataSource: dataSource)
+        let analyticsTracker = analyticsTrackerFactory.makeAreasTracker()
+        return AreasViewController(dataSource: dataSource, analyticsTracker: analyticsTracker )
     }
 
 
     func makeBbqMapArea() -> BBQMapViewController {
 
         let alerter = Alerter()
-        return BBQMapViewController(alerter: alerter)
+        let analyticsTracker = analyticsTrackerFactory.makeMapTracker()
+        return BBQMapViewController(alerter: alerter, analyticsTracker: analyticsTracker)
     }
 
 
     func makeBbqDetails() -> BBQDetailsTableViewController {
 
-        return storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
+        let analytics = analyticsTrackerFactory.makeBBQDetailsTracker()
+        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqDetails) as! BBQDetailsTableViewController
+        controller.analytics = analytics
+        return controller
     }
 
 

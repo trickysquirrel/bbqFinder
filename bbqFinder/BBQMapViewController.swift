@@ -14,6 +14,7 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
     var interactor: BBQMapInteractor!
     private let alerter: Alerter
+    private let analytics: MapAnalyticsTracker
     @IBOutlet weak var mapView: BBQMapView!
 
 
@@ -22,8 +23,9 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     }
 
 
-    required init(alerter: Alerter) {
+    required init(alerter: Alerter, analyticsTracker: MapAnalyticsTracker) {
         self.alerter = alerter
+        self.analytics = analyticsTracker
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -34,8 +36,8 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
 
 
     override func viewDidAppear(_ animated: Bool) {
-
         super.viewDidAppear(animated)
+        self.analytics.trackScreenAppearance()
         if mapView.hasLocationData() == false {
             interactor.fetchLocations()
         }
@@ -54,6 +56,7 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
             mapView.showAndCentreLocationOfUser(coordinate2D)
 
         case .displayAlert(let title, let message):
+            analytics.trackUserLocationDenied()
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
         }
     }
@@ -62,6 +65,7 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     // MARK: Actions
 
     @IBAction func userSelectedShowCurrentLocation() {
+        analytics.trackUserLocationSelection()
         interactor.fetchUsersLocation()
     }
 

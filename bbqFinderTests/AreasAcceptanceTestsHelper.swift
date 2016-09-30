@@ -29,8 +29,9 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let expectation = testCase.expectation(description: "waiting for presenter response")
 
+        let stubAnalyticsTracker = StubAnalyticsTracker()
         let dataSource = TableViewDataSource<AreasViewController>()
-        let spyAreasViewController = SpyAreasViewController(dataSource: dataSource)
+        let spyAreasViewController = SpyAreasViewController(dataSource: dataSource, analyticsTracker: stubAnalyticsTracker)
 
         spyAreasViewController.didReceivePresenterUpdate = { areas in
             self.providedAreaDataModels = areas
@@ -71,7 +72,11 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let spyViewControllerFactory = SpyViewControllerFactory(spyAreasViewController: spyAreasViewController)
 
-        let router = AppRouter(window: window, viewControllerFactory: spyViewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe, appleRouter: appleRouter)
+        let router = AppRouter(window: window,
+                               viewControllerFactory: spyViewControllerFactory,
+                               navigationController: UINavigationController(),
+                               wireframe: wireframe,
+                               appleRouter: appleRouter)
 
         router.showRootViewController()
     }

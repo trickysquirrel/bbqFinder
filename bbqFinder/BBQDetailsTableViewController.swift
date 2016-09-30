@@ -8,6 +8,7 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
 
     var interactor: BBQDetailsInteractor!
     var alerter: Alerter!
+    var analytics: BBQDetailsAnalyticsTracker!
     private var viewModel: BBQDetailsViewModel?
     @IBOutlet weak var mapViewCell: BBQDetailsMapViewCell!
     @IBOutlet weak var distanceViewCell: BBQDetailsDistanceViewCell!
@@ -17,6 +18,7 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        analytics.trackScreenAppearance()
         interactor.fetchDetails()
     }
 
@@ -31,6 +33,7 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
             updateAllViewCells(viewModel)
 
         case .displayAlert(let title, let message):
+            analytics.trackUserLocationDenied()
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
             
         }
@@ -48,11 +51,13 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
     // MARK: Actions
 
     @IBAction func userSelectedDirection() {
+        analytics.trackDirectionSelection()
         viewModel?.directionAction()
     }
 
     
     @IBAction func userSelectedShare() {
+        analytics.trackShareSelection()
         viewModel?.shareAction(self)
     }
     

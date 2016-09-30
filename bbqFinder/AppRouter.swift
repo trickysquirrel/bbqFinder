@@ -16,7 +16,7 @@ typealias RouterBBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ tit
 struct AppRouter {
 
     let window: UIWindow
-    let viewControllerFactory: ViewControllerFactory
+    let viewControllerFactory: ViewControllerFactoryProtocol
     let navigationController: UINavigationController
     let wireframe: Wireframe
     let appleRouter: AppleRouter

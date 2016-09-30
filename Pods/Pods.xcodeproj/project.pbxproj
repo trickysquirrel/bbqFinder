@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B63A7E8B00D81211EADD56F28F5EF03 /* Pods-bbqFinderTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F6739F6D946A80FBD887846E07509784 /* Pods-bbqFinderTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		728C26E662FD65A4AFA19ED4A91559F4 /* Pods-bbqFinderTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE7754565A39ED6FE1000B6F2FDB520 /* Pods-bbqFinderTests-dummy.m */; };
+		8D002D65C761ADE7354A3DE282F2C3ED /* Pods-bbqFinder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E90F1FFD25ECFDD5C72A61B8E39C90BC /* Pods-bbqFinder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7CC0A352FA78B41EBC86EACE2B61A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		AD5BD56122B5DC30EC93FEC0380C27C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B81604F7785EE1B7DF1CC9AB8BA76C11 /* Pods-bbqFinder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B4B670EF91DDDA05B13FD2CBD7B5 /* Pods-bbqFinder-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		027C7626D8E3A83387F9F749C903B34C /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		03A43EE5D8B574127132CEFADCB58FDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		059120CC19CDE74B82D787FF0DEB2E35 /* Pods-bbqFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bbqFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		08EDA84A3489B10424267D217E7DB0B3 /* Pods-bbqFinderTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bbqFinderTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		09C23C9C0CC4A2C4EAC2056915070CE4 /* Pods-bbqFinder-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-bbqFinder-acknowledgements.plist"; sourceTree = "<group>"; };
+		0FD4A1F7101FBA3DC78864210C13A8BB /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Sources/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		1370A4D93A80EB70476E55E0A8796D80 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		13833099FEA20D1C85E5E2DF0E2869A0 /* Pods-bbqFinder-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bbqFinder-acknowledgements.markdown"; sourceTree = "<group>"; };
+		13A1A6F8DC545C1C662B698534679C37 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		19DA27DAD2AA23828BCAF64DB0A8605E /* Pods-bbqFinderTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bbqFinderTests-frameworks.sh"; sourceTree = "<group>"; };
+		22789ABE300A354188C7DACE348ED3D9 /* Pods-bbqFinderTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-bbqFinderTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2934476BBECFE928F8AC0D48AA0DB124 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Sources/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		3839E6955E498E0594043C7F67020719 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		4546579AE7F01E4BB339AAFAF82BF157 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Sources/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		4B2F1B8C64F7F24EC5C7C5597778F08A /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		4C1F850898FABAEDA37BDBC1F950C4EB /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		518369FBF9196DA201338ABAD6120CAC /* Pods-bbqFinder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-bbqFinder.modulemap"; sourceTree = "<group>"; };
+		54FDA27A06A41EB0190AD8C984ECA39D /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/Analytics.h; sourceTree = "<group>"; };
+		5B4C563108474B7D2DF07AEF9D7EC2F1 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Sources/GAIFields.h; sourceTree = "<group>"; };
+		5C3B4F02A21BAEB38312AB5C68E89594 /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Sources/GAITracker.h; sourceTree = "<group>"; };
+		5C782C3D48A26020BCBA25CD1B557932 /* Pods-bbqFinder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bbqFinder-frameworks.sh"; sourceTree = "<group>"; };
+		6147B4B670EF91DDDA05B13FD2CBD7B5 /* Pods-bbqFinder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bbqFinder-dummy.m"; sourceTree = "<group>"; };
+		667EC18B1B5CDE03495C036E4A00353C /* GGLAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLAnalytics.framework; path = Frameworks/GGLAnalytics.framework; sourceTree = "<group>"; };
+		71C2EF84BD7ABB689E830B8EC5533F8D /* Pods-bbqFinderTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-bbqFinderTests.modulemap"; sourceTree = "<group>"; };
+		7DC8E83F42C76C0B86BBA65FD5CCB8E9 /* Pods-bbqFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bbqFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		88E6958908843FB26C476891073DB39E /* Pods-bbqFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bbqFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A4C5231645C9597F942C546F63AC337 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		975BE98F72DCCC1CF0C2EAC63647C8E6 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		9897312D5A70272879BAB46EA8E1F240 /* Pods-bbqFinder-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bbqFinder-resources.sh"; sourceTree = "<group>"; };
+		99B2B7F490639E4C793CDF5E9333C78B /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/Core.h; sourceTree = "<group>"; };
+		9CB4E248AF48FC15609E21DBC2FCF452 /* Pods-bbqFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-bbqFinder.release.xcconfig"; sourceTree = "<group>"; };
+		9F565398C5B1AE20B4263AB7C3909BE3 /* GGLCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GGLCore.framework; path = Frameworks/GGLCore.framework; sourceTree = "<group>"; };
+		B057604AAD39CC9EB16C3A8BF7178053 /* Pods_bbqFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbqFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACE5DD3A71F4144FAD406CAF11146C9 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Sources/GAI.h; sourceTree = "<group>"; };
+		BC7EA175F3BE0BDC77FFDCD62878D8B6 /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Sources/GAITrackedViewController.h; sourceTree = "<group>"; };
+		BF7E7DFF2271DC9C729B46958AC8AE9B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C716A7F4093D429254D821761E41AEDB /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Sources/GAILogger.h; sourceTree = "<group>"; };
+		C88253430ACC98F965B9DB9FB24A9384 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Sources/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D1484F6E76CC305AB612303BAA98AE80 /* Pods_bbqFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbqFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3245F2A1351C06FEB1D388AA929F300 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		D7229ECFBB011E51F64E79BDD238BF5F /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Sources/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		DFE7754565A39ED6FE1000B6F2FDB520 /* Pods-bbqFinderTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-bbqFinderTests-dummy.m"; sourceTree = "<group>"; };
+		E90F1FFD25ECFDD5C72A61B8E39C90BC /* Pods-bbqFinder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bbqFinder-umbrella.h"; sourceTree = "<group>"; };
+		EC8AA9ADBCA7F7E8CCBD0585AF653782 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		F2C961956B06DC4C2BE756C534128C9B /* Pods-bbqFinderTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-bbqFinderTests-resources.sh"; sourceTree = "<group>"; };
+		F6739F6D946A80FBD887846E07509784 /* Pods-bbqFinderTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-bbqFinderTests-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		094AC628EFA749B805CF2C0E0D966930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5BD56122B5DC30EC93FEC0380C27C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54C77795759080803AE63B7899DF3041 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7CC0A352FA78B41EBC86EACE2B61A87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2ACDDB954D3E5A1553D9FCD10923CFEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA81DDAFB717009D6FEAC6C40EBB0C67 /* FirebaseAnalytics */,
+				99A8CAC112714301CE5834AA6BA2942E /* FirebaseInstanceID */,
+				D0F1F2D3A93406B6F20538D9564F460B /* Google */,
+				B76F1FEDFA2F9AEE3A5BFB46FD01BEE1 /* GoogleAnalytics */,
+				A233F3FC4CE578E1C44730EB00627608 /* GoogleInterchangeUtilities */,
+				93EECB14200D3B232114C6E839C90445 /* GoogleSymbolUtilities */,
+				B46185945C3D77EDE52F1AD0EEDD2410 /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3F9385674FC2112F8802C8A710B2B6A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B057604AAD39CC9EB16C3A8BF7178053 /* Pods_bbqFinder.framework */,
+				D1484F6E76CC305AB612303BAA98AE80 /* Pods_bbqFinderTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52001905DF33DE19D17CB263F524C87F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				667EC18B1B5CDE03495C036E4A00353C /* GGLAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		61E36FCE083F6F1E98D412FDAD7486F4 /* Pods-bbqFinder */ = {
+			isa = PBXGroup;
+			children = (
+				03A43EE5D8B574127132CEFADCB58FDF /* Info.plist */,
+				518369FBF9196DA201338ABAD6120CAC /* Pods-bbqFinder.modulemap */,
+				13833099FEA20D1C85E5E2DF0E2869A0 /* Pods-bbqFinder-acknowledgements.markdown */,
+				09C23C9C0CC4A2C4EAC2056915070CE4 /* Pods-bbqFinder-acknowledgements.plist */,
+				6147B4B670EF91DDDA05B13FD2CBD7B5 /* Pods-bbqFinder-dummy.m */,
+				5C782C3D48A26020BCBA25CD1B557932 /* Pods-bbqFinder-frameworks.sh */,
+				9897312D5A70272879BAB46EA8E1F240 /* Pods-bbqFinder-resources.sh */,
+				E90F1FFD25ECFDD5C72A61B8E39C90BC /* Pods-bbqFinder-umbrella.h */,
+				059120CC19CDE74B82D787FF0DEB2E35 /* Pods-bbqFinder.debug.xcconfig */,
+				9CB4E248AF48FC15609E21DBC2FCF452 /* Pods-bbqFinder.release.xcconfig */,
+			);
+			name = "Pods-bbqFinder";
+			path = "Target Support Files/Pods-bbqFinder";
+			sourceTree = "<group>";
+		};
+		76433B5AE4246D6A796B63A52F485F81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				027C7626D8E3A83387F9F749C903B34C /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				2ACDDB954D3E5A1553D9FCD10923CFEF /* Pods */,
+				3F9385674FC2112F8802C8A710B2B6A2 /* Products */,
+				F7D56A47D43D8A759DD5DEDFBFDFE831 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8CBCF8B8C3DDA1EE7B2F7705FD7D069B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1370A4D93A80EB70476E55E0A8796D80 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93EECB14200D3B232114C6E839C90445 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC5FD3D7D82F71930690AADFBE9BFA /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		99A8CAC112714301CE5834AA6BA2942E /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F850898FABAEDA37BDBC1F950C4EB /* FIRInstanceID.h */,
+				B5A1F97D555A88E0C09B1074A4CBF4C6 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		A14A97CCC4A89AAE511DD747524C409F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4B2F1B8C64F7F24EC5C7C5597778F08A /* Analytics-Module.h */,
+				99B2B7F490639E4C793CDF5E9333C78B /* Core.h */,
+				8A4C5231645C9597F942C546F63AC337 /* Core-Module.h */,
+				3839E6955E498E0594043C7F67020719 /* SignIn-Module.h */,
+				A1B67F399217C8B5BD984BE0A9A6E24D /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		A1B67F399217C8B5BD984BE0A9A6E24D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F565398C5B1AE20B4263AB7C3909BE3 /* GGLCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A233F3FC4CE578E1C44730EB00627608 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				8CBCF8B8C3DDA1EE7B2F7705FD7D069B /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		AA75523ABF3E0EEF2262B897CC8B9414 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3245F2A1351C06FEB1D388AA929F300 /* libGoogleAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B46185945C3D77EDE52F1AD0EEDD2410 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DAFE5632CF2082A6AF76AFF134B9F87C /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		B5A1F97D555A88E0C09B1074A4CBF4C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				975BE98F72DCCC1CF0C2EAC63647C8E6 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B76F1FEDFA2F9AEE3A5BFB46FD01BEE1 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				BACE5DD3A71F4144FAD406CAF11146C9 /* GAI.h */,
+				2934476BBECFE928F8AC0D48AA0DB124 /* GAIDictionaryBuilder.h */,
+				D7229ECFBB011E51F64E79BDD238BF5F /* GAIEcommerceFields.h */,
+				C88253430ACC98F965B9DB9FB24A9384 /* GAIEcommerceProduct.h */,
+				0FD4A1F7101FBA3DC78864210C13A8BB /* GAIEcommerceProductAction.h */,
+				4546579AE7F01E4BB339AAFAF82BF157 /* GAIEcommercePromotion.h */,
+				5B4C563108474B7D2DF07AEF9D7EC2F1 /* GAIFields.h */,
+				C716A7F4093D429254D821761E41AEDB /* GAILogger.h */,
+				BC7EA175F3BE0BDC77FFDCD62878D8B6 /* GAITrackedViewController.h */,
+				5C3B4F02A21BAEB38312AB5C68E89594 /* GAITracker.h */,
+				AA75523ABF3E0EEF2262B897CC8B9414 /* Frameworks */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0F1F2D3A93406B6F20538D9564F460B /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				F0209F154945412EE1A6969571B4833E /* Analytics */,
+				A14A97CCC4A89AAE511DD747524C409F /* Core */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		D1EC5FD3D7D82F71930690AADFBE9BFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13A1A6F8DC545C1C662B698534679C37 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAFE5632CF2082A6AF76AFF134B9F87C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC8AA9ADBCA7F7E8CCBD0585AF653782 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA81DDAFB717009D6FEAC6C40EBB0C67 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				76433B5AE4246D6A796B63A52F485F81 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		EE3411F99F059EF47F7845E783FC699C /* Pods-bbqFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF7E7DFF2271DC9C729B46958AC8AE9B /* Info.plist */,
+				71C2EF84BD7ABB689E830B8EC5533F8D /* Pods-bbqFinderTests.modulemap */,
+				22789ABE300A354188C7DACE348ED3D9 /* Pods-bbqFinderTests-acknowledgements.markdown */,
+				08EDA84A3489B10424267D217E7DB0B3 /* Pods-bbqFinderTests-acknowledgements.plist */,
+				DFE7754565A39ED6FE1000B6F2FDB520 /* Pods-bbqFinderTests-dummy.m */,
+				19DA27DAD2AA23828BCAF64DB0A8605E /* Pods-bbqFinderTests-frameworks.sh */,
+				F2C961956B06DC4C2BE756C534128C9B /* Pods-bbqFinderTests-resources.sh */,
+				F6739F6D946A80FBD887846E07509784 /* Pods-bbqFinderTests-umbrella.h */,
+				88E6958908843FB26C476891073DB39E /* Pods-bbqFinderTests.debug.xcconfig */,
+				7DC8E83F42C76C0B86BBA65FD5CCB8E9 /* Pods-bbqFinderTests.release.xcconfig */,
+			);
+			name = "Pods-bbqFinderTests";
+			path = "Target Support Files/Pods-bbqFinderTests";
+			sourceTree = "<group>";
+		};
+		F0209F154945412EE1A6969571B4833E /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				54FDA27A06A41EB0190AD8C984ECA39D /* Analytics.h */,
+				52001905DF33DE19D17CB263F524C87F /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		F7D56A47D43D8A759DD5DEDFBFDFE831 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				61E36FCE083F6F1E98D412FDAD7486F4 /* Pods-bbqFinder */,
+				EE3411F99F059EF47F7845E783FC699C /* Pods-bbqFinderTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		53F4D00C04042B1BB61D44214B171CE6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B63A7E8B00D81211EADD56F28F5EF03 /* Pods-bbqFinderTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C763E7C331B2BDCCA3399118E930EF61 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D002D65C761ADE7354A3DE282F2C3ED /* Pods-bbqFinder-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3E2C5AEE0DBED05D5425C93F69E70EF8 /* Pods-bbqFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2797FE8262D6E139A7E80A85B9FDE54 /* Build configuration list for PBXNativeTarget "Pods-bbqFinderTests" */;
+			buildPhases = (
+				E8ECE77E47286F1F7AC72C0EC67FBE2B /* Sources */,
+				094AC628EFA749B805CF2C0E0D966930 /* Frameworks */,
+				53F4D00C04042B1BB61D44214B171CE6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-bbqFinderTests";
+			productName = "Pods-bbqFinderTests";
+			productReference = D1484F6E76CC305AB612303BAA98AE80 /* Pods_bbqFinderTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51E02CF2AFD3D5FF5C71FDFB21C14611 /* Pods-bbqFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 460B440B7A5FC95F99F24391C219A132 /* Build configuration list for PBXNativeTarget "Pods-bbqFinder" */;
+			buildPhases = (
+				0A9F440AB7D3A4A9B36503DF1AE91A5D /* Sources */,
+				54C77795759080803AE63B7899DF3041 /* Frameworks */,
+				C763E7C331B2BDCCA3399118E930EF61 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-bbqFinder";
+			productName = "Pods-bbqFinder";
+			productReference = B057604AAD39CC9EB16C3A8BF7178053 /* Pods_bbqFinder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 3F9385674FC2112F8802C8A710B2B6A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51E02CF2AFD3D5FF5C71FDFB21C14611 /* Pods-bbqFinder */,
+				3E2C5AEE0DBED05D5425C93F69E70EF8 /* Pods-bbqFinderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A9F440AB7D3A4A9B36503DF1AE91A5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B81604F7785EE1B7DF1CC9AB8BA76C11 /* Pods-bbqFinder-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8ECE77E47286F1F7AC72C0EC67FBE2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				728C26E662FD65A4AFA19ED4A91559F4 /* Pods-bbqFinderTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2ED4B3FDF73DE19B4733BDABA9C75F3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB4E248AF48FC15609E21DBC2FCF452 /* Pods-bbqFinder.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bbqFinder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bbqFinder/Pods-bbqFinder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bbqFinder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3ED494AE4E89DC0C34E019170464B66B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 059120CC19CDE74B82D787FF0DEB2E35 /* Pods-bbqFinder.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bbqFinder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bbqFinder/Pods-bbqFinder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bbqFinder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9C15361D0ACD2F32A4D64FA0CA8D091D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DC8E83F42C76C0B86BBA65FD5CCB8E9 /* Pods-bbqFinderTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bbqFinderTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bbqFinderTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AC1FC48E68E752F18B61691A97457863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88E6958908843FB26C476891073DB39E /* Pods-bbqFinderTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-bbqFinderTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-bbqFinderTests/Pods-bbqFinderTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_bbqFinderTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		460B440B7A5FC95F99F24391C219A132 /* Build configuration list for PBXNativeTarget "Pods-bbqFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ED494AE4E89DC0C34E019170464B66B /* Debug */,
+				2ED4B3FDF73DE19B4733BDABA9C75F3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2797FE8262D6E139A7E80A85B9FDE54 /* Build configuration list for PBXNativeTarget "Pods-bbqFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC1FC48E68E752F18B61691A97457863 /* Debug */,
+				9C15361D0ACD2F32A4D64FA0CA8D091D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

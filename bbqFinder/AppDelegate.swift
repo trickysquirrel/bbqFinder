@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let appleMapsApp = AppleMapsAppDirection()
         let wireframe = Wireframe()
-        let viewControllerFactory = ViewControllerFactory()
+        let analyticsTrackerFactory = AnalyticsTrackerFactory()
+        let viewControllerFactory = ViewControllerFactory(analyticsTrackerFactory: analyticsTrackerFactory)
         let appleRouter = AppleRouter(appleMapsApp: appleMapsApp)
         
         router = AppRouter(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe, appleRouter: appleRouter)
