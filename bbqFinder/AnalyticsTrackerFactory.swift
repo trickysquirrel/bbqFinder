@@ -25,7 +25,7 @@ protocol AnalyticsTrackerFactoryProtocol {
 
 final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 
-    let tracker: GAITracker
+    fileprivate let tracker: GAITracker
 
 
     init() {
@@ -60,10 +60,14 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
         let eventAction = makeAnalyticsEventAction()
         return BBQDetailsAnalyticsTracker(screenApperanceAction: appearanceAction, eventAction: eventAction)
     }
+}
 
-    // MARK: Actions
 
-    private func makeScreenAppearanceAction() -> AnalyticsScreenAppearanceAction {
+// MARK: Actions
+
+extension AnalyticsTrackerFactory {
+
+    fileprivate func makeScreenAppearanceAction() -> AnalyticsScreenAppearanceAction {
 
         let action: AnalyticsScreenAppearanceAction = { screenName in
 
@@ -77,7 +81,7 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
     }
 
 
-    private func makeAnalyticsEventAction() -> AnalyticsEventAction {
+    fileprivate func makeAnalyticsEventAction() -> AnalyticsEventAction {
 
         let action: AnalyticsEventAction = { category, action, label in
 

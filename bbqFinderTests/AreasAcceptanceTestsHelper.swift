@@ -29,7 +29,7 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let expectation = testCase.expectation(description: "waiting for presenter response")
 
-        let stubAnalyticsTracker = StubAnalyticsTracker()
+        let stubAnalyticsTracker = StubAnalyticsTrackerFactory().makeAreasTracker()
         let dataSource = TableViewDataSource<AreasViewController>()
         let spyAreasViewController = SpyAreasViewController(dataSource: dataSource, analyticsTracker: stubAnalyticsTracker)
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3002BCE81D9F09BF0068B2B6 /* MapAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */; };
 		3002BCEA1D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */; };
+		3002BCED1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */; };
 		3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258791D9571F100E3F33E /* LocationDistance.swift */; };
 		3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012587B1D96A6C200E3F33E /* LabelSpacing.swift */; };
 		301258851D96AE5D00E3F33E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301258841D96AE5D00E3F33E /* SceneKit.framework */; };
@@ -90,6 +91,7 @@
 		3002BCE61D9E351B0068B2B6 /* bbqFinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bbqFinder.entitlements; sourceTree = "<group>"; };
 		3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnalyticsTracker.swift; sourceTree = "<group>"; };
 		3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQDetailsAnalyticsTracker.swift; sourceTree = "<group>"; };
+		3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubAnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
 		301258791D9571F100E3F33E /* LocationDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDistance.swift; sourceTree = "<group>"; };
 		3012587B1D96A6C200E3F33E /* LabelSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSpacing.swift; sourceTree = "<group>"; };
 		301258841D96AE5D00E3F33E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
@@ -183,6 +185,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3002BCEB1D9F17910068B2B6 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */,
+			);
+			name = Stubs;
+			sourceTree = "<group>";
+		};
 		3012587D1D96AB2B00E3F33E /* Labels */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +448,7 @@
 			children = (
 				30E59F071D921ED9008643B5 /* AreasAcceptanceTests.swift */,
 				30F6BF621D92364A001509A2 /* AreasAcceptanceTestsHelper.swift */,
+				3002BCEB1D9F17910068B2B6 /* Stubs */,
 				30F6BF5D1D923576001509A2 /* Spy Controllers */,
 			);
 			name = AcceptanceTesting;
@@ -730,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3002BCED1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift in Sources */,
 				30E59F081D921ED9008643B5 /* AreasAcceptanceTests.swift in Sources */,
 				30C716F81D6C7E9F0085FFBD /* bbqFinderTests.swift in Sources */,
 				30F6BF611D9235CA001509A2 /* SpyAreasViewController.swift in Sources */,

@@ -6,19 +6,6 @@ import UIKit
 @testable import bbqFinder
 
 
-class StubAnalyticsTracker: AnalyticsTracker {
-    func trackScreenAppearance() {}
-}
-
-class StubAnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
-
-    func makeAreasTracker() -> AnalyticsTracker {
-        return StubAnalyticsTracker()
-    }
-}
-
-
-
 class SpyViewControllerFactory: ViewControllerFactoryProtocol {
 
     fileprivate let spyAreasViewController: SpyAreasViewController
