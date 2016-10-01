@@ -5,9 +5,8 @@
 import Foundation
 
 
-class MapAnalyticsTracker: NSObject {
+final class MapAnalyticsTracker: NSObject {
 
-    // todo look at passing func instead so vars can be named
     private let screenApperanceAction: AnalyticsScreenAppearanceAction
     private let eventAction: AnalyticsEventAction
     private let screenName = "Map"

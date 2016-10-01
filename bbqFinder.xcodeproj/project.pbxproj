@@ -34,7 +34,7 @@
 		308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
 		308BF9E71D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */; };
 		308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
-		308BF9EA1D9DD329007FA732 /* AnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */; };
+		308BF9EA1D9DD329007FA732 /* AreasTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E91D9DD329007FA732 /* AreasTracker.swift */; };
 		30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272A1D98DD180044B6C4 /* AlphineShire.swift */; };
 		30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272E1D9932C80044B6C4 /* Noosa.swift */; };
 		30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27341D993A670044B6C4 /* GreaterDandenong.swift */; };
@@ -116,7 +116,7 @@
 		308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bbqFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
-		308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTracker.swift; sourceTree = "<group>"; };
+		308BF9E91D9DD329007FA732 /* AreasTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasTracker.swift; sourceTree = "<group>"; };
 		30AE272A1D98DD180044B6C4 /* AlphineShire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphineShire.swift; sourceTree = "<group>"; };
 		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
 		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */,
-				308BF9E91D9DD329007FA732 /* AnalyticsTracker.swift */,
+				308BF9E91D9DD329007FA732 /* AreasTracker.swift */,
 				3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */,
 				3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */,
 			);
@@ -716,7 +716,7 @@
 				30D7EBFE1D7F70E8007C2884 /* Alerter.swift in Sources */,
 				30D7EC161D811681007C2884 /* BBQDetailsMapViewCell.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */,
-				308BF9EA1D9DD329007FA732 /* AnalyticsTracker.swift in Sources */,
+				308BF9EA1D9DD329007FA732 /* AreasTracker.swift in Sources */,
 				30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */,
 				30D7EC071D80B14F007C2884 /* BBQDetailsInteractor.swift in Sources */,
 				30D7EBEF1D7E9ACD007C2884 /* BBQs.swift in Sources */,

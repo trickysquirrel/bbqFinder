@@ -8,11 +8,11 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     typealias dataSourceType = AreaViewModel
     private let dataSource: TableViewDataSource<AreasViewController>
-    private let analytics: AnalyticsTracker
+    private let analytics: AreasTracker
     var interactor: AreasInteractor!    // required var for the controller/interactor/presenter dependancy
 
 
-    required init(dataSource: TableViewDataSource<AreasViewController>, analyticsTracker: AnalyticsTracker) {
+    required init(dataSource: TableViewDataSource<AreasViewController>, analyticsTracker: AreasTracker) {
 
         self.dataSource = dataSource
         self.analytics = analyticsTracker

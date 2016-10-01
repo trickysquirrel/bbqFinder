@@ -8,30 +8,18 @@ import UIKit
 
 class StubAnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 
-    func makeAreasTracker() -> AnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        return AreaTracker(name: "Areas", screenApperanceAction: appearanceAction)
+    func makeAreasTracker() -> AreasTracker {
+        return AreasTracker(screenApperanceAction: trackScreenAppearance)
     }
 
     func makeMapTracker() -> MapAnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        let eventAction = makeAnalyticsEventAction()
-        return MapAnalyticsTracker(screenApperanceAction: appearanceAction, eventAction: eventAction)
+        return MapAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 
     func makeBBQDetailsTracker() -> BBQDetailsAnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        let eventAction = makeAnalyticsEventAction()
-        return BBQDetailsAnalyticsTracker(screenApperanceAction: appearanceAction, eventAction: eventAction)
+        return BBQDetailsAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 
-    private func makeScreenAppearanceAction() -> AnalyticsScreenAppearanceAction {
-        let action: AnalyticsScreenAppearanceAction = { _ in }
-        return action
-    }
-
-    private func makeAnalyticsEventAction() -> AnalyticsEventAction {
-        let action: AnalyticsEventAction = { _ in }
-        return action
-    }
+    fileprivate func trackScreenAppearance(screenName: String) {}
+    fileprivate func trackEvent(category: String, action: String, label: String) {}
 }

@@ -4,19 +4,14 @@
 
 import UIKit
 
-protocol AnalyticsTracker {
-    func trackScreenAppearance()
-}
 
-
-final class AreaTracker: AnalyticsTracker {
+final class AreasTracker {
 
     private let screenApperanceAction: AnalyticsScreenAppearanceAction
-    private let screenName: String
+    private let screenName = "Areas"
 
 
-    required init(name: String, screenApperanceAction: @escaping AnalyticsScreenAppearanceAction) {
-        self.screenName = name
+    required init(screenApperanceAction: @escaping AnalyticsScreenAppearanceAction) {
         self.screenApperanceAction = screenApperanceAction
     }
 
@@ -24,5 +19,4 @@ final class AreaTracker: AnalyticsTracker {
     func trackScreenAppearance() {
         screenApperanceAction(screenName)
     }
-    
 }

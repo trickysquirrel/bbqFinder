@@ -4,20 +4,21 @@
 //  Note: As this class contains a relationship with an end point (external web service)
 //  we need to make sure this is not used in testing.  For these classes always use
 //  protocols, tests are therefore required to replace the whole object.
-//  If we use this as a sub class we might accidentally touch some code we were
+//  If we use this as a sub class and override we might accidentally touch some code we were
 //  not expecting and hit the network.
+//  In this specific case googleAnalytics has a testing switch, but generally this is good practice
 
 
 import UIKit
 
 
-typealias AnalyticsScreenAppearanceAction = ((_ screenName: String) -> Void)
+typealias AnalyticsScreenAppearanceAction = (_ screenName: String) -> Void
 typealias AnalyticsEventAction = ((_ category: String, _ action: String, _ label: String) -> Void)
 
 
 protocol AnalyticsTrackerFactoryProtocol {
 
-    func makeAreasTracker() -> AnalyticsTracker
+    func makeAreasTracker() -> AreasTracker
     func makeMapTracker() -> MapAnalyticsTracker
     func makeBBQDetailsTracker() -> BBQDetailsAnalyticsTracker
 }
@@ -37,61 +38,51 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
         gai?.trackUncaughtExceptions = true
         gai?.logger.logLevel = .none
         //gai?.dispatchInterval = 20
-
         tracker = GAI.sharedInstance().defaultTracker
     }
 
 
-    func makeAreasTracker() -> AnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        return AreaTracker(name: "Areas", screenApperanceAction: appearanceAction)
+    func makeAreasTracker() -> AreasTracker {
+        return AreasTracker(screenApperanceAction: trackScreenAppearance)
     }
 
 
     func makeMapTracker() -> MapAnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        let eventAction = makeAnalyticsEventAction()
-        return MapAnalyticsTracker(screenApperanceAction: appearanceAction, eventAction: eventAction)
+        return MapAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 
 
     func makeBBQDetailsTracker() -> BBQDetailsAnalyticsTracker {
-        let appearanceAction = makeScreenAppearanceAction()
-        let eventAction = makeAnalyticsEventAction()
-        return BBQDetailsAnalyticsTracker(screenApperanceAction: appearanceAction, eventAction: eventAction)
+        return BBQDetailsAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 }
 
 
-// MARK: Actions
+//  We could pass in GAITracker to the classes this factory generates, but this couples
+//  those classes with the 3rd party library.
+//  By passing in funcs rather than properties we ensure that all code that touches
+//  the 3rd party library is kept in this class, decoupling all others.  We can then
+//  easily switch to another analytic provider if needs by only amend this one class.
 
 extension AnalyticsTrackerFactory {
 
-    fileprivate func makeScreenAppearanceAction() -> AnalyticsScreenAppearanceAction {
+    fileprivate func trackScreenAppearance(screenName: String) {
 
-        let action: AnalyticsScreenAppearanceAction = { screenName in
+        self.tracker.set(kGAIScreenName, value: screenName)
 
-            self.tracker.set(kGAIScreenName, value: screenName)
-
-            if let builder = GAIDictionaryBuilder.createScreenView() {
-                self.tracker.send(builder.build() as [NSObject : AnyObject])
-            }
+        if let builder = GAIDictionaryBuilder.createScreenView() {
+            self.tracker.send(builder.build() as [NSObject : AnyObject])
         }
-        return action
     }
 
 
-    fileprivate func makeAnalyticsEventAction() -> AnalyticsEventAction {
+    fileprivate func trackEvent(category: String, action: String, label: String) {
 
-        let action: AnalyticsEventAction = { category, action, label in
-
-            if let builder = GAIDictionaryBuilder.createEvent(withCategory: category,
-                                                              action: action,
-                                                              label: label,
-                                                              value: 0) {
-                self.tracker.send(builder.build() as [NSObject : AnyObject])
-            }
+        if let builder = GAIDictionaryBuilder.createEvent(withCategory: category,
+                                                          action: action,
+                                                          label: label,
+                                                          value: 0) {
+            self.tracker.send(builder.build() as [NSObject : AnyObject])
         }
-        return action
     }
 }

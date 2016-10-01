@@ -5,7 +5,7 @@
 import Foundation
 
 
-class BBQDetailsAnalyticsTracker: NSObject {
+final class BBQDetailsAnalyticsTracker: NSObject {
 
     private let screenApperanceAction: AnalyticsScreenAppearanceAction
     private let eventAction: AnalyticsEventAction
