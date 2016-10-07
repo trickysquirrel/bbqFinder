@@ -11,8 +11,7 @@ typealias RouterDirectionAction = (_ latitude: Double, _ longitude: Double, _ re
 typealias RouterShareBBQAction = (_ presentingViewController: UIViewController, _ title:String, _ latitude: Double, _ longitude: Double) -> Void
 
 
-
-struct AppleRouter {
+struct BBQAppleRouterActionFactory: AppleRouterActionFactory {
 
     let appleMapsApp: AppleMapsApp
 
@@ -37,7 +36,7 @@ struct AppleRouter {
 
 
 
-extension AppleRouter {
+extension BBQAppleRouterActionFactory {
 
     fileprivate func showDirections(latitude: Double, longitude: Double, regionDistance: CLLocationDistance, pinTitle: String) {
 

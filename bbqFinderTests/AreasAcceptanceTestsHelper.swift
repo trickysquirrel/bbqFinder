@@ -62,21 +62,22 @@ class AreasAcceptanceTestsHelper: NSObject {
     private func createRouterAndShowRootViewController(spyAreasViewController: SpyAreasViewController) {
 
         let window = UIWindow()
-        let wireframe = Wireframe()
-        let appleMaps = AppleMapsAppDirection()
-        let appleRouter = AppleRouter(appleMapsApp: appleMaps)
-        let stubABConfig = StubABConfiguration()
 
         let spyViewControllerFactory = SpyViewControllerFactory(spyAreasViewController: spyAreasViewController)
 
+        let moduleFactory = BBQModuleFactory(viewControllerFactory: spyViewControllerFactory)
+        let appleMaps = AppleMapsAppDirection()
+        let appleRouter = BBQAppleRouterActionFactory(appleMapsApp: appleMaps)
+        let stubABConfig = StubABConfiguration()
+
+
         let navigationController = UINavigationController()
 
-        let router = AppRouter(window: window,
-                               viewControllerFactory: spyViewControllerFactory,
-                               navigationController: navigationController,
-                               wireframe: wireframe,
-                               appleRouter: appleRouter,
-                               abConfiguration: stubABConfig)
+        let router = BBQAppRouter(window: window,
+                                  navigationController: navigationController,
+                                  moduleFactory: moduleFactory,
+                                  appleRouterActionFactory: appleRouter,
+                                  abConfiguration: stubABConfig)
 
         router.showRootViewController()
 

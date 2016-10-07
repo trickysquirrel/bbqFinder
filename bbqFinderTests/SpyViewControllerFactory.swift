@@ -6,7 +6,7 @@ import UIKit
 @testable import bbqFinder
 
 
-class SpyViewControllerFactory: ViewControllerFactoryProtocol {
+class SpyViewControllerFactory: ViewControllerFactory {
 
     fileprivate let spyAreasViewController: SpyAreasViewController
 

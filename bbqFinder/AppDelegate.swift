@@ -13,7 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var router: AppRouter?
+    var router: BBQAppRouter?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -30,17 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setAppApperance()
 
         let appleMapsApp = AppleMapsAppDirection()
-        let wireframe = Wireframe()
         let analyticsTrackerFactory = AnalyticsTrackerFactory()
-        let viewControllerFactory = ViewControllerFactory(analyticsTrackerFactory: analyticsTrackerFactory)
-        let appleRouter = AppleRouter(appleMapsApp: appleMapsApp)
+        let viewControllerFactory = BBQViewControllerFactory(analyticsTrackerFactory: analyticsTrackerFactory)
+        let moduleFactory = BBQModuleFactory(viewControllerFactory: viewControllerFactory)
+        let appleRouter = BBQAppleRouterActionFactory(appleMapsApp: appleMapsApp)
         
-        router = AppRouter(window: validWindow,
-                           viewControllerFactory: viewControllerFactory,
-                           navigationController: UINavigationController(),
-                           wireframe: wireframe,
-                           appleRouter: appleRouter,
-                           abConfiguration: abConfiguration)
+        router = BBQAppRouter(window: validWindow,
+                              navigationController: UINavigationController(),
+                              moduleFactory: moduleFactory,
+                              appleRouterActionFactory: appleRouter,
+                              abConfiguration: abConfiguration)
         
         router?.showRootViewController()
 

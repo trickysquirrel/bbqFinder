@@ -6,23 +6,28 @@ import UIKit
 import CoreLocation
 
 
-// todo: is this the correct name?
-
-final class Wireframe: NSObject {
-
-    private let appStyle: AppStyle
-
-
-    override init() {
-        self.appStyle = AppStyle()
-    }
+protocol ViewControllerFactory {
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController
+    func makeBbqMapArea() -> BBQMapViewController
+    func makeBbqDetails() -> BBQDetailsTableViewController
+    func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController
+}
 
 
-    func wireUpAreasViewController(controller: AreasViewController, action: @escaping RouterAreaSelectionAction) {
+struct BBQModuleFactory: ModuleFactory {
+
+    private let appStyle = AppStyle()
+    let viewControllerFactory: ViewControllerFactory
+
+
+    func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController {
+
+        let dataSource = TableViewDataSource<AreasViewController>()
+        let controller = viewControllerFactory.makeAreasViewController(dataSource: dataSource)
 
         controller.title = "Bbq Areas"
 
-        let presenter = AreasPresenter(interface: controller, action: action)
+        let presenter = AreasPresenter(interface: controller, action: showMapAction)
 
         let interactor = AreasInteractor(output: presenter)
         controller.interactor = interactor
@@ -31,15 +36,19 @@ final class Wireframe: NSObject {
         if let view = nibContents?.first as? UIView {
             controller.tableView.backgroundView = view
         }
+
+        return controller
     }
 
 
-    func wireUpBbqMapViewController(controller: BBQMapViewController, bbqArea: BBQArea, action: @escaping RouterBBQSelectionAction) {
+    func makeMapModuleAndReturnViewController(bbqArea: BBQArea, showDetailsAction: @escaping RouterBBQSelectionAction) -> BBQMapViewController {
+
+        let controller = viewControllerFactory.makeBbqMapArea()
 
         let locationStatus = UserLocationStatus()
         let requestUsersLocation = UserLocation(locationStatus: locationStatus)
 
-        let presenter = BBQMapPresenter(output: controller, action: action)
+        let presenter = BBQMapPresenter(output: controller, action: showDetailsAction)
 
         let bbqListProvider = BBQListProvider(area: bbqArea)
 
@@ -47,11 +56,15 @@ final class Wireframe: NSObject {
 
         controller.title = bbqArea.title()
         controller.interactor = interactor
+
+        return controller
     }
 
 
-    func wireUpBbqDetailsViewController(controller: BBQDetailsTableViewController, coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) {
-        
+    func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController {
+
+        let controller = viewControllerFactory.makeBbqDetails()
+
         let locationDistance = LocationDistance()
         let locationStatus = UserLocationStatus()
         let requestUsersLocation = UserLocation(locationStatus: locationStatus)
@@ -72,7 +85,12 @@ final class Wireframe: NSObject {
 
         controller.interactor = interactor
         controller.alerter = alerter
+
+        return controller
     }
 
 
+    func makeDetailsPopoverModuleAndReturnViewController() -> BBQDetailsPopoverViewController {
+        return viewControllerFactory.makeBbqDetailsPopover()
+    }
 }

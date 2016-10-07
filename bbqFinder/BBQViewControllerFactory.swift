@@ -24,16 +24,8 @@ enum ViewControllersIDs : String {
 }
 
 
-protocol ViewControllerFactoryProtocol {
 
-    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController
-    func makeBbqMapArea() -> BBQMapViewController
-    func makeBbqDetails() -> BBQDetailsTableViewController
-    func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController
-}
-
-
-class ViewControllerFactory: ViewControllerFactoryProtocol {
+class BBQViewControllerFactory: ViewControllerFactory {
 
     private var storyboard: UIStoryboard?
     private var analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol
