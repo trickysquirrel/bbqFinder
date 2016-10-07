@@ -48,17 +48,12 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
         switch response {
         case .updateAreas(let areas):
-            dataSource.reloadData(areas)
+            dataSource.reloadData(areas, cellIdentifier: AreaTableViewCell.cellIdentifier)
         }
     }
 
     // MARK: data source delegate
     
-    func cellReuseIdentifier(atIndexPath indexPath:IndexPath) -> String {
-        return AreaTableViewCell.cellIdentifier
-    }
-    
-
     func configureCell(tableViewCell cell: AreaTableViewCell, object viewModel: AreaViewModel) {
         cell.configureWithViewModel(viewModel)
     }

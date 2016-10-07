@@ -19,11 +19,6 @@
 //  typealias cellType = UICollectionView
 //  typealias dataSourceType = AnyObject
 //
-//  There is a code smell here as an external class can break the behavour by
-//  returning different cellIdentifiers and needs to be in total sync with the property
-//  dataSource.
-//  Maybe later I'll associate data to cell identifier so things cannot get out of sync
-//
 
 
 
@@ -31,11 +26,18 @@ import UIKit
 
 
 protocol TableViewDataSourceDelegate: class {
-
     associatedtype cellType
     associatedtype dataSourceType
-    func cellReuseIdentifier(atIndexPath indexPath: IndexPath) -> String
     func configureCell(tableViewCell cell: cellType, object: dataSourceType)
+}
+
+struct TableRow<T> {
+    let data:T
+    let cellIdentifier: String
+}
+
+struct TableSection<T:TableViewDataSourceDelegate> {
+    let rows:[TableRow<T.dataSourceType>]
 }
 
 
@@ -43,9 +45,9 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     weak var delegate: T?
     private weak var tableView:UITableView?
-    private var dataSource:[[T.dataSourceType]]?
+    private var sections: [TableSection<T>]?
 
-    
+
     func setTableView(_ tableView: UITableView?) {
 
         self.tableView = tableView
@@ -53,19 +55,20 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    func reloadData(_ dataSource:[[T.dataSourceType]]) {
+    func reloadData(_ dataSource: [[T.dataSourceType]], cellIdentifier: String) {
 
         guard delegate != nil else { print("delegate not yet set"); return }
-        self.dataSource = dataSource
+
+        sections = dataSource.map { TableSection<T>(rows: $0.map{ TableRow<T.dataSourceType>(data: $0, cellIdentifier: cellIdentifier) }) }
+
         self.tableView?.reloadData()
     }
-
 
     // MARK: table view delegate
 
     func numberOfSections(in tableView: UITableView) -> Int {
 
-        if let source = dataSource {
+        if let source = sections {
             return source.count
         }
         return 0
@@ -74,10 +77,10 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if let source = dataSource {
+        if let source = sections {
 
             if source.count > section {
-                return source[section].count
+                return source[section].rows.count
             }
         }
         return 0;
@@ -86,13 +89,11 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        if let cellIdentifier = self.delegate?.cellReuseIdentifier(atIndexPath: indexPath) {
+        if let tableRow = sections?[safe:indexPath.section]?.rows[safe:indexPath.row] {
 
-            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? T.cellType {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: tableRow.cellIdentifier, for: indexPath) as? T.cellType {
 
-                let object = self.objectAtIndexPath(indexPath)
-
-                self.delegate?.configureCell(tableViewCell: cell, object: object!)
+                self.delegate?.configureCell(tableViewCell: cell, object: tableRow.data)
 
                 return cell
             }
@@ -102,11 +103,9 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    // MARK: helpers
-    
     func objectAtIndexPath(_ indexPath: IndexPath) -> T.dataSourceType? {
-        
-        return dataSource?[safe:(indexPath as NSIndexPath).section]?[safe:(indexPath as NSIndexPath).row]
+
+        return sections?[safe:indexPath.section]?.rows[safe:indexPath.row]?.data
     }
-    
+
 }
