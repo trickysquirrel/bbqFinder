@@ -25,13 +25,12 @@ enum ViewControllersIDs : String {
 
 
 
-class BBQViewControllerFactory: ViewControllerFactory {
+struct BBQViewControllerFactory: ViewControllerFactory {
 
     private var storyboard: UIStoryboard?
     private var analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol
-
     
-    required init(analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol) {
+    init(analyticsTrackerFactory: AnalyticsTrackerFactoryProtocol) {
         self.analyticsTrackerFactory = analyticsTrackerFactory
         self.storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
     }

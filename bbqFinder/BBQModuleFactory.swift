@@ -17,7 +17,11 @@ protocol ViewControllerFactory {
 struct BBQModuleFactory: ModuleFactory {
 
     private let appStyle = AppStyle()
-    let viewControllerFactory: ViewControllerFactory
+    private let viewControllerFactory: ViewControllerFactory
+
+    init(viewControllerFactory: ViewControllerFactory) {
+        self.viewControllerFactory = viewControllerFactory
+    }
 
 
     func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController {

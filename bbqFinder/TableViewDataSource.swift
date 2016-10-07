@@ -1,26 +1,51 @@
 //
 //  Copyright © 2015 TrickySquirrel. All rights reserved.
 //
+//  The class that becomes the delegate will need to express two typealias's
+//
+//  typealias cellType = MyCellClass
+//  typealias dataSourceType = MyDataClass
+//
+//  Implemenation of delegate methods now use the correct type, so no need to convert types, e.g.
+//
+//  func configureCell(collectionViewCell cell: MyCellClass, object: MyDataClass)
+//
+//  In this case we are saying that every collection view cell conforms to
+//  MyCellClass and requires the same type of data MyDataClass.
+//
+//  But in the cases where you have cells of different types that require
+//  different data types, you'll need
+//
+//  typealias cellType = UICollectionView
+//  typealias dataSourceType = AnyObject
+//
+//  There is a code smell here as an external class can break the behavour by
+//  returning different cellIdentifiers and needs to be in total sync with the property
+//  dataSource.
+//  Maybe later I'll associate data to cell identifier so things cannot get out of sync
+//
+
+
 
 import UIKit
 
 
 protocol TableViewDataSourceDelegate: class {
 
+    associatedtype cellType
     associatedtype dataSourceType
-    func cellReuseIdentifier(atIndexPath indexPath:IndexPath) -> String
-    func configureCell(tableViewCell cell:UITableViewCell, object:dataSourceType)
+    func cellReuseIdentifier(atIndexPath indexPath: IndexPath) -> String
+    func configureCell(tableViewCell cell: cellType, object: dataSourceType)
 }
 
 
-class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewDataSource {
+class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewDataSource where T.cellType: UITableViewCell {
 
     weak var delegate: T?
+    private weak var tableView:UITableView?
+    private var dataSource:[[T.dataSourceType]]?
 
-    fileprivate weak var tableView:UITableView?
-    fileprivate var dataSource:[[T.dataSourceType]]?
-
-
+    
     func setTableView(_ tableView: UITableView?) {
 
         self.tableView = tableView
@@ -30,6 +55,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     func reloadData(_ dataSource:[[T.dataSourceType]]) {
 
+        guard delegate != nil else { print("delegate not yet set"); return }
         self.dataSource = dataSource
         self.tableView?.reloadData()
     }
@@ -37,7 +63,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     // MARK: table view delegate
 
-    @objc internal func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
 
         if let source = dataSource {
             return source.count
@@ -46,12 +72,11 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    @objc internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         if let source = dataSource {
 
             if source.count > section {
-
                 return source[section].count
             }
         }
@@ -59,17 +84,21 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    @objc internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cellIdentifier = self.delegate?.cellReuseIdentifier(atIndexPath: indexPath)
+        if let cellIdentifier = self.delegate?.cellReuseIdentifier(atIndexPath: indexPath) {
 
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier!, for: indexPath);
+            if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? T.cellType {
 
-        let object = self.objectAtIndexPath(indexPath)
+                let object = self.objectAtIndexPath(indexPath)
 
-        self.delegate?.configureCell(tableViewCell: cell, object: object!)
+                self.delegate?.configureCell(tableViewCell: cell, object: object!)
 
-        return cell;
+                return cell
+            }
+        }
+        print("CollectionViewDataSource ERROR: delegate not set or cell identifier not associated with kind of class cellType")
+        return UITableViewCell()
     }
 
 

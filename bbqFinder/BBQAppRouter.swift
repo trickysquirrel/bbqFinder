@@ -9,17 +9,20 @@ import CoreLocation
 
 
 protocol ABConfiguration {
+    
     func isFlagForDetailsPopeverOn() -> Bool
 }
 
 
 protocol AppleRouterActionFactory {
+
     func makeRouterDirectionAction() -> RouterDirectionAction
     func makeRouterShareBBQAction() -> RouterShareBBQAction
 }
 
 
 protocol ModuleFactory {
+
     func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController
 
     func makeMapModuleAndReturnViewController(bbqArea: BBQArea, showDetailsAction: @escaping RouterBBQSelectionAction) -> BBQMapViewController
@@ -35,11 +38,24 @@ typealias RouterBBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ tit
 
 struct BBQAppRouter {
 
-    let window: UIWindow
-    let navigationController: UINavigationController
-    let moduleFactory: BBQModuleFactory
-    let appleRouterActionFactory: AppleRouterActionFactory
-    let abConfiguration: ABConfiguration
+    private let window: UIWindow
+    private let navigationController: UINavigationController
+    private let moduleFactory: BBQModuleFactory
+    private let appleRouterActionFactory: AppleRouterActionFactory
+    private let abConfiguration: ABConfiguration
+
+    init(window: UIWindow,
+         navigationController: UINavigationController,
+         moduleFactory: BBQModuleFactory,
+         appleRouterActionFactory: AppleRouterActionFactory,
+         abConfiguration: ABConfiguration) {
+
+        self.window = window
+        self.navigationController = navigationController
+        self.moduleFactory = moduleFactory
+        self.appleRouterActionFactory = appleRouterActionFactory
+        self.abConfiguration = abConfiguration
+    }
 
 
     func showRootViewController() {

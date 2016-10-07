@@ -6,6 +6,7 @@ import UIKit
 
 class AreasViewController: UITableViewController, TableViewDataSourceDelegate, ListAreaPresenterOutput {
 
+    typealias cellType = AreaTableViewCell
     typealias dataSourceType = AreaViewModel
     private let dataSource: TableViewDataSource<AreasViewController>
     private let analytics: AreasTracker
@@ -31,9 +32,14 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         analytics.trackScreenAppearance()
+        setAutoResizingTableCells()
+        interactor.fetchAreas()
+    }
+
+
+    private func setAutoResizingTableCells() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 140
-        interactor.fetchAreas()
     }
 
     // MARK: List View Interface
@@ -53,8 +59,7 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
     }
     
 
-    func configureCell(tableViewCell cell:UITableViewCell, object viewModel:AreaViewModel) {
-        guard let cell = cell as? AreaTableViewCell else { return }
+    func configureCell(tableViewCell cell: AreaTableViewCell, object viewModel: AreaViewModel) {
         cell.configureWithViewModel(viewModel)
     }
 
