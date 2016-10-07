@@ -31,5 +31,10 @@ class SpyViewControllerFactory: ViewControllerFactoryProtocol {
         return UIViewController() as! BBQDetailsTableViewController
     }
 
+    func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController {
+        print("makeBbqDetailsPopover not ready to use")
+        return UIViewController() as! BBQDetailsPopoverViewController
+    }
+
 }
 

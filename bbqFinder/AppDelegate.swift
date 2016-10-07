@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,10 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        setAppApperance()
+        guard isExecutingTests() else {
+            window = nil
+            return false
+        }
 
         window = UIWindow(frame: UIScreen.main.bounds)
         guard let validWindow = window else { return true }
+
+        let abConfiguration = BBQFinderConfiguration()
+        setAppApperance()
 
         let appleMapsApp = AppleMapsAppDirection()
         let wireframe = Wireframe()
@@ -28,7 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewControllerFactory = ViewControllerFactory(analyticsTrackerFactory: analyticsTrackerFactory)
         let appleRouter = AppleRouter(appleMapsApp: appleMapsApp)
         
-        router = AppRouter(window: validWindow, viewControllerFactory: viewControllerFactory, navigationController: UINavigationController(), wireframe: wireframe, appleRouter: appleRouter)
+        router = AppRouter(window: validWindow,
+                           viewControllerFactory: viewControllerFactory,
+                           navigationController: UINavigationController(),
+                           wireframe: wireframe,
+                           appleRouter: appleRouter,
+                           abConfiguration: abConfiguration)
+        
         router?.showRootViewController()
 
         return true
@@ -49,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.black
     }
 
+
+    private func isExecutingTests() -> Bool {
+        return NSClassFromString("XCTestCase") == nil
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {}
     func applicationDidEnterBackground(_ application: UIApplication) {}

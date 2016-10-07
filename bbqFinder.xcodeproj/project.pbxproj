@@ -10,6 +10,8 @@
 		3002BCE81D9F09BF0068B2B6 /* MapAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */; };
 		3002BCEA1D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */; };
 		3002BCED1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */; };
+		3002BCEF1D9FA5350068B2B6 /* BBQFinderConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCEE1D9FA5350068B2B6 /* BBQFinderConfiguration.swift */; };
+		3002BCF21D9FE5140068B2B6 /* BBQDetailsPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3002BCF11D9FE5140068B2B6 /* BBQDetailsPopoverViewController.swift */; };
 		3012587A1D9571F100E3F33E /* LocationDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258791D9571F100E3F33E /* LocationDistance.swift */; };
 		3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3012587B1D96A6C200E3F33E /* LabelSpacing.swift */; };
 		301258851D96AE5D00E3F33E /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301258841D96AE5D00E3F33E /* SceneKit.framework */; };
@@ -43,7 +45,6 @@
 		30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E61D6C7E9F0085FFBD /* Main.storyboard */; };
 		30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E91D6C7E9F0085FFBD /* Assets.xcassets */; };
 		30C716ED1D6C7E9F0085FFBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716EB1D6C7E9F0085FFBD /* LaunchScreen.storyboard */; };
-		30C716F81D6C7E9F0085FFBD /* bbqFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716F71D6C7E9F0085FFBD /* bbqFinderTests.swift */; };
 		30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */; };
 		30C717081D6C7F270085FFBD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717071D6C7F270085FFBD /* AppRouter.swift */; };
 		30C7170A1D6C7FE50085FFBD /* AreasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C717091D6C7FE50085FFBD /* AreasViewController.swift */; };
@@ -92,6 +93,8 @@
 		3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnalyticsTracker.swift; sourceTree = "<group>"; };
 		3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQDetailsAnalyticsTracker.swift; sourceTree = "<group>"; };
 		3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubAnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
+		3002BCEE1D9FA5350068B2B6 /* BBQFinderConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQFinderConfiguration.swift; sourceTree = "<group>"; };
+		3002BCF11D9FE5140068B2B6 /* BBQDetailsPopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQDetailsPopoverViewController.swift; sourceTree = "<group>"; };
 		301258791D9571F100E3F33E /* LocationDistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDistance.swift; sourceTree = "<group>"; };
 		3012587B1D96A6C200E3F33E /* LabelSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelSpacing.swift; sourceTree = "<group>"; };
 		301258841D96AE5D00E3F33E /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,7 @@
 		308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bbqFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
 		308BF9E91D9DD329007FA732 /* AreasTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasTracker.swift; sourceTree = "<group>"; };
+		309D5FEE1DA791BF008BEC0E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		30AE272A1D98DD180044B6C4 /* AlphineShire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphineShire.swift; sourceTree = "<group>"; };
 		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
 		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
@@ -128,7 +132,6 @@
 		30C716EC1D6C7E9F0085FFBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30C716EE1D6C7E9F0085FFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30C716F31D6C7E9F0085FFBD /* bbqFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bbqFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30C716F71D6C7E9F0085FFBD /* bbqFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bbqFinderTests.swift; sourceTree = "<group>"; };
 		30C716F91D6C7E9F0085FFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30C717031D6C7F090085FFBD /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		30C717071D6C7F270085FFBD /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
@@ -191,6 +194,14 @@
 				3002BCEC1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift */,
 			);
 			name = Stubs;
+			sourceTree = "<group>";
+		};
+		3002BCF01D9FE4CB0068B2B6 /* Bbq Details Popover */ = {
+			isa = PBXGroup;
+			children = (
+				3002BCF11D9FE5140068B2B6 /* BBQDetailsPopoverViewController.swift */,
+			);
+			name = "Bbq Details Popover";
 			sourceTree = "<group>";
 		};
 		3012587D1D96AB2B00E3F33E /* Labels */ = {
@@ -258,6 +269,14 @@
 			name = Tracking;
 			sourceTree = "<group>";
 		};
+		309D5FE81DA770FD008BEC0E /* AB Testing */ = {
+			isa = PBXGroup;
+			children = (
+				3002BCEE1D9FA5350068B2B6 /* BBQFinderConfiguration.swift */,
+			);
+			name = "AB Testing";
+			sourceTree = "<group>";
+		};
 		30A81D541D89682800309158 /* App Style */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +314,7 @@
 				30C717021D6C7EAD0085FFBD /* Area Selection */,
 				3030E31A1D7E05E600647CFA /* Bbq Map */,
 				30D7EC011D7FBFC4007C2884 /* Bbq Details */,
+				3002BCF01D9FE4CB0068B2B6 /* Bbq Details Popover */,
 				30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */,
 				30C716E61D6C7E9F0085FFBD /* Main.storyboard */,
 				30C716E91D6C7E9F0085FFBD /* Assets.xcassets */,
@@ -311,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				30E59F061D921E78008643B5 /* AcceptanceTesting */,
-				30C716F71D6C7E9F0085FFBD /* bbqFinderTests.swift */,
 				30C716F91D6C7E9F0085FFBD /* Info.plist */,
 			);
 			path = bbqFinderTests;
@@ -387,6 +406,7 @@
 		30D7EBFA1D7F6FC5007C2884 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				309D5FE81DA770FD008BEC0E /* AB Testing */,
 				308BF9E51D9DD1CA007FA732 /* Tracking */,
 				301258921D96CC7F00E3F33E /* Buttons */,
 				3012587D1D96AB2B00E3F33E /* Labels */,
@@ -403,6 +423,7 @@
 		30D7EBFB1D7F6FEC007C2884 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				309D5FEE1DA791BF008BEC0E /* SystemConfiguration.framework */,
 				301258841D96AE5D00E3F33E /* SceneKit.framework */,
 				30D7EBF71D7F5353007C2884 /* CoreLocation.framework */,
 				3030E31D1D7E070200647CFA /* MapKit.framework */,
@@ -694,6 +715,7 @@
 				3050353C1D93E974002B7D1F /* UILabel+CharacterSpacing.swift in Sources */,
 				3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */,
 				30C717041D6C7F090085FFBD /* ViewControllerFactory.swift in Sources */,
+				3002BCEF1D9FA5350068B2B6 /* BBQFinderConfiguration.swift in Sources */,
 				30D7EC051D80B0D5007C2884 /* BBQDetailsTableViewController.swift in Sources */,
 				30D7EC141D8115CC007C2884 /* BBQDetailsAddressViewCell.swift in Sources */,
 				30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */,
@@ -708,6 +730,7 @@
 				3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */,
 				30E59F0A1D922772008643B5 /* Wireframe.swift in Sources */,
 				30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */,
+				3002BCF21D9FE5140068B2B6 /* BBQDetailsPopoverViewController.swift in Sources */,
 				3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */,
 				301258941D96CC9900E3F33E /* ButtonRounded.swift in Sources */,
 				301258C01D97FECE00E3F33E /* Tasmania.swift in Sources */,
@@ -743,7 +766,6 @@
 			files = (
 				3002BCED1D9F17A20068B2B6 /* StubAnalyticsTrackerFactory.swift in Sources */,
 				30E59F081D921ED9008643B5 /* AreasAcceptanceTests.swift in Sources */,
-				30C716F81D6C7E9F0085FFBD /* bbqFinderTests.swift in Sources */,
 				30F6BF611D9235CA001509A2 /* SpyAreasViewController.swift in Sources */,
 				30F6BF5F1D92359B001509A2 /* SpyViewControllerFactory.swift in Sources */,
 				30F6BF631D92364A001509A2 /* AreasAcceptanceTestsHelper.swift in Sources */,

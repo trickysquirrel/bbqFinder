@@ -12,22 +12,21 @@ struct ACTAreas {
 }
 
 
+class StubABConfiguration: ABConfiguration {
+
+    func isFlagForDetailsPopeverOn() -> Bool {
+        return false
+    }
+}
+
+
+
 class AreasAcceptanceTestsHelper: NSObject {
 
-    let testCase: XCTestCase
     var providedAreaDataModels = [[AreaViewModel]]()
 
 
-    override init() {
-        
-        testCase = XCTestCase()
-        super.init()
-    }
-
-
     func showRootViewController() {
-
-        let expectation = testCase.expectation(description: "waiting for presenter response")
 
         let stubAnalyticsTracker = StubAnalyticsTrackerFactory().makeAreasTracker()
         let dataSource = TableViewDataSource<AreasViewController>()
@@ -35,12 +34,9 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         spyAreasViewController.didReceivePresenterUpdate = { areas in
             self.providedAreaDataModels = areas
-            expectation.fulfill()
         }
 
         createRouterAndShowRootViewController(spyAreasViewController: spyAreasViewController)
-
-        testCase.waitForExpectations(timeout: 1.0, handler: nil)
     }
 
 
@@ -69,16 +65,23 @@ class AreasAcceptanceTestsHelper: NSObject {
         let wireframe = Wireframe()
         let appleMaps = AppleMapsAppDirection()
         let appleRouter = AppleRouter(appleMapsApp: appleMaps)
+        let stubABConfig = StubABConfiguration()
 
         let spyViewControllerFactory = SpyViewControllerFactory(spyAreasViewController: spyAreasViewController)
 
+        let navigationController = UINavigationController()
+
         let router = AppRouter(window: window,
                                viewControllerFactory: spyViewControllerFactory,
-                               navigationController: UINavigationController(),
+                               navigationController: navigationController,
                                wireframe: wireframe,
-                               appleRouter: appleRouter)
+                               appleRouter: appleRouter,
+                               abConfiguration: stubABConfig)
 
         router.showRootViewController()
+
+        navigationController.beginAppearanceTransition(true, animated: false)
+        spyAreasViewController.beginAppearanceTransition(true, animated: false)
     }
 
 

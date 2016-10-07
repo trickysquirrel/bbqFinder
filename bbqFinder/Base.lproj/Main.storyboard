@@ -219,6 +219,105 @@
             </objects>
             <point key="canvasLocation" x="1924" y="542.87856071964018"/>
         </scene>
+        <!--Details Popover View Controller-->
+        <scene sceneID="ePX-zP-2AW">
+            <objects>
+                <viewController storyboardIdentifier="BBQDetailsPopoverViewControllerId" id="GAo-rp-mhG" customClass="BBQDetailsPopoverViewController" customModule="bbqFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zSO-ue-AvC"/>
+                        <viewControllerLayoutGuide type="bottom" id="vfj-dg-ox3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FJ4-Bj-Yzm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiA-xz-IcN">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5Z-7e-UVp">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI7-V7-lhB" customClass="ButtonRounded" customModule="bbqFinder" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="JMx-hb-qqK"/>
+                                    <constraint firstAttribute="height" constant="40" id="p7l-YM-Ijo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Directions">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userSelectedDirection" destination="EuX-Nb-AaI" eventType="touchUpInside" id="bAb-GJ-OMQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8F-HN-iOE" customClass="ButtonRounded" customModule="bbqFinder" customModuleProvider="target">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="J6C-R5-fyj"/>
+                                    <constraint firstAttribute="height" constant="44" id="MWl-0E-Ccn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <state key="normal" image="share"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rounding">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="userSelectedShare" destination="EuX-Nb-AaI" eventType="touchUpInside" id="a5Y-nu-zdf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facilities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqp-WE-AEx">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWe-uH-TWh">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--.--km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy2-4F-oLK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="iff-Sc-11U"/>
+                                    <constraint firstAttribute="height" constant="21" id="obw-Yf-6aM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hiA-xz-IcN" firstAttribute="trailing" secondItem="FJ4-Bj-Yzm" secondAttribute="trailingMargin" id="1yT-gu-d9R"/>
+                            <constraint firstItem="JI7-V7-lhB" firstAttribute="leading" secondItem="FJ4-Bj-Yzm" secondAttribute="leading" constant="12" id="4Gg-EO-oNi"/>
+                            <constraint firstItem="PWe-uH-TWh" firstAttribute="leading" secondItem="FJ4-Bj-Yzm" secondAttribute="leading" constant="12" id="5mq-R9-wxt"/>
+                            <constraint firstItem="lqp-WE-AEx" firstAttribute="top" secondItem="JI7-V7-lhB" secondAttribute="bottom" constant="14" id="7wQ-bS-RnC"/>
+                            <constraint firstItem="JI7-V7-lhB" firstAttribute="top" secondItem="wy2-4F-oLK" secondAttribute="bottom" constant="23" id="86y-Rb-ja7"/>
+                            <constraint firstItem="hiA-xz-IcN" firstAttribute="top" secondItem="FJ4-Bj-Yzm" secondAttribute="topMargin" id="Azg-Ft-Ffh"/>
+                            <constraint firstItem="wy2-4F-oLK" firstAttribute="leading" secondItem="h5Z-7e-UVp" secondAttribute="trailing" constant="15" id="BiO-sy-x4x"/>
+                            <constraint firstItem="lqp-WE-AEx" firstAttribute="leading" secondItem="FJ4-Bj-Yzm" secondAttribute="leading" constant="12" id="Iem-Dd-I2o"/>
+                            <constraint firstItem="PWe-uH-TWh" firstAttribute="top" secondItem="lqp-WE-AEx" secondAttribute="bottom" constant="1" id="Lbz-Rb-m5x"/>
+                            <constraint firstItem="h5Z-7e-UVp" firstAttribute="top" secondItem="hiA-xz-IcN" secondAttribute="bottom" constant="2" id="WnI-ex-4Uf"/>
+                            <constraint firstItem="k8F-HN-iOE" firstAttribute="centerY" secondItem="JI7-V7-lhB" secondAttribute="centerY" id="X0F-Bz-psp"/>
+                            <constraint firstItem="hiA-xz-IcN" firstAttribute="leading" secondItem="FJ4-Bj-Yzm" secondAttribute="leadingMargin" id="YMG-vg-ZVb"/>
+                            <constraint firstAttribute="trailing" secondItem="PWe-uH-TWh" secondAttribute="trailing" constant="16" id="d0a-jv-Yqh"/>
+                            <constraint firstItem="h5Z-7e-UVp" firstAttribute="leading" secondItem="FJ4-Bj-Yzm" secondAttribute="leadingMargin" id="qZX-ae-4ZZ"/>
+                            <constraint firstItem="wy2-4F-oLK" firstAttribute="leading" secondItem="h5Z-7e-UVp" secondAttribute="trailing" constant="15" id="wFQ-bn-v1y"/>
+                            <constraint firstItem="k8F-HN-iOE" firstAttribute="trailing" secondItem="FJ4-Bj-Yzm" secondAttribute="trailingMargin" id="xK0-bC-hGf"/>
+                            <constraint firstItem="wy2-4F-oLK" firstAttribute="top" secondItem="zSO-ue-AvC" secondAttribute="bottom" constant="5" id="z5x-2B-uu9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bLf-KT-tjo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2741.5999999999999" y="542.87856071964018"/>
+        </scene>
     </scenes>
     <resources>
         <image name="share" width="32" height="32"/>

@@ -20,6 +20,7 @@ enum ViewControllersIDs : String {
 //    case areas = "AreasViewControllerStoryboardID"
 //    case bbqMap = "BBQMapViewControllerID"
     case bbqDetails = "BBQDetailsViewControllerStoryboardID"
+    case bbqDetailsPopover = "BBQDetailsPopoverViewControllerId"
 }
 
 
@@ -28,6 +29,7 @@ protocol ViewControllerFactoryProtocol {
     func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController
     func makeBbqMapArea() -> BBQMapViewController
     func makeBbqDetails() -> BBQDetailsTableViewController
+    func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController
 }
 
 
@@ -66,5 +68,10 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
         return controller
     }
 
+
+    func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController {
+
+        return storyboard?.instantiateViewControllerWithIdentifier(.bbqDetailsPopover) as! BBQDetailsPopoverViewController
+    }
 
 }

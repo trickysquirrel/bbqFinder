@@ -26,12 +26,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        printOutCanberraBbqList()
+        printOutMeetMeMelbourne()
 
     }
 
 
+    func printOutMeetMeMelbourne() {
+        guard let jsonResult = dictionaryFromJsonResourceName(fileName: "MeetMe_Melbourne") else { return }
 
+        if let bbqList = jsonResult["bbqList"] as? NSArray {
+
+            let bbqDictionaryList = bbqList.flatMap { $0 as? NSDictionary }
+
+            var bbqs = [BBQ]()
+
+            for bbq in bbqDictionaryList {
+
+                let title = bbq["name"] as! String
+                let facility = ""
+                let lat = bbq["latitude"] as! Double
+                let lon = bbq["longitude"] as! Double
+                let address = ""
+                let barbeque = BBQ(title: title.capitalized, facilities: facility, lat: lat, lon: lon, address: address)
+                bbqs.append(barbeque)
+            }
+            printBBQList(bbqs: bbqs)
+        }
+
+    }
+// MeetMe_Melbourne
 
 
     private func printBBQList(bbqs: [BBQ]) {

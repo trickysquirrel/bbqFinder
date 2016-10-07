@@ -3,3 +3,5 @@
 //
 
 #import <Google/Analytics.h>
+#import <FirebaseAnalytics/FIRAnalytics.h>
+

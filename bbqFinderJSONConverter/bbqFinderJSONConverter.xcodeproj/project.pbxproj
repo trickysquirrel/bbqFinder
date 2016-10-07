@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3002BCF41DA1A1C30068B2B6 /* MeetMe_Melbourne.json in Resources */ = {isa = PBXBuildFile; fileRef = 3002BCF31DA1A1C30068B2B6 /* MeetMe_Melbourne.json */; };
 		301258A21D9754DE00E3F33E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258A11D9754DE00E3F33E /* AppDelegate.swift */; };
 		301258A41D9754DE00E3F33E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301258A31D9754DE00E3F33E /* ViewController.swift */; };
 		301258A61D9754DE00E3F33E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301258A51D9754DE00E3F33E /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3002BCF31DA1A1C30068B2B6 /* MeetMe_Melbourne.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MeetMe_Melbourne.json; sourceTree = "<group>"; };
 		3012589E1D9754DE00E3F33E /* bbqFinderJSONConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinderJSONConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301258A11D9754DE00E3F33E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		301258A31D9754DE00E3F33E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				30AE27301D9937040044B6C4 /* GreaterGeelong.json */,
 				30AE27321D9939DE0044B6C4 /* GreaterDandenong.json */,
 				30AE27361D99408B0044B6C4 /* Canberra.json */,
+				3002BCF31DA1A1C30068B2B6 /* MeetMe_Melbourne.json */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				30AE27371D99408B0044B6C4 /* Canberra.json in Resources */,
 				30AE27311D9937040044B6C4 /* GreaterGeelong.json in Resources */,
 				301258A91D9754DE00E3F33E /* Main.storyboard in Resources */,
+				3002BCF41DA1A1C30068B2B6 /* MeetMe_Melbourne.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

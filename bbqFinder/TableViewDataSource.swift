@@ -15,9 +15,9 @@ protocol TableViewDataSourceDelegate: class {
 
 class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewDataSource {
 
-    var delegate: T?
+    weak var delegate: T?
 
-    fileprivate var tableView:UITableView?
+    fileprivate weak var tableView:UITableView?
     fileprivate var dataSource:[[T.dataSourceType]]?
 
 
