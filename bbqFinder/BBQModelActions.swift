@@ -5,5 +5,5 @@
 import UIKit
 
 
-typealias DataModelAction = (() -> Void)
+typealias ViewModelAction = (() -> Void)
 typealias DataModelViewControllerAction = ((_ viewController: UIViewController) -> Void)

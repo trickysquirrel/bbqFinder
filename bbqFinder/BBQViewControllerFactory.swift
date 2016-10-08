@@ -39,7 +39,7 @@ struct BBQViewControllerFactory: ViewControllerFactory {
     func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
 
         let analyticsTracker = analyticsTrackerFactory.makeAreasTracker()
-        return AreasViewController(dataSource: dataSource, analyticsTracker: analyticsTracker )
+        return AreasViewController(tableViewDataSource: dataSource, analyticsTracker: analyticsTracker )
     }
 
 

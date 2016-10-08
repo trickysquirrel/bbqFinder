@@ -30,7 +30,7 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let stubAnalyticsTracker = StubAnalyticsTrackerFactory().makeAreasTracker()
         let dataSource = TableViewDataSource<AreasViewController>()
-        let spyAreasViewController = SpyAreasViewController(dataSource: dataSource, analyticsTracker: stubAnalyticsTracker)
+        let spyAreasViewController = SpyAreasViewController(tableViewDataSource: dataSource, analyticsTracker: stubAnalyticsTracker)
 
         spyAreasViewController.didReceivePresenterUpdate = { areas in
             self.providedAreaDataModels = areas

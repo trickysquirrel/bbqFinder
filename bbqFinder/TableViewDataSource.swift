@@ -3,15 +3,17 @@
 //
 //  The class that becomes the delegate will need to express two typealias's
 //
-//  typealias cellType = MyCellClass
+//  typealias cellType = MyCellView
 //  typealias dataSourceType = MyDataClass
 //
-//  Implemenation of delegate methods now use the correct type, so no need to convert types, e.g.
+//  or
+//
+//  Implemenation of delegate methods with correct type, so no need to convert types, e.g.
 //
 //  func configureCell(collectionViewCell cell: MyCellClass, object: MyDataClass)
 //
-//  In this case we are saying that every collection view cell conforms to
-//  MyCellClass and requires the same type of data MyDataClass.
+//  In this case we are saying that every cell conforms to
+//  MyCellView and requires the same type of data MyDataClass.
 //
 //  But in the cases where you have cells of different types that require
 //  different data types, you'll need
@@ -25,19 +27,21 @@
 import UIKit
 
 
-protocol TableViewDataSourceDelegate: class {
-    associatedtype cellType
-    associatedtype dataSourceType
-    func configureCell(tableViewCell cell: cellType, object: dataSourceType)
-}
-
 struct TableRow<T> {
     let data:T
     let cellIdentifier: String
 }
 
-struct TableSection<T:TableViewDataSourceDelegate> {
-    let rows:[TableRow<T.dataSourceType>]
+
+struct TableSection<T> {
+    let rows:[TableRow<T>]
+}
+
+
+protocol TableViewDataSourceDelegate: class {
+    associatedtype cellType
+    associatedtype dataType
+    func configureCell(tableViewCell cell: cellType, object: dataType)
 }
 
 
@@ -45,7 +49,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
 
     weak var delegate: T?
     private weak var tableView:UITableView?
-    private var sections: [TableSection<T>]?
+    private var sections: [TableSection<T.dataType>]?
 
 
     func setTableView(_ tableView: UITableView?) {
@@ -55,12 +59,10 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    func reloadData(_ dataSource: [[T.dataSourceType]], cellIdentifier: String) {
+    func reloadData(tableSections: [TableSection<T.dataType>]) {
 
         guard delegate != nil else { print("delegate not yet set"); return }
-
-        sections = dataSource.map { TableSection<T>(rows: $0.map{ TableRow<T.dataSourceType>(data: $0, cellIdentifier: cellIdentifier) }) }
-
+        sections = tableSections
         self.tableView?.reloadData()
     }
 
@@ -103,7 +105,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     }
 
 
-    func objectAtIndexPath(_ indexPath: IndexPath) -> T.dataSourceType? {
+    func objectAtIndexPath(_ indexPath: IndexPath) -> T.dataType? {
 
         return sections?[safe:indexPath.section]?.rows[safe:indexPath.row]?.data
     }

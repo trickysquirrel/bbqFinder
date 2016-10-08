@@ -9,7 +9,7 @@ import MapKit
 struct BBQMapViewModel {
     let title: String
     let location: CLLocationCoordinate2D
-    let action: DataModelAction
+    let action: ViewModelAction
 }
 
 enum BBQMapPresenterResponse {
@@ -64,7 +64,7 @@ final class BBQMapPresenter: BBQMapInteractorOutput {
     }
 
 
-    fileprivate func actionForBBQ(_ bbq: BBQ) -> DataModelAction {
+    fileprivate func actionForBBQ(_ bbq: BBQ) -> ViewModelAction {
         return  {
             let coordinate = CLLocationCoordinate2D(latitude: bbq.lat, longitude: bbq.lon)
             self.action( coordinate, bbq.title, bbq.facilities, bbq.address )

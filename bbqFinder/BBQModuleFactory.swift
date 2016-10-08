@@ -26,20 +26,24 @@ struct BBQModuleFactory: ModuleFactory {
 
     func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController {
 
-        let dataSource = TableViewDataSource<AreasViewController>()
-        let controller = viewControllerFactory.makeAreasViewController(dataSource: dataSource)
+        let tableViewDataSource = TableViewDataSource<AreasViewController>()
+        let controller = viewControllerFactory.makeAreasViewController(dataSource: tableViewDataSource)
 
         controller.title = "Bbq Areas"
 
-        let presenter = AreasPresenter(interface: controller, action: showMapAction)
+        let presenter = AreasPresenter(interface: controller, routerShowMapAction: showMapAction)
 
         let interactor = AreasInteractor(output: presenter)
-        controller.interactor = interactor
+
+        controller.configure(interactor: interactor)
 
         let nibContents =  Bundle.main.loadNibNamed("AreasTableViewBackground", owner: nil, options: nil)
         if let view = nibContents?.first as? UIView {
             controller.tableView.backgroundView = view
         }
+
+        tableViewDataSource.delegate = controller
+        tableViewDataSource.setTableView(controller.tableView)
 
         return controller
     }

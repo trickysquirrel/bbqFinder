@@ -9,7 +9,7 @@ import MapKit
 class MapViewAnnotation: NSObject, MKAnnotation {
 
     let coordinate: CLLocationCoordinate2D
-    let action: DataModelAction
+    let action: ViewModelAction
     let title: String?
 
     init(viewModel: BBQMapViewModel) {

@@ -37,6 +37,8 @@
 		308BF9E71D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */; };
 		308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
 		308BF9EA1D9DD329007FA732 /* AreasTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E91D9DD329007FA732 /* AreasTracker.swift */; };
+		309D5FF11DA9A429008BEC0E /* TableView+AutoSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309D5FF01DA9A429008BEC0E /* TableView+AutoSizing.swift */; };
+		309D5FF31DA9AA4B008BEC0E /* TableView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309D5FF21DA9AA4B008BEC0E /* TableView+RegisterCell.swift */; };
 		30AE272B1D98DD180044B6C4 /* AlphineShire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272A1D98DD180044B6C4 /* AlphineShire.swift */; };
 		30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272E1D9932C80044B6C4 /* Noosa.swift */; };
 		30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27341D993A670044B6C4 /* GreaterDandenong.swift */; };
@@ -121,6 +123,8 @@
 		308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
 		308BF9E91D9DD329007FA732 /* AreasTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasTracker.swift; sourceTree = "<group>"; };
 		309D5FEE1DA791BF008BEC0E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		309D5FF01DA9A429008BEC0E /* TableView+AutoSizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+AutoSizing.swift"; sourceTree = "<group>"; };
+		309D5FF21DA9AA4B008BEC0E /* TableView+RegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+RegisterCell.swift"; sourceTree = "<group>"; };
 		30AE272A1D98DD180044B6C4 /* AlphineShire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphineShire.swift; sourceTree = "<group>"; };
 		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
 		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
@@ -373,6 +377,8 @@
 				30C7170E1D6C852B0085FFBD /* Array+Safe.swift */,
 				30D7EBFF1D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift */,
 				3050353B1D93E974002B7D1F /* UILabel+CharacterSpacing.swift */,
+				309D5FF01DA9A429008BEC0E /* TableView+AutoSizing.swift */,
+				309D5FF21DA9AA4B008BEC0E /* TableView+RegisterCell.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -712,8 +718,10 @@
 				30C717081D6C7F270085FFBD /* BBQAppRouter.swift in Sources */,
 				3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */,
 				3012587C1D96A6C200E3F33E /* LabelSpacing.swift in Sources */,
+				309D5FF11DA9A429008BEC0E /* TableView+AutoSizing.swift in Sources */,
 				3050353C1D93E974002B7D1F /* UILabel+CharacterSpacing.swift in Sources */,
 				3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */,
+				309D5FF31DA9AA4B008BEC0E /* TableView+RegisterCell.swift in Sources */,
 				30C717041D6C7F090085FFBD /* BBQViewControllerFactory.swift in Sources */,
 				3002BCEF1D9FA5350068B2B6 /* BBQFinderConfiguration.swift in Sources */,
 				30D7EC051D80B0D5007C2884 /* BBQDetailsTableViewController.swift in Sources */,

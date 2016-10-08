@@ -17,7 +17,7 @@ struct BBQDetailsViewModel {
     let addressColour: UIColor
     let amenities: String
     let amenitiesColour: UIColor
-    let directionAction: DataModelAction
+    let directionAction: ViewModelAction
     let shareAction: DataModelViewControllerAction
     let coordinate: CLLocationCoordinate2D
 }
@@ -153,13 +153,13 @@ extension BBQDetailsPresenter {
 extension BBQDetailsPresenter {
 
 
-    fileprivate func makeEmptyAction() -> DataModelAction {
+    fileprivate func makeEmptyAction() -> ViewModelAction {
 
         return {}
     }
 
 
-    private func makeActionForDirections(bbqDetails: BBQDetails) -> DataModelAction {
+    private func makeActionForDirections(bbqDetails: BBQDetails) -> ViewModelAction {
 
         if bbqDetails.userLocationUnknown {
             return makeEmptyAction()
@@ -180,9 +180,9 @@ extension BBQDetailsPresenter {
 
     // todo - as this is a new view controller maybe this should belong in the router
 
-    fileprivate func makeShowDirectionAction(bbqDetails: BBQDetails) -> DataModelAction {
+    fileprivate func makeShowDirectionAction(bbqDetails: BBQDetails) -> ViewModelAction {
 
-        let showDirectionsAction: DataModelAction  = {
+        let showDirectionsAction: ViewModelAction  = {
             self.directionsAction(bbqDetails.latitude, bbqDetails.longitude, 10000, "bbq")
         }
         return showDirectionsAction

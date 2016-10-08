@@ -7,7 +7,7 @@ import UIKit
 struct AreaViewModel {
     let title: String
     let subtitle: String
-    let action: DataModelAction
+    let showMapAction: ViewModelAction
 }
 
 enum AreasMapPresenterResponse {
@@ -22,12 +22,12 @@ protocol ListAreaPresenterOutput: class {
 final class AreasPresenter: AreasInteractorOutput {
 
     private weak var output: ListAreaPresenterOutput?
-    private let action: RouterAreaSelectionAction
+    private let routerShowMapAction: RouterAreaSelectionAction
 
 
-    init(interface: ListAreaPresenterOutput, action: @escaping RouterAreaSelectionAction) {
+    init(interface: ListAreaPresenterOutput, routerShowMapAction: @escaping RouterAreaSelectionAction) {
         self.output = interface
-        self.action = action
+        self.routerShowMapAction = routerShowMapAction
     }
 
 
@@ -35,17 +35,18 @@ final class AreasPresenter: AreasInteractorOutput {
 
         let dataModelList = areaList.map {
 
-            AreaViewModel(title:$0.title(), subtitle:$0.subtitle(),
-                          action: actionForTitle($0))
+            AreaViewModel(title:$0.title(),
+                          subtitle:$0.subtitle(),
+                          showMapAction: showMapActionForArea($0))
         }
         output?.presenterUpdate( .updateAreas([dataModelList]) )
     }
 
 
-    fileprivate func actionForTitle(_ area: BBQArea) -> DataModelAction {
+    fileprivate func showMapActionForArea(_ area: BBQArea) -> ViewModelAction {
 
         return  {
-            self.action(area)
+            self.routerShowMapAction(area)
         }
     }
 }
