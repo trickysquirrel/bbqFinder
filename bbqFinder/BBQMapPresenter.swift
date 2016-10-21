@@ -23,7 +23,9 @@ protocol BBQMapPresenterOutput: class {
 }
 
 
-final class BBQMapPresenter: BBQMapInteractorOutput {
+
+
+final class BBQMapPresenter: BBQMapInteractorOutput, BBQAddInteractorOutput {
 
     private weak var output: BBQMapPresenterOutput?
     private let action: RouterBBQSelectionAction
@@ -32,6 +34,14 @@ final class BBQMapPresenter: BBQMapInteractorOutput {
     required init(output: BBQMapPresenterOutput, action: @escaping RouterBBQSelectionAction) {
         self.output = output
         self.action = action
+    }
+
+    // MARK: add interactor output
+
+    func interactorUpdatedStoredBBQs(bbqs: [BBQ]) {
+
+        let dataModels = bbqs.map { makeViewModel($0) }
+        output?.presenterUpdate(.updateDataModels(dataModels))
     }
 
     // MARK: interactor output

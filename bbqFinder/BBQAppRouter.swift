@@ -23,13 +23,15 @@ protocol AppleRouterActionFactory {
 
 protocol ModuleFactory {
 
-    func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController
+    func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction, showAddAction: @escaping RouterAddBbqAction) -> AreasViewController
 
     func makeMapModuleAndReturnViewController(bbqArea: BBQArea, showDetailsAction: @escaping RouterBBQSelectionAction) -> BBQMapViewController
 
     func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController
 }
 
+
+typealias RouterAddBbqAction = () -> Void
 
 typealias RouterAreaSelectionAction = (_ area:BBQArea) -> Void
 
@@ -60,7 +62,7 @@ struct BBQAppRouter {
 
     func showRootViewController() {
 
-        let controller = moduleFactory.makeAreasModuleAndReturnViewController(showMapAction: showAreaMapViewController)
+        let controller = moduleFactory.makeAreasModuleAndReturnViewController(showMapAction: showAreaMapViewController, showAddAction: showAddBbqViewController)
 
         navigationController.setViewControllers([controller], animated: false)
 
@@ -68,6 +70,14 @@ struct BBQAppRouter {
         window.makeKeyAndVisible()
     }
 
+
+    fileprivate func showAddBbqViewController() {
+
+        let controller = moduleFactory.makeAddBbqModuleAndReturnViewController(showDetailsAction: showBBQDetailsViewController)
+
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
 
     fileprivate func showAreaMapViewController(area: BBQArea) {
 

@@ -7,7 +7,8 @@ import CoreLocation
 
 
 protocol ViewControllerFactory {
-    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>, addBbqAction: @escaping RouterAddBbqAction) -> AreasViewController
+    func makeBBQAddViewController() -> BBQAddViewController
     func makeBbqMapArea() -> BBQMapViewController
     func makeBbqDetails() -> BBQDetailsTableViewController
     func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController
@@ -18,16 +19,18 @@ struct BBQModuleFactory: ModuleFactory {
 
     private let appStyle = AppStyle()
     private let viewControllerFactory: ViewControllerFactory
+    private let bbqStorage: BBQPersistentStorage
 
-    init(viewControllerFactory: ViewControllerFactory) {
+    init(viewControllerFactory: ViewControllerFactory, bbqStorage: BBQPersistentStorage) {
         self.viewControllerFactory = viewControllerFactory
+        self.bbqStorage = bbqStorage
     }
 
 
-    func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction) -> AreasViewController {
+    func makeAreasModuleAndReturnViewController(showMapAction: @escaping RouterAreaSelectionAction, showAddAction: @escaping RouterAddBbqAction) -> AreasViewController {
 
         let tableViewDataSource = TableViewDataSource<AreasViewController>()
-        let controller = viewControllerFactory.makeAreasViewController(dataSource: tableViewDataSource)
+        let controller = viewControllerFactory.makeAreasViewController(dataSource: tableViewDataSource, addBbqAction: showAddAction)
 
         controller.title = "Bbq Areas"
 
@@ -43,8 +46,30 @@ struct BBQModuleFactory: ModuleFactory {
         }
 
         tableViewDataSource.delegate = controller
-        tableViewDataSource.setTableView(controller.tableView)
+        tableViewDataSource.setTableViewDataSource(controller.tableView)
 
+        return controller
+    }
+
+
+    func makeAddBbqModuleAndReturnViewController(showDetailsAction: @escaping RouterBBQSelectionAction) -> BBQAddViewController {
+
+        let controller = viewControllerFactory.makeBBQAddViewController()
+
+        let locationStatus = UserLocationStatus()
+        let requestUsersLocation = UserLocation(locationStatus: locationStatus)
+
+        let presenter = BBQMapPresenter(output: controller, action: showDetailsAction)
+
+        let bbqListProvider = bbqStorage
+
+        let mapInteractor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider, userLocation: requestUsersLocation)
+
+        let addInteractor = BBQAddInteractor(bbqStorage: bbqStorage, output: presenter)
+
+        controller.mapInteractor = mapInteractor
+        controller.addInteractor = addInteractor
+        
         return controller
     }
 
@@ -58,7 +83,7 @@ struct BBQModuleFactory: ModuleFactory {
 
         let presenter = BBQMapPresenter(output: controller, action: showDetailsAction)
 
-        let bbqListProvider = BBQListProvider(area: bbqArea)
+        let bbqListProvider = BBQAreaListProvider(area: bbqArea)
 
         let interactor = BBQMapInteractor(output: presenter, bbqListProvider: bbqListProvider, userLocation: requestUsersLocation)
 

@@ -30,7 +30,7 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let stubAnalyticsTracker = StubAnalyticsTrackerFactory().makeAreasTracker()
         let dataSource = TableViewDataSource<AreasViewController>()
-        let spyAreasViewController = SpyAreasViewController(tableViewDataSource: dataSource, analyticsTracker: stubAnalyticsTracker)
+        let spyAreasViewController = SpyAreasViewController(tableViewDataSource: dataSource, analyticsTracker: stubAnalyticsTracker, addBbqAction: {})
 
         spyAreasViewController.didReceivePresenterUpdate = { areas in
             self.providedAreaDataModels = areas
@@ -65,7 +65,10 @@ class AreasAcceptanceTestsHelper: NSObject {
 
         let spyViewControllerFactory = SpyViewControllerFactory(spyAreasViewController: spyAreasViewController)
 
-        let moduleFactory = BBQModuleFactory(viewControllerFactory: spyViewControllerFactory)
+        let fakePersistentStorage = FakePersistenStorage()
+        let bbqStorage = BBQPersistentStorage(persistentStorage: fakePersistentStorage)
+
+        let moduleFactory = BBQModuleFactory(viewControllerFactory: spyViewControllerFactory, bbqStorage: bbqStorage)
         let appleMaps = AppleMapsAppDirection()
         let appleRouter = BBQAppleRouterActionFactory(appleMapsApp: appleMaps)
         let stubABConfig = StubABConfiguration()

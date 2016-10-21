@@ -19,6 +19,7 @@ extension UIStoryboard {
 enum ViewControllersIDs : String {
 //    case areas = "AreasViewControllerStoryboardID"
 //    case bbqMap = "BBQMapViewControllerID"
+    case bbqAdd = "BBQAddViewControllerStoryboardID"
     case bbqDetails = "BBQDetailsViewControllerStoryboardID"
     case bbqDetailsPopover = "BBQDetailsPopoverViewControllerId"
 }
@@ -36,10 +37,17 @@ struct BBQViewControllerFactory: ViewControllerFactory {
     }
 
     
-    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>, addBbqAction: @escaping RouterAddBbqAction) -> AreasViewController {
 
         let analyticsTracker = analyticsTrackerFactory.makeAreasTracker()
-        return AreasViewController(tableViewDataSource: dataSource, analyticsTracker: analyticsTracker )
+        return AreasViewController(tableViewDataSource: dataSource, analyticsTracker: analyticsTracker, addBbqAction: addBbqAction )
+    }
+
+
+    func makeBBQAddViewController() -> BBQAddViewController {
+
+        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqAdd) as! BBQAddViewController
+        return controller
     }
 
 

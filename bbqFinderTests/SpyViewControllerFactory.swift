@@ -16,7 +16,7 @@ class SpyViewControllerFactory: ViewControllerFactory {
     }
 
 
-    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>) -> AreasViewController {
+    func makeAreasViewController(dataSource: TableViewDataSource<AreasViewController>, addBbqAction: @escaping RouterAddBbqAction) -> AreasViewController {
         return spyAreasViewController
     }
 
@@ -34,6 +34,11 @@ class SpyViewControllerFactory: ViewControllerFactory {
     func makeBbqDetailsPopover() -> BBQDetailsPopoverViewController {
         print("makeBbqDetailsPopover not ready to use")
         return UIViewController() as! BBQDetailsPopoverViewController
+    }
+
+    func makeBBQAddViewController() -> BBQAddViewController {
+        print("makeAddBbqModuleAndReturnViewController not ready to use")
+        return UIViewController() as! BBQAddViewController
     }
 
 }

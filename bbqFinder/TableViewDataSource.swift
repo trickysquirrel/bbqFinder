@@ -52,7 +52,7 @@ class TableViewDataSource<T:TableViewDataSourceDelegate>: NSObject, UITableViewD
     private var sections: [TableSection<T.dataType>]?
 
 
-    func setTableView(_ tableView: UITableView?) {
+    func setTableViewDataSource(_ tableView: UITableView?) {
 
         self.tableView = tableView
         self.tableView?.dataSource = self

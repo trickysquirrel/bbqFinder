@@ -60,7 +60,7 @@ final class BBQMapInteractor: NSObject, UserLocationDelegate {
 
     fileprivate func locationsResponseModel() -> BBQMapInteractorResponseModel {
 
-        let bbqs = bbqListProvider.list()
+        let bbqs = bbqListProvider.allBbqs()
         let response: BBQMapInteractorResponseModel = .bbqs(bbqs)
         return response
     }

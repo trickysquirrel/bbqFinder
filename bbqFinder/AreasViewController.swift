@@ -8,14 +8,16 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     private let tableViewDataSource: TableViewDataSource<AreasViewController>
     private let analytics: AreasTracker
+    private let addBbqAction: RouterAddBbqAction
     private var interactor: AreasInteractor?    // required var for the controller/interactor/presenter dependancy
 
     // MARK: Life cycle
 
-    required init(tableViewDataSource: TableViewDataSource<AreasViewController>, analyticsTracker: AreasTracker) {
+    required init(tableViewDataSource: TableViewDataSource<AreasViewController>, analyticsTracker: AreasTracker, addBbqAction: @escaping RouterAddBbqAction) {
 
         self.tableViewDataSource = tableViewDataSource
         self.analytics = analyticsTracker
+        self.addBbqAction = addBbqAction
         super.init(style: .plain)
         tableView.registerTableCell(nibName: AreaTableViewCell.nibName, cellReuseIdentifier: AreaTableViewCell.cellIdentifier)
     }
@@ -30,11 +32,19 @@ class AreasViewController: UITableViewController, TableViewDataSourceDelegate, L
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        addAddBbqButton()
         analytics.trackScreenAppearance()
         tableView.setAutoResizingTableCellsWithEstimatedRowHeight(140)
         interactor?.fetchAreas()
     }
 
+    private func addAddBbqButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+
+    @objc private func addButtonTapped() {
+        addBbqAction()
+    }
 
     // MARK: List Area Output
 

@@ -30,15 +30,27 @@
                         <action selector="userSelectedShowCurrentLocation" destination="-1" eventType="touchUpInside" id="QnA-Y7-wo3"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g83-BN-gtA" customClass="BBQADBannerView" customModule="bbqFinder" customModuleProvider="target">
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="RzR-4W-bEy"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="delegate" destination="nZw-OA-AQZ" id="s2F-qY-4Zz"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="nZw-OA-AQZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="22v-sJ-EQN"/>
+                <constraint firstAttribute="trailing" secondItem="g83-BN-gtA" secondAttribute="trailing" id="Ni1-Sv-X3b"/>
                 <constraint firstAttribute="trailing" secondItem="nZw-OA-AQZ" secondAttribute="trailing" id="PTc-Fw-wyd"/>
                 <constraint firstAttribute="bottom" secondItem="nZw-OA-AQZ" secondAttribute="bottom" id="Str-B6-bQr"/>
-                <constraint firstAttribute="bottom" secondItem="XYv-eT-ONN" secondAttribute="bottom" constant="20" id="eXk-T4-rWk"/>
+                <constraint firstAttribute="bottom" secondItem="g83-BN-gtA" secondAttribute="bottom" id="TQY-I2-t3L"/>
+                <constraint firstItem="XYv-eT-ONN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="YL5-RO-bgi"/>
+                <constraint firstItem="g83-BN-gtA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hEp-7T-pp5"/>
                 <constraint firstItem="nZw-OA-AQZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oOa-Lx-atm"/>
-                <constraint firstItem="XYv-eT-ONN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="x5o-kQ-0yd"/>
+                <constraint firstItem="XYv-eT-ONN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="78" id="y0T-B6-KcL"/>
             </constraints>
             <point key="canvasLocation" x="45.5" y="53.5"/>
         </view>

@@ -29,10 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let abConfiguration = BBQFinderConfiguration()
         setAppApperance()
 
+        let persistentStorage = UserDefaultsStorage()
+        let bbqStorage = BBQPersistentStorage(persistentStorage: persistentStorage)
+
         let appleMapsApp = AppleMapsAppDirection()
         let analyticsTrackerFactory = AnalyticsTrackerFactory()
         let viewControllerFactory = BBQViewControllerFactory(analyticsTrackerFactory: analyticsTrackerFactory)
-        let moduleFactory = BBQModuleFactory(viewControllerFactory: viewControllerFactory)
+        let moduleFactory = BBQModuleFactory(viewControllerFactory: viewControllerFactory, bbqStorage: bbqStorage)
         let appleRouter = BBQAppleRouterActionFactory(appleMapsApp: appleMapsApp)
         
         router = BBQAppRouter(window: validWindow,

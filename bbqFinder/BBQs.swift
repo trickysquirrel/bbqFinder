@@ -53,12 +53,15 @@ enum BBQArea: String {
     }
 }
 
+protocol BBQListProvider {
+    func allBbqs() -> [BBQ]
+}
 
-struct BBQListProvider {
+struct BBQAreaListProvider: BBQListProvider {
 
     let area: BBQArea
 
-    func list() -> [BBQ] {
+    func allBbqs() -> [BBQ] {
 
         switch area {
         case .melbourne:
