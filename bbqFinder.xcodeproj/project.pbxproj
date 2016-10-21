@@ -34,6 +34,7 @@
 		30671EFB1DBA49BF00E51639 /* FakePersistenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30671EFA1DBA49BF00E51639 /* FakePersistenStorage.swift */; };
 		30671EFD1DBA4C3000E51639 /* BBQPersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30671EFC1DBA4C3000E51639 /* BBQPersistentStorage.swift */; };
 		30671F021DBAC07D00E51639 /* Dictionary+ValueForKeySubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30671F011DBAC07D00E51639 /* Dictionary+ValueForKeySubscript.swift */; };
+		30671F041DBAC3AA00E51639 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 30671F031DBAC3AA00E51639 /* README.md */; };
 		3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9671D8A4F0C00A033A6 /* UserLocation.swift */; };
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
@@ -127,6 +128,7 @@
 		30671EFA1DBA49BF00E51639 /* FakePersistenStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakePersistenStorage.swift; sourceTree = "<group>"; };
 		30671EFC1DBA4C3000E51639 /* BBQPersistentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQPersistentStorage.swift; sourceTree = "<group>"; };
 		30671F011DBAC07D00E51639 /* Dictionary+ValueForKeySubscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+ValueForKeySubscript.swift"; sourceTree = "<group>"; };
+		30671F031DBAC3AA00E51639 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3070C9671D8A4F0C00A033A6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		30C716D61D6C7E9E0085FFBD = {
 			isa = PBXGroup;
 			children = (
+				30671F031DBAC3AA00E51639 /* README.md */,
 				30C716E11D6C7E9F0085FFBD /* bbqFinder */,
 				30D7EBFB1D7F6FEC007C2884 /* Frameworks */,
 				30C716F61D6C7E9F0085FFBD /* bbqFinderTests */,
@@ -810,6 +813,7 @@
 				30D7EC121D811596007C2884 /* BBQDetailsAmmenitiesViewCell.swift in Sources */,
 				308BF9DD1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift in Sources */,
 				30A96CB41DB8EFFA000F8C15 /* AdBannerView.swift in Sources */,
+				30671F041DBAC3AA00E51639 /* README.md in Sources */,
 				30C717121D6C868E0085FFBD /* AreasPresenter.swift in Sources */,
 				3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */,
 				30D7EC001D7F859C007C2884 /* CLLocationCoordinate2D+Default.swift in Sources */,
