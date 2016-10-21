@@ -20,6 +20,7 @@ protocol AnalyticsTrackerFactoryProtocol {
 
     func makeAreasTracker() -> AreasTracker
     func makeMapTracker() -> MapAnalyticsTracker
+    func makeAddBBQMapTracker() -> AddBBQMapAnalyticsTracker
     func makeBBQDetailsTracker() -> BBQDetailsAnalyticsTracker
 }
 
@@ -49,6 +50,11 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 
     func makeMapTracker() -> MapAnalyticsTracker {
         return MapAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
+    }
+
+
+    func makeAddBBQMapTracker() -> AddBBQMapAnalyticsTracker {
+        return AddBBQMapAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 
 

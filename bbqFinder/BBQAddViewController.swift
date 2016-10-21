@@ -7,20 +7,30 @@ import UIKit
 class BBQAddViewController: UIViewController, BBQMapPresenterOutput {
 
     @IBOutlet weak var mapView: BBQMapView!
+    private let alerter: Alerter
+    private let analytics: AddBBQMapAnalyticsTracker
     var mapInteractor: BBQMapInteractor?
     var addInteractor: BBQAddInteractor?
 
-    override func viewDidLoad() {
 
+    required init(alerter: Alerter, analytics: AddBBQMapAnalyticsTracker) {
+        self.alerter = alerter
+        self.analytics = analytics
+        super.init(nibName: "BBQMapViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func viewDidLoad() {
         super.viewDidLoad()
         addLongPressGestureHandler()
     }
 
-
     override func viewDidAppear(_ animated: Bool) {
-
         super.viewDidAppear(animated)
-        //self.analytics.trackScreenAppearance()
+        self.analytics.trackScreenAppearance()
         if mapView.hasLocationData() == false {
             mapInteractor?.fetchLocations()
         }
@@ -40,9 +50,8 @@ class BBQAddViewController: UIViewController, BBQMapPresenterOutput {
             mapView.showAndCentreLocationOfUser(coordinate2D)
 
         case .displayAlert(let title, let message):
-            //analytics.trackUserLocationDenied()
-            //alerter.displayOkAlert(title, message: message, presentingViewController: self)
-            break
+            analytics.trackUserLocationDenied()
+            alerter.displayOkAlert(title, message: message, presentingViewController: self)
         }
     }
 
@@ -59,6 +68,7 @@ class BBQAddViewController: UIViewController, BBQMapPresenterOutput {
     @objc private func userPerformedLongPressGesture(gesture: UILongPressGestureRecognizer) {
         
         if gesture.state == .began {
+            analytics.trackUserAddingBBQ()
             let touchPoint = gesture.location(in: mapView)
             let coordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
             addInteractor?.addNewCoordinate(latitude: coordinate.latitude, longitude: coordinate.longitude)
@@ -67,9 +77,7 @@ class BBQAddViewController: UIViewController, BBQMapPresenterOutput {
 
 
     @IBAction func userSelectedShowCurrentLocation() {
-//        analytics.trackUserLocationSelection()
+        analytics.trackUserLocationSelection()
         mapInteractor?.fetchUsersLocation()
     }
-
-
 }

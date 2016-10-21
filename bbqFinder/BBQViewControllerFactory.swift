@@ -17,9 +17,6 @@ extension UIStoryboard {
 
 // change the first 2 into xib to see what the advantage of testing is?
 enum ViewControllersIDs : String {
-//    case areas = "AreasViewControllerStoryboardID"
-//    case bbqMap = "BBQMapViewControllerID"
-    case bbqAdd = "BBQAddViewControllerStoryboardID"
     case bbqDetails = "BBQDetailsViewControllerStoryboardID"
     case bbqDetailsPopover = "BBQDetailsPopoverViewControllerId"
 }
@@ -46,8 +43,9 @@ struct BBQViewControllerFactory: ViewControllerFactory {
 
     func makeBBQAddViewController() -> BBQAddViewController {
 
-        let controller = storyboard?.instantiateViewControllerWithIdentifier(.bbqAdd) as! BBQAddViewController
-        return controller
+        let alerter = Alerter()
+        let analytics = analyticsTrackerFactory.makeAddBBQMapTracker()
+        return BBQAddViewController(alerter: alerter, analytics: analytics)
     }
 
 
