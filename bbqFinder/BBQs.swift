@@ -11,13 +11,15 @@ struct BBQ {
     let lat: Double
     let lon: Double
     let address: String
+    let userGenerated: Bool
 
-    init(title:String, facilities:String, lat:Double, lon:Double, address:String="") {
+    init(title:String, facilities:String, lat:Double, lon:Double, address:String="", userGenerated: Bool = false) {
         self.title = title
         self.facilities = facilities
         self.lat = lat
         self.lon = lon
         self.address = address
+        self.userGenerated = userGenerated
     }
 }
 

@@ -28,4 +28,11 @@ extension Dictionary where Key:ExpressibleByStringLiteral, Value:Any {
         return double
     }
 
+
+    subscript (bool key: String) -> Bool? {
+
+        guard let boolean = self[key as! Key] as? Bool else { return nil }
+        return boolean
+    }
+
 }
