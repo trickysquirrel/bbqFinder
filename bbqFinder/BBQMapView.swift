@@ -23,7 +23,6 @@ class MapViewAnnotation: NSObject, MKAnnotation {
 final class BBQMapView: MKMapView, MKMapViewDelegate {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
-    private var mapViewModels = [BBQMapViewModel]()
 
     
     func hasLocationData() -> Bool {
@@ -35,14 +34,16 @@ final class BBQMapView: MKMapView, MKMapViewDelegate {
 
         delegate = self
 
-        if newDataSourceHasBeenUpdated(newDataSource) {
-            removeAnnotations(annotationList)
-            annotationList = newDataSource.map{ MapViewAnnotation(viewModel: $0) }
-            addAnnotations(annotationList)
+        let fillViewWithAllAnnotations = shouldFitAllAnnotationsInView()
+
+        removeAnnotations(annotationList)
+        annotationList = newDataSource.map{ MapViewAnnotation(viewModel: $0) }
+        addAnnotations(annotationList)
+
+        // todo - presentation logic, should this come from the presenter ??? think so
+        if fillViewWithAllAnnotations == true {
             fitAllAnnotationsInView()
         }
-
-        mapViewModels = newDataSource
     }
 
 
@@ -51,10 +52,9 @@ final class BBQMapView: MKMapView, MKMapViewDelegate {
     }
 
 
-    // todo - presentation logic, should dataSource be held by presenter ??? think so
-    private func newDataSourceHasBeenUpdated(_ newDataSource: [BBQMapViewModel]) -> Bool {
+    private func shouldFitAllAnnotationsInView() -> Bool {
 
-        return (newDataSource == mapViewModels) ? false : true
+        return annotationList.count == 0 ? true : false
     }
 
 
