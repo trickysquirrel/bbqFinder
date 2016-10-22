@@ -33,7 +33,7 @@ final class BBQAddInteractor: NSObject {
                       facilities: defaultFacilities,
                       lat: latitude,
                       lon: longitude,
-                      userGenerated: true)
+                      userGeneratedKey: key)
 
         bbqStorage.setBBQ(value: bbq, forKey: key)
 

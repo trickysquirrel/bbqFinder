@@ -94,7 +94,7 @@ struct BBQModuleFactory: ModuleFactory {
     }
 
 
-    func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController {
+    func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, userGeneratedKey: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController {
 
         let controller = viewControllerFactory.makeBbqDetails()
 
@@ -106,17 +106,21 @@ struct BBQModuleFactory: ModuleFactory {
 
         let presenter = BBQDetailsPresenter(output: controller, style: appStyle, directionsAction: directionsAction, sharingAction: sharingAction)
 
-        let interactor = BBQDetailsInteractor(output: presenter,
-                                              bbqTitle:title,
-                                              bbqLatitude: coordinate.latitude,
-                                              bbqLongitude: coordinate.longitude,
-                                              facilities: facilities,
-                                              address: address,
-                                              userLocation: requestUsersLocation,
-                                              locationAddress: locationAddress,
-                                              locationDistance: locationDistance)
+        let deleteBBQInteractor = DeleteBBQInteractor(persistentStorage: bbqStorage)
 
-        controller.interactor = interactor
+        let detailsInteractor = BBQDetailsInteractor(output: presenter,
+                                                     bbqTitle:title,
+                                                     bbqLatitude: coordinate.latitude,
+                                                     bbqLongitude: coordinate.longitude,
+                                                     facilities: facilities,
+                                                     address: address,
+                                                     userLocation: requestUsersLocation,
+                                                     locationAddress: locationAddress,
+                                                     locationDistance: locationDistance,
+                                                     userGeneratedKey: userGeneratedKey)
+
+        controller.detailsInteractor = detailsInteractor
+        controller.deleteBBQInteractor = deleteBBQInteractor
         controller.alerter = alerter
 
         return controller

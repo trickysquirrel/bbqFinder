@@ -45,7 +45,7 @@ extension BBQPersistentStorage {
         static let lat = "lat"
         static let lon = "lon"
         static let address = "address"
-        static let userGenerated = "userGenerated"
+        static let userGeneratedKey = "userGeneratedKey"
     }
 
 
@@ -55,7 +55,7 @@ extension BBQPersistentStorage {
                 Keys.lat: bbq.lat,
                 Keys.lon: bbq.lon,
                 Keys.address: bbq.address,
-                Keys.userGenerated: true
+                Keys.userGeneratedKey: bbq.userGeneratedKey
         ]
     }
     
@@ -68,8 +68,8 @@ extension BBQPersistentStorage {
         guard let lat = dictionary[double: Keys.lat] else { return nil }
         guard let lon = dictionary[double: Keys.lon] else { return nil }
         guard let address = dictionary[string: Keys.address] else { return nil }
-        guard let userGenerated = dictionary[bool: Keys.userGenerated] else { return nil }
+        guard let userGenerated = dictionary[string: Keys.userGeneratedKey] else { return nil }
 
-        return BBQ(title: title, facilities: facilities, lat: lat, lon: lon, address: address, userGenerated: userGenerated)
+        return BBQ(title: title, facilities: facilities, lat: lat, lon: lon, address: address, userGeneratedKey: userGenerated)
     }
 }

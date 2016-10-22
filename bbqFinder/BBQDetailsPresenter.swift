@@ -20,11 +20,13 @@ struct BBQDetailsViewModel {
     let directionAction: ViewModelAction
     let shareAction: DataModelViewControllerAction
     let coordinate: CLLocationCoordinate2D
+    let userGeneratedKey: String
 }
 
 enum BBQDetailsPresenterResponseModel {
     case details(BBQDetailsViewModel)
     case displayAlert(title: String, message: String)
+    case displayDeleteButton
 }
 
 protocol BBQDetailsPresenterOutput: class {
@@ -66,6 +68,9 @@ final class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
 
             let viewModel = makeBBQDetailsDataModel(details)
             output?.presenterUpdate( response: .details(viewModel) )
+            if details.userGeneratedKey.isEmpty == false {
+                output?.presenterUpdate(response: .displayDeleteButton)
+            }
 
         case .userLocationDenied:
             
@@ -91,7 +96,8 @@ final class BBQDetailsPresenter: NSObject, BBQDetailsInteractorOutput {
                 amenitiesColour: amenities.colour,
                 directionAction: makeShowDirectionAction(bbqDetails: bbqDetails),
                 shareAction: makeShareAction(bbqDetails: bbqDetails),
-                coordinate: bbqLocation2D
+                coordinate: bbqLocation2D,
+                userGeneratedKey: bbqDetails.userGeneratedKey
         )
     }
 }

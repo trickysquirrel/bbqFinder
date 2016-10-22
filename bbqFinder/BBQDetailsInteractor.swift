@@ -14,6 +14,7 @@ struct BBQDetails {
     let distanceInMeters: Int
     let address: String
     let facilities: String
+    let userGeneratedKey: String
 }
 
 enum BBQDetailsInteractorResponseModel {
@@ -37,6 +38,7 @@ final class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddres
     private let facilities: String
     private var address: String = ""
     private let locationDistance: LocationDistance
+    private let userGeneratedKey: String
 
     // todo remove these 2 vars
     private var distanceInMeters: Int = 0
@@ -50,7 +52,8 @@ final class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddres
          address: String,
          userLocation: UserLocation,
          locationAddress: LocationAddress,
-         locationDistance: LocationDistance) {
+         locationDistance: LocationDistance,
+         userGeneratedKey: String) {
         
         self.output = output
         self.bbqTitle = bbqTitle
@@ -61,6 +64,7 @@ final class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddres
         self.userLocation = userLocation
         self.locationAddress = locationAddress
         self.locationDistance = locationDistance
+        self.userGeneratedKey = userGeneratedKey
         super.init()
         self.locationAddress.delegate = self
     }
@@ -131,6 +135,7 @@ final class BBQDetailsInteractor: NSObject, UserLocationDelegate, LocationAddres
                           userLocationUnknown: isUsersLocationUnknown(),
                           distanceInMeters: distanceInMeters,
                           address: address,
-                          facilities: facilities)
+                          facilities: facilities,
+                          userGeneratedKey: userGeneratedKey)
     }
 }

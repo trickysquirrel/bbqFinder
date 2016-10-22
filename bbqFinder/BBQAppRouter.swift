@@ -27,7 +27,7 @@ protocol ModuleFactory {
 
     func makeMapModuleAndReturnViewController(bbqArea: BBQArea, showDetailsAction: @escaping RouterBBQSelectionAction) -> BBQMapViewController
 
-    func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController
+    func makeDetailsModuleAndReturnViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, userGeneratedKey: String, directionsAction: @escaping RouterDirectionAction, sharingAction: @escaping RouterShareBBQAction) -> BBQDetailsTableViewController
 }
 
 
@@ -35,7 +35,7 @@ typealias RouterAddBbqAction = () -> Void
 
 typealias RouterAreaSelectionAction = (_ area:BBQArea) -> Void
 
-typealias RouterBBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ title: String, _ facilities:String, _ address:String) -> Void
+typealias RouterBBQSelectionAction = (_ coordinate:CLLocationCoordinate2D, _ title: String, _ facilities:String, _ address:String, _ userGeneratedKey:String) -> Void
 
 
 struct BBQAppRouter {
@@ -87,7 +87,7 @@ struct BBQAppRouter {
     }
 
 
-    fileprivate func showBBQDetailsViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String) {
+    fileprivate func showBBQDetailsViewController(coordinate: CLLocationCoordinate2D, title: String, facilities: String, address: String, userGeneratedKey: String) {
 
         let directionsAction = appleRouterActionFactory.makeRouterDirectionAction()
         let sharingAction = appleRouterActionFactory.makeRouterShareBBQAction()
@@ -103,7 +103,7 @@ struct BBQAppRouter {
         }
         else {
 
-            let controller = moduleFactory.makeDetailsModuleAndReturnViewController(coordinate: coordinate, title: title, facilities: facilities, address: address, directionsAction: directionsAction, sharingAction: sharingAction)
+            let controller = moduleFactory.makeDetailsModuleAndReturnViewController(coordinate: coordinate, title: title, facilities: facilities, address: address, userGeneratedKey: userGeneratedKey, directionsAction: directionsAction, sharingAction: sharingAction)
             
             navigationController.pushViewController(controller, animated: true)
         }

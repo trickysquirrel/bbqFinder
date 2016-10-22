@@ -39,6 +39,7 @@
 		3070C9681D8A4F0C00A033A6 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9671D8A4F0C00A033A6 /* UserLocation.swift */; };
 		3070C96A1D8A5A1D00A033A6 /* LocationAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */; };
 		3070C96E1D8B491B00A033A6 /* AppleMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */; };
+		307D42841DBB8C02000E101B /* DeleteBBQInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D42831DBB8C02000E101B /* DeleteBBQInteractor.swift */; };
 		30807CB91DB301B6009890CE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30807CB81DB301B6009890CE /* iAd.framework */; };
 		308BF9DD1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9DC1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift */; };
 		308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
@@ -134,6 +135,7 @@
 		3070C9671D8A4F0C00A033A6 /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
 		3070C9691D8A5A1D00A033A6 /* LocationAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAddress.swift; sourceTree = "<group>"; };
 		3070C96D1D8B491B00A033A6 /* AppleMapsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleMapsApp.swift; sourceTree = "<group>"; };
+		307D42831DBB8C02000E101B /* DeleteBBQInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteBBQInteractor.swift; sourceTree = "<group>"; };
 		30807CB81DB301B6009890CE /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		308BF9DC1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQAppleRouterActionFactory.swift; sourceTree = "<group>"; };
 		308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -502,6 +504,7 @@
 				30D7EC041D80B0D5007C2884 /* BBQDetailsTableViewController.swift */,
 				30D7EC081D80B167007C2884 /* BBQDetailsPresenter.swift */,
 				30D7EC061D80B14F007C2884 /* BBQDetailsInteractor.swift */,
+				307D42831DBB8C02000E101B /* DeleteBBQInteractor.swift */,
 			);
 			name = "Bbq Details";
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				30A96CB71DB8FD0C000F8C15 /* BBQAddViewController.swift in Sources */,
 				30D7EC161D811681007C2884 /* BBQDetailsMapViewCell.swift in Sources */,
 				3030E3201D7E078200647CFA /* BBQMapView.swift in Sources */,
+				307D42841DBB8C02000E101B /* DeleteBBQInteractor.swift in Sources */,
 				308BF9EA1D9DD329007FA732 /* AreasTracker.swift in Sources */,
 				30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */,
 				30D7EC071D80B14F007C2884 /* BBQDetailsInteractor.swift in Sources */,

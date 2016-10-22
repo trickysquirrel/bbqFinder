@@ -6,7 +6,8 @@ import UIKit
 
 final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPresenterOutput {
 
-    var interactor: BBQDetailsInteractor!
+    var detailsInteractor: BBQDetailsInteractor!
+    var deleteBBQInteractor: DeleteBBQInteractor!
     var alerter: Alerter!
     var analytics: BBQDetailsAnalyticsTracker!
     private var viewModel: BBQDetailsViewModel?
@@ -15,11 +16,14 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
     @IBOutlet weak var ammentiesViewCell: BBQDetailsAmenitiesViewCell!
     @IBOutlet weak var addressViewCell: BBQDetailsAddressViewCell!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         analytics.trackScreenAppearance()
-        interactor.fetchDetails()
+        detailsInteractor.fetchDetails()
     }
 
     // MARK: Presenter output
@@ -35,7 +39,18 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
         case .displayAlert(let title, let message):
             analytics.trackUserLocationDenied()
             alerter.displayOkAlert(title, message: message, presentingViewController: self)
-            
+
+        case .displayDeleteButton:
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(userSelectedDeleteBBQButton))
+
+        }
+    }
+
+    // todo this could all be in an action
+    @objc private func userSelectedDeleteBBQButton() {
+        if let viewModel = viewModel {
+            deleteBBQInteractor.deleteBBQWithUserGeneratedKey(viewModel.userGeneratedKey)
+            navigationController?.popViewController(animated: true)
         }
     }
 
