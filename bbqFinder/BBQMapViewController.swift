@@ -38,9 +38,7 @@ final class BBQMapViewController: UIViewController, BBQMapPresenterOutput {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.analytics.trackScreenAppearance()
-        if mapView.hasLocationData() == false {
-            interactor.fetchLocations()
-        }
+        interactor.fetchLocations()
     }
 
     // MARK: presenter output

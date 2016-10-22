@@ -6,12 +6,6 @@ import Foundation
 import MapKit
 
 
-struct BBQMapViewModel {
-    let title: String
-    let location: CLLocationCoordinate2D
-    let action: ViewModelAction
-}
-
 enum BBQMapPresenterResponse {
     case updateDataModels([BBQMapViewModel])
     case showUsersLocation(CLLocationCoordinate2D)

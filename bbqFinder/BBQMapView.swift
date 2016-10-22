@@ -23,20 +23,38 @@ class MapViewAnnotation: NSObject, MKAnnotation {
 final class BBQMapView: MKMapView, MKMapViewDelegate {
 
     private var annotationList:[MapViewAnnotation] = [MapViewAnnotation]()
+    private var mapViewModels = [BBQMapViewModel]()
 
-
+    
     func hasLocationData() -> Bool {
         return annotationList.count > 0 ? true : false
     }
 
 
-    func reloadData(_ dataSource:[BBQMapViewModel]) {
+    func reloadData(_ newDataSource:[BBQMapViewModel]) {
 
         delegate = self
-        removeAnnotations(annotationList)
-        annotationList = dataSource.map{ MapViewAnnotation(viewModel: $0) }
-        addAnnotations(annotationList)
-        showAnnotations(annotationList, animated: true)
+
+        if newDataSourceHasBeenUpdated(newDataSource) {
+            removeAnnotations(annotationList)
+            annotationList = newDataSource.map{ MapViewAnnotation(viewModel: $0) }
+            addAnnotations(annotationList)
+            fitAllAnnotationsInView()
+        }
+
+        mapViewModels = newDataSource
+    }
+
+
+    private func fitAllAnnotationsInView() {
+        showAnnotations(annotationList, animated: false)
+    }
+
+
+    // todo - presentation logic, should dataSource be held by presenter ??? think so
+    private func newDataSourceHasBeenUpdated(_ newDataSource: [BBQMapViewModel]) -> Bool {
+
+        return (newDataSource == mapViewModels) ? false : true
     }
 
 
