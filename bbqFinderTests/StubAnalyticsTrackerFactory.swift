@@ -20,6 +20,11 @@ class StubAnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
         return BBQDetailsAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
     }
 
+    func makeAddBBQMapTracker() -> AddBBQMapAnalyticsTracker {
+        return AddBBQMapAnalyticsTracker(screenApperanceAction: trackScreenAppearance, eventAction: trackEvent)
+    }
+
+
     fileprivate func trackScreenAppearance(screenName: String) {}
     fileprivate func trackEvent(category: String, action: String, label: String) {}
 }

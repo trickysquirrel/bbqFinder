@@ -32,26 +32,27 @@ class AreasAcceptanceTests: XCTestCase {
 
         let areasInFirstSection = app.areasInSection(section: 0)
 
-        XCTAssertEqual(areasInFirstSection[0].title, "Ballarat")
-        XCTAssertEqual(areasInFirstSection[0].subtitle, "Victoria")
+        XCTAssertEqual(areasInFirstSection[0].title, "Canberra")
+        XCTAssertEqual(areasInFirstSection[0].subtitle, "ACT")
 
-        XCTAssertEqual(areasInFirstSection[1].title, "Bright")
-        XCTAssertEqual(areasInFirstSection[1].subtitle, "Victoria")
+        XCTAssertEqual(areasInFirstSection[1].title, "Noosa")
+        XCTAssertEqual(areasInFirstSection[1].subtitle, "Queensland")
 
-        XCTAssertEqual(areasInFirstSection[2].title, "Canberra")
-        XCTAssertEqual(areasInFirstSection[2].subtitle, "ACT")
+        XCTAssertEqual(areasInFirstSection[2].title, "Glenorchy")
+        XCTAssertEqual(areasInFirstSection[2].subtitle, "Tasmania")
 
-        XCTAssertEqual(areasInFirstSection[3].title, "Glenorchy")
-        XCTAssertEqual(areasInFirstSection[3].subtitle, "Tasmania")
+        XCTAssertEqual(areasInFirstSection[3].title, "Ballarat")
+        XCTAssertEqual(areasInFirstSection[3].subtitle, "Victoria")
 
-        XCTAssertEqual(areasInFirstSection[4].title, "Melbourne")
+        XCTAssertEqual(areasInFirstSection[4].title, "Bright")
         XCTAssertEqual(areasInFirstSection[4].subtitle, "Victoria")
 
-        XCTAssertEqual(areasInFirstSection[5].title, "Melbourne SE")
+        XCTAssertEqual(areasInFirstSection[5].title, "Melbourne")
         XCTAssertEqual(areasInFirstSection[5].subtitle, "Victoria")
 
-        XCTAssertEqual(areasInFirstSection[6].title, "Noosa")
-        XCTAssertEqual(areasInFirstSection[6].subtitle, "Queensland")
+        XCTAssertEqual(areasInFirstSection[6].title, "Melbourne SE")
+        XCTAssertEqual(areasInFirstSection[6].subtitle, "Victoria")
+
     }
 
 }
