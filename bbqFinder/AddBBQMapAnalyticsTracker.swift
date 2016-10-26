@@ -22,22 +22,17 @@ final class AddBBQMapAnalyticsTracker: NSObject {
         self.eventAction = eventAction
     }
 
-
     func trackScreenAppearance() {
         screenApperanceAction(screenName)
     }
-
 
     func trackUserLocationSelection() {
         eventAction(screenName, locationAction, fetchLabel)
     }
 
-
     func trackUserLocationDenied() {
         eventAction(screenName, locationAction, deniedLabel)
-        
     }
-
 
     func trackUserAddingBBQ() {
         eventAction(screenName, locationAction, addingBBQAction)

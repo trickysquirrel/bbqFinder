@@ -46,11 +46,12 @@ final class BBQDetailsTableViewController: UITableViewController, BBQDetailsPres
         }
     }
 
-    // todo this could all be in an action
+    // todo this could all be in an action and injected in
     @objc private func userSelectedDeleteBBQButton() {
         if let viewModel = viewModel {
+            analytics.trackUserDeletedBBQ()
             deleteBBQInteractor.deleteBBQWithUserGeneratedKey(viewModel.userGeneratedKey)
-            navigationController?.popViewController(animated: true)
+            _ = navigationController?.popViewController(animated: true)
         }
     }
 

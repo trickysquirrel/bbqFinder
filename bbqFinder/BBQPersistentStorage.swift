@@ -33,6 +33,10 @@ struct BBQPersistentStorage: BBQListProvider {
     func allBbqs() -> [BBQ] {
         return persistentStorage.allObjects().flatMap{ convertObjectToBBQ($0) }
     }
+
+    func userGenerated() -> Bool {
+        return true
+    }
 }
 
 // Conversion

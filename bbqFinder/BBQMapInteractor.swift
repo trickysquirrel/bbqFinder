@@ -6,7 +6,7 @@ import Foundation
 
 
 enum BBQMapInteractorResponseModel {
-    case bbqs([BBQ])
+    case bbqs(bbqs: [BBQ], usedGenerated: Bool)
     case usersLocation(latitude:Double, longitude:Double)
     case userLocationDenied
 }
@@ -61,7 +61,8 @@ final class BBQMapInteractor: NSObject, UserLocationDelegate {
     fileprivate func locationsResponseModel() -> BBQMapInteractorResponseModel {
 
         let bbqs = bbqListProvider.allBbqs()
-        let response: BBQMapInteractorResponseModel = .bbqs(bbqs)
+        let userGenerated = bbqListProvider.userGenerated()
+        let response: BBQMapInteractorResponseModel = .bbqs(bbqs: bbqs, usedGenerated: userGenerated)
         return response
     }
 

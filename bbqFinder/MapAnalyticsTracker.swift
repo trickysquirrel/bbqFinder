@@ -26,15 +26,12 @@ final class MapAnalyticsTracker: NSObject {
         screenApperanceAction(screenName)
     }
 
-
     func trackUserLocationSelection() {
         eventAction(screenName, locationAction, fetchLabel)
     }
 
-
     func trackUserLocationDenied() {
         eventAction(screenName, locationAction, deniedLabel)
-
     }
 
 }

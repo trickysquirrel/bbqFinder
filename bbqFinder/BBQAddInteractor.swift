@@ -14,7 +14,7 @@ final class BBQAddInteractor: NSObject {
 
     let bbqStorage: BBQPersistentStorage
     let output: BBQAddInteractorOutput
-    let defaultTitle = "bbq"
+    let defaultTitle = "BBQ"
     let defaultFacilities = ""
 
 

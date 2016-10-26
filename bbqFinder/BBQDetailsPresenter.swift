@@ -189,7 +189,7 @@ extension BBQDetailsPresenter {
     fileprivate func makeShowDirectionAction(bbqDetails: BBQDetails) -> ViewModelAction {
 
         let showDirectionsAction: ViewModelAction  = {
-            self.directionsAction(bbqDetails.latitude, bbqDetails.longitude, 10000, "bbq")
+            self.directionsAction(bbqDetails.latitude, bbqDetails.longitude, 10000, "BBQ")
         }
         return showDirectionsAction
     }

@@ -32,7 +32,7 @@ struct BBQModuleFactory: ModuleFactory {
         let tableViewDataSource = TableViewDataSource<AreasViewController>()
         let controller = viewControllerFactory.makeAreasViewController(dataSource: tableViewDataSource, addBbqAction: showAddAction)
 
-        controller.title = "Bbq Areas"
+        controller.title = "BBQ Areas"
 
         let presenter = AreasPresenter(interface: controller, routerShowMapAction: showMapAction)
 
@@ -69,6 +69,7 @@ struct BBQModuleFactory: ModuleFactory {
 
         controller.mapInteractor = mapInteractor
         controller.addInteractor = addInteractor
+        controller.title = "Added BBQs"
         
         return controller
     }

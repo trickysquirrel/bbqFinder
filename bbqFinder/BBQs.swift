@@ -57,11 +57,16 @@ enum BBQArea: String {
 
 protocol BBQListProvider {
     func allBbqs() -> [BBQ]
+    func userGenerated() -> Bool
 }
 
 struct BBQAreaListProvider: BBQListProvider {
 
     let area: BBQArea
+
+    func userGenerated() -> Bool {
+        return false
+    }
 
     func allBbqs() -> [BBQ] {
 

@@ -12,9 +12,11 @@ final class BBQDetailsAnalyticsTracker: NSObject {
     private let screenName = "Details"
     private let locationAction = "user location"
     private let directionAction = "directions"
+    private let deleteAction = "delete"
     private let shareAction = "share"
     private let showLabel = "show"
     private let deniedLabel = "denied"
+    private let deletedLabel = "deleted"
 
 
     required init(screenApperanceAction: @escaping AnalyticsScreenAppearanceAction, eventAction: @escaping AnalyticsEventAction) {
@@ -23,23 +25,23 @@ final class BBQDetailsAnalyticsTracker: NSObject {
         self.eventAction = eventAction
     }
 
-
     func trackScreenAppearance() {
         screenApperanceAction(screenName)
     }
-
 
     func trackDirectionSelection() {
         eventAction(screenName, directionAction, showLabel)
     }
 
-
     func trackShareSelection() {
         eventAction(screenName, shareAction, showLabel)
     }
 
-
     func trackUserLocationDenied() {
         eventAction(screenName, locationAction, deniedLabel)
+    }
+
+    func trackUserDeletedBBQ() {
+        eventAction(screenName, deleteAction, deletedLabel)
     }
 }

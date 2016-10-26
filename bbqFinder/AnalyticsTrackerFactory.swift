@@ -28,6 +28,7 @@ protocol AnalyticsTrackerFactoryProtocol {
 final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 
     fileprivate let tracker: GAITracker
+    
 
 
     init() {
