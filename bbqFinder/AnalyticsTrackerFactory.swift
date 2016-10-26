@@ -27,22 +27,20 @@ protocol AnalyticsTrackerFactoryProtocol {
 
 final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 
-    fileprivate let tracker: GAITracker
-    
-
+    private let flurrySessionBuilder: FlurrySessionBuilder
 
     init() {
-        var configureError:NSError?
-        GGLContext.sharedInstance().configureWithError(&configureError)
-        assert(configureError == nil, "Error configuring Google services: \(configureError)")
 
-        let gai = GAI.sharedInstance()
-        gai?.trackUncaughtExceptions = true
-        gai?.logger.logLevel = .none
-        //gai?.dispatchInterval = 20
-        tracker = GAI.sharedInstance().defaultTracker
+        let bundleVersion: String = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String ?? "unknown"
+
+        flurrySessionBuilder = FlurrySessionBuilder()
+        flurrySessionBuilder.withLogLevel(FlurryLogLevel(0)) // None
+        flurrySessionBuilder.withCrashReporting(true)
+        flurrySessionBuilder.withAppVersion(bundleVersion)
+
+        Flurry.startSession(analyticsId, with: flurrySessionBuilder)
     }
-
+    
 
     func makeAreasTracker() -> AreasTracker {
         return AreasTracker(screenApperanceAction: trackScreenAppearance)
@@ -65,7 +63,7 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 }
 
 
-//  We could pass in GAITracker to the classes this factory generates, but this couples
+//  We could pass in Flurry to the classes this factory generates, but this couples
 //  those classes with the 3rd party library.
 //  By passing in funcs rather than properties we ensure that all code that touches
 //  the 3rd party library is kept in this class, decoupling all others.  We can then
@@ -74,22 +72,11 @@ final class AnalyticsTrackerFactory: AnalyticsTrackerFactoryProtocol {
 extension AnalyticsTrackerFactory {
 
     fileprivate func trackScreenAppearance(screenName: String) {
-
-        self.tracker.set(kGAIScreenName, value: screenName)
-
-        if let builder = GAIDictionaryBuilder.createScreenView() {
-            self.tracker.send(builder.build() as [NSObject : AnyObject])
-        }
+        Flurry.logEvent(screenName)
     }
 
 
-    fileprivate func trackEvent(category: String, action: String, label: String) {
-
-        if let builder = GAIDictionaryBuilder.createEvent(withCategory: category,
-                                                          action: action,
-                                                          label: label,
-                                                          value: 0) {
-            self.tracker.send(builder.build() as [NSObject : AnyObject])
-        }
+    fileprivate func trackEvent(screenName: String, action: String, label: String) {
+        Flurry.logEvent(screenName, withParameters: [action: label])
     }
 }

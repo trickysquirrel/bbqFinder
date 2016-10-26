@@ -25,6 +25,8 @@
 		3030E3241D7E6EDF00647CFA /* BBQMapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */; };
 		3030E3261D7E717300647CFA /* BBQMapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030E3251D7E717300647CFA /* BBQMapPresenter.swift */; };
 		30432FF21DC13C3000637FDE /* TrackerId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30432FF11DC13C3000637FDE /* TrackerId.swift */; };
+		30432FF51DC13DCF00637FDE /* libFlurry_7.8.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30432FF41DC13DCF00637FDE /* libFlurry_7.8.0.a */; };
+		30432FF81DC145F200637FDE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309D5FEE1DA791BF008BEC0E /* SystemConfiguration.framework */; };
 		305035381D938971002B7D1F /* AreaViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 305035371D938971002B7D1F /* AreaViewCell.xib */; };
 		3050353A1D9389E4002B7D1F /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305035391D9389E4002B7D1F /* AreaTableViewCell.swift */; };
 		3050353C1D93E974002B7D1F /* UILabel+CharacterSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3050353B1D93E974002B7D1F /* UILabel+CharacterSpacing.swift */; };
@@ -122,6 +124,9 @@
 		3030E3231D7E6EDF00647CFA /* BBQMapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapInteractor.swift; sourceTree = "<group>"; };
 		3030E3251D7E717300647CFA /* BBQMapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapPresenter.swift; sourceTree = "<group>"; };
 		30432FF11DC13C3000637FDE /* TrackerId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerId.swift; sourceTree = "<group>"; };
+		30432FF31DC13DCF00637FDE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = SOURCE_ROOT; };
+		30432FF41DC13DCF00637FDE /* libFlurry_7.8.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_7.8.0.a; path = Flurry/libFlurry_7.8.0.a; sourceTree = SOURCE_ROOT; };
+		30432FF71DC13E1A00637FDE /* FlurrySessionBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FlurrySessionBuilder.h; path = Flurry/FlurrySessionBuilder.h; sourceTree = SOURCE_ROOT; };
 		305035371D938971002B7D1F /* AreaViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaViewCell.xib; sourceTree = "<group>"; };
 		305035391D9389E4002B7D1F /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
 		3050353B1D93E974002B7D1F /* UILabel+CharacterSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+CharacterSpacing.swift"; sourceTree = "<group>"; };
@@ -199,7 +204,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30432FF81DC145F200637FDE /* SystemConfiguration.framework in Frameworks */,
 				30807CB91DB301B6009890CE /* iAd.framework in Frameworks */,
+				30432FF51DC13DCF00637FDE /* libFlurry_7.8.0.a in Frameworks */,
 				301258851D96AE5D00E3F33E /* SceneKit.framework in Frameworks */,
 				30D7EBF81D7F5353007C2884 /* CoreLocation.framework in Frameworks */,
 				3030E31E1D7E070200647CFA /* MapKit.framework in Frameworks */,
@@ -264,6 +271,17 @@
 			name = "Bbq Areas Map";
 			sourceTree = "<group>";
 		};
+		30432FF61DC13DD400637FDE /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				30432FF11DC13C3000637FDE /* TrackerId.swift */,
+				30432FF71DC13E1A00637FDE /* FlurrySessionBuilder.h */,
+				30432FF31DC13DCF00637FDE /* Flurry.h */,
+				30432FF41DC13DCF00637FDE /* libFlurry_7.8.0.a */,
+			);
+			name = Flurry;
+			sourceTree = "<group>";
+		};
 		305035401D948382002B7D1F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,12 +321,12 @@
 		308BF9E51D9DD1CA007FA732 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
+				30432FF61DC13DD400637FDE /* Flurry */,
 				308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */,
 				308BF9E91D9DD329007FA732 /* AreasTracker.swift */,
 				3002BCE71D9F09BF0068B2B6 /* MapAnalyticsTracker.swift */,
 				3002BCE91D9F0E360068B2B6 /* BBQDetailsAnalyticsTracker.swift */,
 				30671F051DBAC59500E51639 /* AddBBQMapAnalyticsTracker.swift */,
-				30432FF11DC13C3000637FDE /* TrackerId.swift */,
 			);
 			name = Tracking;
 			sourceTree = "<group>";
@@ -979,6 +997,10 @@
 				DEVELOPMENT_TEAM = 7HG6PP7Q5J;
 				INFOPLIST_FILE = bbqFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flurry",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "bbqFinder/bbqFinder-Bridging-Header.h";
@@ -997,6 +1019,10 @@
 				DEVELOPMENT_TEAM = 7HG6PP7Q5J;
 				INFOPLIST_FILE = bbqFinder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Flurry",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.bbqFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "bbqFinder/bbqFinder-Bridging-Header.h";

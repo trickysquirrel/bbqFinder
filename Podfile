@@ -7,16 +7,9 @@ target 'bbqFinder' do
 
   # Pods for bbqFinder
 
-  pod 'Firebase/Core'
-  pod 'Firebase/RemoteConfig'
-  pod 'Google/Analytics'
-
   target 'bbqFinderTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Firebase/Core'
-    pod 'Firebase/RemoteConfig'
-    pod 'Google/Analytics'
   end
 
 end
