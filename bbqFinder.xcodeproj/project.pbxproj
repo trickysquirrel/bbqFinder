@@ -45,9 +45,7 @@
 		307D42861DBC0B55000E101B /* BBQMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307D42851DBC0B55000E101B /* BBQMapViewModel.swift */; };
 		30807CB91DB301B6009890CE /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30807CB81DB301B6009890CE /* iAd.framework */; };
 		308BF9DD1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9DC1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift */; };
-		308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
 		308BF9E71D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */; };
-		308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */; };
 		308BF9EA1D9DD329007FA732 /* AreasTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308BF9E91D9DD329007FA732 /* AreasTracker.swift */; };
 		309D5FF11DA9A429008BEC0E /* TableView+AutoSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309D5FF01DA9A429008BEC0E /* TableView+AutoSizing.swift */; };
 		309D5FF31DA9AA4B008BEC0E /* TableView+RegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309D5FF21DA9AA4B008BEC0E /* TableView+RegisterCell.swift */; };
@@ -57,6 +55,8 @@
 		30AE272F1D9932C80044B6C4 /* Noosa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE272E1D9932C80044B6C4 /* Noosa.swift */; };
 		30AE27351D993A670044B6C4 /* GreaterDandenong.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27341D993A670044B6C4 /* GreaterDandenong.swift */; };
 		30AE27391D99421B0044B6C4 /* Canberra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE27381D99421B0044B6C4 /* Canberra.swift */; };
+		30BB30511DC550A80087B2CA /* BBQFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB30501DC550A80087B2CA /* BBQFinderUITests.swift */; };
+		30BB30591DC550F20087B2CA /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BB30581DC550F20087B2CA /* SnapshotHelper.swift */; };
 		30C716E31D6C7E9F0085FFBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */; };
 		30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E61D6C7E9F0085FFBD /* Main.storyboard */; };
 		30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C716E91D6C7E9F0085FFBD /* Assets.xcassets */; };
@@ -93,6 +93,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		30BB30531DC550A80087B2CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30C716D71D6C7E9E0085FFBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30C716DE1D6C7E9E0085FFBD;
+			remoteInfo = bbqFinder;
+		};
 		30C716F41D6C7E9F0085FFBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 30C716D71D6C7E9E0085FFBD /* Project object */;
@@ -146,7 +153,6 @@
 		307D42851DBC0B55000E101B /* BBQMapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQMapViewModel.swift; sourceTree = "<group>"; };
 		30807CB81DB301B6009890CE /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		308BF9DC1D9DC110007FA732 /* BBQAppleRouterActionFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBQAppleRouterActionFactory.swift; sourceTree = "<group>"; };
-		308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bbqFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		308BF9E61D9DD1EF007FA732 /* AnalyticsTrackerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsTrackerFactory.swift; sourceTree = "<group>"; };
 		308BF9E91D9DD329007FA732 /* AreasTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreasTracker.swift; sourceTree = "<group>"; };
@@ -159,6 +165,10 @@
 		30AE272E1D9932C80044B6C4 /* Noosa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Noosa.swift; sourceTree = "<group>"; };
 		30AE27341D993A670044B6C4 /* GreaterDandenong.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreaterDandenong.swift; sourceTree = "<group>"; };
 		30AE27381D99421B0044B6C4 /* Canberra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canberra.swift; sourceTree = "<group>"; };
+		30BB304E1DC550A80087B2CA /* BBQFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBQFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30BB30501DC550A80087B2CA /* BBQFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBQFinderUITests.swift; sourceTree = "<group>"; };
+		30BB30521DC550A80087B2CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30BB30581DC550F20087B2CA /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbqFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C716E21D6C7E9F0085FFBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30C716E71D6C7E9F0085FFBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +210,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		30BB304B1DC550A80087B2CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C716DC1D6C7E9E0085FFBD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +373,16 @@
 			name = "Add Bbq";
 			sourceTree = "<group>";
 		};
+		30BB304F1DC550A80087B2CA /* BBQFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				30BB30501DC550A80087B2CA /* BBQFinderUITests.swift */,
+				30BB30581DC550F20087B2CA /* SnapshotHelper.swift */,
+				30BB30521DC550A80087B2CA /* Info.plist */,
+			);
+			path = BBQFinderUITests;
+			sourceTree = "<group>";
+		};
 		30C716D61D6C7E9E0085FFBD = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +390,7 @@
 				30C716E11D6C7E9F0085FFBD /* bbqFinder */,
 				30D7EBFB1D7F6FEC007C2884 /* Frameworks */,
 				30C716F61D6C7E9F0085FFBD /* bbqFinderTests */,
+				30BB304F1DC550A80087B2CA /* BBQFinderUITests */,
 				30C716E01D6C7E9F0085FFBD /* Products */,
 				31F5A58C8701C5AAE5FEB646 /* Pods */,
 			);
@@ -373,6 +401,7 @@
 			children = (
 				30C716DF1D6C7E9F0085FFBD /* bbqFinder.app */,
 				30C716F31D6C7E9F0085FFBD /* bbqFinderTests.xctest */,
+				30BB304E1DC550A80087B2CA /* BBQFinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,7 +422,6 @@
 				30C716E91D6C7E9F0085FFBD /* Assets.xcassets */,
 				30C716EB1D6C7E9F0085FFBD /* LaunchScreen.storyboard */,
 				30C716EE1D6C7E9F0085FFBD /* Info.plist */,
-				308BF9DF1D9DD12C007FA732 /* GoogleService-Info.plist */,
 				308BF9E11D9DD17E007FA732 /* bbqFinder-Bridging-Header.h */,
 				30D7EBFA1D7F6FC5007C2884 /* Utils */,
 			);
@@ -577,6 +605,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		30BB304D1DC550A80087B2CA /* BBQFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30BB30571DC550A80087B2CA /* Build configuration list for PBXNativeTarget "BBQFinderUITests" */;
+			buildPhases = (
+				30BB304A1DC550A80087B2CA /* Sources */,
+				30BB304B1DC550A80087B2CA /* Frameworks */,
+				30BB304C1DC550A80087B2CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30BB30541DC550A80087B2CA /* PBXTargetDependency */,
+			);
+			name = BBQFinderUITests;
+			productName = BBQFinderUITests;
+			productReference = 30BB304E1DC550A80087B2CA /* BBQFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		30C716DE1D6C7E9E0085FFBD /* bbqFinder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30C716FC1D6C7E9F0085FFBD /* Build configuration list for PBXNativeTarget "bbqFinder" */;
@@ -624,10 +670,15 @@
 		30C716D71D6C7E9E0085FFBD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = RichardMoult;
 				TargetAttributes = {
+					30BB304D1DC550A80087B2CA = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 30C716DE1D6C7E9E0085FFBD;
+					};
 					30C716DE1D6C7E9E0085FFBD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 7HG6PP7Q5J;
@@ -663,11 +714,19 @@
 			targets = (
 				30C716DE1D6C7E9E0085FFBD /* bbqFinder */,
 				30C716F21D6C7E9F0085FFBD /* bbqFinderTests */,
+				30BB304D1DC550A80087B2CA /* BBQFinderUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		30BB304C1DC550A80087B2CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C716DD1D6C7E9E0085FFBD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -678,7 +737,6 @@
 				30C716EA1D6C7E9F0085FFBD /* Assets.xcassets in Resources */,
 				3050354F1D949A91002B7D1F /* BBQMapViewController.xib in Resources */,
 				30C716E81D6C7E9F0085FFBD /* Main.storyboard in Resources */,
-				308BF9E01D9DD12C007FA732 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,7 +745,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F6BF5C1D923340001509A2 /* Main.storyboard in Resources */,
-				308BF9E81D9DD24B007FA732 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +844,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		30BB304A1DC550A80087B2CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30BB30511DC550A80087B2CA /* BBQFinderUITests.swift in Sources */,
+				30BB30591DC550F20087B2CA /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30C716DB1D6C7E9E0085FFBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -870,6 +936,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		30BB30541DC550A80087B2CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30C716DE1D6C7E9E0085FFBD /* bbqFinder */;
+			targetProxy = 30BB30531DC550A80087B2CA /* PBXContainerItemProxy */;
+		};
 		30C716F51D6C7E9F0085FFBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 30C716DE1D6C7E9E0085FFBD /* bbqFinder */;
@@ -897,6 +968,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		30BB30551DC550A80087B2CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = BBQFinderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.BBQFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = bbqFinder;
+			};
+			name = Debug;
+		};
+		30BB30561DC550A80087B2CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				INFOPLIST_FILE = BBQFinderUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.trickysquirrel.BBQFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = bbqFinder;
+			};
+			name = Release;
+		};
 		30C716FA1D6C7E9F0085FFBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1061,6 +1163,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		30BB30571DC550A80087B2CA /* Build configuration list for PBXNativeTarget "BBQFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30BB30551DC550A80087B2CA /* Debug */,
+				30BB30561DC550A80087B2CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		30C716DA1D6C7E9E0085FFBD /* Build configuration list for PBXProject "bbqFinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

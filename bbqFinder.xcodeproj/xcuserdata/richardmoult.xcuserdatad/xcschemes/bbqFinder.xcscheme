@@ -38,6 +38,16 @@
                ReferencedContainer = "container:bbqFinder.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "30BB304D1DC550A80087B2CA"
+               BuildableName = "BBQFinderUITests.xctest"
+               BlueprintName = "BBQFinderUITests"
+               ReferencedContainer = "container:bbqFinder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
