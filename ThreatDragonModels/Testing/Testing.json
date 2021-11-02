@@ -5,8 +5,18 @@
     "description": "just a test"
   },
   "detail": {
-    "contributors": [],
-    "diagrams": [],
+    "contributors": [
+      {
+        "name": "fred"
+      }
+    ],
+    "diagrams": [
+      {
+        "title": "testing1",
+        "thumbnail": "./public/content/images/thumbnail.jpg",
+        "id": 0
+      }
+    ],
     "reviewer": "testing"
   }
 }
